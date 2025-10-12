@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "titulo":"Identificación de microorganismos",
+        "descripcion": "Secuenciación del gen 16S rRNA / Secuenciación del genoma completo (WGS) / Ensamblaje y anotación de genomas bacterianos / Análisis filogenético y taxonómico / MLSA"
+    },
+    {
+        "id":2,
+        "titulo":"Calidad de inoculantes",
+        "descripcion":"Recuentos de viables (CFU) / Pruebas de viabilidad y pureza / Evaluación de la eficacia del inoculante en condiciones controladas / Cuantificación de viables mediante métodos no cultivables (vqPCR)"
+    },
+    {
+        "id":3,
+        "titulo":"",
+        "descripcion":""
+    },
+    {
+        "id":4,
+        "titulo":"",
+        "descripcion":""
+    },{
+        "id":5,
+        "titulo":"",
+        "descripcion":""
+    }
+]

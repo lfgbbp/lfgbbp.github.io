@@ -1,51 +1,110 @@
 [
     {
         "id": 1,
-        "nombre": "",
+        "nombre": "Claudio",
+        "apellido": "Valverde",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
     },
     {
         "id": 2,
-        "nombre": "",
+        "nombre": "Betina",
+        "apellido": "Agaras",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
     },
     {
         "id": 3,
-        "nombre": "",
+        "nombre": "Antonio",
+        "apellido": "Lagares Jr.",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
     },
     {
         "id": 4,
-        "nombre": "",
+        "nombre": "Patricio",
+        "apellido":"Sobrero",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
     },
     {
         "id": 5,
-        "nombre": "",
+        "nombre": "Melina",
+        "apellido":"Martins",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
     },
     {
         "id": 6,
-        "nombre": "",
+        "nombre": "Yanina",
+        "apellido": "Magaldi",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
     },
     {
         "id": 7,
-        "nombre": "",
+        "nombre": "Fernanda",
+        "apellido": "Coelho",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": ""
+        "descripcion": "",
+        "estado": "actual"
+    },
+    {
+        "id": 8,
+        "nombre": "Melani",
+        "apellido": "Lorch",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": "",
+        "estado": "actual"
+    },
+    {
+        "id": 9,
+        "nombre": "Federico",
+        "apellido": "Muzio",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": "",
+        "estado": "pasado"
+    },
+    {
+        "id": 10,
+        "nombre": "Andres",
+        "apellido": "Muzlera",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": "",
+        "estado": "pasado"
+    },
+    {
+        "id": 11,
+        "nombre": "Matías",
+        "apellido": "Garabaglia",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": "",
+        "estado": "pasado"
+    },
+    {
+        "id": 12,
+        "nombre": "Micaela",
+        "apellido": "Pérez-Rodriguez",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": "",
+        "estado": "pasado"
     }
 ]
