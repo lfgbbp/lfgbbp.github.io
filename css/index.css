@@ -83,45 +83,237 @@ main{
 }
 
 /* Styles for the main section.*/
-.aboutUsI{
+    /* Styles for the about us section */
+.aboutUsI {
     background-color: #659A5A;
-    display: flow-root;
+    padding: 10px; 
 }
 
-.aboutUsI h2{
-    position: relative;
-    left: 50px; 
-    
-    /* (Optional) Use 'top' to move it down */
-    /* top: 10px; */ 
+.aboutUsI h2 {
+    margin-bottom: 20px; 
 }
 
-.aboutUsI p{
+.aboutUsI p {
     font-size: 18px;
     max-width: 1000px;
-    position: relative;
-    left: 100px;
-    top: 10px;
     line-height: 1.6;
+}
+
+    /* styles for the members section.*/
+.membersI{
+    background-color: #252d23;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .inv{
     color: white;
 }
 
-.membersI{
-    background-color: #252d23;
+#contenedor-investigadores .card {
+    background-color: #f4f4f4; /* Un gris muy claro, color hueso */
+    color: #333;              /* Texto principal en gris oscuro */
+    border: none;              /* Opcional: quita el borde para un look más limpio */
+}
+
+#contenedor-investigadores .card-title {
+    color: #1a1a1a; /* Un título un poco más oscuro para que resalte */
+}
+
+#contenedor-investigadores .card-subtitle {
+    color: #555;
 }
 
 /* Styles for the services and publications.*/
-.sectionServs{
+    /* Styles for the services section */
+.sectionServs {
     display: flex;
     flex-direction: row;
-    gap: 200px;
     justify-content: center;
+    align-items: flex-start; 
+    flex-wrap: wrap;
+    gap: 50px;
     background-color: #659A5A;
+    padding: 50px 20px;
 }
 
+.services-column,
+.publications-column {
+    flex: 1 1 400px; 
+    max-width: 600px; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-column h2,
+.publications-column h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #659A5A;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#contenedor-servicios {
+    width: 100%;
+    max-width: 600px;
+}
+
+.custom-accordion-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.accordion-title {
+    /* Reseteamos los estilos de botón */
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 18px 5px;
+    cursor: pointer;
+    
+    /* Flexbox para alinear título e icono */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Estilos del texto */
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-title:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.accordion-icon {
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translate(-50%, -50%);
+}
+
+.accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    color: #cccccc;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.accordion-content p {
+    padding: 0 5px 18px 5px; 
+}
+
+.custom-accordion-item.active .accordion-title {
+    color: #a3d996;
+}
+
+.custom-accordion-item.active .accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.custom-accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.custom-accordion-item.active .accordion-content {
+    max-height: 200px; 
+}
+
+/* Styles for the pubs section.*/
+.publications-column #contenedor-publicaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 600px;
+}
+
+.publications-column .publication-item a {
+    display: block;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 18px 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; 
+}
+
+.publications-column .publication-item a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.publications-column .publication-item .publication-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+.publications-column .publication-item .publication-meta {
+    display: block;
+    color: #cccccc;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.btn-ver-todos {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 10px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-ver-todos:hover {
+    background-color: #f4f4f4;
+    color: #252d23;
+    border-color: #f4f4f4;
+}
+
+.publication-item .publication-authors {
+    color: #a3d996; /* Un verde claro para que resalte */
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-style: normal; /* Asegura que no sea itálica como el meta */
+}
 
 /* Styles for the contact Section.*/
 .contactS{

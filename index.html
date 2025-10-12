@@ -28,31 +28,24 @@
     </div>
     <main>
         <section id="aboutUs" class="aboutUsI">
-            <h2>Sobre nosotros</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam odit saepe quidem a, provident maiores similique voluptate quod, consectetur ea tempora. Dicta ipsum veniam nulla debitis ab eius natus quaerat.</p>
-        </section>
-        <section id="members" class="membersI">
-            <h2 class="inv">Investigadores</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+                <h2>Sobre nosotros</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam odit saepe quidem a, provident maiores similique voluptate quod, consectetur ea tempora. Dicta ipsum veniam nulla debitis ab eius natus quaerat.</p>
             </div>
+        </section>
+        <section id="members" class="membersI container py-4">
+            <h2 class="inv ">Nuestro equipo</h2>
+            <div id="contenedor-investigadores" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"></div>
         </section>
         <section id="services" class="sectionServs">
-            <div class="serv">
-                <h2 class="serv">Servicios</h2>
-                
+            <div class="serv services-column">
+                <h2>Servicios</h2>
+                <div id="contenedor-servicios"></div>
             </div>
-            <div class="pubs">
+            <div class="pubs publications-column"> 
                 <h2 class="publi">Ultimas publicaciones</h2>
+                <div id="contenedor-publicaciones"></div>
+                <a href="./pages/publicaciones.html" class="btn-ver-todos">Ver todas las publicaciones</a>
             </div>
         </section>
         <section id="contact" class="contactS bgColor">
