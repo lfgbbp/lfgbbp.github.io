@@ -3,8 +3,7 @@
 Este repositorio contiene el código fuente del sitio web oficial del Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas de la Universidad Nacional de Quilmes. 
 El sitio está diseñado para presentar al equipo de investigación, sus publicaciones recientes y los servicios ofrecidos.
 
-**➡️ Visita el sitio en vivo:** **[Enlace a la pagina](https://lfgbbp.github.io/)**
-
+<a href="[https://lfgbbp.github.io/]" target="_blank" rel="noopener noreferrer">**➡️ Visita el sitio en vivo:**</a>
 ---
 
 ### 📸 Vista Previa
