@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarServicios();
     mostrarUltimasPublicaciones();
     cargarInvestigadores();
+
+    const menuToggle = document.querySelector('.menuB');
+    const navBar = document.querySelector('.nav-bar');
+
+    if (menuToggle && navBar) {
+        menuToggle.addEventListener('click', () => {
+            // Añade/quita la clase 'active' tanto al botón como a la barra de navegación
+            menuToggle.classList.toggle('active');
+            navBar.classList.toggle('active');
+        });
+    }
 });
 
 async function cargarInvestigadores() {
