@@ -1,4 +1,4 @@
-# Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGGBp)
+# Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGGBP)
 
 Este repositorio contiene el código fuente del sitio web oficial del Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas de la Universidad Nacional de Quilmes. 
 El sitio está diseñado para presentar al equipo de investigación, sus publicaciones recientes y los servicios ofrecidos.
