@@ -16,10 +16,9 @@ html {
 /* styles for the main.*/
 main{
     background-color: #252d23;
-
 }
 
-/* Styles for the Navbar and Hero elements.*/
+/* Styles for the nav-bar and Hero elements.*/
 .bgHero{
     background-color: #A07D5D;
     background-image: url('../imgs/heroElement.png');
@@ -45,8 +44,10 @@ main{
 
 }
 
-.navbar{
+.nav-bar{
     flex: 2;
+    
+    padding: 0;
 }
 
 .ulNav{
@@ -80,6 +81,10 @@ main{
     /* Center the block if you used a fixed max-width */
     margin-left: auto;
     margin-right: auto;	
+}
+
+.menuB {
+    display: none;
 }
 
 /* Styles for the main section.*/
@@ -414,4 +419,144 @@ main{
 .anchorD{
     text-decoration: none;
     color: white
+}
+
+/* Media queries */
+/* --- PARA TABLETS Y PANTALLAS MEDIANAS--- */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 38px;
+        width: 80%; 
+    }
+
+    .containerHead {
+        gap: 40px;
+    }
+
+    .ulNav {
+        gap: 15px;
+    }
+
+    .sectionServs, .contactS {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .services-column,
+    .publications-column,
+    .infoContact,
+    .iframeContainer {
+        width: 90%;
+        max-width: 600px;
+        flex-basis: auto;
+    }
+    
+    .contactS {
+        gap: 40px;
+    }
+}
+
+/* --- PARA MÓVILES --- */
+@media (max-width: 768px) {
+    .menuB {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        
+        margin-left: auto;
+        margin-right: 0;
+
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2.5rem;
+        cursor: pointer;    
+        z-index: 1001;
+        margin-right: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .menuB.active {
+        transform: rotate(90deg);
+    }
+
+    .nav-bar {
+        width: 100%;
+
+        /* Lógica de ocultar/mostrar con max-height */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        
+        /* Eliminamos las propiedades del menú lateral */
+        height: auto;
+        backdrop-filter: none; 
+    }
+
+    .containerMedia{
+        display: flex;
+    }
+
+    .nav-bar.active {
+        /* El menú se vuelve visible y se desliza a su posición */
+        
+        max-height: 1000px;
+    }
+
+    .ulNav {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        height: auto;
+    }
+
+    .liNav a {
+        font-size: 20px;
+        color: #f97e04;
+    }
+    
+    .containerHead {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px; 
+        padding: 0 15px; 
+    }
+
+    .logo {
+        max-width: 180px; 
+        
+    }
+    
+    .logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .bgHero {
+        background-image: url('../imgs/heroElement-mobile.png');
+        position: relative; /* Permite posicionar el menú desplegable debajo */
+        min-height: auto; /* Dejamos que la altura se ajuste al contenido */
+        padding-bottom: 20px; /* Espacio inferior */
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        width: 90%;
+    }
+
+    .aboutUsI p {
+        font-size: 16px;
+    }
+
+    .services-column h2,
+    .publications-column h2,
+    .contactTitle {
+        font-size: 1.8em;
+    }
 }
