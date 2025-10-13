@@ -4,6 +4,7 @@ Este repositorio contiene el código fuente del sitio web oficial del Laboratori
 El sitio está diseñado para presentar al equipo de investigación, sus publicaciones recientes y los servicios ofrecidos.
 
 <a href="https://lfgbbp.github.io/" target="_blank" rel="noopener noreferrer">**➡️ Visita el sitio en vivo:**</a>
+
 ---
 
 ### 📸 Vista Previa
