@@ -93,14 +93,15 @@ main{
     padding: 10px; 
 }
 
-.aboutUsI h2 {
-    margin-bottom: 20px; 
+.aboutUsI .container h2 {
+    margin-bottom: 15px; 
 }
 
-.aboutUsI p {
+.aboutUsI .container p {
     font-size: 18px;
     max-width: 1000px;
     line-height: 1.6;
+    margin-left:    20px;
 }
 
     /* styles for the members section.*/
