@@ -70,7 +70,6 @@ async function mostrarUltimasPublicaciones() {
         const papers = await respuestaPapers.json();
         const investigadores = await respuestaInvestigadores.json();
 
-        // ✅ CAMBIO 2: El mapa ahora guarda solo el APELLIDO del investigador
         const mapaInvestigadores = new Map(
             investigadores.map(inv => [inv.id, inv.apellido])
         );

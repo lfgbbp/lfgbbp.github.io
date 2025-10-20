@@ -41,7 +41,6 @@ main{
     flex: 1;
     max-height: 100px;
     max-width: 250px;
-
 }
 
 .nav-bar{
@@ -501,8 +500,6 @@ main{
     }
 
     .nav-bar.active {
-        /* El menú se vuelve visible y se desliza a su posición */
-        
         max-height: 1000px;
     }
 
@@ -511,7 +508,7 @@ main{
         width: 100%;
         align-items: center;
         padding: 20px;
-        gap: 20px;
+        gap: 15px;
         height: auto;
     }
 
@@ -529,8 +526,7 @@ main{
     }
 
     .logo {
-        max-width: 180px; 
-        
+        max-width: 500px;
     }
     
     .logo img {
