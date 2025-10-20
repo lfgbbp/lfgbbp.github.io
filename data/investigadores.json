@@ -12,9 +12,9 @@
         "id": 2,
         "nombre": "Betina",
         "apellido": "Agaras",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
+        "titulo": "Dra. en Ciencia y Tecnología UNQ (Microbiología agrícola)",
+        "fotoUrl": "./imgs/investigadores/Foto BA nueva.jpg",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada ultrices arcu quis posuere. Mauris posuere lobortis quam, eu iaculis risus tristique vestibulum. Fusce consectetur massa sed venenatis efficitur. Phasellus mattis leo quis felis interdum, ut aliquam purus fringilla. Integer gravida eros eu dui eleifend semper. Proin non erat leo. Cras elementum nulla at dolor pellentesque, sed gravida ligula luctus. Sed elementum lacus risus, sed consequat lacus efficitur eget. Phasellus ac urna maximus, sodales orci quis, efficitur enim. Sed porta risus eget lorem malesuada, non lacinia nunc tincidunt. Vivamus dolor tellus, porta et tellus in, rutrum convallis est. Curabitur ultrices sapien vitae mauris porta, id scelerisque felis tempor.",
         "estado": "actual"
     },
     {
