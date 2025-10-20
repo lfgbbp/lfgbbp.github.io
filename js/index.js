@@ -45,7 +45,8 @@ async function cargarInvestigadores() {
                         <img src="${investigador.fotoUrl}" class="card-img-top" alt="Foto de ${nombreCompleto}">
                         <div class="card-body">
                             <h5 class="card-title">${nombreCompleto}</h5>
-                            <p class="card-text">${investigador.titulo}</p>
+                            <p class="card-sub-title">${investigador.titulo}</p>
+                            <p class="card-text">${investigador.descripcion}</p>
                         </div>
                     </div>
                 </div>`;
