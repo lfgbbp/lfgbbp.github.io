@@ -10,16 +10,37 @@
     <title>Publicaciones</title>
 </head>
 <body id="publicaciones-page">
-    <header class="containerHead bgColor">
-        <a href="../index.html"><img src="/imgs/Logo horizontal (sin fondo).png" alt="El logo del laboratorio." class="logo"></a>
+    <header class="bgColor">
+        <div class="containerHead">
+            <a href="../index.html"><img src="../imgs/Logo horizontal (sin fondo).png" alt="Logo LFG" class="logo"></a>
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <nav class="navbar">
+                <ul class="ulNav">
+                    <li class="liNav home-link"> 
+                        <a href="../index.html" aria-label="Volver al inicio">
+                            <i class="bi bi-arrow-left-circle"></i> 
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <main class="publications-page-container">
-            <div class="page-header">
+        <div class="page-header">
+            <div class="header-left">
                 <h1>Archivo de Publicaciones</h1>
-                <div id="filtros-container" class="filtros-container"></div>
+                <div id="filtros-container" class="filtros-container">
+                    <!-- Botones de filtro -->
+                </div>
             </div>
-            <div id="publicaciones-container" class="publicaciones-lista"></div>
+            <div id="search-container" class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar por título o autor...">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+        <div id="publicaciones-container" class="publicaciones-lista"></div>
     </main>
     
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top bgColor"> 

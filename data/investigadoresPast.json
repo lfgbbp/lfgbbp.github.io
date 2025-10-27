@@ -2,17 +2,19 @@
     {
         "id": 1,
         "nombre": "",
-        "apellido": ""
+        "apellido": "",
+        "descripcion": ""
     },
     {
         "id": 2,
         "nombre": "",
         "apellido": "",
-        "titulo": ""
+        "descripcion": ""
     },
     {
         "id": 3,
         "nombre": "",
-        "apellido": ""
+        "apellido": "",
+        "descripcion": ""
     }
 ]
