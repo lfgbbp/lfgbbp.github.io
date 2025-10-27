@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "titulo": "Aislamientos nativos del genero <i>Pseudomonas</i>: estudios funcionales para el desarrollo de bioinsumos.",
+        "descripcion": "sfs",
+        "imagen": ""
+    },
+    {
+        "id": 2,
+        "titulo": "Caracterización molecular de la hibernación ribosomal en rizobios simbiontes de alfalfa, leguminosa forrajera de relevancia en suelos agrícolas.",
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "id": 3,
+        "titulo": "Análisis molecular de las redes regulatorias implicadas en el control de la expresión génica en bacterias",
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "id": 4,
+        "titulo": "Bases genéticas de la promoción del crecimiento por parte de <i>Pseudomonas</i> pergaminensis 1008",
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "id": 5,
+        "titulo": "Caracterización funcional del ARN pequeño Sm84 de <i>Sinorhizobium meliloti</i>",
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "id": 6,
+        "titulo": "ARNs pequeños regulatorios del clan Rsm en bacterias del género <i>Pseudomonas</i>",
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "id": 7,
+        "titulo": "Caracterización de metabolitos especializados de <i>Pseudomonas</i> autóctonas",
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "id": 8,
+        "titulo": "Desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal",
+        "descripcion": "",
+        "imagen": ""
+    }
+]

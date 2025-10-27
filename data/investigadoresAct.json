@@ -70,41 +70,5 @@
         "fotoUrl": "",
         "descripcion": "",
         "estado": "actual"
-    },
-    {
-        "id": 9,
-        "nombre": "Federico",
-        "apellido": "Muzio",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
-        "estado": "pasado"
-    },
-    {
-        "id": 10,
-        "nombre": "Andres",
-        "apellido": "Muzlera",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
-        "estado": "pasado"
-    },
-    {
-        "id": 11,
-        "nombre": "Matías",
-        "apellido": "Garabaglia",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
-        "estado": "pasado"
-    },
-    {
-        "id": 12,
-        "nombre": "Micaela",
-        "apellido": "Pérez-Rodriguez",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
-        "estado": "pasado"
     }
 ]

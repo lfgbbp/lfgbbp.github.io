@@ -5,7 +5,7 @@
         "titulo": "Variability in maize seed bacterization and survival correlating with root colonization by Pseudomonas isolates with plant-probiotic traits.",
         "publicadoEn": "PLANTS",
         "enlace": "https://doi.org/10.3390/plants13152130",
-        "autoresIds": [8, 1, 2] 
+        "autores": "Lorch, M., Valverde, C., Agaras, B."
     },
     {
         "paperId": 101,
@@ -13,7 +13,7 @@
         "titulo": "Autochthonous isolate Pseudomonas 42P4 as a sustainable strategy to control Rhizoctonia solani and promote growth of tomato plants.",
         "publicadoEn": "J NATURAL PESTICIDE RESEARCH",
         "enlace": "https://doi.org/10.1016/j.napere.2025.100164",
-        "autoresIds": [12, 2]
+        "autores": "Pérez-Rodriguez, M., Lucero, G., Agaras, B., Lobato-Ureche, M., Fernández, M., Espino, M., Cohen, A."
     },
     {
         "paperId": 102,
@@ -21,7 +21,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": [] 
+        "autores": ""
     },
     {
         "paperId": 103,
@@ -29,7 +29,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 104,
@@ -37,7 +37,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 105,
@@ -45,7 +45,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 106,
@@ -53,7 +53,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 107,
@@ -61,7 +61,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 108,
@@ -69,7 +69,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 109,
@@ -77,7 +77,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 110,
@@ -85,7 +85,7 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     },
     {
         "paperId": 111,
@@ -93,6 +93,6 @@
         "titulo": "",
         "publicadoEn": "",
         "enlace": "",
-        "autoresIds": []
+        "autores": ""
     }
 ]

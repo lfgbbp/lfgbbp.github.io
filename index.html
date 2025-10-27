@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="/imgs/Logo Favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>lfgbbp</title>
 </head>
 <body>
@@ -20,7 +21,9 @@
                     <li class="liNav"><a href="#aboutUs">Sobre nosotros</a></li>
                     <li class="liNav"><a href="#members">Nuestro Equipo</a></li>
                     <li class="liNav"><a href="#services">Servicios</a></li>
-                    <li class="liNav"><a href="#services">Publicaciones</a></li>
+                    <li class="liNav"><a href="#research">Líneas de Investigación</a></li>
+                    <li class="liNav"><a href="#publications">Publicaciones</a></li>
+                    <li class="liNav"><a href="#news">Novedades</a/li>
                     <li class="liNav"><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -40,15 +43,28 @@
             <h2 class="inv ">Nuestro equipo</h2>
             <div id="contenedor-investigadores" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"></div>
         </section>
+        <section id="research" class="sectionResearch">
+            <div class="research-column">
+                <h2>Líneas de Investigación</h2>
+                <div id="contenedor-research" class="research-items-container"></div>
+            </div>
+            <div class="pubs publications-column" id="publications"> 
+                <h2 class="publi">Ultimas publicaciones</h2>
+                <div id="contenedor-publicaciones"></div>
+                <a href="./pages/publicaciones.html" class="btn-ver-todos">Ver todas las publicaciones</a>
+            </div>
+        </section>
         <section id="services" class="sectionServs">
             <div class="serv services-column">
                 <h2>Servicios</h2>
                 <div id="contenedor-servicios"></div>
             </div>
-            <div class="pubs publications-column"> 
-                <h2 class="publi">Ultimas publicaciones</h2>
-                <div id="contenedor-publicaciones"></div>
-                <a href="./pages/publicaciones.html" class="btn-ver-todos">Ver todas las publicaciones</a>
+        </section>
+        <section id="news" class="sectionNews">
+            <div id="twitter-feed-container" class="news-column">
+                <h2>Novedades</h2>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
+                <iframe onload="iFrameResize(this)"src="https://7d4da41018244580aaf66cadd4e6117b.elf.site" style="border:none;width:100%;" frameborder="0"></iframe>
             </div>
         </section>
         <section id="contact" class="contactS bgColor">
@@ -70,6 +86,16 @@
         <p class="col-md-4 mb-0 text-body-light mx-5">&copy; <span id="current-year"></span> lfgbbp</p>
         <p class="col-md-4 mb-0 text-body-light mx-3">Desarrollado por <a href="https://github.com/Bertolini-Victor" class="anchorD" target="_blank">Victor Bertolini</a></p>
     </footer>
+    <div id="research-modal" class="modal">
+        <div class="modal-content">
+            <span id="modal-close-btn" class="modal-close-btn">&times;</span>
+            <h3 id="modal-title">Título de la Línea</h3>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Imagen de Línea de Investigación">
+                <p id="modal-description">Descripción detallada...</p>
+            </div>
+        </div>
+    </div>
     <!-- JS Scripts -->
     <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
