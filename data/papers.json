@@ -17,82 +17,650 @@
     },
     {
         "paperId": 102,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2024",
+        "titulo": "Comparative Multi‐Omics Survey Reveals Novel Specialized Metabolites and Biosynthetic Gene Clusters Under GacS Control in Pseudomonas donghuensis Strain SVBP6",
+        "publicadoEn": "Molecular Microbiology",
+        "enlace": "https://doi.org/10.1111/mmi.15329",
+        "autores": "Muzio, F., Hamilton, C., Stincone, P., Agaras, B., Haney, C., Petras, D., Valverde, C."
     },
     {
         "paperId": 103,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2024",
+        "titulo": "Small Regulatory RNAs of the Rsm Clan in Pseudomonas",
+        "publicadoEn": "Molecular Microbiology",
+        "enlace": "https://doi.org/10.1111/mmi.15313",
+        "autores": "Gallegos, M., Garavaglia, M., Valverde, C."
     },
     {
         "paperId": 104,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2024",
+        "titulo": "Orfamide production in Pseudomonas protegens CHA0T promotes rhizospheric colonization and influences assemblage of the bacterial community of wheat roots in soil.",
+        "publicadoEn": "Rhizosphere",
+        "enlace": "https://doi.org/10.1016/j.rhisph.2024.100882",
+        "autores": "Muzlera, A., Sobrero, P., Agaras, B., Valverde, C."
     },
     {
         "paperId": 105,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2023",
+        "titulo": "Comparative genomics and informational content analysis uncovered internal regions of the core genes rpoD, pepN and gltX for an MLSA with genome-level resolving power within the genus Pseudomonas",
+        "publicadoEn": "Molecular Phylogenetics and Evolution",
+        "enlace": "https://doi.org/10.1016/j.ympev.2022.107663",
+        "autores": "Garavaglia, M., Muzlera, A., Valverde, C."
     },
     {
         "paperId": 106,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2021",
+        "titulo": "Repeated annual application of glyphosate reduces the abundance and alters the community structure of soil culturable pseudomonads in a temperate grassland",
+        "publicadoEn": "Agriculture, Ecosystems & Environment",
+        "enlace": "https://doi.org/10.1016/j.agee.2021.107503",
+        "autores": "Lorch, M., Agaras, B., García-Parisi, P., Druille, M., Omacini, M., Valverde, C."
     },
     {
         "paperId": 107,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2020",
+        "titulo": "A black-pigmented pseudomonad isolate with antibacterial activity against phyllospheric pathogens",
+        "publicadoEn": "Rhizosphere",
+        "enlace": "https://doi.org/10.1016/j.rhisph.2020.100207",
+        "autores": "Sosa, F., Sobrero, P., Valverde, C., Agaras, B."
     },
     {
         "paperId": 108,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2020",
+        "titulo": "Biocontrol potential index of pseudomonads, instead of their direct-growth promotion traits, is a predictor of seed inoculation effect on crop productivity under field conditions",
+        "publicadoEn": "Biological Control",
+        "enlace": "https://doi.org/10.1016/j.biocontrol.2020.104209",
+        "autores": "Agaras, B., Noguera, F., Gonzales Anta, G., Wall, L., Valverde, C."
     },
     {
         "paperId": 109,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2020",
+        "titulo": "Biocontrol Traits Correlate With Resistance to Predation by Protists in Soil Pseudomonads",
+        "publicadoEn": "Frontiers in Microbiology",
+        "enlace": "https://doi.org/10.3389/fmicb.2020.614194",
+        "autores": "Amacker, N., Zhilei, G., Agaras, B., Latz, E., Kowalchuk, G., Valverde, C., Jousset, A., Weidner, S."
     },
     {
         "paperId": 110,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2020",
+        "titulo": "Comparative Genomics and Evolutionary Analysis of RNA-Binding Proteins of the CsrA Family in the Genus Pseudomonas",
+        "publicadoEn": "Frontiers in Molecular Biosciences",
+        "enlace": "https://doi.org/10.3389/fmolb.2020.00127",
+        "autores": "Sobrero, P., Valverde, C."
     },
     {
         "paperId": 111,
-        "fechaPublicacion": "",
-        "titulo": "",
-        "publicadoEn": "",
-        "enlace": "",
-        "autores": ""
+        "fechaPublicacion": "2022",
+        "titulo": "Visualising the concept of metabolic regulation in bacteria: a simple laboratory experiment on polyhydroxybutyrate storage",
+        "publicadoEn": "Journal of Biological Education",
+        "enlace": "https://doi.org/10.1080/00219266.2020.1757482",
+        "autores": "Lagares, A. Jr., Garavaglia, M., Robledo, N., Valverde, C., Goñi, S., Lozano, M."
+    },
+    {
+        "paperId": 112,
+        "fechaPublicacion": "2020",
+        "titulo": "7‐hydroxytropolone is the main metabolite responsible for the fungal antagonism of Pseudomonas donghuensis strain SVBP6",
+        "publicadoEn": "Environmental Microbiology",
+        "enlace": "https://doi.org/10.1111/1462-2920.14925",
+        "autores": "Muzio, F., Agaras, B., Masi, M., Tuzi, A., Evidente, A., Valverde, C."
+    },
+    {
+        "paperId": 113,
+        "fechaPublicacion": "2019",
+        "titulo": "A mutation in the glta gene from a native isolate of the Pseudomonas chlororaphis subgroup induces a phenotypic change associated with phenazine production",
+        "publicadoEn": "Archives of Phytopathology and Plant Protection",
+        "enlace": "https://doi.org/10.1080/03235408.2018.1549649",
+        "autores": "Agaras, B., Valverde, C."
+    },
+    {
+        "paperId": 114,
+        "fechaPublicacion": "2018",
+        "titulo": "Expression of the small regulatory RNA gene mmgR is regulated negatively by AniA and positively by NtrC in Sinorhizobium meliloti 2011",
+        "publicadoEn": "Microbiology",
+        "enlace": "https://doi.org/10.1099/mic.0.000586",
+        "autores": "Borella, G.C., Lagares, A. Jr., Valverde, C."
+    },
+    {
+        "paperId": 115,
+        "fechaPublicacion": "2018",
+        "titulo": "Friends or foes in the rhizosphere: traits of fluorescent Pseudomonas that hinder Azospirillum brasilense growth and root colonization",
+        "publicadoEn": "FEMS microbiology ecology",
+        "enlace": "https://doi.org/10.1093/femsec/fiy202",
+        "autores": "Maroniche, G., Diaz, P., Borrajo, M., Valverde, C., Creus, C."
+    },
+    {
+        "paperId": 116,
+        "fechaPublicacion": "2018",
+        "titulo": "Genomic insights into the broad antifungal activity, plant-probiotic properties, and their regulation, in Pseudomonas donghuensis strain SVBP6",
+        "publicadoEn": "PLOS ONE",
+        "enlace": "https://doi.org/10.1371/journal.pone.0194088",
+        "autores": "Agaras, B., Virolle, M.-J., Iriarte, A., Valverde, C."
+    },
+    {
+        "paperId": 117,
+        "fechaPublicacion": "2018",
+        "titulo": "Guidelines for inferring and characterizing a family of bacterial trans-acting small noncoding RNAs",
+        "publicadoEn": "Methods in Molecular Biology",
+        "enlace": "https://doi.org/10.1007/978-1-4939-7634-8_2",
+        "autores": "Lagares, A. Jr., Valverde, C."
+    },
+    {
+        "paperId": 118,
+        "fechaPublicacion": "2018",
+        "titulo": "A Novel Oligonucleotide Pair for Genotyping Members of the <i>Pseudomonas</i> Genus by Single-Round PCR Amplification of the <i>gyrB</i> Gene",
+        "publicadoEn": "Methods and Protocols",
+        "enlace": "https://doi.org/10.3390/mps1030024",
+        "autores": "Agaras, B., Valverde, C."
+    },
+    {
+        "paperId": 119,
+        "fechaPublicacion": "2017",
+        "titulo": "A matter of hierarchy: activation of orfamide production by the post-transcriptional Gac-Rsm cascade of Pseudomonas protegens CHA0 through expression upregulation of the two dedicated transcriptional regulators",
+        "publicadoEn": "Environmental Microbiology Reports",
+        "enlace": "https://doi.org/10.1111/1758-2229.12566",
+        "autores": "Sobrero, P., Muzlera, A., Frescura, J., Jofré, E., Valverde, C."
+    },
+    {
+        "paperId": 120,
+        "fechaPublicacion": "2017",
+        "titulo": "Protozoa stimulate the plant beneficial activity of rhizospheric pseudomonads",
+        "publicadoEn": "Plant and Soil",
+        "enlace": "https://doi.org/10.1007/s11104-016-3094-8",
+        "autores": "Weidner, S., Latz, E., Agaras, B., Valverde, C., Jousset, A."
+    },
+    {
+        "paperId": 121,
+        "fechaPublicacion": "2017",
+        "titulo": "Regulation of polyhydroxybutyrate accumulation in Sinorhizobium meliloti by the trans-encoded small RNA MmgR",
+        "publicadoEn": "Journal of Bacteriology",
+        "enlace": "https://doi.org/10.1128/jb.00776-16",
+        "autores": "Lagares, A., Borella, G.C., Linne, U., Becker, A., Valverde, C."
+    },
+    {
+        "paperId": 122,
+        "fechaPublicacion": "2017",
+        "titulo": "The Irr and RirA proteins participate in a complex regulatory circuit and act in concert to modulate bacterioferritin expression in Ensifer meliloti 1021",
+        "publicadoEn": "Applied and Environmental Microbiology",
+        "enlace": "https://doi.org/10.1128/aem.00895-17",
+        "autores": "Costa, D., Amarelle, V., Valverde, C., O'Brian, M.R., Fabiano, E."
+    },
+    {
+        "paperId": 123,
+        "fechaPublicacion": "2017",
+        "titulo": "Who's the boss here? The post-transcriptional global regulator Hfq takes over control of secondary metabolite production in the nematode symbiont Photorhabdus luminiscens",
+        "publicadoEn": "Environmental Microbiology",
+        "enlace": "https://doi.org/10.1111/1462-2920.13635",
+        "autores": "Valverde, C."
+    },
+    {
+        "paperId": 124,
+        "fechaPublicacion": "2016",
+        "titulo": "Expression of the Sinorhizobium meliloti small RNA gene mmgR is controlled by the nitrogen source",
+        "publicadoEn": "FEMS Microbiology Letters",
+        "enlace": "https://doi.org/10.1093/femsle/fnw069",
+        "autores": "Borella, G.C., Lagares Jr, A., Valverde, C."
+    },
+    {
+        "paperId": 125,
+        "fechaPublicacion": "2016",
+        "titulo": "Interspecific cooperation: Enhanced growth, attachment and strain-specific distribution in biofilms through Azospirillum brasilense-Pseudomonas protegens co-cultivation",
+        "publicadoEn": "FEMS Microbiology Letters",
+        "enlace": "https://doi.org/10.1093/femsle/fnw238",
+        "autores": "Pagnussat, L.A., Salcedo, F., Maroniche, G., Keel, C., Valverde, C., Creus, C.M."
+    },
+    {
+        "paperId": 126,
+        "fechaPublicacion": "2016",
+        "titulo": "Major cereal crops benefit from biological nitrogen fixation when inoculated with the nitrogen-fixing bacterium Pseudomonas protegens Pf-5 X940",
+        "publicadoEn": "Environmental Microbiology",
+        "enlace": "https://doi.org/10.1111/1462-2920.13376",
+        "autores": "Fox, A.R., Soto, G., Valverde, C., Russo, D., Lagares Jr, A., Zorreguieta, Á., Alleva, K., Pascuan, C., Frare, R., Mercado-Blanco, J. et al."
+    },
+    {
+        "paperId": 127,
+        "fechaPublicacion": "2016",
+        "titulo": "Phylogenetic distribution and evolutionary pattern of an α-proteobacterial small RNA gene that controls polyhydroxybutyrate accumulation in Sinorhizobium meliloti",
+        "publicadoEn": "Molecular Phylogenetics and Evolution",
+        "enlace": "https://doi.org/10.1016/j.ympev.2016.03.026",
+        "autores": "Lagares Jr, A., Roux, I., Valverde, C."
+    },
+    {
+        "paperId": 128,
+        "fechaPublicacion": "2015",
+        "titulo": "A cultivation-independent PCR-RFLP assay targeting oprF gene for detection and identification of Pseudomonas spp. in samples from fibrocystic pediatric patients",
+        "publicadoEn": "Journal of Microbiological Methods",
+        "enlace": "https://doi.org/10.1016/j.mimet.2015.05.008",
+        "autores": "Lagares Jr, A., Agaras, B., Bettiol, M.P., Gatti, B.M., Valverde, C."
+    },
+    {
+        "paperId": 129,
+        "fechaPublicacion": "2015",
+        "titulo": "Abundance and ribotypes of phosphate-solubilizing bacteria in Argentinean agricultural soils under no-till management",
+        "publicadoEn": "Annals of Microbiology",
+        "enlace": "https://doi.org/10.1007/s13213-014-1006-9",
+        "autores": "Fernández, L.A., Agaras, B., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 130,
+        "fechaPublicacion": "2015",
+        "titulo": "Contribution of the RNA Chaperone Hfq to Environmental Fitness and Symbiosis in Sinorhizobium meliloti",
+        "publicadoEn": "Biological Nitrogen Fixation",
+        "enlace": "https://doi.org/10.1002/9781119053095.ch73",
+        "autores": "Jiménez-Zurdo, J.I., Torres-Quesada, O., Valverde, C., Sobrero, P."
+    },
+    {
+        "paperId": 131,
+        "fechaPublicacion": "2015",
+        "titulo": "Current Research on Plant-Growth Promoting Rhizobacteria in Latin America: Meeting Report from the 2nd Latin American PGPR Workshop",
+        "publicadoEn": "Journal of Plant Growth Regulation",
+        "enlace": "https://doi.org/10.1007/s00344-014-9470-9",
+        "autores": "Valverde, C., Ramírez, C., Kloepper, J.W., Cassán, F."
+    },
+    {
+        "paperId": 132,
+        "fechaPublicacion": "2015",
+        "titulo": "Molecular Biology of Infection and Nodule Development in Discaria trinervis-Frankia Actinorhizal Symbiosis",
+        "publicadoEn": "Biological Nitrogen Fixation",
+        "enlace": "https://doi.org/10.1002/9781119053095.ch43",
+        "autores": "Imanishi, L., Vayssières, A., Vaissayre, V., Perrine-Walker, F., Moukouanga, D., Lucas, M., Gherbi, H., Laplaze, L., Gabbarini, L., Valverde, C. et al."
+    },
+    {
+        "paperId": 133,
+        "fechaPublicacion": "2015",
+        "titulo": "Pseudomonas and azospirillum",
+        "publicadoEn": "Handbook for Azospirillum: Technical Issues and Protocols",
+        "enlace": "https://doi.org/10.1007/978-3-319-06542-7_21",
+        "autores": "Valverde, C., Anta, G.G., Ferraris, G."
+    },
+    {
+        "paperId": 134,
+        "fechaPublicacion": "2015",
+        "titulo": "Quantification of the potential biocontrol and direct plant growth promotion abilities based on multiple biological traits distinguish different groups of Pseudomonas spp. isolates",
+        "publicadoEn": "Biological Control",
+        "enlace": "https://doi.org/10.1016/j.biocontrol.2015.07.003",
+        "autores": "Agaras, B., Scandiani, M., Luque, A., Fernández, L., Farina, F., Carmona, M., Gally, M., Romero, A., Wall, L., Valverde, C."
+    },
+    {
+        "paperId": 135,
+        "fechaPublicacion": "2015",
+        "titulo": "Selective enrichment of pseudomonas spp. In the rhizoplane of different plant species,Enriquecimiento diferencial de Pseudomonas spp. En el rizoplano de distintas especies cultivadas",
+        "publicadoEn": "Revista Argentina de Microbiologia",
+        "enlace": "https://doi.org/10.1016/j.ram.2015.03.007",
+        "autores": "Marrero, M.A., Agaras, B., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 136,
+        "fechaPublicacion": "2014",
+        "titulo": "Influence of agricultural practices and seasons on the abundance and community structure of culturable pseudomonads in soils under no-till management in Argentina",
+        "publicadoEn": "Plant and Soil",
+        "enlace": "https://doi.org/10.1007/s11104-014-2095-8",
+        "autores": "Agaras, B.C., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 137,
+        "fechaPublicacion": "2013",
+        "titulo": "A CsrA/RsmA translational regulator gene encoded in the replication region of a sinorhizobium meliloti cryptic plasmid complements pseudomonas fluorescens rsmA/E mutants",
+        "publicadoEn": "Microbiology (United Kingdom)",
+        "enlace": "https://doi.org/10.1099/mic.0.061614-0",
+        "autores": "Agaras, B., Sobrero, P., Valverde, C."
+    },
+    {
+        "paperId": 138,
+        "fechaPublicacion": "2013",
+        "titulo": "A simple laboratory class using a Pseudomonas aeruginosa auxotroph to illustrate UV-mutagenic killing, DNA photorepair and mutagenic DNA repair",
+        "publicadoEn": "Journal of Biological Education",
+        "enlace": "https://doi.org/10.1080/00219266.2012.688850",
+        "autores": "Sobrero, P., Valverde, C."
+    },
+    {
+        "paperId": 139,
+        "fechaPublicacion": "2013",
+        "titulo": "Biological control of the false root-knot nematode Nacobbus aberrans by Pseudomonas protegens under controlled conditions",
+        "publicadoEn": "Crop Protection",
+        "enlace": "https://doi.org/10.1016/j.cropro.2013.02.020",
+        "autores": "Lax, P., Marro, N., Agaras, B., Valverde, C., Doucet, M.E., Becerra, A."
+    },
+    {
+        "paperId": 140,
+        "fechaPublicacion": "2013",
+        "titulo": "Insights into the Noncoding RNome of nitrogen-fixing endosymbiotic a-proteobacteria",
+        "publicadoEn": "Molecular Plant-Microbe Interactions",
+        "enlace": "https://doi.org/10.1094/mpmi-07-12-0186-cr",
+        "autores": "Jiménez-Zurdo, J.I., Valverde, C., Becker, A."
+    },
+    {
+        "paperId": 141,
+        "fechaPublicacion": "2013",
+        "titulo": "Isolation and characterization of atrazine-degrading Arthrobacter sp. strains from Argentine agricultural soils",
+        "publicadoEn": "Annals of Microbiology",
+        "enlace": "https://doi.org/10.1007/s13213-012-0463-2",
+        "autores": "Fernández, L.A., Valverde, C., Gómez, M.A."
+    },
+    {
+        "paperId": 142,
+        "fechaPublicacion": "2012",
+        "titulo": "Erratum to Characterization and screening of plant probiotic traits of bacteria isolated from rice seeds cultivated in Argentina (The Journal of Microbiology, (2011), 49, 6 (902-912), 10.1007/s12275-011-1073-6)",
+        "publicadoEn": "Journal of Microbiology",
+        "enlace": "https://doi.org/10.1007/s12275-012-0634-7",
+        "autores": "Ruiz, D., Agaras, B., de Werra, P., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 143,
+        "fechaPublicacion": "2012",
+        "titulo": "Pseudomonas spp. isolates with high phosphate-mobilizing potential and root colonization properties from agricultural bulk soils under no-till management",
+        "publicadoEn": "Biology and Fertility of Soils",
+        "enlace": "https://doi.org/10.1007/s00374-012-0665-6",
+        "autores": "Fernández, L., Agaras, B., Zalba, P., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 144,
+        "fechaPublicacion": "2012",
+        "titulo": "Quantitative Proteomic Analysis of the Hfq-Regulon in Sinorhizobium meliloti 2011",
+        "publicadoEn": "PLoS ONE",
+        "enlace": "https://doi.org/10.1371/journal.pone.0048494",
+        "autores": "Sobrero, P., Schlüter, J.-P., Lanner, U., Schlosser, A., Becker, A., Valverde, C."
+    },
+    {
+        "paperId": 145,
+        "fechaPublicacion": "2012",
+        "titulo": "Specific enumeration and analysis of the community structure of culturable pseudomonads in agricultural soils under no-till management in Argentina",
+        "publicadoEn": "Applied Soil Ecology",
+        "enlace": "https://doi.org/10.1016/j.apsoil.2011.11.016",
+        "autores": "Agaras, B., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 146,
+        "fechaPublicacion": "2012",
+        "titulo": "The bacterial protein Hfq: Much more than a mere RNA-binding factor",
+        "publicadoEn": "Critical Reviews in Microbiology",
+        "enlace": "https://doi.org/10.3109/1040841x.2012.664540",
+        "autores": "Sobrero, P., Valverde, C."
+    },
+    {
+        "paperId": 147,
+        "fechaPublicacion": "2011",
+        "titulo": "Characterization and screening of plant probiotic traits of bacteria isolated from rice seeds cultivated in Argentina",
+        "publicadoEn": "Journal of Microbiology",
+        "enlace": "https://doi.org/10.1007/s12275-011-1073-6",
+        "autores": "Ruiza, D., Agaras, B., de Werrab, P., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 148,
+        "fechaPublicacion": "2011",
+        "titulo": "Circadian variation in Pseudomonas fluorescens (CHA0)-mediated paralysis of Caenorhabditis elegans",
+        "publicadoEn": "Microbial Pathogenesis",
+        "enlace": "https://doi.org/10.1016/j.micpath.2010.09.001",
+        "autores": "Romanowski, A., Migliori, M.L., Valverde, C., Golombek, D.A."
+    },
+    {
+        "paperId": 149,
+        "fechaPublicacion": "2011",
+        "titulo": "Evidences of autoregulation of hfq expression in Sinorhizobium meliloti strain 2011",
+        "publicadoEn": "Archives of Microbiology",
+        "enlace": "https://doi.org/10.1007/s00203-011-0701-1",
+        "autores": "Sobrero, P., Valverde, C."
+    },
+    {
+        "paperId": 150,
+        "fechaPublicacion": "2009",
+        "titulo": "A single mutation in the oprF mRNA leader confers strict translational control by the Gac/Rsm system in pseudomonas fluorescens CHA0",
+        "publicadoEn": "Current Microbiology",
+        "enlace": "https://doi.org/10.1007/s00284-008-9306-6",
+        "autores": "Alvarez Crespo, M.C., Valverde, C."
+    },
+    {
+        "paperId": 151,
+        "fechaPublicacion": "2009",
+        "titulo": "Artificial sRNAs activating the Gac/Rsm signal transduction pathway in Pseudomonas fluorescens",
+        "publicadoEn": "Archives of Microbiology",
+        "enlace": "https://doi.org/10.1007/s00203-009-0459-x",
+        "autores": "Valverde, C."
+    },
+    {
+        "paperId": 152,
+        "fechaPublicacion": "2009",
+        "titulo": "Effects of calcium in the nitrogen-fixing symbiosis between actinorhizal discaria trinervis (rhamnaceae) and frankia",
+        "publicadoEn": "Symbiosis",
+        "enlace": "https://doi.org/10.1007/s13199-009-0046-6",
+        "autores": "Valverde, C., Ferrari, A., Wall, L.G."
+    },
+    {
+        "paperId": 153,
+        "fechaPublicacion": "2008",
+        "titulo": "Genome-wide search reveals a novel GacA-regulated small RNA in Pseudomonas species",
+        "publicadoEn": "BMC Genomics",
+        "enlace": "https://doi.org/10.1186/1471-2164-9-167",
+        "autores": "González, N., Heeb, S., Valverde, C., Kay, E., Reimmann, C., Junier, T., Haas, D."
+    },
+    {
+        "paperId": 154,
+        "fechaPublicacion": "2008",
+        "titulo": "Prediction of Sinorhizobium meliloti sRNA genes and experimental detection in strain 2011",
+        "publicadoEn": "BMC Genomics",
+        "enlace": "https://doi.org/10.1186/1471-2164-9-416",
+        "autores": "Valverde, C., Livny, J., Schlüter, J.-P., Reinkensmeier, J., Becker, A., Parisi, G."
+    },
+    {
+        "paperId": 155,
+        "fechaPublicacion": "2008",
+        "titulo": "Small RNAs controlled by two-component systems",
+        "publicadoEn": "Advances in Experimental Medicine and Biology",
+        "enlace": "https://doi.org/10.1007/978-0-387-78885-2_5",
+        "autores": "Valverde, C., Haas, D."
+    },
+    {
+        "paperId": 156,
+        "fechaPublicacion": "2007",
+        "titulo": "Genome characteristics of facultatively symbiotic Frankia sp. strains reflect host range and host plant biogeography",
+        "publicadoEn": "Genome Research",
+        "enlace": "https://doi.org/10.1101/gr.5798407",
+        "autores": "Normand, P., Lapierre, P., Tisa, L.S., Gogarten, J.P., Alloisio, N., Bagnarol, E., Bassi, C.A., Berry, A.M., Bickhart, D.M., Choisne, N. et al."
+    },
+    {
+        "paperId": 157,
+        "fechaPublicacion": "2006",
+        "titulo": "Local adaptation of Frankia to different Discaria (Rhamnaceae) host species growing in Patagonia",
+        "publicadoEn": "Current Microbiology",
+        "enlace": "https://doi.org/10.1007/s00284-006-0306-0",
+        "autores": "Chaia, E.E., Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 158,
+        "fechaPublicacion": "2006",
+        "titulo": "Secondary metabolites help biocontrol strain Pseudomonas fluorescens CHA0 to escape protozoan grazing",
+        "publicadoEn": "Applied and Environmental Microbiology",
+        "enlace": "https://doi.org/10.1128/aem.00557-06",
+        "autores": "Jousset, A., Lara, E., Wall, L.G., Valverde, C."
+    },
+    {
+        "paperId": 159,
+        "fechaPublicacion": "2006",
+        "titulo": "Two GacA-dependent small RNAs modulate the quorum-sensing response in Pseudomonas aeruginosa",
+        "publicadoEn": "Journal of Bacteriology",
+        "enlace": "https://doi.org/10.1128/jb.00409-06",
+        "autores": "Kay, E., Humair, B., Dénervaud, V., Riedel, K., Spahr, S., Eberl, L., Valverde, C., Haas, D."
+    },
+    {
+        "paperId": 160,
+        "fechaPublicacion": "2005",
+        "titulo": "Ethylene modulates the susceptibility of the root for nodulation in actinorhizal Discaria trinervis",
+        "publicadoEn": "Physiologia Plantarum",
+        "enlace": "https://doi.org/10.1111/j.1399-3054.2005.00503.x",
+        "autores": "Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 161,
+        "fechaPublicacion": "2005",
+        "titulo": "Posttranscriptional repression of GacS/GacA-controlled genes by the RNA-binding protein RsmE acting together with RsmA in the biocontrol strain Pseudomonas fluorescens CHA0",
+        "publicadoEn": "Journal of Bacteriology",
+        "enlace": "https://doi.org/10.1128/jb.187.1.276-285.2005",
+        "autores": "Reimmann, C., Valverde, C., Kay, E., Haas, D."
+    },
+    {
+        "paperId": 162,
+        "fechaPublicacion": "2005",
+        "titulo": "Role of the stress sigma factor RpoS in GacA/RsmA-controlled secondary metabolism and resistance to oxidative stress in Pseudomonas fluorescens CHA0",
+        "publicadoEn": "FEMS Microbiology Letters",
+        "enlace": "https://doi.org/10.1016/j.femsle.2004.12.008",
+        "autores": "Heeb, S., Valverde, C., Gigot-Bonnefoy, C., Haas, D."
+    },
+    {
+        "paperId": 163,
+        "fechaPublicacion": "2004",
+        "titulo": "A repeated GGA motif is critical for the activity and stability of the riboregulator RsmY of Pseudomonas fluorescens",
+        "publicadoEn": "Journal of Biological Chemistry",
+        "enlace": "https://doi.org/10.1074/jbc.m401870200",
+        "autores": "Valverde, C., Lindell, M., Wagner, E.G.H., Haas, D."
+    },
+    {
+        "paperId": 164,
+        "fechaPublicacion": "2003",
+        "titulo": "Ammonium assimilation in root nodules of actinorhizal Discaria trinervis. Regulation of enzyme activities and protein levels by the availability of macronutrients (N, P and C)",
+        "publicadoEn": "Plant and Soil",
+        "enlace": "https://doi.org/10.1023/a:1024907130981",
+        "autores": "Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 165,
+        "fechaPublicacion": "2003",
+        "titulo": "Regulation of nodulation in the absence of N<inf>2</inf> is different in actinorhizal plants with different infection pathways",
+        "publicadoEn": "Journal of Experimental Botany",
+        "enlace": "https://doi.org/10.1093/jxb/erg131",
+        "autores": "Wall, L.G., Valverde, C., Huss-Danell, K."
+    },
+    {
+        "paperId": 166,
+        "fechaPublicacion": "2003",
+        "titulo": "RsmY, a small regulatory RNA, is required in concert with RsmZ for GacA-dependent expression of biocontrol traits in Pseudomonas fluorescens CHA0",
+        "publicadoEn": "Molecular Microbiology",
+        "enlace": "https://doi.org/10.1046/j.1365-2958.2003.03774.x",
+        "autores": "Valverde, C., Heeb, S., Keel, C., Haas, D."
+    },
+    {
+        "paperId": 167,
+        "fechaPublicacion": "2003",
+        "titulo": "The regulation of nodulation, nitrogen fixation and ammonium assimilation under a carbohydrate shortage stress in the Discaria trinervis-Frankia symbiosis",
+        "publicadoEn": "Plant and Soil",
+        "enlace": "https://doi.org/10.1023/a:1024982527843",
+        "autores": "Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 168,
+        "fechaPublicacion": "2002",
+        "titulo": "Nodule distribution on the roots of actinorhizal Discaria trinervis (Rhamnaceae) growing in pots",
+        "publicadoEn": "Environmental and Experimental Botany",
+        "enlace": "https://doi.org/10.1016/s0098-8472(01)00115-0",
+        "autores": "Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 169,
+        "fechaPublicacion": "2002",
+        "titulo": "Phosphorus and the regulation of nodulation in the actinorhizal symbiosis between Discaria trinervis (Rhamnaceae) and Frankia BCU110501",
+        "publicadoEn": "New Phytologist",
+        "enlace": "https://doi.org/10.1046/j.0028-646x.2001.00298.x",
+        "autores": "Valverde, C., Ferrari, A., Wall, L.G."
+    },
+    {
+        "paperId": 170,
+        "fechaPublicacion": "1999",
+        "titulo": "Regulation of nodulation in Discaria trinervis (Rhamnaceae) - Frankia symbiosis",
+        "publicadoEn": "Canadian Journal of Botany",
+        "enlace": "https://doi.org/10.1139/cjb-77-9-1302",
+        "autores": "Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 171,
+        "fechaPublicacion": "1999",
+        "titulo": "Time course of nodule development in the Discaria trinervis (Rhamnaceae) - Frankia symbiosis",
+        "publicadoEn": "New Phytologist",
+        "enlace": "https://doi.org/10.1046/j.1469-8137.1999.00345.x",
+        "autores": "Valverde, C., Wall, L.G."
+    },
+    {
+        "paperId": 172,
+        "fechaPublicacion": "1997",
+        "titulo": "Rapid preparation of affinity-purified lipo-polysaccharide samples for electrophoretic analysis",
+        "publicadoEn": "BioTechniques",
+        "enlace": "https://doi.org/10.2144/97222bm07",
+        "autores": "Valverde, C., Hozbor, D.F., Lagares, A."
+    },
+    {
+        "paperId": 173,
+        "fechaPublicacion": "2009",
+        "titulo": "DIURNAL VARIATION IN ENDOTOXIN-INDUCED MORTALITY IN MICE: CORRELATION WITH PROINFLAMMATORY FACTORS",
+        "publicadoEn": "Chronobiology International",
+        "enlace": "https://doi.org/10.3109/07420520903408358",
+        "autores": "Marpegan, L., Leone, M. J., Katz, M. E., Sobrero, P. M., Bekinstein, T. A., Golombek, D. A."
+    },
+    {
+        "paperId": 174,
+        "fechaPublicacion": "2025",
+        "titulo": "A systems-level insight into PHB-driven metabolic adaptation orchestrated by the PHB-binding transcriptional regulator AniA (PhaR)",
+        "publicadoEn": "mSystems",
+        "enlace": "https://doi.org/10.1128/msystems.00760-25",
+        "autores": "Lagares Jr, A., Krol, E., Jühling, T., Glatter, T., Becker, A."
+    },
+    {
+        "paperId": 175,
+        "fechaPublicacion": "2024",
+        "titulo": "An Integrated Affinity Chromatography-Based Approach to Unravel the sRNA Interactome in Nitrogen-Fixing Rhizobia",
+        "publicadoEn": "Methods in Molecular Biology",
+        "enlace": "https://doi.org/10.1007/978-1-0716-3565-0_19",
+        "autores": "García-Tomsig, N. I., Lagares Jr, A., Becker, A., Valverde, C., Jiménez-Zurdo, J. I."
+    },
+    {
+        "paperId": 176,
+        "fechaPublicacion": "2024",
+        "titulo": "Modular Low-Copy-Number Plasmid Vectors for Rhodobacterales with Extended Host Range in Alphaproteobacteria",
+        "publicadoEn": "ACS Synthetic Biology",
+        "enlace": "https://doi.org/10.1021/acssynbio.4c00062",
+        "autores": "Körner, D., Schäfer, N. M., Lagares Jr, A., Birmes, L., Oehlmann, N. N., Addison, H., Pöhl, S., Thanbichler, M., Rebelein, J. G., Petersen, J., et al."
+    },
+    {
+        "paperId": 177,
+        "fechaPublicacion": "2019",
+        "titulo": "Codon Usage Heterogeneity in the Multipartite Prokaryote Genome: Selection-Based Coding Bias Associated with Gene Location, Expression Level, and Ancestry",
+        "publicadoEn": "mBio",
+        "enlace": "https://doi.org/10.1128/mbio.00505-19",
+        "autores": "López, J. L., Lozano, M. J., Lagares Jr, A., Fabre, M. L., Draghi, W. O., Del Papa, M. F., Pistorio, M., Becker, A., Wibberg, D., Schlüter, A., et al."
+    },
+    {
+        "paperId": 178,
+        "fechaPublicacion": "2017",
+        "titulo": "Quantification of Bacterial Polyhydroxybutyrate Content by Flow Cytometry",
+        "publicadoEn": "BIO-PROTOCOL",
+        "enlace": "https://doi.org/10.21769/bioprotoc.2638",
+        "autores": "Lagares Jr, A., Valverde, C."
+    },
+    {
+        "paperId": 179,
+        "fechaPublicacion": "2016",
+        "titulo": "A consolidated analysis of the physiologic and molecular responses induced under acid stress in the legume-symbiont model-soil bacterium Sinorhizobium meliloti",
+        "publicadoEn": "Scientific Reports",
+        "enlace": "https://doi.org/10.1038/srep29278",
+        "autores": "Draghi, W. O., Del Papa, M. F., Hellweg, C., Watt, S. A., Watt, T. F., Barsch, A., Lozano, M. J., Lagares Jr, A., Salas, M. E., López, J. L., et al."
+    },
+    {
+        "paperId": 180,
+        "fechaPublicacion": "2025",
+        "titulo": "Autochthonous isolate Pseudomonas 42P4 as a sustainable strategy to control Rhizoctonia solani and promote growth of tomato plants",
+        "publicadoEn": "Journal of Natural Pesticide Research",
+        "enlace": "https://doi.org/10.1016/j.napere.2025.100164",
+        "autores": "Pérez-Rodriguez, M. M., Lucero, G., Agaras, B., Lobato-Ureche, M. A., Fernández, M. de los Á., Espino, M., Cohen, A. C."
+    },
+    {
+        "paperId": 181,
+        "fechaPublicacion": "2023",
+        "titulo": "Unveiling the Secrets of Calcium-Dependent Proteins in Plant Growth-Promoting Rhizobacteria: An Abundance of Discoveries Awaits",
+        "publicadoEn": "Plants",
+        "enlace": "https://doi.org/10.3390/plants12193398",
+        "autores": "Agaras, B., Grossi, C. E. M., Ulloa, R. M."
+    },
+    {
+        "paperId": 182,
+        "fechaPublicacion": "2023",
+        "titulo": "Generalised mutagenesis with transposon Tn<i>5</i>. A laboratory procedure for the identification of genes responsible for a bacterial phenotype and its regulation, illustrated with phenazine production in <i>Pseudomonas chlororaphis</i>",
+        "publicadoEn": "Journal of Biological Education",
+        "enlace": "https://doi.org/10.1080/00219266.2021.2006266",
+        "autores": "Muzio, F. M., Sobrero, P. M., Agaras, B. C., Valverde, C."
     }
 ]
