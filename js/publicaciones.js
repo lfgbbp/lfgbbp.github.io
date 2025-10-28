@@ -1,5 +1,5 @@
 let todosLosPapers = [];
-let mapaInvestigadoresGlobal = new Map();
+
 document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
     const yearElement = document.getElementById('current-year');
@@ -16,52 +16,48 @@ async function cargarPaginaPublicaciones() {
         if (!respuestaPapers.ok) {
             throw new Error('No se pudo cargar el archivo de papers.');
         }
-        todosLosPapers = await respuestaPapers.json(); // Guardamos en la variable global
+        todosLosPapers = await respuestaPapers.json(); 
 
-        // Generamos los filtros con todos los papers
-        generarFiltros(todosLosPapers);
-
-        // Renderizamos inicialmente todos los papers
+        generarFiltrosPorRango();
         renderizarPublicaciones(todosLosPapers);
-
-        // Activamos la lógica de los filtros de año Y la nueva barra de búsqueda
         activarLogicaFiltrosYBusqueda();
-
     } catch (error) {
         console.error("Error al cargar la página de publicaciones:", error);
         const contenedor = document.getElementById('publicaciones-container');
-         if (contenedor) {
-             contenedor.innerHTML = '<p style="color: #ff8a8a;">Error al cargar publicaciones.</p>';
-         }
+        if (contenedor) {
+            contenedor.innerHTML = '<p style="color: #ff8a8a;">Error al cargar publicaciones.</p>';
+        }
     }
 }
 
-function generarFiltros(papers) {
+function generarFiltrosPorRango() {
     const contenedor = document.getElementById('filtros-container');
     if (!contenedor) return; 
 
-    const years = [...new Set(papers.map(p => p.fechaPublicacion ? p.fechaPublicacion.substring(0, 4) : 'N/A'))]
-                    .filter(year => year !== 'N/A');
-    years.sort((a, b) => b - a);
+    const ranges = [
+        '2025-2020',
+        '2019-2014',
+        '2013-2009',
+        '2008-2003',
+        '2002-1997'
+    ];
 
-    let botonesHTML = '<button class="filtro-btn active" data-year="all">Mostrar Todas</button>';
-    years.forEach(year => {
-        botonesHTML += `<button class="filtro-btn" data-year="${year}">${year}</button>`;
+    let botonesHTML = '<button class="filtro-btn active" data-range="all">Mostrar Todas</button>';
+    ranges.forEach(range => {
+        botonesHTML += `<button class="filtro-btn" data-range="${range}">${range}</button>`;
     });
 
     contenedor.innerHTML = botonesHTML;
 }
 
-// ✅ FUNCIÓN MODIFICADA para renderizar según filtros
 function renderizarPublicaciones(papersParaMostrar) {
     const contenedor = document.getElementById('publicaciones-container');
     if (!contenedor) return;
 
-    // Agrupar los papers filtrados por año
     const papersPorAnio = papersParaMostrar.reduce((acc, paper) => {
         const year = paper.fechaPublicacion ? paper.fechaPublicacion.substring(0, 4) : 'N/A';
         if (year !== 'N/A') {
-             if (!acc[year]) {
+            if (!acc[year]) {
                 acc[year] = [];
             }
             acc[year].push(paper);
@@ -73,7 +69,7 @@ function renderizarPublicaciones(papersParaMostrar) {
 
     let html = '';
     if (papersParaMostrar.length === 0) {
-        html = '<p class="no-results">No se encontraron publicaciones que coincidan con la búsqueda.</p>';
+        html = '<p class="no-results">No se encontraron publicaciones que coincidan con los filtros.</p>';
     } else {
         aniosOrdenados.forEach(year => {
             html += `<div class="year-section" data-year="${year}">
@@ -99,39 +95,56 @@ function renderizarPublicaciones(papersParaMostrar) {
     contenedor.innerHTML = html;
 }
 
-// ✅ FUNCIÓN MODIFICADA para manejar ambos filtros (año y búsqueda)
 function activarLogicaFiltrosYBusqueda() {
     const contenedorFiltros = document.getElementById('filtros-container');
     const inputBusqueda = document.getElementById('search-input');
     if (!contenedorFiltros || !inputBusqueda) return;
 
-    let filtroAnioActual = 'all';
+    let filtroRangoActual = 'all'; 
     let filtroBusquedaActual = '';
 
-    // Función para aplicar filtros y re-renderizar
     const aplicarFiltros = () => {
+        console.log(`Aplicando filtros - Rango: ${filtroRangoActual}, Búsqueda: "${filtroBusquedaActual}"`); // Log para depurar
         let papersFiltrados = todosLosPapers;
 
-        // 1. Filtrar por año
-        if (filtroAnioActual !== 'all') {
-            papersFiltrados = papersFiltrados.filter(paper => 
-                (paper.fechaPublicacion ? paper.fechaPublicacion.substring(0, 4) : '') === filtroAnioActual
-            );
+        // 1. Filtrar por rango de año
+        if (filtroRangoActual !== 'all') {
+            try {
+                // ✅ CORRECCIÓN: Aseguramos el orden correcto de startYear y endYear
+                const years = filtroRangoActual.split('-').map(Number);
+                const startYear = Math.min(...years);
+                const endYear = Math.max(...years);
+                
+                papersFiltrados = papersFiltrados.filter(paper => {
+                    const yearStr = paper.fechaPublicacion ? paper.fechaPublicacion.substring(0, 4) : null;
+                    if (yearStr && !isNaN(yearStr)) { 
+                        const year = parseInt(yearStr);
+                        // La comparación ahora siempre funcionará
+                        return year >= startYear && year <= endYear; 
+                    }
+                    return false; 
+                });
+            } catch (e) {
+                console.error("Error al parsear el rango de años:", filtroRangoActual, e);
+            }
         }
 
         // 2. Filtrar por búsqueda (título o autores)
         if (filtroBusquedaActual) {
-            const busquedaLower = filtroBusquedaActual.toLowerCase();
-            papersFiltrados = papersFiltrados.filter(paper => 
-                (paper.titulo || '').toLowerCase().includes(busquedaLower) ||
-                (paper.autores || '').toLowerCase().includes(busquedaLower)
-            );
+            const busquedaLower = filtroBusquedaActual.toLowerCase().trim();
+            if (busquedaLower) { 
+                papersFiltrados = papersFiltrados.filter(paper => 
+                    (paper.titulo && paper.titulo.toLowerCase().includes(busquedaLower)) ||
+                    (paper.autores && paper.autores.toLowerCase().includes(busquedaLower))
+                );
+            }
         }
-
+        
+        console.log(`- Papers después de filtrar: ${papersFiltrados.length}`); 
         renderizarPublicaciones(papersFiltrados);
     };
 
-    // Listener para los botones de año
+    // Listener para los botones de rango
     contenedorFiltros.addEventListener('click', (event) => {
         if (event.target.tagName !== 'BUTTON') return;
 
@@ -139,13 +152,16 @@ function activarLogicaFiltrosYBusqueda() {
         if (botonActivo) botonActivo.classList.remove('active');
         event.target.classList.add('active');
 
-        filtroAnioActual = event.target.getAttribute('data-year');
-        aplicarFiltros(); // Re-renderizar con el nuevo filtro de año
+        filtroRangoActual = event.target.getAttribute('data-range'); 
+        aplicarFiltros(); 
     });
 
-    // Listener para la barra de búsqueda (se activa mientras escribes)
+    // Listener para la barra de búsqueda 
     inputBusqueda.addEventListener('input', () => {
-        filtroBusquedaActual = inputBusqueda.value;
-        aplicarFiltros(); // Re-renderizar con el nuevo filtro de búsqueda
+        clearTimeout(inputBusqueda.timer); 
+        inputBusqueda.timer = setTimeout(() => {
+            filtroBusquedaActual = inputBusqueda.value;
+            aplicarFiltros(); 
+        }, 300); 
     });
 }
