@@ -39,9 +39,11 @@
                 <p>Somos un grupo de investigadores fascinados por las bacterias promotoras del crecimiento vegetal como una herramienta para contribuir a la seguridad alimentaria y la producción agrícola sostenible. Nuestros modelos de estudio se centran en aislamientos autóctonos y cepas modelo del género Pseudomonas y de rizobios simbióticos de leguminosas. Nos interesa comprender las bases moleculares y regulatorias de sus propiedades benéficas para el crecimiento y la salud vegetal. También desarrollamos servicios y actividades de I+D para instituciones públicas y privadas.</p>
             </div>
         </section>
-        <section id="members" class="membersI container py-4">
-            <h2 class="inv ">Nuestro equipo</h2>
-            <div id="contenedor-investigadores" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"></div>
+        <section id="team" class="membersI container py-4">
+            <div class="container py-5">
+                <h2 class="inv text-center mb-5">Nuestro Equipo</h2>
+                <div id="contenedor-investigadores" class="researcher-grid"></div>
+            </div>
         </section>
         <section id="research" class="sectionResearch">
             <div class="research-column">
@@ -93,6 +95,19 @@
             <div class="modal-body">
                 <img id="modal-image" src="" alt="Imagen de Línea de Investigación">
                 <p id="modal-description">Descripción detallada...</p>
+            </div>
+        </div>
+    </div>
+    <div id="researcher-modal" class="modal">
+        <div class="modal-content researcher-modal-content">
+            <span id="researcher-modal-close-btn" class="modal-close-btn">&times;</span>
+            <div class="modal-body">
+                <img id="researcher-modal-image" src="" alt="Foto de Investigador">
+                <div class="modal-text">
+                    <h3 id="researcher-modal-name"></h3>
+                    <h4 id="researcher-modal-title"></h4>
+                    <p id="researcher-modal-description"></p>
+                </div>
             </div>
         </div>
     </div>

@@ -1,3 +1,5 @@
+let investigadoresData = [];
+let lineasInvestigacionData = [];
 document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
     const yearElement = document.getElementById('current-year');
@@ -7,72 +9,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cargarServicios();
     mostrarUltimasPublicaciones();
+    cargarLineasInvestigacion();
     cargarInvestigadores();
 
-    const menuToggle = document.querySelector('.menuB');
-    const navBar = document.querySelector('.nav-bar');
+    setupMenuToggle();
+    setupModalClickOutsideClose('research-modal');
+    setupModalClickOutsideClose('researcher-modal');
+});
 
+function setupMenuToggle() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navBar = document.querySelector('.navbar');
     if (menuToggle && navBar) {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navBar.classList.toggle('active');
         });
     }
+}
 
-    const modal = document.getElementById('research-modal');
-    const closeBtn = document.getElementById('modal-close-btn'); 
-
-    if (modal && closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // Cerrar al hacer clic fuera del contenido del modal
+function setupModalClickOutsideClose(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
         });
     } else {
-        console.error("No se encontró el modal o el botón de cierre.");
+        console.warn(`Advertencia: No se encontró el modal con ID "${modalId}" para el cierre exterior.`);
     }
-    cargarLineasInvestigacion();
-});
+}
 
-async function cargarInvestigadores() {
+function mostrarModalInvestigador(id) {
+    const investigador = investigadoresData.find(inv => inv.id === id);
+    if (!investigador) return; 
+
+    const modal = document.getElementById('researcher-modal');
+    const modalImage = document.getElementById('researcher-modal-image');
+    const modalName = document.getElementById('researcher-modal-name');
+    const modalTitle = document.getElementById('researcher-modal-title');
+    const modalDescription = document.getElementById('researcher-modal-description');
+
+    if (modal && modalImage && modalName && modalTitle && modalDescription) {
+        const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
+        modalImage.src = investigador.fotoUrl || './imgs/placeholder.png'; 
+        modalImage.alt = `Foto de ${nombreCompleto}`;
+        modalName.textContent = nombreCompleto;
+        modalTitle.textContent = investigador.titulo || '';
+        modalDescription.textContent = investigador.descripcion || ''; 
+
+        modal.style.display = 'block'; 
+    } else {
+        console.error("Error: No se encontraron todos los elementos del modal de investigador en el HTML.");
+    }
+}
+
+async function cargarInvestigadores() { 
     try {
         const respuesta = await fetch('./data/investigadoresAct.json');
         if (!respuesta.ok) {
             throw new Error(`Error al cargar investigadores: ${respuesta.status}`);
         }
-        const todosLosInvestigadores = await respuesta.json();
 
-        const contenedor = document.getElementById('contenedor-investigadores');
-        if (!contenedor) return;
+        investigadoresData = await respuesta.json(); 
+        const investigadoresActuales = investigadoresData; 
+
+        const contenedor = document.getElementById('contenedor-investigadores'); 
+        if (!contenedor) {
+            console.error("Error: Contenedor '#contenedor-investigadores' no encontrado.");
+            return;
+        }
 
         contenedor.innerHTML = '';
 
-        todosLosInvestigadores.forEach(investigador => {
+        if (investigadoresActuales.length === 0) {
+            console.warn("Advertencia: El archivo 'investigadoresAct.json' está vacío o no contiene investigadores."); 
+        }
+
+        investigadoresActuales.forEach((investigador, index) => {
             const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
-            
             const cardHTML = `
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="${investigador.fotoUrl}" class="card-img-top" alt="Foto de ${nombreCompleto}">
-                        <div class="card-body">
-                            <h5 class="card-title">${nombreCompleto}</h5>
-                            <p class="card-sub-title">${investigador.titulo}</p>
-                            <p class="card-text">${investigador.descripcion}</p>
-                        </div>
-                    </div>
+                <div class="researcher-card" data-id="${investigador.id}" role="button" tabindex="0">
+                    <img src="${investigador.fotoUrl || './imgs/placeholder.png'}" alt="Foto de ${nombreCompleto}">
+                    <span class="researcher-name">${nombreCompleto}</span>
                 </div>`;
             contenedor.innerHTML += cardHTML;
         });
+        contenedor.querySelectorAll('.researcher-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = parseInt(card.getAttribute('data-id')); 
+                mostrarModalInvestigador(id);
+            });
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    const id = parseInt(card.getAttribute('data-id')); 
+                    mostrarModalInvestigador(id);
+                }
+            });
+        });
     } catch (error) {
-        console.error("No se pudieron cargar los investigadores:", error);
+        console.error("No se pudieron cargar los investigadores:", error); 
     }
 }
-
 async function mostrarUltimasPublicaciones() {
     try {
         // Solo necesitamos cargar el archivo de papers
@@ -153,9 +192,7 @@ async function cargarServicios() {
     } catch (error) {
         console.error(error);
     }
-}
-
-let lineasInvestigacionData = []; 
+} 
 
 async function cargarLineasInvestigacion() {
     try {
@@ -196,24 +233,32 @@ async function cargarLineasInvestigacion() {
     }
 }
 
-function mostrarModalInvestigacion(id) {
-    const linea = lineasInvestigacionData.find(l => l.id === id);
-    if (!linea) return; 
+function mostrarModalInvestigador(id) {
+    const investigador = investigadoresData.find(inv => inv.id === id);
+    if (!investigador) return;
 
-    const modal = document.getElementById('research-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalImage = document.getElementById('modal-image');
-    const modalDescription = document.getElementById('modal-description');
+    const modal = document.getElementById('researcher-modal');
+    const modalImage = document.getElementById('researcher-modal-image');
+    const modalName = document.getElementById('researcher-modal-name');
+    const modalTitle = document.getElementById('researcher-modal-title');
+    const modalDescription = document.getElementById('researcher-modal-description');
+    const closeBtn = document.getElementById('researcher-modal-close-btn');
 
-    if (modal && modalTitle && modalImage && modalDescription) {
-        // ✅ CAMBIO 2: Usamos innerHTML para el título del modal también
-        modalTitle.innerHTML = linea.titulo; 
-        modalImage.src = linea.image || './imgs/placeholder.jpg'; 
-        modalImage.alt = `Imagen sobre ${linea.titulo}`;
-        modalDescription.textContent = linea.descripcion; // La descripción sigue siendo textContent
+    if (modal && modalImage && modalName && modalTitle && modalDescription && closeBtn) {
+        const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
+        modalImage.src = investigador.fotoUrl || './imgs/placeholder.png';
+        modalImage.alt = `Foto de ${nombreCompleto}`;
+        modalName.textContent = nombreCompleto;
+        modalTitle.textContent = investigador.titulo || '';
+        modalDescription.textContent = investigador.descripcion || '';
 
-        modal.style.display = 'block'; 
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+        };
+
+        modal.style.display = 'block';
     } else {
-        console.error("Error: No se encontraron todos los elementos del modal en el HTML.");
+        console.error("Error: No se encontraron todos los elementos del modal de investigador en el HTML.");
     }
 }
+
