@@ -638,6 +638,10 @@ button.modal-open-btn {
     .contactS {
         gap: 40px;
     }
+    #contenedor-investigadores.researcher-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+        max-width: 700px;
+    }
 }
 
 /* --- PARA MÓVILES --- */
@@ -758,4 +762,62 @@ button.modal-open-btn {
     .modal-body p {
         text-align: justify; /* Texto justificado en móvil */
     }
+    #contenedor-investigadores.researcher-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+        max-width: 400px;
+    }
+}
+
+#team { 
+    background-color: #252d23;
+    padding: 50px 0;
+}
+
+#team h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#contenedor-investigadores.researcher-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    justify-content: center; 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.researcher-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.researcher-card:hover,
+.researcher-card:focus { 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    outline: 2px solid #a3d996; 
+}
+
+.researcher-card img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2); 
+}
+
+.researcher-name {
+    color: #f0f0f0;
+    font-weight: 600;
+    font-size: 1.1em;
 }
