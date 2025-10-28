@@ -5,8 +5,7 @@
         "apellido": "Valverde",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "descripcion": ""
     },
     {
         "id": 2,
@@ -14,26 +13,23 @@
         "apellido": "Agaras",
         "titulo": "Dra. en Ciencia y Tecnología UNQ (Microbiología agrícola)",
         "fotoUrl": "./imgs/investigadores/Foto BA nueva.jpg",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada ultrices arcu quis posuere. Mauris posuere lobortis quam, eu iaculis risus tristique vestibulum. Fusce consectetur massa sed venenatis efficitur. Phasellus mattis leo quis felis interdum, ut aliquam purus fringilla. Integer gravida eros eu dui eleifend semper. Proin non erat leo. Cras elementum nulla at dolor pellentesque, sed gravida ligula luctus. Sed elementum lacus risus, sed consequat lacus efficitur eget. Phasellus ac urna maximus, sodales orci quis, efficitur enim. Sed porta risus eget lorem malesuada, non lacinia nunc tincidunt. Vivamus dolor tellus, porta et tellus in, rutrum convallis est. Curabitur ultrices sapien vitae mauris porta, id scelerisque felis tempor.",
-        "estado": "actual"
+        "descripcion": "Mi formación doctoral se basó en metodologías de biología molecular y microbiología para el análisis poblacional de <i>Pseudomonas</i> en suelos agrícolas, tanto con técnicas dependientes (recuentos en placa, PCR-RFLP) como independientes de cultivo (DGGE, PCR en tiempo real). Además, logré la caracterización funcional de aislamientos de <i>Pseudomonas</i> spp. seleccionados a partir de su capacidad de inhibir <i>in vitro</i> el crecimiento de hongos fitopatógenos que afectan a cultivos agrícolas extensivos. Además del enfoque aplicado, buscando como objetivo final el desarrollo de biosinsumos eficientes para el agro, mi interés radica en identificar y entender los mecanismos por los cuales estas bacterias ejercen la actividad antagonista por la cual fueron seleccionadas, como parte de la estrategia de mejorar su desempeño en las condiciones naturales donde debe actuar un inoculante. Así como en comprender la interacción planta-bacteria y los factores que intervienen en una buena colonización de los tejidos vegetales."
     },
     {
         "id": 3,
         "nombre": "Antonio",
         "apellido": "Lagares Jr.",
         "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "fotoUrl": "./imgs/investigadores/foto antonio.jpg",
+        "descripcion": ""
     },
     {
         "id": 4,
         "nombre": "Patricio",
         "apellido":"Sobrero",
         "titulo": "",
-        "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "fotoUrl": "./imgs/investigadores/Foto patricio.jpg",
+        "descripcion": ""
     },
     {
         "id": 5,
@@ -41,8 +37,7 @@
         "apellido":"Martins",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "descripcion": ""
     },
     {
         "id": 6,
@@ -50,8 +45,7 @@
         "apellido": "Magaldi",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "descripcion": ""
     },
     {
         "id": 7,
@@ -59,8 +53,7 @@
         "apellido": "Coelho",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "descripcion": ""
     },
     {
         "id": 8,
@@ -68,7 +61,6 @@
         "apellido": "Lorch",
         "titulo": "",
         "fotoUrl": "",
-        "descripcion": "",
-        "estado": "actual"
+        "descripcion": ""
     }
 ]

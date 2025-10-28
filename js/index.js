@@ -47,14 +47,12 @@ async function cargarInvestigadores() {
         }
         const todosLosInvestigadores = await respuesta.json();
 
-        const investigadoresActuales = todosLosInvestigadores.filter(investigador => investigador.estado === 'actual');
-
         const contenedor = document.getElementById('contenedor-investigadores');
         if (!contenedor) return;
 
         contenedor.innerHTML = '';
 
-        investigadoresActuales.forEach(investigador => {
+        todosLosInvestigadores.forEach(investigador => {
             const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
             
             const cardHTML = `
@@ -76,7 +74,7 @@ async function cargarInvestigadores() {
 }
 
 async function mostrarUltimasPublicaciones() {
-      try {
+    try {
         // Solo necesitamos cargar el archivo de papers
         const respuestaPapers = await fetch('./data/papers.json');
 
@@ -92,14 +90,14 @@ async function mostrarUltimasPublicaciones() {
             .filter(p => p.fechaPublicacion && p.fechaPublicacion !== 'N/A') // Asegurarse de que tengan fecha válida
             .sort((a, b) => b.fechaPublicacion.localeCompare(a.fechaPublicacion));
 
-        const ultimos5Papers = papersOrdenados.slice(0, 5);
+        const ultimos4Papers = papersOrdenados.slice(0, 4);
 
         const contenedor = document.getElementById('contenedor-publicaciones');
         if (!contenedor) return;
 
         contenedor.innerHTML = '';
 
-        ultimos5Papers.forEach(paper => {
+        ultimos4Papers.forEach(paper => {
             // Usamos directamente el string 'paper.autores' del JSON
             const autoresString = paper.autores || 'Autores no disponibles'; 
 
