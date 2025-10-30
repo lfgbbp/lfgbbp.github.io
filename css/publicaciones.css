@@ -22,8 +22,8 @@ main{
 
 .containerHead{
     display: flex;
-    justify-content: space-between; /* Mantiene logo a la izq, nav a la der */
-    align-items: center; /* ✅ Centra verticalmente logo y nav */
+    justify-content: space-between;
+    align-items: center; 
     padding: 0 15px;
     margin-bottom: 10px;
 }
@@ -229,8 +229,6 @@ main.publications-page-container {
     font-style: italic;
 }
 
-
-
 .ulNav {
     display: flex;
     list-style: none;
@@ -239,62 +237,6 @@ main.publications-page-container {
     margin-left: auto;
     align-items: center;
 }
-
-/* --- MEDIA QUERY PARA MÓVILES (hasta 768px) --- */
-@media (max-width: 768px) {
-
-    /* Muestra el botón hamburguesa */
-    .menu-toggle {
-        display: flex; /* O block, según tu diseño */
-        /* (Aquí van los estilos que ya tenías para el botón: tamaño, color, margen, etc.) */
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        margin-left: auto;
-        margin-right: 0;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2.5rem;
-        cursor: pointer;
-        z-index: 1001;
-        transition: transform 0.3s ease;
-    }
-
-    .menu-toggle.active {
-        transform: rotate(90deg);
-    }
-
-    /* Oculta la barra de navegación y la prepara para desplegarse */
-    .navbar {
-        display: block; /* Necesitamos display block para que max-height funcione */
-        position: static; /* Mantenemos estático para empujar el contenido */
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        background-color: #1b201a;
-        transition: max-height 0.4s ease-in-out;
-    }
-
-    /* Muestra la barra cuando está activa */
-    .navbar.active {
-        max-height: 350px; /* O el alto que necesites */
-    }
-
-    /* Estilos para la lista de navegación en móvil */
-    .ulNav {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        gap: 20px;
-        height: auto; /* La altura se ajusta al contenido */
-    }
-
-    /* (Asegúrate de incluir aquí también los estilos para .liNav a en móvil si son diferentes) */
-}
-
 
 .navbar .ulNav .liNav.home-link {
     list-style: none; /* Quitamos el bullet point */
@@ -309,14 +251,11 @@ main.publications-page-container {
     padding: 8px 15px; 
     border-radius: 50px;
     transition: background-color 0.3s ease;
-    
-    /* ✅ Aseguramos el color y quitamos la decoración */
+
     color: #ffffff; 
     text-decoration: none !important; /* Usamos !important para asegurar que no haya subrayado */
 }
-.menu-toggle {
-    display: none;
-}
+
 
 .navbar .ulNav .liNav.home-link a:hover {
     background-color: rgba(255, 255, 255, 0.1); 
@@ -328,12 +267,73 @@ main.publications-page-container {
     font-size: 1.3em; 
 }
 
+p.col-md-4.mb-0.text-body-light.mx-3 {
+    display: flex;
+    justify-content: end;
+    gap: 6px;
+}
+
+/* --- MEDIA QUERY PARA MÓVILES (hasta 768px) --- */
+@media (max-width: 768px) {
+    .navbar {
+        display: block;
+        position: static;
+        overflow: hidden;
+        background-color: #1b201a;
+    }
+
+    .ulNav {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+        margin: 0;
+    }
+
+    p.col-md-4.mb-0.text-body-light.mx-5 {
+        margin-left: 1rem !important;
+    }
+
+    footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.border-top.bgColor {
+        gap: 10px;
+    }
+}
 
 @media (max-width: 992px) { 
-    .navbar .ulNav .liNav.home-link a span {
-        display: none; 
-    }
     .navbar .ulNav .liNav.home-link a {
         padding: 8px 10px; 
+    }
+    
+    .logo{
+        margin: 0;;
+    }
+}
+
+@media (max-width: 376px) {
+    .page-header{
+        padding: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    nav.navbar {
+        width: 80px;
+        margin-right: 10px;
+    }
+    
+    .header-left {
+        overflow: clip;
+    }
+
+    .containerHead{
+        padding: 0;
+    }
+
+    .logo {
+        margin-top: 5px;
+        max-width: 200px;
     }
 }

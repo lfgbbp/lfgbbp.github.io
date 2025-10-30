@@ -613,6 +613,7 @@ button.modal-open-btn {
 }
 
 /* Media queries */
+/* --- PARA PANTALLAS GRANDES --- */
 @media (max-width: 1024px){
     .containerHead {
         gap: 10px;
@@ -728,7 +729,7 @@ button.modal-open-btn {
         width: 100px;
         height: 40px;
         align-content: center;
-        flex: 0.5;
+        flex: 0.3;
     }
 
     span.accordion-title-text {
