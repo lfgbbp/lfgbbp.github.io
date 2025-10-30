@@ -594,7 +594,6 @@ button.modal-open-btn {
     color: lightgreen;
 }
 
-/* Main color style for the footer and contact sections.*/
 .bgColor{
     background-color: #1b201a;
     color: white;
@@ -639,7 +638,7 @@ button.modal-open-btn {
         gap: 40px;
     }
     #contenedor-investigadores.researcher-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+        grid-template-columns: repeat(3, 1fr);
         max-width: 700px;
     }
 }
@@ -660,10 +659,9 @@ button.modal-open-btn {
         background: none;
         border: none;
         color: white;
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         cursor: pointer;    
         z-index: 1001;
-        margin-right: 20px;
         transition: transform 0.3s ease;
     }
 
@@ -673,13 +671,9 @@ button.modal-open-btn {
 
     .nav-bar {
         width: 100%;
-
-        /* Lógica de ocultar/mostrar con max-height */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
-        
-        /* Eliminamos las propiedades del menú lateral */
         height: auto;
         backdrop-filter: none; 
     }
@@ -715,7 +709,8 @@ button.modal-open-btn {
     }
 
     .logo {
-        max-width: 500px;
+        max-width: 150px;
+        margin: 0;
     }
     
     .logo img {
