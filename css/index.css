@@ -261,11 +261,18 @@ i {
     color: #bbbbbb;
     position: absolute;
     top: 15px;
-    right: 25px;
-    font-size: 28px;
+    right: 15px;
+    font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
-    transition: color 0.3s ease;
+    z-index: 10;
+    line-height: 1;
+    transition: color 0.2s ease;
+    width: 44px;  
+    height: 44px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-close-btn:hover,
@@ -325,7 +332,8 @@ i {
 
 button.modal-open-btn {
     justify-content: center;
-    display: flex
+    display: flex;
+    width: 30px;
 ;
 }
 
@@ -594,7 +602,6 @@ button.modal-open-btn {
     color: lightgreen;
 }
 
-/* Main color style for the footer and contact sections.*/
 .bgColor{
     background-color: #1b201a;
     color: white;
@@ -606,19 +613,72 @@ button.modal-open-btn {
 }
 
 /* Media queries */
+/* --- PARA PANTALLAS GRANDES --- */
+@media (max-width: 1024px){
+    .containerHead {
+        gap: 10px;
+    }
+
+    .ulNav{
+        height: 60px;
+        padding: 0;
+    }
+
+    li.liNav {
+        text-align: center;
+        overflow: clip;
+    }
+
+    h4#researcher-modal-title {
+        overflow: hidden;
+    }
+
+    .research-item span {
+        max-width: 330px;
+    }
+    
+    .research-item{
+        gap: 7px;
+    }
+
+    i.bi.bi-geo-alt {
+        width: 37px;
+    }
+}
+
 /* --- PARA TABLETS Y PANTALLAS MEDIANAS--- */
 @media (max-width: 992px) {
+    .logo {
+        margin-left: 0;
+        max-height: 100px;
+        max-width: 170px;
+    }
+
+    h4#researcher-modal-title {
+        overflow: hidden;
+    }
+    
     .hero h1 {
         font-size: 38px;
         width: 80%; 
     }
 
     .containerHead {
-        gap: 40px;
+        gap: 0;
     }
 
     .ulNav {
-        gap: 15px;
+        padding-left: 0;
+        gap: 0;
+        height: 60px;
+    }
+
+    .liNav a {
+        font-size: 14px
+    }
+
+    li.liNav {
+        max-width: 84px;
     }
 
     .sectionServs, .contactS {
@@ -639,13 +699,63 @@ button.modal-open-btn {
         gap: 40px;
     }
     #contenedor-investigadores.researcher-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+        grid-template-columns: repeat(3, 1fr);
         max-width: 700px;
     }
 }
 
 /* --- PARA MÓVILES --- */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    .anchorD:hover{
+        text-decoration: underline;
+        color: lightgreen;
+    }
+
+    i.bi.bi-geo-alt {
+        width: 40px;
+    }
+    
+    span#researcher-modal-close-btn {
+        width: auto;
+    }
+
+    span#modal-close-btn {
+        top: 3px;
+        right: 3px;
+    }
+
+    button.modal-open-btn {
+        font-size: 2rem;
+        width: 100px;
+        height: 40px;
+        align-content: center;
+        flex: 0.3;
+    }
+
+    span.accordion-title-text {
+        max-width: 200px;
+    }
+
+    .research-item{
+        gap: 5px;
+    }
+
+    .accordion-icon{
+        width: 1.2rem
+    }
+
+    footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.border-top.bgColor {
+        gap: 10px;
+    }
+
+    p.col-md-4.mb-0.text-body-light.mx-5 {
+        margin-left: 1rem !important;
+    }
+
+    span.research-title {
+        flex: 2;
+    }
+
     .menuB {
         display: flex;
         align-items: center;
@@ -660,10 +770,9 @@ button.modal-open-btn {
         background: none;
         border: none;
         color: white;
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         cursor: pointer;    
         z-index: 1001;
-        margin-right: 20px;
         transition: transform 0.3s ease;
     }
 
@@ -673,13 +782,9 @@ button.modal-open-btn {
 
     .nav-bar {
         width: 100%;
-
-        /* Lógica de ocultar/mostrar con max-height */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
-        
-        /* Eliminamos las propiedades del menú lateral */
         height: auto;
         backdrop-filter: none; 
     }
@@ -715,7 +820,8 @@ button.modal-open-btn {
     }
 
     .logo {
-        max-width: 500px;
+        max-width: 150px;
+        margin: 0;
     }
     
     .logo img {
@@ -735,9 +841,16 @@ button.modal-open-btn {
         width: 90%;
     }
 
-    .aboutUsI p {
+    .aboutUsI .container p {
         font-size: 16px;
+        text-align: center;
     }
+
+    #contenedor-investigadores.researcher-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+    }
+
 
     .services-column h2,
     .publications-column h2,
@@ -750,18 +863,22 @@ button.modal-open-btn {
         margin: 15% auto;
         padding: 20px;
     }
+
     .modal-body {
-        flex-direction: column; /* Apila imagen y texto */
-        align-items: center; /* Centra la imagen */
+        flex-direction: column; 
+        align-items: center; 
     }
+    
     .modal-body img {
-        width: 100%; /* Imagen ocupa todo el ancho */
-        max-width: 300px; /* Pero no más de 300px */
+        width: 100%;
+        max-width: 300px;
         margin-bottom: 20px;
     }
+    
     .modal-body p {
-        text-align: justify; /* Texto justificado en móvil */
+        text-align: center;
     }
+
     #contenedor-investigadores.researcher-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
         max-width: 400px;
@@ -779,11 +896,11 @@ button.modal-open-btn {
     margin-bottom: 40px;
 }
 
-#contenedor-investigadores.researcher-grid {
+.researcher-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 30px; 
-    justify-content: center; 
+    justify-items: center; 
     max-width: 900px;
     margin: 0 auto;
 }
