@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupMenuToggle() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navBar = document.querySelector('.navbar');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navBar = document.getElementById('navC');
     if (menuToggle && navBar) {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
@@ -112,6 +112,7 @@ async function cargarInvestigadores() {
         console.error("No se pudieron cargar los investigadores:", error); 
     }
 }
+
 async function mostrarUltimasPublicaciones() {
     try {
         // Solo necesitamos cargar el archivo de papers
