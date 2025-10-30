@@ -50,14 +50,20 @@ function mostrarModalInvestigador(id) {
     const modalName = document.getElementById('researcher-modal-name');
     const modalTitle = document.getElementById('researcher-modal-title');
     const modalDescription = document.getElementById('researcher-modal-description');
+    const closeBtn = document.getElementById('researcher-modal-close-btn');
+
 
     if (modal && modalImage && modalName && modalTitle && modalDescription) {
         const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
         modalImage.src = investigador.fotoUrl || './imgs/placeholder.png'; 
         modalImage.alt = `Foto de ${nombreCompleto}`;
-        modalName.textContent = nombreCompleto;
-        modalTitle.textContent = investigador.titulo || '';
-        modalDescription.textContent = investigador.descripcion || ''; 
+        modalName.innerHTML = nombreCompleto;
+        modalTitle.innerHTML = investigador.titulo || '';
+        modalDescription.innerHTML = investigador.descripcion || '';
+
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+        };
 
         modal.style.display = 'block'; 
     } else {
@@ -234,32 +240,28 @@ async function cargarLineasInvestigacion() {
     }
 }
 
-function mostrarModalInvestigador(id) {
-    const investigador = investigadoresData.find(inv => inv.id === id);
-    if (!investigador) return;
+function mostrarModalInvestigacion(id) {
+    const linea = lineasInvestigacionData.find(l => l.id === id);
+    if (!linea) return; 
 
-    const modal = document.getElementById('researcher-modal');
-    const modalImage = document.getElementById('researcher-modal-image');
-    const modalName = document.getElementById('researcher-modal-name');
-    const modalTitle = document.getElementById('researcher-modal-title');
-    const modalDescription = document.getElementById('researcher-modal-description');
-    const closeBtn = document.getElementById('researcher-modal-close-btn');
+    const modal = document.getElementById('research-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalDescription = document.getElementById('modal-description');
+    const closeBtn = document.getElementById('modal-close-btn'); 
 
-    if (modal && modalImage && modalName && modalTitle && modalDescription && closeBtn) {
-        const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
-        modalImage.src = investigador.fotoUrl || './imgs/placeholder.png';
-        modalImage.alt = `Foto de ${nombreCompleto}`;
-        modalName.textContent = nombreCompleto;
-        modalTitle.textContent = investigador.titulo || '';
-        modalDescription.textContent = investigador.descripcion || '';
+    if (modal && modalTitle && modalImage && modalDescription && closeBtn) {
+        modalTitle.innerHTML = linea.titulo; 
+        modalImage.src = linea.image || './imgs/placeholder.jpg'; 
+        modalImage.alt = `Imagen sobre ${linea.titulo}`;
+        modalDescription.innerHTML = linea.descripcion; // Usamos innerHTML aquí también
 
         closeBtn.onclick = () => {
             modal.style.display = 'none';
         };
 
-        modal.style.display = 'block';
+        modal.style.display = 'block'; 
     } else {
-        console.error("Error: No se encontraron todos los elementos del modal de investigador en el HTML.");
+        console.error("Error: No se encontraron todos los elementos del modal de línea de investigación.");
     }
 }
-

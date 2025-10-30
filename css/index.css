@@ -730,9 +730,16 @@ button.modal-open-btn {
         width: 90%;
     }
 
-    .aboutUsI p {
+    .aboutUsI .container p {
         font-size: 16px;
+        text-align: center;
     }
+
+    #contenedor-investigadores.researcher-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+    }
+
 
     .services-column h2,
     .publications-column h2,
@@ -774,7 +781,7 @@ button.modal-open-btn {
     margin-bottom: 40px;
 }
 
-#contenedor-investigadores.researcher-grid {
+.researcher-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 30px; 
