@@ -45,4 +45,4 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 
 * **[Victor H. Bertolini Agaras]**
 * **GitHub:** [@Bertolini-Victor](https://github.com/Bertolini-Victor)
-* **LinkedIn:** [Enlace a tu perfil de LinkedIn](www.linkedin.com/in/victor-bertolini)
+* **LinkedIn:** [Victor Bertolini](www.linkedin.com/in/victor-bertolini)
