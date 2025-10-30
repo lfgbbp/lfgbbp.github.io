@@ -332,7 +332,8 @@ i {
 
 button.modal-open-btn {
     justify-content: center;
-    display: flex
+    display: flex;
+    width: 30px;
 ;
 }
 
@@ -612,19 +613,71 @@ button.modal-open-btn {
 }
 
 /* Media queries */
+@media (max-width: 1024px){
+    .containerHead {
+        gap: 10px;
+    }
+
+    .ulNav{
+        height: 60px;
+        padding: 0;
+    }
+
+    li.liNav {
+        text-align: center;
+        overflow: clip;
+    }
+
+    h4#researcher-modal-title {
+        overflow: hidden;
+    }
+
+    .research-item span {
+        max-width: 330px;
+    }
+    
+    .research-item{
+        gap: 7px;
+    }
+
+    i.bi.bi-geo-alt {
+        width: 37px;
+    }
+}
+
 /* --- PARA TABLETS Y PANTALLAS MEDIANAS--- */
 @media (max-width: 992px) {
+    .logo {
+        margin-left: 0;
+        max-height: 100px;
+        max-width: 170px;
+    }
+
+    h4#researcher-modal-title {
+        overflow: hidden;
+    }
+    
     .hero h1 {
         font-size: 38px;
         width: 80%; 
     }
 
     .containerHead {
-        gap: 40px;
+        gap: 0;
     }
 
     .ulNav {
-        gap: 15px;
+        padding-left: 0;
+        gap: 0;
+        height: 60px;
+    }
+
+    .liNav a {
+        font-size: 14px
+    }
+
+    li.liNav {
+        max-width: 84px;
     }
 
     .sectionServs, .contactS {
@@ -658,7 +711,7 @@ button.modal-open-btn {
     }
 
     i.bi.bi-geo-alt {
-        width: 59px;
+        width: 40px;
     }
     
     span#researcher-modal-close-btn {
@@ -846,7 +899,7 @@ button.modal-open-btn {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 30px; 
-    justify-content: center; 
+    justify-items: center; 
     max-width: 900px;
     margin: 0 auto;
 }
