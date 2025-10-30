@@ -179,7 +179,7 @@ async function cargarServicios() {
             const itemHTML = `
                 <div class="custom-accordion-item">
                     <button class="accordion-title">
-                    <span>${servicio.titulo}</span>
+                    <span class="accordion-title-text">${servicio.titulo}</span>
                     <span class="accordion-icon"></span>
                     </button>
                     <div class="accordion-content">
