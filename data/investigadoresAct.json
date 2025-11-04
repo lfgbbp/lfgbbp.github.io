@@ -3,9 +3,9 @@
         "id": 1,
         "nombre": "Claudio",
         "apellido": "Valverde",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Dr. de la Fac. Cs. Exactas (UNLP) - Investigador Principal CONICET",
+        "fotoUrl": "./imgs/investigadores/foto claudio.jpg",
+        "descripcion": "Profesor Titular de la Universidad Nacional de Quilmes, dónde dicta el curso Fisiología y Genética de Bacterias para la Licenciatura en Biotecnología. Dirige el Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP), perteneciente al Centro de Bioquímica y Microbiología del Suelo (CBMS) de la Universidad Nacional de Quilmes y la CIC-BA. Lidera proyectos en el campo de las interacciones entre microorganismos y plantas, particularmente sobre mecanismos de las bacterias que promueven el crecimiento y la salud vegetal, y su regulación genética."
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "id": 3,
         "nombre": "Antonio",
         "apellido": "Lagares Jr.",
-        "titulo": "",
+        "titulo": "Dr. de la Fac. Cs. Exactas (UNLP) - Investigador Asistente CONICET",
         "fotoUrl": "./imgs/investigadores/foto antonio.jpg",
         "descripcion": ""
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "nombre": "Patricio",
         "apellido":"Sobrero",
-        "titulo": "",
+        "titulo": "Dr. en Ciencia y Tecnología UNQ - Investigador Asistente CONICET",
         "fotoUrl": "./imgs/investigadores/Foto patricio.jpg",
         "descripcion": "A lo largo de mi trayectoria científica me he especializado en microbiología molecular, con un enfoque particular en la regulación de la expresión génica en bacterias promotoras del crecimiento vegetal. Mis investigaciones se han centrado en comprender cómo estas bacterias perciben y procesan señales ambientales para modular la expresión génica de manera eficiente y adaptativa. Actualmente, mis líneas de investigación se orientan a desentrañar el funcionamiento de las redes regulatorias que controlan la biosíntesis de metabolitos especializados en Pseudomonas. Abordamos esta problemática mediante un enfoque cuali-cuantitativo, integrando diferentes niveles de regulación transcripcional, post-transcripcional y epigenético con el objetivo de construir una visión sistémica de la regulación génica en esta especie modelo. Mi trabajo busca aportar al entendimiento de los mecanismos evolutivos y adaptativos que moldean la regulación génica en bacterias de relevancia agrobiotecnológica."
     },
