@@ -19,9 +19,9 @@
         "id": 3,
         "nombre": "Antonio",
         "apellido": "Lagares Jr.",
-        "titulo": "Dr. de la Fac. Cs. Exactas (UNLP) - Investigador Asistente CONICET",
+        "titulo": "Lic. en Bioquímica y Dr. en Ciencias Exactas (UNLP). Investigador Adjunto del CONICET y Docente-Investigador en la UNQ",
         "fotoUrl": "./imgs/investigadores/foto antonio.jpg",
-        "descripcion": ""
+        "descripcion": "Mis intereses se centran en la compresión a nivel molecular de fenómenos fundamentales en modelos microbianos de importancia estratégica. Combino estrategias microbiológicas clásicas, de biología molecular, análisis ómicos y bioinformáticos para estudiar procesos de (ribo)regulación metabólica y de transferencia horizontal genética en bacterias. <br> En el ámbito docente, dicto un curso de grado sobre metabolismo Intermedio (UNQ), y de posgrado sobre tecnologías ómicas para el estudio de sistemas biológicos (UNLP). <br> Busco integrar de manera continua mi perfil docente e investigador, promoviendo la colaboración científica a nivel local e internacional, y contribuyendo activamente a la formación de recursos humanos en todos los niveles."
     },
     {
         "id": 4,
