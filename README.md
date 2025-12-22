@@ -7,12 +7,6 @@ El sitio está diseñado para presentar al equipo de investigación, sus publica
 
 ---
 
-### 📸 Vista Previa
-
-[//]: # (TODO: sacar foto a la primera version final de la pagina.)
-
----
-
 ### ✨ Características Principales
 
 * **Diseño Moderno y Limpio:** Una interfaz profesional diseñada para presentar la información de manera clara y accesible.
