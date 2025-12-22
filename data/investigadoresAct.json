@@ -49,6 +49,14 @@
     },
     {
         "id": 7,
+        "nombre": "Ariel",
+        "apellido": "Bravo",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": ""
+    },
+    {
+        "id": 8,
         "nombre": "Fernanda",
         "apellido": "Coelho",
         "titulo": "",
@@ -56,9 +64,49 @@
         "descripcion": ""
     },
     {
-        "id": 8,
+        "id": 9,
         "nombre": "Melani",
         "apellido": "Lorch",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": ""
+    },
+    {
+        "id": 10,
+        "nombre": "Priscila",
+        "apellido": "Fredez",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": ""
+    },
+    {
+        "id": 11,
+        "nombre": "Lucia",
+        "apellido": "Nuñez",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": ""
+    },
+    {
+        "id": 12,
+        "nombre": "Sofia",
+        "apellido": "Díaz",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": ""
+    },
+    {
+        "id": 13,
+        "nombre": "Micaela",
+        "apellido": "Arnoso Ventancour",
+        "titulo": "",
+        "fotoUrl": "",
+        "descripcion": ""
+    },
+    {
+        "id": 14,
+        "nombre": "Alexa",
+        "apellido": "Gallardo Lafon",
         "titulo": "",
         "fotoUrl": "",
         "descripcion": ""

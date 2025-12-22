@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "titulo":"Identificación de microorganismos",
+        "titulo":"Identificación de microorganismos / Minería genómica",
         "descripcion": "Secuenciación del gen 16S rRNA / Secuenciación del genoma completo (WGS) / Ensamblaje y anotación de genomas bacterianos / Análisis filogenético y taxonómico / MLSA"
     },
     {
@@ -11,16 +11,32 @@
     },
     {
         "id":3,
-        "titulo":"",
-        "descripcion":""
+        "titulo":"Preservación de microorganismo",
+        "descripcion":"Liofilización / Ultracongelación"
     },
     {
         "id":4,
-        "titulo":"",
-        "descripcion":""
-    },{
+        "titulo":"Aislamiento y caracterización de microorganismos",
+        "descripcion":"Aislamiento, caracterización, e identificación de microorganismos a partir de muestras de suelo y de tejidos vegetales. La caracterización e identificación de microorganismos se lleva a cabo tanto mediante métodos clásicos microbiológicos así como mediante técnicas moleculares"
+    },
+    {
         "id":5,
-        "titulo":"",
-        "descripcion":""
+        "titulo":"Análisis de propiedades promotoras del crecimiento vegetal",
+        "descripcion":"Contamos con métodos para la detección de actividades de promoción del desarrollo vegetal y el control biológico (antagonismo) de fitopatógenos mediante ensayos in vitro y en planta en condiciones controladas)"
+    },
+    {
+        "id":6,
+        "titulo":"Genética bacteriana y estudio de la expresión génica en bacterias",
+        "descripcion":"Contamos con herramientas y procedimientos para generar mutantes para estudios de función génica, y para análisis de la expresión genética)"
+    },
+    {
+        "id":7,
+        "titulo":"Generación de cepas con etiquetas génicas",
+        "descripcion":"Contamos con herramientas y procedimientos para introducir genes que codifican proteínas fluorescentes y de resistencia a antibióticos, para facilitar para estudios de colonización bacteriana de tejidos vegetales"
+    },
+    {
+        "id":8,
+        "titulo":"Desarrollo de proyectos microbiológicos a demanda",
+        "descripcion":"A partir de tu necesidad e interés, podemos trabajar juntos en la elaboración de una propuesta de trabajo basada en nuestras capacidades y experticias"
     }
 ]
