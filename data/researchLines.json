@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titulo": "Aislamientos nativos del genero <i>Pseudomonas</i>: estudios funcionales para el desarrollo de bioinsumos.",
-        "descripcion": "sfs",
+        "descripcion": "Las bacterias del género <i>Pseudomonas</i> son microorganismos ubicuos con una gran diversidad metabólica y ecológica. Algunas especies poseen características promotoras del crecimiento vegetal y biocontrol de fitopatógenos, por lo que son candidatas ideales para el desarrollo de bioinsumos agrícolas sustentables. En esta línea de investigación, nos enfocamos en el aislamiento y caracterización de cepas autóctonas de <i>Pseudomonas</i> con potencial aplicación agrícola, así como en el estudio de sus mecanismos moleculares de acción y su interacción con los diferentes cultivos.",
         "imagen": "./imgs/lineas/linea1_2.jpeg"
     },
     {
@@ -19,32 +19,32 @@
     },
     {
         "id": 4,
-        "titulo": "Bases genéticas de la promoción del crecimiento por parte de <i>Pseudomonas</i> pergaminensis 1008",
+        "titulo": "Bases genéticas de la promoción del crecimiento por parte de <i>Pseudomonas pergaminensis</i> 1008",
         "descripcion": "Esta cepa de una nueva especie del género que definimos en nuestro laboratorio, es el ingrediente activo de bioinsumos comerciales que promueven el rendimiento en grano de cereales. Buscamos comprender sus características microbiológicas, sus mecanismos de promoción de crecimiento, y su interacción con los tejidos vegetales.",
         "imagen": "./imgs/lineas/basesGeneticas.jpg"
     },
     {
         "id": 5,
         "titulo": "Caracterización funcional del ARN pequeño Sm84 de <i>Sinorhizobium meliloti</i>",
-        "descripcion": "Sm84 es un ARN no codificante muy conservado en rizobiales con diferentes estilos de vida, cuya función biológica es desconocida. En este proyecto, queremos identificar el rol funcional del alelo sm84 de Sinorhizobium meliloti tanto en vida libre como en su asociación simbiótica con alfalfa.",
+        "descripcion": "Sm84 es un ARN no codificante muy conservado en rizobiales con diferentes estilos de vida, cuya función biológica es desconocida. En este proyecto, queremos identificar el rol funcional del alelo sm84 de <i>Sinorhizobium meliloti</i> tanto en vida libre como en su asociación simbiótica con alfalfa.",
         "imagen": "./imgs/lineas/caracterizacionFuncional.jpg"
     },
     {
         "id": 6,
         "titulo": "ARNs pequeños regulatorios del clan Rsm en bacterias del género <i>Pseudomonas</i>",
-        "descripcion": "Los ARNs no codificantes del clan Rsm son intermediarios funcionales clave para la regulación global de la expresión genética a nivel post-transcripcional en el género Pseudomonas. Tratamos de comprender su multiplicidad génica en los distintos grupos intragénero, y caracterizar nuevas familias identificadas en cromosomas y elementos génicos móviles.",
+        "descripcion": "Los ARNs no codificantes del clan Rsm son intermediarios funcionales clave para la regulación global de la expresión genética a nivel post-transcripcional en el género <i>Pseudomonas</i>. Tratamos de comprender su multiplicidad génica en los distintos grupos intragénero, y caracterizar nuevas familias identificadas en cromosomas y elementos génicos móviles.",
         "imagen": "./imgs/lineas/arnPequeños.JPG"
     },
     {
         "id": 7,
         "titulo": "Caracterización de metabolitos especializados de <i>Pseudomonas</i> autóctonas",
-        "descripcion": " Los genomas de los distintos linajes del género Pseudomonas contienen un patrimonio enormemente rico de agrupamientos génicos para la biosíntesis de metabolitos bioactivos de naturaleza desconocida. Nos interesa en particular la identificación de determinantes genéticos y/o moléculas bioactivas con actividad antimicrobiana, en aislamientos autóctonos de especies con rasgos biopesticidas.",
+        "descripcion": " Los genomas de los distintos linajes del género <i>Pseudomonas</i> contienen un patrimonio enormemente rico de agrupamientos génicos para la biosíntesis de metabolitos bioactivos de naturaleza desconocida. Nos interesa en particular la identificación de determinantes genéticos y/o moléculas bioactivas con actividad antimicrobiana, en aislamientos autóctonos de especies con rasgos biopesticidas.",
         "imagen": "./imgs/lineas/metabolitos.jpg"
     },
     {
         "id": 8,
         "titulo": "Desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal",
-        "descripcion": "El objetivo de esta línea de trabajo es la generación de una mezcla de aislamientos promotores del crecimiento vegetal del género Pseudomonas para su utilización como bioinsumo en el cultivo de cannabis para mejorar su rendimiento y/o calidad fitoquímica.",
-        "imagen": ""
+        "descripcion": "El objetivo de esta línea de trabajo es la generación de una mezcla de aislamientos promotores del crecimiento vegetal del género <i>Pseudomonas</i> para su utilización como bioinsumo en el cultivo de cannabis para mejorar su rendimiento y/o calidad fitoquímica.",
+        "imagen": "./imgs/lineas/linea desarrollo.jpeg"
     }
 ]

@@ -191,12 +191,13 @@ async function cargarServicios() {
         const servicios = await respuesta.json();
         const contenedor = document.getElementById('contenedor-servicios');
         if (!contenedor) return;
+        contenedor.innerHTML = '';
         servicios.forEach(servicio => {
             const itemHTML = `
                 <div class="custom-accordion-item">
                     <button class="accordion-title">
-                    <span class="accordion-title-text">${servicio.titulo}</span>
-                    <span class="accordion-icon"></span>
+                        <span class="accordion-title-text">${servicio.titulo}</span>
+                        <span class="accordion-icon"></span>
                     </button>
                     <div class="accordion-content">
                         <p>${servicio.descripcion}</p>
@@ -204,12 +205,17 @@ async function cargarServicios() {
                 </div>`;
             contenedor.innerHTML += itemHTML;
         });
-
         const titulos = contenedor.querySelectorAll('.accordion-title');
         titulos.forEach(titulo => {
             titulo.addEventListener('click', () => {
                 const item = titulo.parentElement;
-                item.classList.toggle('active');
+                const estabaActivo = item.classList.contains('active');
+                contenedor.querySelectorAll('.custom-accordion-item').forEach(otroItem => {
+                    otroItem.classList.remove('active');
+                });
+                if (!estabaActivo) {
+                    item.classList.add('active');
+                }
             });
         });
     } catch (error) {
