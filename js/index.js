@@ -72,11 +72,9 @@ function mostrarModalInvestigador(id) {
         modalName.innerHTML = nombreCompleto;
         modalTitle.innerHTML = investigador.titulo || '';
         modalDescription.innerHTML = investigador.descripcion || '';
-
         closeBtn.onclick = () => {
             modal.style.display = 'none';
         };
-
         modal.style.display = 'block'; 
     } else {
         console.error("Error: No se encontraron todos los elementos del modal de investigador en el HTML.");
@@ -89,22 +87,17 @@ async function cargarInvestigadores() {
         if (!respuesta.ok) {
             throw new Error(`Error al cargar investigadores: ${respuesta.status}`);
         }
-
         investigadoresData = await respuesta.json(); 
         const investigadoresActuales = investigadoresData; 
-
         const contenedor = document.getElementById('contenedor-investigadores'); 
         if (!contenedor) {
             console.error("Error: Contenedor '#contenedor-investigadores' no encontrado.");
             return;
         }
-
         contenedor.innerHTML = '';
-
         if (investigadoresActuales.length === 0) {
             console.warn("Advertencia: El archivo 'investigadoresAct.json' está vacío o no contiene investigadores."); 
         }
-
         investigadoresActuales.forEach((investigador, index) => {
             const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
             const cardHTML = `
@@ -133,32 +126,20 @@ async function cargarInvestigadores() {
 
 async function mostrarUltimasPublicaciones() {
     try {
-        // Solo necesitamos cargar el archivo de papers
         const respuestaPapers = await fetch('./data/papers.json');
-
         if (!respuestaPapers.ok) {
             throw new Error('No se pudo cargar el archivo de papers.');
         }
-
         const papers = await respuestaPapers.json();
-        
-        // Ya no necesitamos cargar investigadores ni crear el mapa
-
         const papersOrdenados = papers
-            .filter(p => p.fechaPublicacion && p.fechaPublicacion !== 'N/A') // Asegurarse de que tengan fecha válida
+            .filter(p => p.fechaPublicacion && p.fechaPublicacion !== 'N/A') 
             .sort((a, b) => b.fechaPublicacion.localeCompare(a.fechaPublicacion));
-
         const ultimos4Papers = papersOrdenados.slice(0, 4);
-
         const contenedor = document.getElementById('contenedor-publicaciones');
         if (!contenedor) return;
-
         contenedor.innerHTML = '';
-
         ultimos4Papers.forEach(paper => {
-            // Usamos directamente el string 'paper.autores' del JSON
             const autoresString = paper.autores || 'Autores no disponibles'; 
-
             const publicacionHTML = `
                 <div class="publication-item">
                     <a href="${paper.enlace}" target="_blank" rel="noopener noreferrer">
