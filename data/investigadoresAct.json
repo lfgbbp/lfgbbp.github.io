@@ -11,7 +11,7 @@
         "id": 2,
         "nombre": "Betina",
         "apellido": "Agaras",
-        "titulo": "Dra. en Ciencia y Tecnología UNQ (Microbiología agrícola) - Investigadora adjunta CONICET",
+        "titulo": "Dra. en Ciencia y Tecnología UNQ (Microbiología agrícola) - Investigadora adjunta CONICET - Profesora Instructora Bioquímica (UNQ)",
         "fotoUrl": "./imgs/investigadores/Foto BA nueva.jpg",
         "descripcion": "Mi formación doctoral se basó en metodologías de biología molecular y microbiología para el análisis poblacional de <i>Pseudomonas</i> en suelos agrícolas, tanto con técnicas dependientes (recuentos en placa, PCR-RFLP) como independientes de cultivo (DGGE, PCR en tiempo real). Además, logré la caracterización funcional de aislamientos de <i>Pseudomonas</i> spp. seleccionados a partir de su capacidad de inhibir <i>in vitro</i> el crecimiento de hongos fitopatógenos que afectan a cultivos agrícolas extensivos. Además del enfoque aplicado, buscando como objetivo final el desarrollo de biosinsumos eficientes para el agro, mi interés radica en identificar y entender los mecanismos por los cuales estas bacterias ejercen la actividad antagonista por la cual fueron seleccionadas, así como en comprender la interacción planta-bacteria y los factores que intervienen en una buena colonización de los tejidos vegetales. Todo como parte de una estrategia integral para mejorar el desempeño de los inoculantes bacterianos en las condiciones naturales y edafoclimáticas donde debe actuar."
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "nombre": "Ariel",
         "apellido": "Bravo",
-        "titulo": "",
+        "titulo": "Lic. en Biotecnología con orientación en Agrobiotecnología (UNQ) - Estudiante doctoral UNQ",
         "fotoUrl": "./imgs/investigadores/foto ariel.png",
         "descripcion": "Biotecnólogo graduado en la Universidad Nacional de Quilmes (UNQ), con orientación en agrobiotecnología. Se desempeña como docente en el Centro universitario de la Innovación de la Matanza (UNQ-CUDI) en las áreas de química y microbiología. Su trabajo de tesis se centra en la caracterización de sRNA en Sinorhizobium meliloti. Actualmente realiza actividades de investigación en la Johannes Gutenberg-Universität Mainz, donde trabaja en el estudio de proteínas intrínsecamente desordenadas.   "
     },
