@@ -5,7 +5,7 @@
         "apellido": "Valverde",
         "titulo": "Dr. de la Fac. Cs. Exactas (UNLP) - Investigador Principal CONICET",
         "fotoUrl": "./imgs/investigadores/foto claudio.jpg",
-        "descripcion": "Profesor Titular de la Universidad Nacional de Quilmes, dónde dicta el curso Fisiología y Genética de Bacterias para la Licenciatura en Biotecnología. Dirige el Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP), perteneciente al Centro de Bioquímica y Microbiología del Suelo (CBMS) de la Universidad Nacional de Quilmes y la CIC-BA. Lidera proyectos en el campo de las interacciones entre microorganismos y plantas, particularmente sobre mecanismos de las bacterias que promueven el crecimiento y la salud vegetal, y su regulación genética."
+        "descripcion": "Soy Profesor Titular de la Universidad Nacional de Quilmes, dónde dicto el curso Fisiología y Genética de Bacterias para la Licenciatura en Biotecnología. Dirijo el Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP), perteneciente al Centro de Bioquímica y Microbiología del Suelo (CBMS) de la Universidad Nacional de Quilmes y la CIC-BA. Lidero proyectos en el campo de las interacciones entre microorganismos y plantas, particularmente sobre mecanismos de las bacterias que promueven el crecimiento y la salud vegetal, y su regulación genética."
     },
     {
         "id": 2,
@@ -29,7 +29,7 @@
         "apellido":"Sobrero",
         "titulo": "Dr. en Ciencia y Tecnología UNQ - Investigador Asistente CONICET",
         "fotoUrl": "./imgs/investigadores/Foto patricio.jpg",
-        "descripcion": "A lo largo de mi trayectoria científica me he especializado en microbiología molecular, con un enfoque particular en la regulación de la expresión génica en bacterias promotoras del crecimiento vegetal. Mis investigaciones se han centrado en comprender cómo estas bacterias perciben y procesan señales ambientales para modular la expresión génica de manera eficiente y adaptativa. Actualmente, mis líneas de investigación se orientan a desentrañar el funcionamiento de las redes regulatorias que controlan la biosíntesis de metabolitos especializados en Pseudomonas. Abordamos esta problemática mediante un enfoque cuali-cuantitativo, integrando diferentes niveles de regulación transcripcional, post-transcripcional y epigenético con el objetivo de construir una visión sistémica de la regulación génica en esta especie modelo. Mi trabajo busca aportar al entendimiento de los mecanismos evolutivos y adaptativos que moldean la regulación génica en bacterias de relevancia agrobiotecnológica."
+        "descripcion": "A lo largo de mi trayectoria científica me he especializado en microbiología molecular, con un enfoque particular en la regulación de la expresión génica en bacterias promotoras del crecimiento vegetal. Mis investigaciones se han centrado en comprender cómo estas bacterias perciben y procesan señales ambientales para modular la expresión génica de manera eficiente y adaptativa. Actualmente, mis líneas de investigación se orientan a desentrañar el funcionamiento de las redes regulatorias que controlan la biosíntesis de metabolitos especializados en <i>Pseudomonas</i>. Abordamos esta problemática mediante un enfoque cuali-cuantitativo, integrando diferentes niveles de regulación transcripcional, post-transcripcional y epigenético con el objetivo de construir una visión sistémica de la regulación génica en esta especie modelo. Mi trabajo busca aportar al entendimiento de los mecanismos evolutivos y adaptativos que moldean la regulación génica en bacterias de relevancia agrobiotecnológica."
     },
     {
         "id": 5,
@@ -53,15 +53,15 @@
         "apellido": "Bravo",
         "titulo": "Lic. en Biotecnología con orientación en Agrobiotecnología (UNQ) - Estudiante doctoral UNQ",
         "fotoUrl": "./imgs/investigadores/foto ariel.png",
-        "descripcion": "Biotecnólogo graduado en la Universidad Nacional de Quilmes (UNQ), con orientación en agrobiotecnología. Se desempeña como docente en el Centro universitario de la Innovación de la Matanza (UNQ-CUDI) en las áreas de química y microbiología. Su trabajo de tesis se centra en la caracterización de sRNA en Sinorhizobium meliloti. Actualmente realiza actividades de investigación en la Johannes Gutenberg-Universität Mainz, donde trabaja en el estudio de proteínas intrínsecamente desordenadas.   "
+        "descripcion": "Me desempeño como docente en el Centro universitario de la Innovación de la Matanza (UNQ-CUDI) en las áreas de química y microbiología. Mi trabajo de tesis se centra en la caracterización de sRNA en <i>Sinorhizobium meliloti</i>. Actualmente realizo actividades de investigación en la Johannes Gutenberg-Universität Mainz, donde trabajo en el estudio de proteínas intrínsecamente desordenadas."
     },
     {
         "id": 8,
         "nombre": "Fernanda",
         "apellido": "Coelho",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Lic. en Biotecnología y becaria doctoral de la Agencia I+D+i",
+        "fotoUrl": "./imgs/investigadores/foto fernanda.jpeg",
+        "descripcion": "Actualmente estoy estudiando aislamientos autóctonos de <i>Pseudomonas</i> con características promotoras del crecimiento vegetal en cultivos extensivos. Mediante técnicas de biología molecular y microbiología busco comprender cómo funcionan y qué genes están involucrados en estas propiedades de los aislamientos nativos y así aportar mi granito de arena en vías de una agricultura más sustentable."
     },
     {
         "id": 9,
@@ -83,9 +83,9 @@
         "id": 11,
         "nombre": "Lucia",
         "apellido": "Nuñez",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Bioprocesos (UNQ)",
+        "fotoUrl": "./imgs/investigadores/foto lucia.jpeg",
+        "descripcion": "Mi interés se orienta al estudio de microorganismos con potencial aplicación en agricultura sustentable y el desarrollo de estrategias biotecnológicas para el cuidado y manejo del ambiente. Actualmente realizo mi tesina de grado sobre la caracterización fisiológica y genómica de variantes morfológicas espontáneas de la cepa estimulante de cereales <i>Pseudomonas pergaminensis</i> en el LFGBBP en la UNQ, bajo la dirección del Dr. Claudio Valverde. Además, me desempeño como auxiliar docente en el área de Microbiología e Inmunología y como tutora de ingresantes en el Taller de Vida Universitaria en la misma Universidad. Participo activamente en la organización de jornadas académicas y actividades de divulgación científica, y me interesa la comunicación pública de la ciencia y su vinculación con la sociedad."
     },
     {
         "id": 12,
