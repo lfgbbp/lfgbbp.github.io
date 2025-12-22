@@ -19,13 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupMenuToggle() {
     const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
     const navBar = document.getElementById('navC');
+    const navLinks = document.querySelectorAll('.liNav a');
+
     if (menuToggle && navBar) {
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navBar.classList.toggle('active');
+            navBar.classList.add('active');
         });
     }
+    if (menuClose && navBar) {
+        menuClose.addEventListener('click', () => {
+            navBar.classList.remove('active');
+        });
+    }
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navBar.classList.remove('active');
+        });
+    });
 }
 
 function setupModalClickOutsideClose(modalId) {
