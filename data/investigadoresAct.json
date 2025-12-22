@@ -35,9 +35,9 @@
         "id": 5,
         "nombre": "Melina",
         "apellido":"Martins",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Lic. en Biotecnología (UNQ) - Becaria Doctoral CONICET ",
+        "fotoUrl": "./imgs/investigadores/foto melina.jpg",
+        "descripcion": "Licenciada en Biotecnología con orientación en Genética Molecular (UNQ). Durante mi tesis de grado, realicé la puesta a punto de condiciones de cultivo para estudios metabolómicos y proteómicos del aislamiento <i>Pseudomonas donghuensis</i> SVBP6, identificando condiciones óptimas de crecimiento bajo estimulación con medio condicionado de los fitopatógenos <i>Xanthomonas vesicatoria</i> y <i>Sclerotinia sclerotiorum</i>. Asimismo, llevé a cabo estudios de control biológico utilizando el patosistema </i>Xanthomonas</i>-tomate. Actualmente, realizo mi doctorado en el LFGBBP, donde empleo técnicas de Biología Molecular y Microbiología para la caracterización del aislamiento probiótico autóctono <i>Pseudomonas donghuensis</i> SVBP6, con el objetivo de describir el metabolismo involucrado en la interacción bacteria–patógeno y dilucidar los mecanismos moleculares que median el antagonismo."
     },
     {
         "id": 6,
