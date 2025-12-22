@@ -52,8 +52,8 @@
         "nombre": "Ariel",
         "apellido": "Bravo",
         "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "fotoUrl": "./imgs/investigadores/foto ariel.png",
+        "descripcion": "Biotecnólogo graduado en la Universidad Nacional de Quilmes (UNQ), con orientación en agrobiotecnología. Se desempeña como docente en el Centro universitario de la Innovación de la Matanza (UNQ-CUDI) en las áreas de química y microbiología. Su trabajo de tesis se centra en la caracterización de sRNA en Sinorhizobium meliloti. Actualmente realiza actividades de investigación en la Johannes Gutenberg-Universität Mainz, donde trabaja en el estudio de proteínas intrínsecamente desordenadas.   "
     },
     {
         "id": 8,
