@@ -1,7 +1,5 @@
 /* Style to make the scroll to links inside the same page go smoother. */
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
 /* Generic reset for CSS properties.*/
 * {
@@ -11,89 +9,101 @@ html {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-    overflow-x: auto;
     scrollbar-width: none;
+    box-sizing: border-box;
 }
 
 /* styles for the main.*/
-main{
-    background-color: #252d23;
-}
+main{ background-color: #252d23; }
+body { overflow-x: hidden; }
 
 /* Styles for the nav-bar and Hero elements.*/
-.bgHero{
-    background-color: #A07D5D;
-    background-image: url('../imgs/heroElement.png');
-    background-repeat: repeat; 
-    background-size: cover;
-    background-position: center center;
-    min-height: 60vh;
-    min-width: 60vw;
-    padding-top: 15px; 
+.header-main {
+    background-color: #1b201a;
+    border-bottom: 2px solid #659A5A;
+    padding: 15px 0;
+    width: 100%;
+    z-index: 1100;
+    position: relative;
 }
 
-.containerHead{
+.containerHead {
     display: flex;
-    gap: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
+.containerMedia {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo{
-    margin-left: 15px;
-    flex: 1;
-    max-height: 100px;
-    max-width: 250px;
+    max-width: 240px;
+    height: auto;
+    margin-right: 40px;
+    transition: transform 0.3s ease;
 }
 
-.nav-bar{
-    flex: 2;
-    
-    padding: 0;
-}
+.logo:hover { transform: scale(1.05); }
+
+.nav-bar{ display: flex; align-items: center; }
 
 .ulNav{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     list-style: none;
-    height: 100px;
-    gap: 25px;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    align-items: center; 
 }
 
 .liNav a {
-    font-size: 18px;
-    text-decoration: none;
     color: #ffffff;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
 }
 
-.hero{
-    text-align: center;
+.liNav a:hover {
+    color: #a3d996;
 }
 
-.hero h1{
-    color: #ffffff;
-    font-size: 45px;
-    line-height: 1.2;
-    
-    /* Option B: Use a percentage width (best for responsive layouts) */
-    width: 50%;
-    
-    /* Center the block if you used a fixed max-width */
-    margin-left: auto;
-    margin-right: auto;	
+#heroCarousel {
+    width: 100%;
+    height: 650px;
+    background-color: #000;
+}
+
+.carousel-inner, .carousel-item {
+            height: 100%;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
 }
 
 .menuB {
     display: none;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    border: none;
 }
 
-/* Styles for the main section.*/
-    /* Styles for the about us section */
-.aboutUsI {
-    background-color: #659A5A;
-    padding: 10px; 
-}
+section { padding: 80px 10%; }
+h2.inv { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+.aboutUsI { background-color: #659A5A; }
 
 .aboutUsI .container h2 {
     margin-bottom: 15px; 
@@ -108,6 +118,71 @@ main{
 }
 
     /* styles for the members section.*/
+#team { 
+    background-color: #252d23;
+    padding: 50px 0;
+}
+
+#team h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#team h2.inv {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.researcher-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    justify-items: center; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.researcher-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 220px;
+    height: 100%;
+}
+
+.researcher-card:hover,
+.researcher-card:focus { 
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #a3d996; 
+}
+
+.researcher-card img {
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.2); 
+}
+
+.researcher-name {
+    color: #f0f0f0;
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 1.3;
+}
+
 .membersI{
     background-color: #252d23;
     display: flex;
@@ -115,31 +190,18 @@ main{
     gap: 20px;
 }
 
-.inv{
-    color: white;
-}
-
 #contenedor-investigadores .card {
-    background-color: #f4f4f4; /* Un gris muy claro, color hueso */
-    color: #333;              /* Texto principal en gris oscuro */
-    border: none;              /* Opcional: quita el borde para un look más limpio */
+    background-color: #f4f4f4;
+    color: #333;
+    border: none;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
 }
 
-
-#contenedor-investigadores .card-title {
-    color: #1a1a1a; /* Un título un poco más oscuro para que resalte */
-}
-
-#contenedor-investigadores .card-subtitle {
-    color: #555;
-}
-
-.card-body {
-    text-align: center;
-}
+#contenedor-investigadores .card-title { color: #1a1a1a; }
+#contenedor-investigadores .card-subtitle { color: #555; }
+.card-body { text-align: center; }
 
 #contenedor-investigadores .card-img-top{
     width: 318px;
@@ -148,7 +210,6 @@ main{
     object-fit: cover; 
     margin: 20px auto 10px; 
 }
-
 
 /* Styles for the research and publications.*/
     /* Styles for the research section */
@@ -167,11 +228,9 @@ main{
 .publications-column {
     flex: 1 1 400px; 
     max-width: 600px; 
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-color: rgba(0, 0, 0, 0.15);
     padding: 30px;
     border-radius: 12px;
@@ -207,9 +266,7 @@ main{
     font-weight: 500;
 }
 
-.research-item span{
-    max-width: 450px;
-}
+.research-item span{ max-width: 450px; }
 
 .modal-open-btn {
     background-color: #659A5A;
@@ -224,9 +281,7 @@ main{
     transition: background-color 0.3s ease;
 }
 
-.modal-open-btn:hover {
-    background-color: #4a7c41;
-}
+.modal-open-btn:hover { background-color: #4a7c41; }
 
 .modal {
     display: none; 
@@ -241,9 +296,7 @@ main{
     backdrop-filter: blur(5px);
 }
 
-i {
-    font-style: italic;
-}
+i { font-style: italic; }
 
 .modal .modal-content {
     background-color: #474747; 
@@ -276,10 +329,7 @@ i {
 }
 
 .modal-close-btn:hover,
-.modal-close-btn:focus {
-    color: #ffffff;
-    text-decoration: none;
-}
+.modal-close-btn:focus { color: #ffffff; text-decoration: none; }
 
 .modal-content h3 {
     text-align: center;
@@ -288,11 +338,7 @@ i {
     color: #ffffff;
 }
 
-.modal-body {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start; 
-}
+.modal-body { display: flex; gap: 30px; align-items: flex-start;  }
 
 .modal-body img {
     flex-shrink: 0; 
@@ -313,10 +359,10 @@ i {
 /* Styles for the services section */
 .sectionServs {
     display: flex;
-    flex-direction: row; /* Mantenemos las columnas en escritorio */
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start; 
-    flex-wrap: wrap; /* Permite que se apilen en móvil */
+    flex-wrap: wrap; 
     gap: 50px;
     background-color: #252d23;
     padding: 50px 20px;
@@ -331,36 +377,19 @@ i {
     text-align: center;
 }
 
-button.modal-open-btn {
-    justify-content: center;
-    display: flex;
-    width: 30px;
-;
-}
-
-#contenedor-servicios {
-    width: 100%;
-    max-width: 600px;
-}
-
-.custom-accordion-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
+button.modal-open-btn { justify-content: center; display: flex; width: 30px; }
+#contenedor-servicios { width: 100%; max-width: 600px; }
+.custom-accordion-item { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
 
 .accordion-title {
-    /* Reseteamos los estilos de botón */
     background: none;
     border: none;
     width: 100%;
     padding: 18px 5px;
     cursor: pointer;
-    
-    /* Flexbox para alinear título e icono */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    /* Estilos del texto */
     color: #fff;
     font-weight: 600;
     font-size: 1.1em;
@@ -368,9 +397,7 @@ button.modal-open-btn {
     transition: background-color 0.3s ease;
 }
 
-.accordion-title:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
+.accordion-title:hover { background-color: rgba(0, 0, 0, 0.1); }
 
 .accordion-icon {
     width: 1em;
@@ -380,6 +407,7 @@ button.modal-open-btn {
     position: relative;
     transition: transform 0.3s ease;
 }
+
 .accordion-icon::before,
 .accordion-icon::after {
     content: '';
@@ -392,10 +420,7 @@ button.modal-open-btn {
     transform: translate(-50%, -50%);
 }
 
-.accordion-icon::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-    transition: transform 0.3s ease;
-}
+.accordion-icon::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform 0.3s ease; }
 
 .accordion-content {
     max-height: 0; 
@@ -406,31 +431,12 @@ button.modal-open-btn {
     line-height: 1.6;
 }
 
-.accordion-content p {
-    padding: 0 5px 18px 5px; 
-}
-
-.custom-accordion-item.active .accordion-title {
-    color: #a3d996;
-}
-
-.custom-accordion-item.active .accordion-icon::after {
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.custom-accordion-item.active .accordion-icon {
-    transform: rotate(45deg);
-}
-
-.custom-accordion-item.active .accordion-content {
-    max-height: 200px; 
-}
-
-.sectionNews {
-    background-color: #659A5A;
-    padding: 50px 20px;
-    text-align: center;
-}
+.accordion-content p { padding: 0 5px 18px 5px;  }
+.custom-accordion-item.active .accordion-title { color: #a3d996; }
+.custom-accordion-item.active .accordion-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.custom-accordion-item.active .accordion-icon { transform: rotate(45deg); }
+.custom-accordion-item.active .accordion-content { max-height: 200px;  }
+.sectionNews { background-color: #659A5A; padding: 50px 20px; text-align: center; }
 
 .sectionNews h2 {
     font-size: 2.5em;
@@ -441,13 +447,13 @@ button.modal-open-btn {
 }
 
 #twitter-feed-container {
-    max-width: 600px; /* ✅ Ancho máximo para hacerlo más pequeño */
-    margin: 0 auto; /* ✅ Centra el contenedor horizontalmente */
-    background-color: #4a7c41; /* ✅ Fondo verde oscuro */
-    padding: 20px; /* ✅ Espacio interno */
-    border-radius: 12px; /* ✅ Bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ✅ Sombra sutil */
-    overflow: hidden; /* Asegura que cualquier cosa que sobresalga se corte */
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #4a7c41;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 /* Styles for the pubs section.*/
@@ -467,14 +473,8 @@ button.modal-open-btn {
     transition: background-color 0.3s ease; 
 }
 
-.publications-column .publication-item a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.publications-column .publication-item .publication-title {
-    color: #fff;
-    font-weight: 600;
-}
+.publications-column .publication-item a:hover { background-color: rgba(0, 0, 0, 0.1); }
+.publications-column .publication-item .publication-title { color: #fff; font-weight: 600; }
 
 .publications-column .publication-item .publication-meta {
     display: block;
@@ -498,19 +498,15 @@ button.modal-open-btn {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-ver-todos:hover {
-    background-color: #f4f4f4;
-    color: #252d23;
-    border-color: #f4f4f4;
-}
+.btn-ver-todos:hover { background-color: #f4f4f4; color: #252d23; border-color: #f4f4f4; }
 
 .publication-item .publication-authors {
-    color: #a3d996; /* Un verde claro para que resalte */
+    color: #a3d996;
     font-size: 0.9em;
     font-weight: 600;
     margin-top: 8px;
     margin-bottom: 8px;
-    font-style: normal; /* Asegura que no sea itálica como el meta */
+    font-style: normal;
 }
 
 /* Styles for the contact Section.*/
@@ -518,13 +514,9 @@ button.modal-open-btn {
     display: flex;
     flex-direction: row;
     gap: 100px;
-    
-    /* Puts the content at the top and manages spacing between columns */
     align-items: flex-start; 
     justify-content: space-between; 
-    
-    padding: 40px; /* Add some overall padding (adjust as needed) */
-
+    padding: 40px;
 }
 
 .contactLinks{
@@ -534,10 +526,7 @@ button.modal-open-btn {
     margin-left: 30px;
 }
 
-.containerContactLinks{
-    display: flex;
-    flex-direction: column;
-}
+.containerContactLinks{ display: flex; flex-direction: column; }
 
 .infoContact{
     display: flex;
@@ -545,397 +534,107 @@ button.modal-open-btn {
     flex: 1;
     width: 200px;
     gap:5px;
-    flex-basis: 350px; /* Gives a fixed minimum width to the contact column */
+    flex-basis: 350px;
     flex-shrink: 0;
-    
-
 }
 
-.contactTitle{
-    margin-left: 15px;
-    margin-bottom: 20px;
-    font-size: 2em; 
-}
+.contactTitle{ margin-left: 15px; margin-bottom: 20px; font-size: 2em; }
 
 .iframeContainer {
-    /* 1. Limiter (from previous steps) */
-    max-width: 800px; /* Limits the max width of the map on large screens */
+    max-width: 800px;
     flex-grow: 1; 
     width: 100%; 
-    
-    /* 2. SET A FIXED HEIGHT */
-    height: 250px; /* Set a specific height in pixels (adjust this value!) */
-    
-    /* Reset all position/padding to let the fixed height work */
+    height: 250px;
     position: relative;
-    padding-bottom: 0; /* Ensures the proportional padding is gone */
-    
+    padding-bottom: 0;
     overflow: hidden; 
 }
 
 /* The iframe itself */
 .iframeContainer iframe {
-    /* Ensures the iframe fills the 400px tall container */
     width: 100%;
-    height: 100%; 
-    
-    /* Reset position rules used for the padding trick */
-    position: static; /* Or you can keep it as 'absolute' if you prefer */
+    height: 100%;
+    position: static;
     top: auto;
     left: auto;
     border: none;
 }
-
-.anchorMail{
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.anchorTwitter{
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.anchorTwitter:hover, .anchorMail:hover, .anchorD:hover {
-    text-decoration: underline;
-    color: lightgreen;
-}
-
-.bgColor{
-    background-color: #1b201a;
-    color: white;
-}
-
-.anchorD{
-    text-decoration: none;
-    color: white
-}
+.anchorMail{ text-decoration: none; color: white; transition: color 0.3s ease, background-color 0.3s ease; }
+.anchorTwitter{ text-decoration: none; color: white; transition: color 0.3s ease, background-color 0.3s ease; }
+.anchorTwitter:hover, .anchorMail:hover, .anchorD:hover { text-decoration: underline; color: lightgreen; }
+.bgColor{ background-color: #1b201a; color: white; }
+.anchorD{ text-decoration: none; color: white }
 
 /* Media queries */
 /* --- PARA PANTALLAS GRANDES --- */
 @media (max-width: 1024px){
-    .containerHead {
-        gap: 10px;
-    }
-
-    .ulNav{
-        height: 60px;
-        padding: 0;
-    }
-
-    li.liNav {
-        text-align: center;
-        overflow: clip;
-    }
-
-    h4#researcher-modal-title {
-        overflow: hidden;
-    }
-
-    .research-item span {
-        max-width: 330px;
-    }
-    
-    .research-item{
-        gap: 7px;
-    }
-
-    i.bi.bi-geo-alt {
-        width: 37px;
-    }
+    .containerHead { gap: 10px; }
+    .ulNav{ height: 60px; padding: 0; }
+    li.liNav { text-align: center; overflow: clip; }
+    h4#researcher-modal-title { overflow: hidden; }
+    .research-item span { max-width: 330px; }
+    .research-item{ gap: 7px; }
+    i.bi.bi-geo-alt { width: 37px; }
 }
 
 /* --- PARA TABLETS Y PANTALLAS MEDIANAS--- */
 @media (max-width: 992px) {
-    .logo {
-        margin-left: 0;
-        max-height: 100px;
-        max-width: 170px;
-    }
-
-    h4#researcher-modal-title {
-        overflow: hidden;
-    }
-    
-    .hero h1 {
-        font-size: 38px;
-        width: 80%; 
-    }
-
-    .containerHead {
-        gap: 0;
-    }
-
-    .ulNav {
-        padding-left: 0;
-        gap: 0;
-        height: 60px;
-    }
-
-    .liNav a {
-        font-size: 14px
-    }
-
-    li.liNav {
-        max-width: 84px;
-    }
-
-    .sectionServs, .contactS {
-        flex-direction: column; 
-        align-items: center;
-    }
-
+    .logo { max-width: 180px; margin-right: 15px; }
+    h4#researcher-modal-title { overflow: hidden; }
+    .hero h1 { font-size: 35px; width: 80%;  }
+    .containerHead { flex-direction: column; }
+    .ulNav { padding-left: 0; gap: 0; height: 60px; gap: 15px;}
+    .liNav a { font-size: 14px }
+    li.liNav { max-width: 84px; }
+    .sectionServs, .contactS { flex-direction: column;  align-items: center; }
     .services-column,
     .publications-column,
     .infoContact,
-    .iframeContainer {
-        width: 90%;
-        max-width: 600px;
-        flex-basis: auto;
-    }
-    
-    .contactS {
-        gap: 40px;
-    }
-    #contenedor-investigadores.researcher-grid {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 700px;
-    }
+    .iframeContainer { width: 90%; max-width: 600px; flex-basis: auto; }
+    .contactS {gap: 40px;}
+    #contenedor-investigadores.researcher-grid { grid-template-columns: repeat(3, 1fr); max-width: 750px; }
 }
 
 /* --- PARA MÓVILES --- */
 @media (max-width: 767px) {
-    .anchorD:hover{
-        text-decoration: underline;
-        color: lightgreen;
-    }
-
-    i.bi.bi-geo-alt {
-        width: 40px;
-    }
-    
-    span#researcher-modal-close-btn {
-        width: auto;
-    }
-
-    span#modal-close-btn {
-        top: 3px;
-        right: 3px;
-    }
-
-    button.modal-open-btn {
-        font-size: 2rem;
-        width: 100px;
-        height: 40px;
-        align-content: center;
-        flex: 0.3;
-    }
-
-    span.accordion-title-text {
-        max-width: 200px;
-    }
-
-    .research-item{
-        gap: 5px;
-    }
-
-    .accordion-icon{
-        width: 1.2rem
-    }
-
-    footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.border-top.bgColor {
-        gap: 10px;
-    }
-
-    p.col-md-4.mb-0.text-body-light.mx-5 {
-        margin-left: 1rem !important;
-    }
-
-    span.research-title {
-        flex: 2;
-    }
-
-    .menuB {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        
-        margin-left: auto;
-        margin-right: 0;
-
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2.1rem;
-        cursor: pointer;    
-        z-index: 1001;
-        transition: transform 0.3s ease;
-    }
-
-    .menuB.active {
-        transform: rotate(90deg);
-    }
-
+    .anchorD:hover{ text-decoration: underline; color: lightgreen; }
+    i.bi.bi-geo-alt { width: 40px; }
+    span#researcher-modal-close-btn { width: auto; }
+    span#modal-close-btn { top: 3px; right: 3px; }
+    button.modal-open-btn { font-size: 2rem; width: 100px; height: 40px; align-content: center; flex: 0.3; }
+    span.accordion-title-text { max-width: 200px; }
+    .research-item{ gap: 5px; }
+    .accordion-icon{ width: 1.2rem }
+    footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.border-top.bgColor { gap: 10px; }
+    p.col-md-4.mb-0.text-body-light.mx-5 { margin-left: 1rem !important; }
+    span.research-title { flex: 2; }
+    .menuB {display: block;}
     .nav-bar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        height: auto;
-        backdrop-filter: none; 
-    }
-
-    .containerMedia{
-        display: flex;
-    }
-
-    .nav-bar.active {
-        max-height: 1000px;
-    }
-
-    .ulNav {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+        background: #1b201a;
         padding: 20px;
-        gap: 15px;
-        height: auto;
-    }
-
-    .liNav a {
-        font-size: 20px;
-        color: #f97e04;
-    }
-    
-    .containerHead {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 20px; 
-        padding: 0 15px; 
     }
-
-    .logo {
-        max-width: 150px;
-        margin: 0;
-    }
-    
-    .logo img {
-        width: 100%;
-        height: auto;
-    }
-
-    .bgHero {
-        background-image: url('../imgs/heroElement-mobile.png');
-        position: relative; /* Permite posicionar el menú desplegable debajo */
-        min-height: auto; /* Dejamos que la altura se ajuste al contenido */
-        padding-bottom: 20px; /* Espacio inferior */
-    }
-
-    .hero h1 {
-        font-size: 28px;
-        width: 90%;
-    }
-
-    .aboutUsI .container p {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    #contenedor-investigadores.researcher-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 400px;
-    }
-
-
-    .services-column h2,
-    .publications-column h2,
-    .contactTitle {
-        font-size: 1.8em;
-    }
-
-    .modal-content {
-        width: 90%;
-        margin: 15% auto;
-        padding: 20px;
-    }
-
-    .modal-body {
-        flex-direction: column; 
-        align-items: center; 
-    }
-    
-    .modal-body img {
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-    
-    .modal-body p {
-        text-align: center;
-    }
-
-    #contenedor-investigadores.researcher-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
-        max-width: 400px;
-    }
-}
-
-#team { 
-    background-color: #252d23;
-    padding: 50px 0;
-}
-
-#team h2 {
-    color: white;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.researcher-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 30px; 
-    justify-items: center; 
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.researcher-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.researcher-card:hover,
-.researcher-card:focus { 
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    outline: 2px solid #a3d996; 
-}
-
-.researcher-card img {
-    width: 100px; 
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid rgba(255, 255, 255, 0.2); 
-}
-
-.researcher-name {
-    color: #f0f0f0;
-    font-weight: 600;
-    font-size: 1.1em;
+    .nav-bar.active { display: flex; }
+    .ulNav { flex-direction: column; gap: 20px; }
+    .carousel-caption h1 { font-size: 1.8rem; }
+    #heroCarousel { height: 350px; }
+    .menuB.active { transform: rotate(90deg); }
+    .containerMedia{ display: flex; }
+    .liNav a { font-size: 20px; color: #f97e04; }
+    .containerHead { display: flex; flex-direction: column; justify-content: space-between; gap: 20px;  padding: 0 15px;  }
+    .logo { max-width: 150px; margin-bottom: 10px; }
+    .logo img { width: 100%; height: auto; }
+    .aboutUsI .container p { font-size: 16px; text-align: center; }
+    #contenedor-investigadores.researcher-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));   ; gap: 20px }
+    .services-column h2, .publications-column h2, .contactTitle { font-size: 1.8em; }
+    .modal-content { width: 90%; margin: 15% auto; padding: 20px; }
+    .modal-body { flex-direction: column;  align-items: center;  }
+    .modal-body img { width: 100%; max-width: 300px; margin-bottom: 20px; }
+    .modal-body p { text-align: center; }
+    .carousel-img { height: 350px; }
 }

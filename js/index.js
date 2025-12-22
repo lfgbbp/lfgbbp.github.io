@@ -166,6 +166,10 @@ async function mostrarUltimasPublicaciones() {
     }
 }
 
+function limpiarHTML(texto) {
+    return texto ? texto.replace(/<[^>]*>?/gm, '') : '';
+}
+
 async function cargarServicios() {
     try {
         const respuesta = await fetch('./data/servicios.json');
@@ -252,9 +256,9 @@ function mostrarModalInvestigacion(id) {
 
     if (modal && modalTitle && modalImage && modalDescription && closeBtn) {
         modalTitle.innerHTML = linea.titulo; 
-        modalImage.src = linea.image || './imgs/placeholder.jpg'; 
-        modalImage.alt = `Imagen sobre ${linea.titulo}`;
-        modalDescription.innerHTML = linea.descripcion; // Usamos innerHTML aquí también
+        modalImage.src = linea.imagen || './imgs/placeholder.jpg'; 
+        modalImage.alt = `Imagen sobre ${limpiarHTML(linea.titulo)}`;
+        modalDescription.innerHTML = linea.descripcion;
 
         closeBtn.onclick = () => {
             modal.style.display = 'none';
