@@ -15,7 +15,7 @@
         "id": 3,
         "titulo": "Biología de los Agentes de Transferencia Génica (GTAs)",
         "descripcion": "Los GTAs son elementos simil-fagos que son producidos por ciertas bacterias y empaquetan fragmentos del propio genoma bacteriano para donarlos a otras células. En el laboratorio, investigamos la regulación, función y rol ecológico de GTAs como vectores de transferencia genética horizontal en modelos de alfaproteobacterias.",
-        "imagen": "./imgs/lineas/gta.png"
+        "imagen": "./imgs/lineas/GTA.png"
     },
     {
         "id": 4,

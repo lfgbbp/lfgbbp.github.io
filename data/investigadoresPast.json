@@ -46,5 +46,11 @@
         "nombre": "Mg. Mariana Marrero",
         "participacion": "Maestria",
         "lugarDeTrabajoActual": "Docente JTP en la facultad de Ciencias Agrarias de la UNLZ (Argentina)"
+    },
+    {
+        "id": 9,
+        "nombre": "Lic. Julián D'Ambrosio",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Analista Senior de Aseguramiento de Calidad en Nutrihome S.A (Argentina)"
     }
 ]
