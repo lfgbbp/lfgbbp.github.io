@@ -1,20 +1,50 @@
 [
     {
         "id": 1,
-        "nombre": "",
-        "apellido": "",
-        "descripcion": ""
+        "nombre": "Dr. Germán Ceizel Borella",
+        "participacion": "Doctorado",
+        "lugarDeTrabajoActual": "Especialista en asuntos regulatorios de la Secretaría de Agricultura, Ganadería y Pesca de la Nación (Argentina)"
     },
     {
         "id": 2,
-        "nombre": "",
-        "apellido": "",
-        "descripcion": ""
+        "nombre": "Dra. Indra Roux",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Investigadora asociada en la unidad de Toxicologia de la Universidad de Cambridge (Reino Unido)"
     },
     {
         "id": 3,
-        "nombre": "",
-        "apellido": "",
-        "descripcion": ""
+        "nombre": "Dr. Federico Muzio",
+        "participacion": "Doctorado",
+        "lugarDeTrabajoActual": "Posdoc en la Univesidad de Pittsburgh (EEUU)"
+    },
+    {
+        "id": 4,
+        "nombre": "Lic. Teresita Ybarra",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Asistente de ensayos clinicos en IQVIA (Argentina)"
+    },
+    {
+        "id": 5,
+        "nombre": "Ing. Agrobiotec. Maria Fernanda Sosa",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Tecnica de ventas en Onelab S.A. (Argentina)"
+    },
+    {
+        "id": 6,
+        "nombre": "Dr. Leticia Fernandez",
+        "participacion": "Posdoctorado",
+        "lugarDeTrabajoActual": "Investigadora  Adjunta de CONICET (LABEA, UNS, Argentina)"
+    },
+    {
+        "id": 7,
+        "nombre": "Lic. Florencia Farina",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Emprendedora de Oreshki (Argentina)"
+    },
+    {
+        "id": 8,
+        "nombre": "Mg. Mariana Marrero",
+        "participacion": "Maestria",
+        "lugarDeTrabajoActual": "Docente JTP en la facultad de Ciencias Agrarias de la UNLZ (Argentina)"
     }
 ]
