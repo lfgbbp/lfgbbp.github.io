@@ -67,9 +67,9 @@
         "id": 9,
         "nombre": "Melani",
         "apellido": "Lorch",
-        "titulo": "",
+        "titulo": "Licenciada en Biotecnología y Doctora en Ciencia y Tecnología de la Universidad Nacional de Quilmes",
         "fotoUrl": "./imgs/investigadores/foto melani.jpg",
-        "descripcion": ""
+        "descripcion": "Durante mi tesina de licenciatura investigué el impacto de la aplicación reiterada del herbicida glifosato sobre la comunidad cultivable de Pseudomonas en un pastizal natural. Mi tesis doctoral, financiada mediante una beca CONICET, se centró en el estudio de la persistencia en semillas y la competitividad rizosférica de diversos aislamientos del género Pseudomonas con propiedades de promoción del crecimiento vegetal, mediante un enfoque multidisciplinario que integró técnicas de biología molecular, microbiología y microscopía. Actualmente realizo un servicio para YPF Tecnología (Y-TEC), que involucra el cultivo y enriquecimiento de microorganismos anaerobios capaces de utilizar poliacrilamida parcialmente hidrolizada (HPAM) como fuente de carbono y energía. Además de mis tareas de investigación, me desempeño como instructora de la materia Fisiología y Genética de Bacterias, correspondiente al ciclo superior de la Licenciatura en Biotecnología en la misma Universidad."
     },
     {
         "id": 10,
@@ -91,24 +91,24 @@
         "id": 12,
         "nombre": "Sofia",
         "apellido": "Díaz",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
+        "fotoUrl": "./imgs/investigadores/foto sofia.jpeg",
+        "descripcion": "Ademas de ser estudiante también me desempeño como auxiliar académico de laboratorio en el área de Ciencias Básicas de Alimentos. Actualmente, soy Becaria CIC de entrenamiento en el en el LFGBBP, donde me encuentro realizando mi seminario de grado enfocado en la caracterización molecular de proteínas de unión a ARN de la familia Crs-Rsm en <i>Pseudomonas aeruginosa</i>. Mi formación se centra en dos áreas que me han apasionado durante toda la carrera, la microbiología y biología molecular. Me interesa particularmente comprender los mecanismos moleculares que regulan la interacción entre microorganismos y su entorno, con una mirada aplicada hacia la biotecnología."
     },
     {
         "id": 13,
         "nombre": "Micaela",
         "apellido": "Arnoso Ventancour",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en genética molecular (UNQ)",
+        "fotoUrl": "./imgs/investigadores/foto micaela.jpeg",
+        "descripcion": "Actualmente, me encuentro realizando mi tesina de grado en el LFGBBP, sobre el desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal, bajo la dirección de la Dra. Betina Agaras"
     },
     {
         "id": 14,
         "nombre": "Alexa",
         "apellido": "Gallardo Lafon",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Estudiante de la Licenciatura en Biotecnología (UNQ) | Técnica laboratorista (UNQ) | Técnica en Nutrición Comunitaria (UNLa)",
+        "fotoUrl": "./imgs/investigadores/foto alexa.jpg",
+        "descripcion": "Como estudiante avanzada de la Licenciatura en Biotecnología con orientación en bioprocesos mis intereses se enfocan en la biotecnología sustentable y ambiental. Actualmente soy beneficiaria de la Becas de Formación en la Investigación para Estudiantes en etapa final de Carrera de Grado de la Universidad Nacional de Quilmes y me encuentro trabajando con un aislamiento autóctono de pseudomonas productora de pigmento con potencial de aplicación como fitoprotector solar para cultivos de interés agronómico, bajo la dirección del Dr. Patricio Sobrero. Además, me desempeño como auxiliar académica en el área de ambiente y participo como voluntaria en los proyectos de extensión PACHA Programa de Alimentacion, Comunidad y Huerta Agroecológica de la UNLa, y Compostando y Cultivando ConCiencia, proyecto de gestión de residuos orgánicos y restauración ecológica de la UNQ."
     }
 ]

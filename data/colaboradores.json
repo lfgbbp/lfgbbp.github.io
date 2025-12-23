@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Dr. Adam Deutschbauer",
+        "lugarDeTrabajoActual": "Comparative and Functional Genomics at Lawrence Berkeley National Laboratory (USA)"
+    },
+    {
+        "id": 2,
+        "nombre": "Dra. Anke Becker",
+        "lugarDeTrabajoActual": "Phillips University of Marburg, Center for Synthetic Microbiology (SYNMIKRO, Germany)"
+    },
+    {
+        "id": 3,
+        "nombre": "Dr. Marco Masi",
+        "lugarDeTrabajoActual": "Department of Chemical Sciences, University of Naples Federico II (Italy)"
+    },
+    {
+        "id": 4,
+        "nombre": "Dra. Ana Cohen",
+        "lugarDeTrabajoActual": "Institute of Agricultural Biology of Mendoza (IBAM-CONICET, Argentina)"
+    }
+]

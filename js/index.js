@@ -1,11 +1,11 @@
-let investigadoresData = [];
 let lineasInvestigacionData = [];
+let investigadoresData = [];
+
 document.addEventListener('DOMContentLoaded', () => {
+    // ... (Tu código de inicialización existente) ...
     const currentYear = new Date().getFullYear();
     const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = currentYear;
-    }
+    if (yearElement) yearElement.textContent = currentYear;
 
     cargarServicios();
     mostrarUltimasPublicaciones();
@@ -13,8 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarInvestigadores();
 
     setupMenuToggle();
+    // Listeners botones extra
+    const btnPast = document.getElementById('btn-past-members');
+    const btnCollab = document.getElementById('btn-collaborators');
+    if (btnPast) btnPast.addEventListener('click', cargarExIntegrantes);
+    if (btnCollab) btnCollab.addEventListener('click', cargarColaboradores);
+    
+    // Listener cierre modal lista
+    const closeListBtn = document.getElementById('list-modal-close-btn');
+    if (closeListBtn) {
+        closeListBtn.addEventListener('click', () => cerrarModal('list-modal'));
+    }
+    
+    // Configuración inicial de cierre para los otros modales
     setupModalClickOutsideClose('research-modal');
     setupModalClickOutsideClose('researcher-modal');
+    setupModalClickOutsideClose('list-modal');
 });
 
 function setupMenuToggle() {
@@ -23,21 +37,50 @@ function setupMenuToggle() {
     const navBar = document.getElementById('navC');
     const navLinks = document.querySelectorAll('.liNav a');
 
+    const closeMenu = () => {
+        if (navBar) navBar.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
     if (menuToggle && navBar) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             navBar.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     }
-    if (menuClose && navBar) {
-        menuClose.addEventListener('click', () => {
-            navBar.classList.remove('active');
-        });
+
+    if (menuClose) {
+        menuClose.addEventListener('click', closeMenu);
     }
+
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navBar.classList.remove('active');
-        });
+        link.addEventListener('click', closeMenu);
     });
+
+    document.addEventListener('click', (event) => {
+        if (navBar && navBar.classList.contains('active')) {
+            if (!navBar.contains(event.target) && event.target !== menuToggle) {
+                closeMenu();
+            }
+        }
+    });
+}
+
+function toggleBodyScroll(bloquear) {
+    if (bloquear) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+function cerrarModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        toggleBodyScroll(false); 
+    }
 }
 
 function setupModalClickOutsideClose(modalId) {
@@ -45,12 +88,14 @@ function setupModalClickOutsideClose(modalId) {
     if (modal) {
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
-                modal.style.display = 'none';
+                cerrarModal(modalId);
             }
         });
-    } else {
-        console.warn(`Advertencia: No se encontró el modal con ID "${modalId}" para el cierre exterior.`);
     }
+}
+
+function limpiarHTML(texto) {
+    return texto ? texto.replace(/<[^>]*>?/gm, '') : '';
 }
 
 function mostrarModalInvestigador(id) {
@@ -64,25 +109,18 @@ function mostrarModalInvestigador(id) {
     const modalDescription = document.getElementById('researcher-modal-description');
     const closeBtn = document.getElementById('researcher-modal-close-btn');
 
-
-    if (modal && modalImage && modalName && modalTitle && modalDescription) {
+    if (modal && modalImage && modalName && modalTitle && modalDescription && closeBtn) {
         const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
         modalImage.src = investigador.fotoUrl || './imgs/placeholder.png'; 
-        modalImage.alt = `Foto de ${nombreCompleto}`;
+        modalImage.alt = `Foto de ${limpiarHTML(nombreCompleto)}`;
         modalName.innerHTML = nombreCompleto;
         modalTitle.innerHTML = investigador.titulo || '';
         modalDescription.innerHTML = investigador.descripcion || '';
-
-        closeBtn.onclick = () => {
-            modal.style.display = 'none';
-        };
-
-        modal.style.display = 'block'; 
-    } else {
-        console.error("Error: No se encontraron todos los elementos del modal de investigador en el HTML.");
+        closeBtn.onclick = () => cerrarModal('researcher-modal');
+        modal.style.display = 'flex'; 
+        toggleBodyScroll(true);
     }
 }
-
 async function cargarInvestigadores() { 
     try {
         const respuesta = await fetch('./data/investigadoresAct.json');
@@ -101,19 +139,16 @@ async function cargarInvestigadores() {
 
         contenedor.innerHTML = '';
 
-        if (investigadoresActuales.length === 0) {
-            console.warn("Advertencia: El archivo 'investigadoresAct.json' está vacío o no contiene investigadores."); 
-        }
-
-        investigadoresActuales.forEach((investigador, index) => {
+        investigadoresActuales.forEach((investigador) => {
             const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
             const cardHTML = `
                 <div class="researcher-card" data-id="${investigador.id}" role="button" tabindex="0">
-                    <img src="${investigador.fotoUrl || './imgs/placeholder.png'}" alt="Foto de ${nombreCompleto}">
+                    <img src="${investigador.fotoUrl || './imgs/placeholder.png'}" alt="Foto de ${limpiarHTML(nombreCompleto)}">
                     <span class="researcher-name">${nombreCompleto}</span>
                 </div>`;
             contenedor.innerHTML += cardHTML;
         });
+
         contenedor.querySelectorAll('.researcher-card').forEach(card => {
             card.addEventListener('click', () => {
                 const id = parseInt(card.getAttribute('data-id')); 
@@ -133,19 +168,15 @@ async function cargarInvestigadores() {
 
 async function mostrarUltimasPublicaciones() {
     try {
-        // Solo necesitamos cargar el archivo de papers
         const respuestaPapers = await fetch('./data/papers.json');
-
         if (!respuestaPapers.ok) {
             throw new Error('No se pudo cargar el archivo de papers.');
         }
 
         const papers = await respuestaPapers.json();
         
-        // Ya no necesitamos cargar investigadores ni crear el mapa
-
         const papersOrdenados = papers
-            .filter(p => p.fechaPublicacion && p.fechaPublicacion !== 'N/A') // Asegurarse de que tengan fecha válida
+            .filter(p => p.fechaPublicacion && p.fechaPublicacion !== 'N/A')
             .sort((a, b) => b.fechaPublicacion.localeCompare(a.fechaPublicacion));
 
         const ultimos4Papers = papersOrdenados.slice(0, 4);
@@ -156,7 +187,6 @@ async function mostrarUltimasPublicaciones() {
         contenedor.innerHTML = '';
 
         ultimos4Papers.forEach(paper => {
-            // Usamos directamente el string 'paper.autores' del JSON
             const autoresString = paper.autores || 'Autores no disponibles'; 
 
             const publicacionHTML = `
@@ -178,10 +208,6 @@ async function mostrarUltimasPublicaciones() {
     }
 }
 
-function limpiarHTML(texto) {
-    return texto ? texto.replace(/<[^>]*>?/gm, '') : '';
-}
-
 async function cargarServicios() {
     try {
         const respuesta = await fetch('./data/servicios.json');
@@ -191,12 +217,15 @@ async function cargarServicios() {
         const servicios = await respuesta.json();
         const contenedor = document.getElementById('contenedor-servicios');
         if (!contenedor) return;
+        
+        contenedor.innerHTML = '';
+
         servicios.forEach(servicio => {
             const itemHTML = `
                 <div class="custom-accordion-item">
                     <button class="accordion-title">
-                    <span class="accordion-title-text">${servicio.titulo}</span>
-                    <span class="accordion-icon"></span>
+                        <span class="accordion-title-text">${servicio.titulo}</span>
+                        <span class="accordion-icon"></span>
                     </button>
                     <div class="accordion-content">
                         <p>${servicio.descripcion}</p>
@@ -206,16 +235,26 @@ async function cargarServicios() {
         });
 
         const titulos = contenedor.querySelectorAll('.accordion-title');
+        
         titulos.forEach(titulo => {
             titulo.addEventListener('click', () => {
                 const item = titulo.parentElement;
-                item.classList.toggle('active');
+                const estabaActivo = item.classList.contains('active');
+
+                // Cerrar TODOS los items
+                contenedor.querySelectorAll('.custom-accordion-item').forEach(otroItem => {
+                    otroItem.classList.remove('active');
+                });
+
+                if (!estabaActivo) {
+                    item.classList.add('active');
+                }
             });
         });
     } catch (error) {
         console.error(error);
     }
-} 
+}
 
 async function cargarLineasInvestigacion() {
     try {
@@ -264,20 +303,104 @@ function mostrarModalInvestigacion(id) {
     const modalTitle = document.getElementById('modal-title');
     const modalImage = document.getElementById('modal-image');
     const modalDescription = document.getElementById('modal-description');
-    const closeBtn = document.getElementById('modal-close-btn'); 
+    const closeBtn = document.getElementById('modal-close-btn');
 
     if (modal && modalTitle && modalImage && modalDescription && closeBtn) {
         modalTitle.innerHTML = linea.titulo; 
         modalImage.src = linea.imagen || './imgs/placeholder.jpg'; 
         modalImage.alt = `Imagen sobre ${limpiarHTML(linea.titulo)}`;
-        modalDescription.innerHTML = linea.descripcion;
+        modalDescription.innerHTML = linea.descripcion; 
 
-        closeBtn.onclick = () => {
-            modal.style.display = 'none';
-        };
+        closeBtn.onclick = () => cerrarModal('research-modal');
 
-        modal.style.display = 'block'; 
+        modal.style.display = 'flex'; 
+        toggleBodyScroll(true);
     } else {
-        console.error("Error: No se encontraron todos los elementos del modal de línea de investigación.");
+        console.error("Error modal lineas");
+    }
+}
+
+async function cargarExIntegrantes() {
+    try {
+        const respuesta = await fetch('./data/investigadoresPast.json');
+        if (!respuesta.ok) throw new Error('Error al cargar ex-integrantes');
+        const data = await respuesta.json();
+
+        // Agrupar por tipo de participación
+        const agrupados = data.reduce((acc, persona) => {
+            const tipo = persona.participacion || 'Otros';
+            if (!acc[tipo]) acc[tipo] = [];
+            acc[tipo].push(persona);
+            return acc;
+        }, {});
+
+        let htmlContent = '';
+        const ordenPreferido = ['Doctorado', 'Posdoctorado', 'Seminario de Investigación', 'Tesina de Grado'];
+        const tiposDisponibles = Object.keys(agrupados);
+        const tiposOrdenados = [...new Set([...ordenPreferido, ...tiposDisponibles])];
+
+        tiposOrdenados.forEach(tipo => {
+            if (agrupados[tipo]) { 
+                htmlContent += `
+                    <div class="participation-group">
+                        <h4 class="participation-title">${tipo}</h4>
+                        <ul class="participation-list">
+                            ${agrupados[tipo].map(p => `
+                                <li class="participation-item">
+                                    <strong>${p.nombre}</strong>
+                                    <span>${p.lugarDeTrabajoActual || ''}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+        });
+
+        mostrarModalLista('Ex-Integrantes del Laboratorio', htmlContent);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function cargarColaboradores() {
+    try {
+        const respuesta = await fetch('./data/colaboradores.json');
+        if (!respuesta.ok) throw new Error('Error al cargar colaboradores');
+        const data = await respuesta.json();
+
+        let htmlContent = '<div class="collaborators-list">';
+        data.forEach(colab => {
+            htmlContent += `
+                <div class="collaborator-item">
+                    <span class="collaborator-name">${colab.nombre}</span>
+                    <span class="collaborator-place">${colab.lugarDeTrabajoActual}</span>
+                </div>
+            `;
+        });
+        htmlContent += '</div>';
+
+        mostrarModalLista('Colaboradores', htmlContent);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function mostrarModalLista(titulo, contenidoHTML) {
+    const modal = document.getElementById('list-modal');
+    const modalTitle = document.getElementById('list-modal-title');
+    const modalBody = document.getElementById('list-modal-body');
+    const closeBtn = document.getElementById('list-modal-close-btn');
+
+    if (modal && modalTitle && modalBody) {
+        modalTitle.textContent = titulo;
+        modalBody.innerHTML = contenidoHTML;
+        
+        if(closeBtn) closeBtn.onclick = () => cerrarModal('list-modal');
+
+        modal.style.display = 'flex';
+        toggleBodyScroll(true);
     }
 }

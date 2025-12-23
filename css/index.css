@@ -273,6 +273,122 @@ h2.inv {
     margin: 20px auto 10px; 
 }
 
+.extra-team-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 100px; 
+    margin-top: 50px;
+    flex-wrap: wrap; 
+}
+
+.btn-extra-team {
+    background-color: transparent;
+    border: 2px solid #659A5A;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-extra-team:hover {
+    background-color: #659A5A;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(101, 154, 90, 0.4);
+}
+
+.list-modal-content {
+    max-width: 700px;
+}
+
+.list-modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px; 
+}
+
+.participation-group {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.participation-group:last-child {
+    border-bottom: none;
+}
+
+.participation-title {
+    color: #a3d996; 
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-left: 4px solid #659A5A;
+    padding-left: 10px;
+}
+
+.participation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.participation-item {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.participation-item strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.participation-item span {
+    color: #ccc;
+    font-size: 0.95em;
+    display: block;
+    margin-top: 2px;
+    font-style: italic;
+}
+
+.collaborator-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #4a7c41;
+}
+
+.collaborator-name {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+}
+
+.collaborator-place {
+    color: #ccc;
+    font-size: 1em;
+    margin-top: 5px;
+    display: block;
+}
+
+.list-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.list-modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.list-modal-body::-webkit-scrollbar-thumb {
+    background-color: #659A5A;
+    border-radius: 4px;
+}
+
 
 /* ========================================
     RESEARCH
@@ -565,46 +681,65 @@ h2.inv {
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1050; 
-    left: 0;
+    display: none;
+    position: fixed;
+    z-index: 2000; 
+    left: 0; 
     top: 0;
-    width: 100%;
+    width: 100%; 
     height: 100%;
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
 }
 
-.modal .modal-content {
-    background-color: #474747; 
-    margin: 10% auto; 
-    padding: 30px;
+.modal-content {
+    background-color: #474747 !important; 
+    color: #e0e0e0; 
+    width: 90%; 
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
     border-radius: 12px;
-    max-width: 800px; 
-    width: 80%; 
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #659A5A;
+    border-radius: 4px;
 }
 
 .modal-close-btn {
-    color: #bbbbbb;
     position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10;
-    line-height: 1;
-    transition: color 0.2s ease;
+    top: 10px; 
+    right: 15px; 
     width: 44px;  
     height: 44px; 
     display: flex; 
     align-items: center;
     justify-content: center;
+    color: #aaa;
+    font-size: 2.5rem; 
+    font-weight: bold;
+    line-height: 1; 
+    cursor: pointer;
+    z-index: 10; 
+    transition: color 0.2s ease;
+    background: transparent;
 }
 
 .modal-close-btn:hover,
@@ -626,13 +761,12 @@ h2.inv {
     align-items: flex-start;  
 }
 
-.modal-body img {
-    flex-shrink: 0; 
-    width: 250px; 
-    height: auto;
-    max-height: 300px;
+.modal-body img { 
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
     object-fit: cover;
-    border-radius: 8px;
+    flex-shrink: 0;
 }
 
 .modal-body p { 
@@ -642,6 +776,11 @@ h2.inv {
     text-align: justify;
 }
 
+#researcher-modal-content #researcher-modal-image {
+    width: 180px; 
+    height: 180px;
+    border-radius: 50%; /* Circular para personas */
+}
 
 /* ========================================
     CONTACT
@@ -1032,5 +1171,13 @@ h2.inv {
     
     .menu-close-btn:active {
         background: rgba(255,255,255,0.1);
+    }
+    .extra-team-buttons {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-extra-team {
+        width: 80%;
     }
 }
