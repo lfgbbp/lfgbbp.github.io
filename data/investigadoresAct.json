@@ -43,9 +43,9 @@
         "id": 6,
         "nombre": "Yanina",
         "apellido": "Magaldi",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Licenciada en Biotecnología con Orientación en Genética Molecular (UNQ) ",
+        "fotoUrl": "./imgs/investigadores/foto yanina.jpg",
+        "descripcion": "Actualmente soy becaria doctoral del CONICET y realizo el Doctorado en Ciencia y Tecnología en la Universidad Nacional de Quilmes, desempeñándome en tareas de docencia e investigación. Mi línea de investigación se centra en el estudio de Pseudomonas BP01, una bacteria aislada de suelo rizosférico con potencial como bacteria beneficiosa para plantas. Esta cepa produce un pigmento negro cuya naturaleza química y función biológica aún no han sido completamente caracterizadas. Mi trabajo aborda la regulación genética y metabólica de la producción del pigmento y su relación con el metabolismo del triptófano. Investigo la participación de este pigmento, y de otros metabolitos secundarios, en la actividad antagonista frente a bacterias y hongos fitopatógenos de plantas de tomate. El estudio de estos mecanismos resulta de particular importancia por su potencial aplicación en el desarrollo de estrategias biotecnológicas sustentables para el control de enfermedades en cultivos, contribuyendo a una agricultura más sostenible y a la reducción del uso de agroquímicos."
     },
     {
         "id": 7,
@@ -75,9 +75,9 @@
         "id": 10,
         "nombre": "Priscila",
         "apellido": "Fredez",
-        "titulo": "",
-        "fotoUrl": "",
-        "descripcion": ""
+        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
+        "fotoUrl": "./imgs/investigadores/foto priscila.jpg",
+        "descripcion": "Desarrollo actualmente mi tesina de grado en el LFGBBP. Mi trabajo de investigación consiste en caracterizar la transferencia horizontal de genes entre diferentes especies bacterianas. El estudio se centra en los agentes de transferencia génica (GTAs) que comparten un origen evolutivo."
     },
     {
         "id": 11,

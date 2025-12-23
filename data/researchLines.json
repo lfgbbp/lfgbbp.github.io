@@ -8,41 +8,47 @@
     {
         "id": 2,
         "titulo": "Caracterización molecular de la hibernación ribosomal en rizobios simbiontes de alfalfa, leguminosa forrajera de relevancia en suelos agrícolas.",
-        "descripcion": "",
-        "imagen": ""
+        "descripcion": "Estudiamos los mecanismos de regulación post-transcripcional mediados por ARNs pequeños (sRNAs) en bacterias simbiontes de leguminosas fijadoras de nitrógeno, utilizando a Sinorhizobium meliloti como organismo modelo. Nuestro objetivo es comprender cómo estas redes de regulación integran señales del entorno para ajustar diversos procesos del metabolismo celular.",
+        "imagen": "./imgs/banner/4.jpeg"
     },
     {
         "id": 3,
+        "titulo": "Biología de los Agentes de Transferencia Génica (GTAs)",
+        "descripcion": "Los GTAs son elementos simil-fagos que son producidos por ciertas bacterias y empaquetan fragmentos del propio genoma bacteriano para donarlos a otras células. En el laboratorio, investigamos la regulación, función y rol ecológico de GTAs como vectores de transferencia genética horizontal en modelos de alfaproteobacterias.",
+        "imagen": "./imgs/lineas/gta.png"
+    },
+    {
+        "id": 4,
         "titulo": "Análisis molecular de las redes regulatorias implicadas en el control de la expresión génica en bacterias",
         "descripcion": "",
         "imagen": ""
     },
     {
-        "id": 4,
+        "id": 5,
         "titulo": "Bases genéticas de la promoción del crecimiento por parte de <i>Pseudomonas pergaminensis</i> 1008",
         "descripcion": "Esta cepa de una nueva especie del género que definimos en nuestro laboratorio, es el ingrediente activo de bioinsumos comerciales que promueven el rendimiento en grano de cereales. Buscamos comprender sus características microbiológicas, sus mecanismos de promoción de crecimiento, y su interacción con los tejidos vegetales.",
         "imagen": "./imgs/lineas/basesGeneticas.jpg"
     },
     {
-        "id": 5,
+        "id": 6,
         "titulo": "Caracterización funcional del ARN pequeño Sm84 de <i>Sinorhizobium meliloti</i>",
         "descripcion": "Sm84 es un ARN no codificante muy conservado en rizobiales con diferentes estilos de vida, cuya función biológica es desconocida. En este proyecto, queremos identificar el rol funcional del alelo sm84 de <i>Sinorhizobium meliloti</i> tanto en vida libre como en su asociación simbiótica con alfalfa.",
         "imagen": "./imgs/lineas/caracterizacionFuncional.jpg"
     },
     {
-        "id": 6,
+        "id": 7,
         "titulo": "ARNs pequeños regulatorios del clan Rsm en bacterias del género <i>Pseudomonas</i>",
         "descripcion": "Los ARNs no codificantes del clan Rsm son intermediarios funcionales clave para la regulación global de la expresión genética a nivel post-transcripcional en el género <i>Pseudomonas</i>. Tratamos de comprender su multiplicidad génica en los distintos grupos intragénero, y caracterizar nuevas familias identificadas en cromosomas y elementos génicos móviles.",
         "imagen": "./imgs/lineas/arnPequeños.JPG"
     },
     {
-        "id": 7,
+        "id": 8,
         "titulo": "Caracterización de metabolitos especializados de <i>Pseudomonas</i> autóctonas",
         "descripcion": " Los genomas de los distintos linajes del género <i>Pseudomonas</i> contienen un patrimonio enormemente rico de agrupamientos génicos para la biosíntesis de metabolitos bioactivos de naturaleza desconocida. Nos interesa en particular la identificación de determinantes genéticos y/o moléculas bioactivas con actividad antimicrobiana, en aislamientos autóctonos de especies con rasgos biopesticidas.",
         "imagen": "./imgs/lineas/metabolitos.jpg"
     },
     {
-        "id": 8,
+        "id": 9,
         "titulo": "Desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal",
         "descripcion": "El objetivo de esta línea de trabajo es la generación de una mezcla de aislamientos promotores del crecimiento vegetal del género <i>Pseudomonas</i> para su utilización como bioinsumo en el cultivo de cannabis para mejorar su rendimiento y/o calidad fitoquímica.",
         "imagen": "./imgs/lineas/linea desarrollo.jpeg"
