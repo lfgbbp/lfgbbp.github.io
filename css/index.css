@@ -42,7 +42,7 @@ i {
     padding: 12px 0;
     width: 100%;
     z-index: 1100;
-    position: sticky;
+    position: relative; 
     top: 0;
 }
 
@@ -53,7 +53,6 @@ i {
     padding: 0 5%;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 40px;
 }
 
 .containerMedia {
@@ -82,7 +81,7 @@ i {
 .ulNav {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
     margin: 0;
     padding: 0;
     align-items: center; 
@@ -137,7 +136,7 @@ i {
 ======================================== */
 
 section { 
-    padding: 80px 10%; 
+    padding: 60px 10%; 
 }
 
 h2.inv { 
@@ -160,7 +159,7 @@ h2.inv {
 }
 
 .aboutUsI .container p {
-    font-size: 22px;
+    font-size: 1.15rem;
     max-width: 1300px;
     line-height: 1.6;
     margin-left: 20px;
@@ -433,7 +432,7 @@ h2.inv {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .research-item {
@@ -445,10 +444,12 @@ h2.inv {
     border-radius: 8px;
     color: #f0f0f0;
     font-weight: 500;
+    gap: 15px; 
 }
 
-.research-item span { 
-    max-width: 450px; 
+.research-item span {
+    text-align: left;
+    line-height: 1.4;
 }
 
 
@@ -556,7 +557,7 @@ h2.inv {
     background: none;
     border: none;
     width: 100%;
-    padding: 18px 5px;
+    padding: 15px 10px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -566,6 +567,7 @@ h2.inv {
     font-size: 1.1em;
     text-align: left;
     transition: background-color 0.3s ease;
+    min-height: auto;
 }
 
 .accordion-title:hover { 
@@ -662,22 +664,30 @@ h2.inv {
 ======================================== */
 
 .modal-open-btn {
+    flex-shrink: 0;
     background-color: #659A5A;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     font-size: 1.5em;
     line-height: 1;
     cursor: pointer;
     transition: background-color 0.3s ease;
     justify-content: center; 
+    align-items: center;
     display: flex;
 }
 
 .modal-open-btn:hover { 
     background-color: #4a7c41; 
+}
+
+body.modal-open {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
 }
 
 .modal {
@@ -692,7 +702,8 @@ h2.inv {
     backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
 }
 
 .modal-content {
@@ -707,7 +718,11 @@ h2.inv {
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: none;
-    margin: 0;
+    margin: auto;
+}
+
+.modal-content {
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-content::-webkit-scrollbar {
@@ -798,8 +813,23 @@ h2.inv {
 .contactLinks {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    margin-left: 30px;
+    align-items: flex-start; 
+    gap: 15px; 
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.contactLinks i {
+    color: #659A5A;
+    font-size: 1.3rem;
+    margin-top: 3px; 
+    flex-shrink: 0; 
+}
+
+.contactLinks p, .contactLinks a {
+    margin: 0;
+    color: #ccc;
+    line-height: 1.5;
 }
 
 .containerContactLinks { 
@@ -824,22 +854,16 @@ h2.inv {
 }
 
 .iframeContainer {
-    max-width: 800px;
-    flex-grow: 1; 
-    width: 100%; 
-    height: 250px;
-    position: relative;
-    padding-bottom: 0;
-    overflow: hidden; 
+    flex: 1.5;
+    max-width: 700px;
+    height: 350px;
 }
 
 .iframeContainer iframe {
     width: 100%;
     height: 100%;
-    position: static;
-    top: auto;
-    left: auto;
-    border: none;
+    border-radius: 12px;
+    border: 1px solid #659A5A;
 }
 
 .anchorMail { 
@@ -878,105 +902,131 @@ h2.inv {
 
 @media (max-width: 1024px) {
     .containerHead { 
-        gap: 10px; 
+        padding: 0 20px; 
     }
+
+    .menuB {
+        display: block;
+        background: none;
+        color: white;
+        font-size: 2rem;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .containerMedia {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo { max-width: 180px; margin: 0; }
+
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 85%; 
+        max-width: 320px; 
+        height: 100vh;
+        background-color: #1b201a;
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 25px 40px 25px; 
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.6);
+        overflow-y: auto; 
+    }
+
+    .nav-bar.active { right: 0; }
     
     .ulNav { 
-        height: 60px; 
-        padding: 0; 
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
     }
-    
-    li.liNav { 
-        text-align: center; 
-        overflow: clip; 
+
+    .liNav {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 10px;
     }
-    
+
+    .liNav a {
+        font-size: 1.1rem;
+        display: block;
+        white-space: normal; 
+        overflow-wrap: break-word;
+    }
+
+    .menu-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 20px; left: 20px; 
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+        width: 45px; height: 45px;
+        border: none;
+        color: white;
+        font-size: 2.5rem;
+    }
+
     h4#researcher-modal-title { 
         overflow: hidden; 
     }
-    
+
     .research-item span { 
         max-width: 330px; 
     }
-    
-    .research-item { 
-        gap: 7px; 
-    }
-    
-    i.bi.bi-geo-alt { 
-        width: 37px; 
-    }
+
 }
-
-
-/* ========================================
-    MEDIA QUERIES - TABLETS
-======================================== */
-
-@media (max-width: 992px) {
-    .logo { 
-        max-width: 180px; 
-    }
-    
-    h4#researcher-modal-title { 
-        overflow: hidden; 
-    }
-    
-    .hero h1 { 
-        font-size: 35px; 
-        width: 80%;  
-    }
-    
-    .containerHead { 
-        flex-direction: column; 
-    }
-    
-    .ulNav { 
-        gap: 15px;
-    }
-    
-    .liNav a { 
-        font-size: 14px; 
-    }
-    
-    .sectionServs, 
-    .contactS { 
-        flex-direction: column;  
-        align-items: center; 
-    }
-    
-    .services-column,
-    .publications-column,
-    .infoContact,
-    .iframeContainer { 
-        width: 90%; 
-        max-width: 600px; 
-        flex-basis: auto; 
-    }
-    
-    .contactS {
-        gap: 40px;
-    }
-    
-    #contenedor-investigadores.researcher-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-        max-width: 750px; 
-    }
-}
-
 
 /* ========================================
     MEDIA QUERIES - MÓVILES
 ======================================== */
+@media (min-width: 769px) {
+    .header-main {
+        position: sticky;
+        top: 0;
+    }
+}
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
+    #contenedor-investigadores.researcher-grid  { grid-template-columns: 1fr; }
+    .logo { max-width: 150px; }
+    .modal-content h3 { font-size: 1.5rem; margin: 0; }
+    button.modal-open-btn { width: 25px; height: 25px; font-size: 1.5rem; }
+    .research-column{ margin-bottom: 20px; }
+    span.accordion-title-text { max-width: 200px; }
+    .extra-team-buttons { gap: 30px; }
+    section#contact { display: flex; flex-direction: column; gap: 50px; }
+    .contactLinks p, .contactLinks a { line-height: 1.3; font-size: 1.3rem; }
+    .contactLinks i { margin-top: 0; }
+    p.col-md-4.mb-0.text-body-light.mx-5 { margin-left: 1rem !important; }
+    footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.border-top.bgColor {
+        gap: 20px;
+    }
+    .modal-body{ flex-direction: column; align-items: center; }
+    .modal-text { display: flex; flex-direction: column; gap: 20px; }
+    h4#researcher-modal-title{ margin: 0;}
+    .modal-body p { margin: 0; }
+    .modal-content.list-modal-content { gap: 20px; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    section { padding: 50px 5%; }
+
+    .hero h1 { font-size: 28px; width: 95%; }
+
     .anchorD:hover { 
         text-decoration: underline; 
         color: lightgreen; 
-    }
-    
-    i.bi.bi-geo-alt { 
-        width: 40px; 
     }
     
     span#researcher-modal-close-btn { 
@@ -989,21 +1039,17 @@ h2.inv {
     }
     
     button.modal-open-btn { 
-        font-size: 2rem; 
-        width: 100px; 
-        height: 40px; 
+        font-size: 1.7rem; 
+        width: 40px; 
+        height: 45px; 
         align-content: center; 
         flex: 0.3; 
     }
     
     span.accordion-title-text { 
-        max-width: 200px; 
+        max-width: 430px; 
     }
-    
-    .research-item { 
-        gap: 5px; 
-    }
-    
+
     .accordion-icon { 
         width: 1.2rem; 
     }
@@ -1115,8 +1161,8 @@ h2.inv {
     }
     
     #contenedor-investigadores.researcher-grid { 
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
-        gap: 20px; 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .services-column h2, 
@@ -1180,4 +1226,21 @@ h2.inv {
     .btn-extra-team {
         width: 80%;
     }
+
+    .sectionResearch, .contactS {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 5%;
+        gap: 0;
+    }
+
+    .infoContact, .iframeContainer {
+        width: 100%;
+        max-width: 100%;
+    }
+    .iframeContainer { height: 250px; }
+
+    .modal-content { padding: 25px; width: 95%; }
+    .modal-body { flex-direction: column; align-items: center; text-align: center; }
+    .modal-body img { width: 140px; height: 140px; margin-bottom: 15px; }
 }

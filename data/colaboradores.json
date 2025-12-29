@@ -2,21 +2,31 @@
     {
         "id": 1,
         "nombre": "Dr. Adam Deutschbauer",
-        "lugarDeTrabajoActual": "Comparative and Functional Genomics at Lawrence Berkeley National Laboratory (USA)"
+        "lugarDeTrabajoActual": "Genómica comparativa y funcional en el Laboratorio Nacional Lawrence Berkeley (EEUU)"
     },
     {
         "id": 2,
         "nombre": "Dra. Anke Becker",
-        "lugarDeTrabajoActual": "Phillips University of Marburg, Center for Synthetic Microbiology (SYNMIKRO, Germany)"
-    },
+        "lugarDeTrabajoActual": "Universidad Phillips de Marburg, Centro de Microbiología Sintética (SYNMIKRO, Alemania)"
+        },
     {
         "id": 3,
         "nombre": "Dr. Marco Masi",
-        "lugarDeTrabajoActual": "Department of Chemical Sciences, University of Naples Federico II (Italy)"
+        "lugarDeTrabajoActual": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)"
     },
     {
         "id": 4,
+        "nombre": "Alessio Cimmino",
+        "lugarDeTrabajoActual": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)"
+    },
+    {
+        "id": 5,
         "nombre": "Dra. Ana Cohen",
-        "lugarDeTrabajoActual": "Institute of Agricultural Biology of Mendoza (IBAM-CONICET, Argentina)"
+        "lugarDeTrabajoActual": "Instituto de Biología Agrícola de Mendoza (IBAM-CONICET, UNCuyo,  Argentina)"
+    },
+    {
+        "id": 6,
+        "nombre": "María Trinidad Gallegos",
+        "lugarDeTrabajoActual": "Estación Experimental del Zaidín-CSIC (Granada, España)"
     }
 ]
