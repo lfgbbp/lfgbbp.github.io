@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarInvestigadores();
 
     setupMenuToggle();
-    // Listeners botones extra
+
     const btnPast = document.getElementById('btn-past-members');
     const btnCollab = document.getElementById('btn-collaborators');
     if (btnPast) btnPast.addEventListener('click', cargarExIntegrantes);
@@ -118,9 +118,10 @@ function mostrarModalInvestigador(id) {
         modalDescription.innerHTML = investigador.descripcion || '';
         closeBtn.onclick = () => cerrarModal('researcher-modal');
         modal.style.display = 'flex'; 
-        toggleBodyScroll(true);
+        toggleBodyScroll(true); 
     }
 }
+
 async function cargarInvestigadores() { 
     try {
         const respuesta = await fetch('./data/investigadoresAct.json');
@@ -326,7 +327,6 @@ async function cargarExIntegrantes() {
         if (!respuesta.ok) throw new Error('Error al cargar ex-integrantes');
         const data = await respuesta.json();
 
-        // Agrupar por tipo de participación
         const agrupados = data.reduce((acc, persona) => {
             const tipo = persona.participacion || 'Otros';
             if (!acc[tipo]) acc[tipo] = [];
@@ -404,3 +404,15 @@ function mostrarModalLista(titulo, contenidoHTML) {
         toggleBodyScroll(true);
     }
 }
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const modales = ['research-modal', 'researcher-modal', 'list-modal'];
+        modales.forEach(modalId => {
+            const modal = document.getElementById(modalId);
+            if (modal && modal.style.display === 'flex') {
+                cerrarModal(modalId);
+            }
+        });
+    }
+});
