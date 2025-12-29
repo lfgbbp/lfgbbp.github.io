@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "Dr. Germán Ceizel Borella",
+        "nombre": "Dr. Germán Ceizel-Borella",
         "participacion": "Doctorado",
         "lugarDeTrabajoActual": "Especialista en asuntos regulatorios de la Secretaría de Agricultura, Ganadería y Pesca de la Nación (Argentina)"
     },
@@ -52,5 +52,35 @@
         "nombre": "Lic. Julián D'Ambrosio",
         "participacion": "Seminario de Investigación",
         "lugarDeTrabajoActual": "Analista Senior de Aseguramiento de Calidad en Nutrihome S.A (Argentina)"
+    },
+    {
+        "id": 10,
+        "nombre": "Dr. Andres Muzlera",
+        "participacion": "Doctorado",
+        "lugarDeTrabajoActual": "MLOPs Engineer en Santander Tecnología Argentina (Argentina)"
+    },
+    {
+        "id": 11,
+        "nombre": "Dr. Matías Garavaglia",
+        "participacion": "Posdoctorado",
+        "lugarDeTrabajoActual": "Docente Investigador en la Universidad Nacional de Hurlingham (Argentina)"
+    },
+    {
+        "id": 12,
+        "nombre": "Dr. Alexandre Jousset",
+        "participacion": "Posdoctorado",
+        "lugarDeTrabajoActual": "CEO & Co-Fundador de Genedance (Suiza)"
+    },
+    {
+        "id": 13,
+        "nombre": "Lic. María Cecilia Álvarez Crespo",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Docente Investigador en la Universidad Nacional de Hurlingham (Argentina)"
+    },
+    {
+        "id": 14,
+        "nombre": "Lic. Dante Ruiz",
+        "participacion": "Seminario de Investigación",
+        "lugarDeTrabajoActual": "Coordinador de Ingenieria en Koppert Argentina (Argentina)"
     }
 ]
