@@ -309,7 +309,11 @@ p.col-md-4.mb-0.text-body-light.mx-3 {
     }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
+    .publications-page-container { padding: 20px 20px; }
+
+    .year-section{ padding: 15px; }
+
     .page-header{
         padding: 10px;
     }
@@ -317,6 +321,7 @@ p.col-md-4.mb-0.text-body-light.mx-3 {
     .page-header h1 {
         font-size: 1.5rem;
         margin-bottom: 15px;
+        text-align: center;
     }
 
     nav.navbar {
