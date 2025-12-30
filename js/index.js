@@ -69,9 +69,11 @@ function setupMenuToggle() {
 
 function toggleBodyScroll(bloquear) {
     if (bloquear) {
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('modal-open');
+        document.documentElement.classList.add('modal-open'); 
     } else {
-        document.body.style.overflow = '';
+        document.body.classList.remove('modal-open');
+        document.documentElement.classList.remove('modal-open');
     }
 }
 
