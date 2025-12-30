@@ -20,7 +20,7 @@
     {
         "id": 4,
         "titulo": "Análisis molecular de las redes regulatorias implicadas en el control de la expresión génica en bacterias",
-        "descripcion": "Estudiamos como bacterias del género <i>Pseudomonas</i> perciben señales ambientales y las integran en redes regulatorias complejas que controlan la biosíntesis de metabolitos especializados. Empleamos un abordaje sistémico, integrando niveles de regulación transcripcional y postranscripcional, tanto en estudios poblacionales como de célula única. Esta línea de investigación busca comprender los principios evolutivos y adaptativos que gobiernan los circuitos regulatorios de la expresión génica, a fin de poder transferir este conocimiento fundamental al diseño de racional de potenciales bioinsumos.",
+        "descripcion": "Estudiamos cómo las bacterias del género <i>Pseudomonas</i> perciben señales ambientales y las integran en redes regulatorias complejas que controlan la biosíntesis de metabolitos especializados. Empleamos un abordaje sistémico, integrando niveles de regulación transcripcional y postranscripcional, tanto en estudios poblacionales como de célula única. Esta línea de investigación busca comprender los principios evolutivos y adaptativos que gobiernan los circuitos regulatorios de la expresión génica, a fin de poder transferir este conocimiento fundamental al diseño de racional de potenciales bioinsumos.",
         "imagen": "./imgs/lineas/lineaGenoma.jpg"
     },
     {
