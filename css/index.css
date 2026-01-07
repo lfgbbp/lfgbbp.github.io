@@ -129,6 +129,10 @@ i {
     filter: brightness(0.6);
 }
 
+.bright-pic {
+    filter: brightness(150%);
+}
+
 
 /* ========================================
     SECCIONES GENERALES
