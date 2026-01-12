@@ -418,3 +418,24 @@ document.addEventListener('keydown', (event) => {
         });
     }
 });
+
+function ajustarPaddingBody() {
+    const header = document.querySelector('.header-main');
+    const body = document.body;
+
+    if (!header) return;
+
+    if (window.innerWidth >= 1025) {
+        const alturaExacta = header.offsetHeight;
+        if (alturaExacta > 0) {
+            body.style.paddingTop = `${alturaExacta}px`;
+        }
+    } else {
+        body.style.paddingTop = '0px';
+    }
+}
+
+ajustarPaddingBody();
+document.addEventListener('DOMContentLoaded', ajustarPaddingBody);
+window.addEventListener('resize', ajustarPaddingBody);
+window.addEventListener('load', ajustarPaddingBody);
