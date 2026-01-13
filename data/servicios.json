@@ -1,42 +1,58 @@
 [
-    {
-        "id":1,
-        "titulo":"Identificación de microorganismos / Minería genómica",
-        "descripcion": "Secuenciación del gen 16S rRNA / Secuenciación del genoma completo (WGS) / Ensamblaje y anotación de genomas bacterianos / Análisis filogenético y taxonómico / MLSA"
-    },
-    {
-        "id":2,
-        "titulo":"Calidad de inoculantes",
-        "descripcion":"Recuentos de viables (CFU) / Pruebas de viabilidad y pureza / Evaluación de la eficacia del inoculante en condiciones controladas / Cuantificación de viables mediante métodos no cultivables (vqPCR)"
-    },
-    {
-        "id":3,
-        "titulo":"Preservación de microorganismo",
-        "descripcion":"Liofilización / Ultracongelación"
-    },
-    {
-        "id":4,
-        "titulo":"Aislamiento y caracterización de microorganismos",
-        "descripcion":"Aislamiento, caracterización, e identificación de microorganismos a partir de muestras de suelo y de tejidos vegetales. La caracterización e identificación de microorganismos se lleva a cabo tanto mediante métodos clásicos microbiológicos así como mediante técnicas moleculares"
-    },
-    {
-        "id":5,
-        "titulo":"Análisis de propiedades promotoras del crecimiento vegetal",
-        "descripcion":"Contamos con métodos para la detección de actividades de promoción del desarrollo vegetal y el control biológico (antagonismo) de fitopatógenos mediante ensayos in vitro y en planta en condiciones controladas)"
-    },
-    {
-        "id":6,
-        "titulo":"Genética bacteriana y estudio de la expresión génica en bacterias",
-        "descripcion":"Contamos con herramientas y procedimientos para generar mutantes para estudios de función génica, y para análisis de la expresión genética)"
-    },
-    {
-        "id":7,
-        "titulo":"Generación de cepas con etiquetas génicas",
-        "descripcion":"Contamos con herramientas y procedimientos para introducir genes que codifican proteínas fluorescentes y de resistencia a antibióticos, para facilitar para estudios de colonización bacteriana de tejidos vegetales"
-    },
-    {
-        "id":8,
-        "titulo":"Desarrollo de proyectos microbiológicos a demanda",
-        "descripcion":"A partir de tu necesidad e interés, podemos trabajar juntos en la elaboración de una propuesta de trabajo basada en nuestras capacidades y experticias"
-    }
+	{
+		"id": 1,
+		"titulo_es": "Identificación de microorganismos / Minería genómica",
+		"titulo_en": "Identification of microbes / Genomic mining",
+		"descripcion_es": "Secuenciación del gen 16S rRNA / Secuenciación del genoma completo (WGS) / Ensamblaje y anotación de genomas bacterianos / Análisis filogenético y taxonómico / MLSA",
+		"descripcion_en": "16S rRNA gene sequencing / Whole genome sequencing (WGS) / Bacterial genome assembly and annotation / Phylogenetic and taxonomic analysis / MLSA"
+	},
+	{
+		"id": 2,
+		"titulo_es": "Calidad de inoculantes",
+		"titulo_en": "Inoculant quality",
+		"descripcion_es": "Recuentos de viables (CFU) / Pruebas de viabilidad y pureza / Evaluación de la eficacia del inoculante en condiciones controladas / Cuantificación de viables mediante métodos no cultivables (vqPCR)",
+		"descripcion_en": "Viable counts (CFU) / Viability and purity tests / Evaluation of inoculant efficacy under controlled conditions / Quantification of viable cells using non-cultivable methods (vqPCR)"
+	},
+	{
+		"id": 3,
+		"titulo_es": "Preservación de microorganismo",
+		"titulo_en": "Microorganism preservation",
+		"descripcion_es": "Liofilización / Ultracongelación",
+		"descripcion_en": "Lyophilization / Ultra-freezing"
+	},
+	{
+		"id": 4,
+		"titulo_es": "Aislamiento y caracterización de microorganismos",
+		"titulo_en": "Isolation and characterization of microbes",
+		"descripcion_es": "Aislamiento, caracterización, e identificación de microorganismos a partir de muestras de suelo y de tejidos vegetales. La caracterización e identificación de microorganismos se lleva a cabo tanto mediante métodos clásicos microbiológicos así como mediante técnicas moleculares",
+		"descripcion_en": "Isolation, characterization, and identification of microbes from soil and plant samples. The characterization and identification of microorganisms is carried out using both classical microbiological methods and molecular techniques"
+	},
+	{
+		"id": 5,
+		"titulo_es": "Análisis de propiedades promotoras del crecimiento vegetal",
+		"titulo_en": "Analysis of plant growth-promoting properties",
+		"descripcion_es": "Contamos con métodos para la detección de actividades de promoción del desarrollo vegetal y el control biológico (antagonismo) de fitopatógenos mediante ensayos in vitro y en planta en condiciones controladas)",
+		"descripcion_en": "We have methods for detecting plant growth-promoting activities and biological control (antagonism) of phytopathogens through in vitro and in planta assays under controlled conditions)"
+	},
+	{
+		"id": 6,
+		"titulo_es": "Genética bacteriana y estudio de la expresión génica en bacterias",
+		"titulo_en": "Bacterial genetics and study of gene expression in bacteria",
+		"descripcion_es": "Contamos con herramientas y procedimientos para generar mutantes para estudios de función génica, y para análisis de la expresión genética)",
+		"descripcion_en": "We have tools and procedures for generating mutants for genetic studies, and for gene expression analysis)"
+	},
+	{
+		"id": 7,
+		"titulo_es": "Generación de cepas con etiquetas génicas",
+		"titulo_en": "Generation of strains with genetic tags",
+		"descripcion_es": "Contamos con herramientas y procedimientos para introducir genes que codifican proteínas fluorescentes y de resistencia a antibióticos, para facilitar para estudios de colonización bacteriana de tejidos vegetales",
+		"descripcion_en": "We have tools and procedures to introduce genes that encode fluorescent proteins and antibiotic resistance, to facilitate studies of bacterial colonization of plant tissues"
+	},
+	{
+		"id": 8,
+		"titulo_es": "Desarrollo de proyectos microbiológicos a demanda",
+		"titulo_en": "Development of microbiological projects on demand",
+		"descripcion_es": "A partir de tu necesidad e interés, podemos trabajar juntos en la elaboración de una propuesta de trabajo basada en nuestras capacidades y experticias",
+		"descripcion_en": "Based on your needs and interests, we can work together to develop a work proposal based on our capabilities and expertise"
+	}
 ]

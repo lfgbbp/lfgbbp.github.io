@@ -1,150 +1,150 @@
 {
-    "es": {
-        "nav": {
-            "aboutUs": "Sobre nosotros",
-            "team": "Nuestro Equipo",
-            "research": "Líneas de Investigación",
-            "publications": "Publicaciones",
-            "services": "Servicios",
-            "news": "Novedades",
-            "contact": "Contacto",
-            "home": "Inicio"
-        },
-        "aria": {
-            "changeLang": "Cambiar idioma",
-            "openMenu": "Abrir menú",
-            "closeMenu": "Cerrar menú",
-            "previous": "Anterior",
-            "next": "Siguiente",
-            "backToHome": "Volver al inicio"
-        },
-        "carousel": {
-            "slide1": "Banner Laboratorio 1",
-            "slide2": "Banner Laboratorio 5",
-            "slide3": "Banner Laboratorio 2",
-            "slide4": "Banner Laboratorio 3",
-            "slide5": "Banner Laboratorio 4",
-            "slide6": "Banner Laboratorio 6"
-        },
-        "aboutUs": {
-            "title": "Sobre nosotros",
-            "content": "Somos un grupo de investigadores fascinados por las bacterias promotoras del crecimiento vegetal como una herramienta para contribuir a la seguridad alimentaria y la producción agrícola sostenible. Nuestros modelos de estudio se centran en aislamientos autóctonos y cepas modelo del género <i>Pseudomonas</i> y de rizobios simbióticos de leguminosas. Nos interesa comprender las bases moleculares y regulatorias de sus propiedades benéficas para el crecimiento y la salud vegetal. También desarrollamos servicios y actividades de I+D para instituciones públicas y privadas."
-        },
-        "team": {
-            "title": "Nuestro Equipo",
-            "btnPastMembers": "Ex-integrantes",
-            "btnCollaborators": "Colaboradores"
-        },
-        "research": {
-            "title": "Líneas de Investigación"
-        },
-        "publications": {
-            "title": "Ultimas publicaciones",
-            "btnViewAll": "Ver todas las publicaciones",
-            "pageTitle": "Archivo de Publicaciones",
-            "searchPlaceholder": "Buscar por título o autor..."
-        },
-        "services": {
-            "title": "Servicios"
-        },
-        "news": {
-            "title": "Novedades"
-        },
-        "contact": {
-            "title": "Contacto",
-            "address": "Laboratorio 9 - Pabellón Ghiringhelli - Departamento de Ciencia y Tecnología -UNQ",
-            "phone": "43657100 int 5638",
-            "emailLink": "Envíanos un mail",
-            "twitterLink": "Twitter"
-        },
-        "footer": {
-            "copyright": "lfgbbp",
-            "developedBy": "Desarrollado por"
-        },
-        "modals": {
-            "researchTitle": "Título de la Línea",
-            "researchDescription": "Descripción detallada...",
-            "researchImageAlt": "Imagen de Línea de Investigación",
-            "researcherImageAlt": "Foto de Investigador",
-            "listModalTitle": "Título de la Lista"
-        },
-        "meta": {
-            "logoAlt": "El logo del laboratorio.",
-            "logoAltShort": "Logo LFG"
-        }
-    },
-    "en": {
-        "nav": {
-            "aboutUs": "About Us",
-            "team": "Our Team",
-            "research": "Research Lines",
-            "publications": "Publications",
-            "services": "Services",
-            "news": "News",
-            "contact": "Contact",
-            "home": "Home"
-        },
-        "aria": {
-            "changeLang": "Change language",
-            "openMenu": "Open menu",
-            "closeMenu": "Close menu",
-            "previous": "Previous",
-            "next": "Next",
-            "backToHome": "Back to home"
-        },
-        "carousel": {
-            "slide1": "Laboratory Banner 1",
-            "slide2": "Laboratory Banner 5",
-            "slide3": "Laboratory Banner 2",
-            "slide4": "Laboratory Banner 3",
-            "slide5": "Laboratory Banner 4",
-            "slide6": "Laboratory Banner 6"
-        },
-        "aboutUs": {
-            "title": "About Us",
-            "content": "We are a group of researchers fascinated by plant growth-promoting bacteria as a tool to contribute to food security and sustainable agricultural production. Our study models focus on native isolates and model strains of the genus <i>Pseudomonas</i> and symbiotic rhizobia of legumes. We are interested in understanding the molecular and regulatory bases of their beneficial properties for plant growth and health. We also develop services and R&D activities for public and private institutions."
-        },
-        "team": {
-            "title": "Our Team",
-            "btnPastMembers": "Former Members",
-            "btnCollaborators": "Collaborators"
-        },
-        "research": {
-            "title": "Research Lines"
-        },
-        "publications": {
-            "title": "Latest Publications",
-            "btnViewAll": "View all publications",
-            "pageTitle": "Publications Archive",
-            "searchPlaceholder": "Search by title or author..."
-        },
-        "services": {
-            "title": "Services"
-        },
-        "news": {
-            "title": "News"
-        },
-        "contact": {
-            "title": "Contact",
-            "address": "Laboratory 9 - Ghiringhelli Pavilion - Department of Science and Technology -UNQ",
-            "phone": "43657100 ext 5638",
-            "emailLink": "Send us an email",
-            "twitterLink": "Twitter"
-        },
-        "footer": {
-            "copyright": "lfgbbp",
-            "developedBy": "Developed by"
-        },
-        "modals": {
-            "researchTitle": "Research Line Title",
-            "researchDescription": "Detailed description...",
-            "researchImageAlt": "Research Line Image",
-            "researcherImageAlt": "Researcher Photo",
-            "listModalTitle": "List Title"
-        },
-        "meta": {
-            "logoAlt": "The laboratory logo.",
-            "logoAltShort": "LFG Logo"
-        }
-    }
+	"es": {
+		"nav": {
+			"aboutUs": "Sobre nosotros",
+			"team": "Nuestro Equipo",
+			"research": "Líneas de Investigación",
+			"publications": "Publicaciones",
+			"services": "Servicios",
+			"news": "Novedades",
+			"contact": "Contacto",
+			"home": "Inicio"
+		},
+		"aria": {
+			"changeLang": "Cambiar idioma",
+			"openMenu": "Abrir menú",
+			"closeMenu": "Cerrar menú",
+			"previous": "Anterior",
+			"next": "Siguiente",
+			"backToHome": "Volver al inicio"
+		},
+		"carousel": {
+			"slide1": "Banner Laboratorio 1",
+			"slide2": "Banner Laboratorio 5",
+			"slide3": "Banner Laboratorio 2",
+			"slide4": "Banner Laboratorio 3",
+			"slide5": "Banner Laboratorio 4",
+			"slide6": "Banner Laboratorio 6"
+		},
+		"aboutUs": {
+			"title": "Sobre nosotros",
+			"content": "Somos un grupo de investigadores fascinados por las bacterias promotoras del crecimiento vegetal como una herramienta para contribuir a la seguridad alimentaria y la producción agrícola sostenible. Nuestros modelos de estudio se centran en aislamientos autóctonos y cepas modelo del género <i>Pseudomonas</i> y de rizobios simbióticos de leguminosas. Nos interesa comprender las bases moleculares y regulatorias de sus propiedades benéficas para el crecimiento y la salud vegetal. También desarrollamos servicios y actividades de I+D para instituciones públicas y privadas."
+		},
+		"team": {
+			"title": "Nuestro Equipo",
+			"btnPastMembers": "Ex-integrantes",
+			"btnCollaborators": "Colaboradores"
+		},
+		"research": {
+			"title": "Líneas de Investigación"
+		},
+		"publications": {
+			"title": "Últimas publicaciones",
+			"btnViewAll": "Ver todas las publicaciones",
+			"pageTitle": "Archivo de Publicaciones",
+			"searchPlaceholder": "Buscar por título o autor..."
+		},
+		"services": {
+			"title": "Servicios"
+		},
+		"news": {
+			"title": "Novedades"
+		},
+		"contact": {
+			"title": "Contacto",
+			"address": "Laboratorio 9 - Pabellón Ghiringhelli - Departamento de Ciencia y Tecnología -UNQ",
+			"phone": "43657100 int 5638",
+			"emailLink": "Envíanos un mail",
+			"twitterLink": "Twitter"
+		},
+		"footer": {
+			"copyright": "lfgbbp",
+			"developedBy": "Desarrollado por"
+		},
+		"modals": {
+			"researchTitle": "Título de la Línea",
+			"researchDescription": "Descripción detallada...",
+			"researchImageAlt": "Imagen de Línea de Investigación",
+			"researcherImageAlt": "Foto de Investigador",
+			"listModalTitle": "Título de la Lista"
+		},
+		"meta": {
+			"logoAlt": "El logo del laboratorio.",
+			"logoAltShort": "Logo LFG"
+		}
+	},
+	"en": {
+		"nav": {
+			"aboutUs": "About Us",
+			"team": "Our Team",
+			"research": "Research Lines",
+			"publications": "Publications",
+			"services": "Services",
+			"news": "News",
+			"contact": "Contact",
+			"home": "Home"
+		},
+		"aria": {
+			"changeLang": "Change language",
+			"openMenu": "Open menu",
+			"closeMenu": "Close menu",
+			"previous": "Previous",
+			"next": "Next",
+			"backToHome": "Back to home"
+		},
+		"carousel": {
+			"slide1": "Laboratory Banner 1",
+			"slide2": "Laboratory Banner 5",
+			"slide3": "Laboratory Banner 2",
+			"slide4": "Laboratory Banner 3",
+			"slide5": "Laboratory Banner 4",
+			"slide6": "Laboratory Banner 6"
+		},
+		"aboutUs": {
+			"title": "About Us",
+			"content": "We are a group of researchers fascinated by plant growth-promoting bacteria as a tool to contribute to food security and sustainable agricultural production. Our study models focus on native isolates and model strains of the genus <i>Pseudomonas</i> and symbiotic rhizobia of legumes. We are interested in understanding the molecular and regulatory bases of their beneficial properties for plant growth and health. We also develop services and R&D activities for public and private institutions."
+		},
+		"team": {
+			"title": "Our Team",
+			"btnPastMembers": "Former Members",
+			"btnCollaborators": "Collaborators"
+		},
+		"research": {
+			"title": "Research Lines"
+		},
+		"publications": {
+			"title": "Latest Publications",
+			"btnViewAll": "View all publications",
+			"pageTitle": "Publications Archive",
+			"searchPlaceholder": "Search by title or author..."
+		},
+		"services": {
+			"title": "Services"
+		},
+		"news": {
+			"title": "News"
+		},
+		"contact": {
+			"title": "Contact",
+			"address": "Laboratory 9 - Ghiringhelli Pavilion - Department of Science and Technology -UNQ",
+			"phone": "43657100 ext 5638",
+			"emailLink": "Send us an email",
+			"twitterLink": "Twitter"
+		},
+		"footer": {
+			"copyright": "lfgbbp",
+			"developedBy": "Developed by"
+		},
+		"modals": {
+			"researchTitle": "Research Line Title",
+			"researchDescription": "Detailed description...",
+			"researchImageAlt": "Research Line Image",
+			"researcherImageAlt": "Researcher Photo",
+			"listModalTitle": "List Title"
+		},
+		"meta": {
+			"logoAlt": "The laboratory logo.",
+			"logoAltShort": "LFG Logo"
+		}
+	}
 }

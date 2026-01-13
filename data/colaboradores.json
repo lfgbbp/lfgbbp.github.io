@@ -1,32 +1,44 @@
 [
-    {
-        "id": 1,
-        "nombre": "Dr. Adam Deutschbauer",
-        "lugarDeTrabajoActual": "Genómica comparativa y funcional en el Laboratorio Nacional Lawrence Berkeley (EEUU)"
-    },
-    {
-        "id": 2,
-        "nombre": "Dra. Anke Becker",
-        "lugarDeTrabajoActual": "Universidad Phillips de Marburg, Centro de Microbiología Sintética (SYNMIKRO, Alemania)"
-        },
-    {
-        "id": 3,
-        "nombre": "Dr. Marco Masi",
-        "lugarDeTrabajoActual": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)"
-    },
-    {
-        "id": 4,
-        "nombre": "Alessio Cimmino",
-        "lugarDeTrabajoActual": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)"
-    },
-    {
-        "id": 5,
-        "nombre": "Dra. Ana Cohen",
-        "lugarDeTrabajoActual": "Instituto de Biología Agrícola de Mendoza (IBAM-CONICET, UNCuyo,  Argentina)"
-    },
-    {
-        "id": 6,
-        "nombre": "María Trinidad Gallegos",
-        "lugarDeTrabajoActual": "Estación Experimental del Zaidín-CSIC (Granada, España)"
-    }
+	{
+		"id": 1,
+		"nombre_es": "Dr. Adam Deutschbauer",
+		"nombre_en": "Dr. Adam Deutschbauer",
+		"lugarDeTrabajoActual_es": "Genómica comparativa y funcional en el Laboratorio Nacional Lawrence Berkeley (EEUU)",
+		"lugarDeTrabajoActual_en": "Comparative and Functional Genomics at Lawrence Berkeley National Laboratory (USA)"
+	},
+	{
+		"id": 2,
+		"nombre_es": "Dra. Anke Becker",
+		"nombre_en": "Dr. Anke Becker",
+		"lugarDeTrabajoActual_es": "Universidad Phillips de Marburg, Centro de Microbiología Sintética (SYNMIKRO, Alemania)",
+		"lugarDeTrabajoActual_en": "Philipps University of Marburg, Center for Synthetic Microbiology (SYNMIKRO, Germany)"
+	},
+	{
+		"id": 3,
+		"nombre_es": "Dr. Marco Masi",
+		"nombre_en": "Dr. Marco Masi",
+		"lugarDeTrabajoActual_es": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)",
+		"lugarDeTrabajoActual_en": "Department of Chemical Sciences, University of Naples Federico II (Italy)"
+	},
+	{
+		"id": 4,
+		"nombre_es": "Alessio Cimmino",
+		"nombre_en": "Alessio Cimmino",
+		"lugarDeTrabajoActual_es": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)",
+		"lugarDeTrabajoActual_en": "Department of Chemical Sciences, University of Naples Federico II (Italy)"
+	},
+	{
+		"id": 5,
+		"nombre_es": "Dra. Ana Cohen",
+		"nombre_en": "Dr. Ana Cohen",
+		"lugarDeTrabajoActual_es": "Instituto de Biología Agrícola de Mendoza (IBAM-CONICET, UNCuyo, Argentina)",
+		"lugarDeTrabajoActual_en": "Institute of Agricultural Biology of Mendoza (IBAM-CONICET, UNCuyo, Argentina)"
+	},
+	{
+		"id": 6,
+		"nombre_es": "María Trinidad Gallegos",
+		"nombre_en": "María Trinidad Gallegos",
+		"lugarDeTrabajoActual_es": "Estación Experimental del Zaidín-CSIC (Granada, España)",
+		"lugarDeTrabajoActual_en": "Zaidín Experimental Station-CSIC (Granada, Spain)"
+	}
 ]
