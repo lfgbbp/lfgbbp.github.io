@@ -1,56 +1,74 @@
 [
-    {
-        "id": 1,
-        "titulo": "Aislamientos nativos del genero <i>Pseudomonas</i>: estudios funcionales para el desarrollo de bioinsumos.",
-        "descripcion": "Las bacterias del género <i>Pseudomonas</i> son microorganismos ubicuos con una gran diversidad metabólica y ecológica. Algunas especies poseen características promotoras del crecimiento vegetal y biocontrol de fitopatógenos, por lo que son candidatas ideales para el desarrollo de bioinsumos agrícolas sustentables. En esta línea de investigación, nos enfocamos en el aislamiento y caracterización de cepas autóctonas de <i>Pseudomonas</i> con potencial aplicación agrícola, así como en el estudio de sus mecanismos moleculares de acción y su interacción con los diferentes cultivos.",
-        "imagen": "./imgs/lineas/linea1_2.jpeg"
-    },
-    {
-        "id": 2,
-        "titulo": "Riborregulación del metabolismo en rizobios",
-        "descripcion": "Estudiamos los mecanismos de regulación post-transcripcional mediados por ARNs pequeños (sRNAs) en bacterias simbiontes de leguminosas fijadoras de nitrógeno, utilizando a Sinorhizobium meliloti como organismo modelo. Nuestro objetivo es comprender cómo estas redes de regulación integran señales del entorno para ajustar diversos procesos del metabolismo celular.",
-        "imagen": "./imgs/banner/4.jpeg"
-    },
-    {
-        "id": 3,
-        "titulo": "Biología de los Agentes de Transferencia Génica (GTAs)",
-        "descripcion": "Los GTAs son elementos simil-fagos que son producidos por ciertas bacterias y empaquetan fragmentos del propio genoma bacteriano para donarlos a otras células. En el laboratorio, investigamos la regulación, función y rol ecológico de GTAs como vectores de transferencia genética horizontal en modelos de alfaproteobacterias.",
-        "imagen": "./imgs/lineas/GTA.png"
-    },
-    {
-        "id": 4,
-        "titulo": "Análisis molecular de las redes regulatorias implicadas en el control de la expresión génica en bacterias",
-        "descripcion": "Estudiamos cómo las bacterias del género <i>Pseudomonas</i> perciben señales ambientales y las integran en redes regulatorias complejas que controlan la biosíntesis de metabolitos especializados. Empleamos un abordaje sistémico, integrando niveles de regulación transcripcional y postranscripcional, tanto en estudios poblacionales como de célula única. Esta línea de investigación busca comprender los principios evolutivos y adaptativos que gobiernan los circuitos regulatorios de la expresión génica, a fin de poder transferir este conocimiento fundamental al diseño de racional de potenciales bioinsumos.",
-        "imagen": "./imgs/lineas/lineaGenoma.jpg"
-    },
-    {
-        "id": 5,
-        "titulo": "Bases genéticas de la promoción del crecimiento por parte de <i>Pseudomonas pergaminensis</i> 1008",
-        "descripcion": "Esta cepa de una nueva especie del género que definimos en nuestro laboratorio, es el ingrediente activo de bioinsumos comerciales que promueven el rendimiento en grano de cereales. Buscamos comprender sus características microbiológicas, sus mecanismos de promoción de crecimiento, y su interacción con los tejidos vegetales.",
-        "imagen": "./imgs/lineas/basesGeneticas.jpg"
-    },
-    {
-        "id": 6,
-        "titulo": "Caracterización funcional del ARN pequeño Sm84 de <i>Sinorhizobium meliloti</i>",
-        "descripcion": "Sm84 es un ARN no codificante muy conservado en rizobiales con diferentes estilos de vida, cuya función biológica es desconocida. En este proyecto, queremos identificar el rol funcional del alelo sm84 de <i>Sinorhizobium meliloti</i> tanto en vida libre como en su asociación simbiótica con alfalfa.",
-        "imagen": "./imgs/lineas/caracterizacionFuncional.jpg"
-    },
-    {
-        "id": 7,
-        "titulo": "ARNs pequeños regulatorios del clan Rsm en bacterias del género <i>Pseudomonas</i>",
-        "descripcion": "Los ARNs no codificantes del clan Rsm son intermediarios funcionales clave para la regulación global de la expresión genética a nivel post-transcripcional en el género <i>Pseudomonas</i>. Tratamos de comprender su multiplicidad génica en los distintos grupos intragénero, y caracterizar nuevas familias identificadas en cromosomas y elementos génicos móviles.",
-        "imagen": "./imgs/lineas/arnPequeños.JPG"
-    },
-    {
-        "id": 8,
-        "titulo": "Caracterización de metabolitos especializados de <i>Pseudomonas</i> autóctonas",
-        "descripcion": " Los genomas de los distintos linajes del género <i>Pseudomonas</i> contienen un patrimonio enormemente rico de agrupamientos génicos para la biosíntesis de metabolitos bioactivos de naturaleza desconocida. Nos interesa en particular la identificación de determinantes genéticos y/o moléculas bioactivas con actividad antimicrobiana, en aislamientos autóctonos de especies con rasgos biopesticidas.",
-        "imagen": "./imgs/lineas/metabolitos.jpg"
-    },
-    {
-        "id": 9,
-        "titulo": "Desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal",
-        "descripcion": "El objetivo de esta línea de trabajo es la generación de una mezcla de aislamientos promotores del crecimiento vegetal del género <i>Pseudomonas</i> para su utilización como bioinsumo en el cultivo de cannabis para mejorar su rendimiento y/o calidad fitoquímica.",
-        "imagen": "./imgs/lineas/linea desarrollo.jpeg"
-    }
+	{
+		"id": 1,
+		"titulo_es": "Aislamientos nativos del genero <i>Pseudomonas</i>: estudios funcionales para el desarrollo de bioinsumos.",
+		"titulo_en": "Native isolates of the genus <i>Pseudomonas</i>: functional studies for bioinput development.",
+		"descripcion_es": "Las bacterias del género <i>Pseudomonas</i> son microorganismos ubicuos con una gran diversidad metabólica y ecológica. Algunas especies poseen características promotoras del crecimiento vegetal y biocontrol de fitopatógenos, por lo que son candidatas ideales para el desarrollo de bioinsumos agrícolas sustentables. En esta línea de investigación, nos enfocamos en el aislamiento y caracterización de cepas autóctonas de <i>Pseudomonas</i> con potencial aplicación agrícola, así como en el estudio de sus mecanismos moleculares de acción y su interacción con los diferentes cultivos.",
+		"descripcion_en": "<i>Pseudomonas</i> bacteria are ubiquitous microorganisms with great metabolic and ecological diversity. Some species possess plant growth-promoting and phytopathogen biocontrol characteristics, making them ideal candidates for developing sustainable agricultural bioinputs. In this research line, we focus on the isolation and characterization of native <i>Pseudomonas</i> strains with potential agricultural application, as well as studying their molecular mechanisms of action and interaction with different crops.",
+		"imagen": "./imgs/lineas/linea1_2.jpeg"
+	},
+	{
+		"id": 2,
+		"titulo_es": "Riborregulación del metabolismo en rizobios",
+		"titulo_en": "Riboregulation of metabolism in rhizobia",
+		"descripcion_es": "Estudiamos los mecanismos de regulación post-transcripcional mediados por ARNs pequeños (sRNAs) en bacterias simbiontes de leguminosas fijadoras de nitrógeno, utilizando a Sinorhizobium meliloti como organismo modelo. Nuestro objetivo es comprender cómo estas redes de regulación integran señales del entorno para ajustar diversos procesos del metabolismo celular.",
+		"descripcion_en": "We study post-transcriptional regulation mechanisms mediated by small RNAs (sRNAs) in nitrogen-fixing legume symbiotic bacteria, using Sinorhizobium meliloti as a model organism. Our goal is to understand how these regulatory networks integrate environmental signals to adjust various cellular metabolism processes.",
+		"imagen": "./imgs/banner/4.jpeg"
+	},
+	{
+		"id": 3,
+		"titulo_es": "Biología de los Agentes de Transferencia Génica (GTAs)",
+		"titulo_en": "Biology of Gene Transfer Agents (GTAs)",
+		"descripcion_es": "Los GTAs son elementos simil-fagos que son producidos por ciertas bacterias y empaquetan fragmentos del propio genoma bacteriano para donarlos a otras células. En el laboratorio, investigamos la regulación, función y rol ecológico de GTAs como vectores de transferencia genética horizontal en modelos de alfaproteobacterias.",
+		"descripcion_en": "GTAs are phage-like elements produced by certain bacteria that package fragments of their own bacterial genome to donate them to other cells. In the laboratory, we investigate the regulation, function, and ecological role of GTAs as horizontal gene transfer vectors in alphaproteobacteria models.",
+		"imagen": "./imgs/lineas/GTA.png"
+	},
+	{
+		"id": 4,
+		"titulo_es": "Análisis molecular de las redes regulatorias implicadas en el control de la expresión génica en bacterias",
+		"titulo_en": "Molecular analysis of regulatory networks involved in bacterial gene expression control",
+		"descripcion_es": "Estudiamos cómo las bacterias del género <i>Pseudomonas</i> perciben señales ambientales y las integran en redes regulatorias complejas que controlan la biosíntesis de metabolitos especializados. Empleamos un abordaje sistémico, integrando niveles de regulación transcripcional y postranscripcional, tanto en estudios poblacionales como de célula única. Esta línea de investigación busca comprender los principios evolutivos y adaptativos que gobiernan los circuitos regulatorios de la expresión génica, a fin de poder transferir este conocimiento fundamental al diseño de racional de potenciales bioinsumos.",
+		"descripcion_en": "We study how <i>Pseudomonas</i> bacteria perceive environmental signals and integrate them into complex regulatory networks that control specialized metabolite biosynthesis. We employ a systems approach, integrating transcriptional and post-transcriptional regulation levels in both population and single-cell studies. This research line seeks to understand the evolutionary and adaptive principles governing gene expression regulatory circuits, in order to transfer this fundamental knowledge to the rational design of potential bioinputs.",
+		"imagen": "./imgs/lineas/lineaGenoma.jpg"
+	},
+	{
+		"id": 5,
+		"titulo_es": "Bases genéticas de la promoción del crecimiento por parte de <i>Pseudomonas pergaminensis</i> 1008",
+		"titulo_en": "Genetic basis of growth promotion by <i>Pseudomonas pergaminensis</i> 1008",
+		"descripcion_es": "Esta cepa de una nueva especie del género que definimos en nuestro laboratorio, es el ingrediente activo de bioinsumos comerciales que promueven el rendimiento en grano de cereales. Buscamos comprender sus características microbiológicas, sus mecanismos de promoción de crecimiento, y su interacción con los tejidos vegetales.",
+		"descripcion_en": "This strain of a new species of the genus that we defined in our laboratory is the active ingredient in commercial bioinputs that promote cereal grain yield. We seek to understand its microbiological characteristics, growth promotion mechanisms, and interaction with plant tissues.",
+		"imagen": "./imgs/lineas/basesGeneticas.jpg"
+	},
+	{
+		"id": 6,
+		"titulo_es": "Caracterización funcional del ARN pequeño Sm84 de <i>Sinorhizobium meliloti</i>",
+		"titulo_en": "Functional characterization of the small RNA Sm84 from <i>Sinorhizobium meliloti</i>",
+		"descripcion_es": "Sm84 es un ARN no codificante muy conservado en rizobiales con diferentes estilos de vida, cuya función biológica es desconocida. En este proyecto, queremos identificar el rol funcional del alelo sm84 de <i>Sinorhizobium meliloti</i> tanto en vida libre como en su asociación simbiótica con alfalfa.",
+		"descripcion_en": "Sm84 is a highly conserved non-coding RNA in rhizobia with different lifestyles, whose biological function is unknown. In this project, we want to identify the functional role of the sm84 allele of <i>Sinorhizobium meliloti</i> both in free-living and in its symbiotic association with alfalfa.",
+		"imagen": "./imgs/lineas/caracterizacionFuncional.jpg"
+	},
+	{
+		"id": 7,
+		"titulo_es": "ARNs pequeños regulatorios del clan Rsm en bacterias del género <i>Pseudomonas</i>",
+		"titulo_en": "Small regulatory RNAs of the Rsm clan in bacteria of the genus <i>Pseudomonas</i>",
+		"descripcion_es": "Los ARNs no codificantes del clan Rsm son intermediarios funcionales clave para la regulación global de la expresión genética a nivel post-transcripcional en el género <i>Pseudomonas</i>. Tratamos de comprender su multiplicidad génica en los distintos grupos intragénero, y caracterizar nuevas familias identificadas en cromosomas y elementos génicos móviles.",
+		"descripcion_en": "Non-coding RNAs of the Rsm clan are key functional intermediaries for global regulation of gene expression at the post-transcriptional level in the genus <i>Pseudomonas</i>. We seek to understand their gene multiplicity in different intra-genus groups and characterize new families identified in chromosomes and mobile genetic elements.",
+		"imagen": "./imgs/lineas/arnPequeños.JPG"
+	},
+	{
+		"id": 8,
+		"titulo_es": "Caracterización de metabolitos especializados de <i>Pseudomonas</i> autóctonas",
+		"titulo_en": "Characterization of specialized metabolites from native <i>Pseudomonas</i>",
+		"descripcion_es": "Los genomas de los distintos linajes del género <i>Pseudomonas</i> contienen un patrimonio enormemente rico de agrupamientos génicos para la biosíntesis de metabolitos bioactivos de naturaleza desconocida. Nos interesa en particular la identificación de determinantes genéticos y/o moléculas bioactivas con actividad antimicrobiana, en aislamientos autóctonos de especies con rasgos biopesticidas.",
+		"descripcion_en": "The genomes of different lineages of the genus <i>Pseudomonas</i> contain an enormously rich heritage of gene clusters for the biosynthesis of bioactive metabolites of unknown nature. We are particularly interested in identifying genetic determinants and/or bioactive molecules with antimicrobial activity in native isolates of species with biopesticide traits.",
+		"imagen": "./imgs/lineas/metabolitos.jpg"
+	},
+	{
+		"id": 9,
+		"titulo_es": "Desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal",
+		"titulo_en": "Development of bacterial bioinputs to improve productivity and quality of <i>Cannabis sativa</i> cultivation for medicinal use",
+		"descripcion_es": "El objetivo de esta línea de trabajo es la generación de una mezcla de aislamientos promotores del crecimiento vegetal del género <i>Pseudomonas</i> para su utilización como bioinsumo en el cultivo de cannabis para mejorar su rendimiento y/o calidad fitoquímica.",
+		"descripcion_en": "The objective of this line of work is to generate a mixture of plant growth-promoting isolates of the genus <i>Pseudomonas</i> for use as a bioinput in cannabis cultivation to improve its yield and/or phytochemical quality.",
+		"imagen": "./imgs/lineas/linea desarrollo.jpeg"
+	}
 ]

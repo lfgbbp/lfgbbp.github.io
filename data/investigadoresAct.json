@@ -1,114 +1,142 @@
 [
-    {
-        "id": 1,
-        "nombre": "Claudio",
-        "apellido": "Valverde",
-        "titulo": "Dr. de la Fac. Cs. Exactas (UNLP) - Investigador Principal CONICET",
-        "fotoUrl": "./imgs/investigadores/foto claudio.jpg",
-        "descripcion": "Soy Profesor Titular de la Universidad Nacional de Quilmes, dónde dicto el curso Fisiología y Genética de Bacterias para la Licenciatura en Biotecnología. Dirijo el Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP), perteneciente al Centro de Bioquímica y Microbiología del Suelo (CBMS) de la Universidad Nacional de Quilmes y la CIC-BA. Lidero proyectos en el campo de las interacciones entre microorganismos y plantas, particularmente sobre mecanismos de las bacterias que promueven el crecimiento y la salud vegetal, y su regulación genética."
-    },
-    {
-        "id": 2,
-        "nombre": "Betina",
-        "apellido": "Agaras",
-        "titulo": "Dra. en Ciencia y Tecnología UNQ (Microbiología agrícola) - Investigadora adjunta CONICET - Profesora Instructora Bioquímica (UNQ)",
-        "fotoUrl": "./imgs/investigadores/Foto BA nueva.jpg",
-        "descripcion": "Mi formación doctoral se basó en metodologías de biología molecular y microbiología para el análisis poblacional de <i>Pseudomonas</i> en suelos agrícolas, tanto con técnicas dependientes (recuentos en placa, PCR-RFLP) como independientes de cultivo (DGGE, PCR en tiempo real). Además, logré la caracterización funcional de aislamientos de <i>Pseudomonas</i> spp. seleccionados a partir de su capacidad de inhibir <i>in vitro</i> el crecimiento de hongos fitopatógenos que afectan a cultivos agrícolas extensivos. Además del enfoque aplicado, buscando como objetivo final el desarrollo de biosinsumos eficientes para el agro, mi interés radica en identificar y entender los mecanismos por los cuales estas bacterias ejercen la actividad antagonista por la cual fueron seleccionadas, así como en comprender la interacción planta-bacteria y los factores que intervienen en una buena colonización de los tejidos vegetales. Todo como parte de una estrategia integral para mejorar el desempeño de los inoculantes bacterianos en las condiciones naturales y edafoclimáticas donde debe actuar."
-    },
-    {
-        "id": 3,
-        "nombre": "Antonio",
-        "apellido": "Lagares Jr.",
-        "titulo": "Lic. en Bioquímica y Dr. en Ciencias Exactas (UNLP). Investigador Adjunto del CONICET y Docente-Investigador en la UNQ",
-        "fotoUrl": "./imgs/investigadores/foto antonio.jpg",
-        "descripcion": "Mis intereses se centran en la compresión a nivel molecular de fenómenos fundamentales en modelos microbianos de importancia estratégica. Combino estrategias microbiológicas clásicas, de biología molecular, análisis ómicos y bioinformáticos para estudiar procesos de (ribo)regulación metabólica y de transferencia horizontal genética en bacterias. <br> En el ámbito docente, dicto un curso de grado sobre metabolismo Intermedio (UNQ), y de posgrado sobre tecnologías ómicas para el estudio de sistemas biológicos (UNLP). <br> Busco integrar de manera continua mi perfil docente e investigador, promoviendo la colaboración científica a nivel local e internacional, y contribuyendo activamente a la formación de recursos humanos en todos los niveles."
-    },
-    {
-        "id": 4,
-        "nombre": "Patricio",
-        "apellido":"Sobrero",
-        "titulo": "Dr. en Ciencia y Tecnología UNQ - Investigador Asistente CONICET",
-        "fotoUrl": "./imgs/investigadores/Foto patricio.jpg",
-        "descripcion": "A lo largo de mi trayectoria científica me he especializado en microbiología molecular, con un enfoque particular en la regulación de la expresión génica en bacterias promotoras del crecimiento vegetal. Mis investigaciones se han centrado en comprender cómo estas bacterias perciben y procesan señales ambientales para modular la expresión génica de manera eficiente y adaptativa. Actualmente, mis líneas de investigación se orientan a desentrañar el funcionamiento de las redes regulatorias que controlan la biosíntesis de metabolitos especializados en <i>Pseudomonas</i>. Abordamos esta problemática mediante un enfoque cuali-cuantitativo, integrando diferentes niveles de regulación transcripcional, post-transcripcional y epigenético con el objetivo de construir una visión sistémica de la regulación génica en esta especie modelo. Mi trabajo busca aportar al entendimiento de los mecanismos evolutivos y adaptativos que moldean la regulación génica en bacterias de relevancia agrobiotecnológica."
-    },
-    {
-        "id": 5,
-        "nombre": "Melina",
-        "apellido":"Martins",
-        "titulo": "Lic. en Biotecnología (UNQ) - Becaria Doctoral CONICET ",
-        "fotoUrl": "./imgs/investigadores/foto melina.jpg",
-        "descripcion": "Licenciada en Biotecnología con orientación en Genética Molecular (UNQ). Durante mi tesis de grado, realicé la puesta a punto de condiciones de cultivo para estudios metabolómicos y proteómicos del aislamiento <i>Pseudomonas donghuensis</i> SVBP6, identificando condiciones óptimas de crecimiento bajo estimulación con medio condicionado de los fitopatógenos <i>Xanthomonas vesicatoria</i> y <i>Sclerotinia sclerotiorum</i>. Asimismo, llevé a cabo estudios de control biológico utilizando el patosistema </i>Xanthomonas</i>-tomate. Actualmente, realizo mi doctorado en el LFGBBP, donde empleo técnicas de Biología Molecular y Microbiología para la caracterización del aislamiento probiótico autóctono <i>Pseudomonas donghuensis</i> SVBP6, con el objetivo de describir el metabolismo involucrado en la interacción bacteria–patógeno y dilucidar los mecanismos moleculares que median el antagonismo."
-    },
-    {
-        "id": 6,
-        "nombre": "Yanina",
-        "apellido": "Magaldi",
-        "titulo": "Licenciada en Biotecnología con Orientación en Genética Molecular (UNQ) ",
-        "fotoUrl": "./imgs/investigadores/foto yanina.jpg",
-        "descripcion": "Actualmente soy becaria doctoral del CONICET y realizo el Doctorado en Ciencia y Tecnología en la Universidad Nacional de Quilmes, desempeñándome en tareas de docencia e investigación. Mi línea de investigación se centra en el estudio de Pseudomonas BP01, una bacteria aislada de suelo rizosférico con potencial como bacteria beneficiosa para plantas. Esta cepa produce un pigmento negro cuya naturaleza química y función biológica aún no han sido completamente caracterizadas. Mi trabajo aborda la regulación genética y metabólica de la producción del pigmento y su relación con el metabolismo del triptófano. Investigo la participación de este pigmento, y de otros metabolitos secundarios, en la actividad antagonista frente a bacterias y hongos fitopatógenos de plantas de tomate. El estudio de estos mecanismos resulta de particular importancia por su potencial aplicación en el desarrollo de estrategias biotecnológicas sustentables para el control de enfermedades en cultivos, contribuyendo a una agricultura más sostenible y a la reducción del uso de agroquímicos."
-    },
-    {
-        "id": 7,
-        "nombre": "Ariel",
-        "apellido": "Bravo",
-        "titulo": "Lic. en Biotecnología con orientación en Agrobiotecnología (UNQ) - Estudiante doctoral UNQ",
-        "fotoUrl": "./imgs/investigadores/foto ariel.png",
-        "descripcion": "Me desempeño como docente en el Centro universitario de la Innovación de la Matanza (UNQ-CUDI) en las áreas de química y microbiología. Mi trabajo de tesis se centra en la caracterización de sRNA en <i>Sinorhizobium meliloti</i>. Actualmente realizo actividades de investigación en la Johannes Gutenberg-Universität Mainz, donde trabajo en el estudio de proteínas intrínsecamente desordenadas."
-    },
-    {
-        "id": 8,
-        "nombre": "Fernanda",
-        "apellido": "Coelho",
-        "titulo": "Lic. en Biotecnología y becaria doctoral de la Agencia I+D+i",
-        "fotoUrl": "./imgs/investigadores/foto fernanda.jpeg",
-        "descripcion": "Actualmente estoy estudiando aislamientos autóctonos de <i>Pseudomonas</i> con características promotoras del crecimiento vegetal en cultivos extensivos. Mediante técnicas de biología molecular y microbiología busco comprender cómo funcionan y qué genes están involucrados en estas propiedades de los aislamientos nativos y así aportar mi granito de arena en vías de una agricultura más sustentable."
-    },
-    {
-        "id": 9,
-        "nombre": "Melani",
-        "apellido": "Lorch",
-        "titulo": "Licenciada en Biotecnología y Doctora en Ciencia y Tecnología de la Universidad Nacional de Quilmes",
-        "fotoUrl": "./imgs/investigadores/foto melani.jpg",
-        "descripcion": "Durante mi tesina de licenciatura investigué el impacto de la aplicación reiterada del herbicida glifosato sobre la comunidad cultivable de Pseudomonas en un pastizal natural. Mi tesis doctoral, financiada mediante una beca CONICET, se centró en el estudio de la persistencia en semillas y la competitividad rizosférica de diversos aislamientos del género Pseudomonas con propiedades de promoción del crecimiento vegetal, mediante un enfoque multidisciplinario que integró técnicas de biología molecular, microbiología y microscopía. Actualmente realizo un servicio para YPF Tecnología (Y-TEC), que involucra el cultivo y enriquecimiento de microorganismos anaerobios capaces de utilizar poliacrilamida parcialmente hidrolizada (HPAM) como fuente de carbono y energía. Además de mis tareas de investigación, me desempeño como instructora de la materia Fisiología y Genética de Bacterias, correspondiente al ciclo superior de la Licenciatura en Biotecnología en la misma Universidad."
-    },
-    {
-        "id": 10,
-        "nombre": "Priscila",
-        "apellido": "Fredez",
-        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
-        "fotoUrl": "./imgs/investigadores/foto priscila.jpg",
-        "descripcion": "Desarrollo actualmente mi tesina de grado en el LFGBBP. Mi trabajo de investigación consiste en caracterizar la transferencia horizontal de genes en diferentes especies bacterianas. El estudio se centra en los agentes de transferencia génica (GTAs) que comparten un origen evolutivo."
-    },
-    {
-        "id": 11,
-        "nombre": "Lucia",
-        "apellido": "Nuñez",
-        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Bioprocesos (UNQ)",
-        "fotoUrl": "./imgs/investigadores/foto lucia.jpeg",
-        "descripcion": "Mi interés se orienta al estudio de microorganismos con potencial aplicación en agricultura sustentable y el desarrollo de estrategias biotecnológicas para el cuidado y manejo del ambiente. Actualmente realizo mi tesina de grado sobre la caracterización fisiológica y genómica de variantes morfológicas espontáneas de la cepa estimulante de cereales <i>Pseudomonas pergaminensis</i> en el LFGBBP en la UNQ, bajo la dirección del Dr. Claudio Valverde. Además, me desempeño como auxiliar docente en el área de Microbiología e Inmunología y como tutora de ingresantes en el Taller de Vida Universitaria en la misma Universidad. Participo activamente en la organización de jornadas académicas y actividades de divulgación científica, y me interesa la comunicación pública de la ciencia y su vinculación con la sociedad."
-    },
-    {
-        "id": 12,
-        "nombre": "Sofia",
-        "apellido": "Díaz",
-        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
-        "fotoUrl": "./imgs/investigadores/foto sofia.jpeg",
-        "descripcion": "Ademas de ser estudiante también me desempeño como auxiliar académico de laboratorio en el área de Ciencias Básicas de Alimentos. Actualmente, soy Becaria CIC de entrenamiento en el en el LFGBBP, donde me encuentro realizando mi seminario de grado enfocado en la caracterización molecular de proteínas de unión a ARN de la familia Crs-Rsm en <i>Pseudomonas aeruginosa</i>. Mi formación se centra en dos áreas que me han apasionado durante toda la carrera, la microbiología y biología molecular. Me interesa particularmente comprender los mecanismos moleculares que regulan la interacción entre microorganismos y su entorno, con una mirada aplicada hacia la biotecnología."
-    },
-    {
-        "id": 13,
-        "nombre": "Micaela",
-        "apellido": "Arnoso Ventancour",
-        "titulo": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en genética molecular (UNQ)",
-        "fotoUrl": "./imgs/investigadores/foto micaela.jpeg",
-        "descripcion": "Actualmente, me encuentro realizando mi tesina de grado en el LFGBBP, sobre el desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal, bajo la dirección de la Dra. Betina Agaras"
-    },
-    {
-        "id": 14,
-        "nombre": "Alexa",
-        "apellido": "Gallardo Lafon",
-        "titulo": "Estudiante de la Licenciatura en Biotecnología (UNQ) | Técnica laboratorista (UNQ) | Técnica en Nutrición Comunitaria (UNLa)",
-        "fotoUrl": "./imgs/investigadores/foto alexa.jpg",
-        "descripcion": "Como estudiante avanzada de la Licenciatura en Biotecnología con orientación en bioprocesos mis intereses se enfocan en la biotecnología sustentable y ambiental. Actualmente soy beneficiaria de la Becas de Formación en la Investigación para Estudiantes en etapa final de Carrera de Grado de la Universidad Nacional de Quilmes y me encuentro trabajando con un aislamiento autóctono de pseudomonas productora de pigmento con potencial de aplicación como fitoprotector solar para cultivos de interés agronómico, bajo la dirección del Dr. Patricio Sobrero. Además, me desempeño como auxiliar académica en el área de ambiente y participo como voluntaria en los proyectos de extensión PACHA Programa de Alimentacion, Comunidad y Huerta Agroecológica de la UNLa, y Compostando y Cultivando ConCiencia, proyecto de gestión de residuos orgánicos y restauración ecológica de la UNQ."
-    }
+	{
+		"id": 1,
+		"nombre": "Claudio",
+		"apellido": "Valverde",
+		"titulo_es": "Dr. de la Fac. Cs. Exactas (UNLP) - Investigador Principal CONICET",
+		"titulo_en": "PhD in Exact Sciences (UNLP) - Principal Researcher CONICET",
+		"fotoUrl": "./imgs/investigadores/foto claudio.jpg",
+		"descripcion_es": "Soy Profesor Titular de la Universidad Nacional de Quilmes, dónde dicto el curso Fisiología y Genética de Bacterias para la Licenciatura en Biotecnología. Dirijo el Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP), perteneciente al Centro de Bioquímica y Microbiología del Suelo (CBMS) de la Universidad Nacional de Quilmes y la CIC-BA. Lidero proyectos en el campo de las interacciones entre microorganismos y plantas, particularmente sobre mecanismos de las bacterias que promueven el crecimiento y la salud vegetal, y su regulación genética.",
+		"descripcion_en": "I am a Full Professor at the National University of Quilmes, where I teach the Bacterial Physiology and Genetics course for the Biotechnology degree. I lead the Laboratory of Physiology and Genetics of Plant-Beneficial Bacteria (LFGBBP), part of the Center for Soil Biochemistry and Microbiology (CBMS) at the National University of Quilmes and CIC-BA. I lead projects in the field of microorganism-plant interactions, particularly on mechanisms by which bacteria promote plant growth and health, and their genetic regulation."
+	},
+	{
+		"id": 2,
+		"nombre": "Betina",
+		"apellido": "Agaras",
+		"titulo_es": "Dra. en Ciencia y Tecnología UNQ (Microbiología agrícola) - Investigadora adjunta CONICET - Profesora Instructora Bioquímica (UNQ)",
+		"titulo_en": "PhD in Science and Technology UNQ (Agricultural Microbiology) - Associate Researcher CONICET - Instructor Professor in Biochemistry (UNQ)",
+		"fotoUrl": "./imgs/investigadores/Foto BA nueva.jpg",
+		"descripcion_es": "Mi formación doctoral se basó en metodologías de biología molecular y microbiología para el análisis poblacional de <i>Pseudomonas</i> en suelos agrícolas, tanto con técnicas dependientes (recuentos en placa, PCR-RFLP) como independientes de cultivo (DGGE, PCR en tiempo real). Además, logré la caracterización funcional de aislamientos de <i>Pseudomonas</i> spp. seleccionados a partir de su capacidad de inhibir <i>in vitro</i> el crecimiento de hongos fitopatógenos que afectan a cultivos agrícolas extensivos. Además del enfoque aplicado, buscando como objetivo final el desarrollo de biosinsumos eficientes para el agro, mi interés radica en identificar y entender los mecanismos por los cuales estas bacterias ejercen la actividad antagonista por la cual fueron seleccionadas, así como en comprender la interacción planta-bacteria y los factores que intervienen en una buena colonización de los tejidos vegetales. Todo como parte de una estrategia integral para mejorar el desempeño de los inoculantes bacterianos en las condiciones naturales y edafoclimáticas donde debe actuar.",
+		"descripcion_en": "My doctoral training was based on molecular biology and microbiology methodologies for population analysis of <i>Pseudomonas</i> in agricultural soils, using both culture-dependent (plate counts, PCR-RFLP) and culture-independent techniques (DGGE, real-time PCR). Additionally, I achieved functional characterization of <i>Pseudomonas</i> spp. isolates selected based on their ability to inhibit <i>in vitro</i> growth of phytopathogenic fungi affecting extensive agricultural crops. Beyond the applied approach, aiming for the development of efficient biological inputs for agriculture, my interest lies in identifying and understanding the mechanisms by which these bacteria exert the antagonistic activity for which they were selected, as well as understanding plant-bacteria interaction and the factors involved in successful colonization of plant tissues. All as part of a comprehensive strategy to improve the performance of bacterial inoculants under natural and edaphoclimatic conditions."
+	},
+	{
+		"id": 3,
+		"nombre": "Antonio",
+		"apellido": "Lagares Jr.",
+		"titulo_es": "Lic. en Bioquímica y Dr. en Ciencias Exactas (UNLP). Investigador Adjunto del CONICET y Docente-Investigador en la UNQ",
+		"titulo_en": "BSc in Biochemistry and PhD in Exact Sciences (UNLP). Associate Researcher at CONICET and Teaching Researcher at UNQ",
+		"fotoUrl": "./imgs/investigadores/foto antonio.jpg",
+		"descripcion_es": "Mis intereses se centran en la comprensión a nivel molecular de fenómenos fundamentales en modelos microbianos de importancia estratégica. Combino estrategias microbiológicas clásicas, de biología molecular, análisis ómicos y bioinformáticos para estudiar procesos de (ribo)regulación metabólica y de transferencia horizontal genética en bacterias. <br> En el ámbito docente, dicto un curso de grado sobre metabolismo Intermedio (UNQ), y de posgrado sobre tecnologías ómicas para el estudio de sistemas biológicos (UNLP). <br> Busco integrar de manera continua mi perfil docente e investigador, promoviendo la colaboración científica a nivel local e internacional, y contribuyendo activamente a la formación de recursos humanos en todos los niveles.",
+		"descripcion_en": "My interests focus on the molecular-level understanding of fundamental phenomena in strategically important microbial models. I combine classical microbiological strategies, molecular biology, omic and bioinformatic analyses to study processes of metabolic (ribo)regulation and horizontal gene transfer in bacteria. <br> In teaching, I conduct an undergraduate course on Intermediate Metabolism (UNQ), and a graduate course on omic technologies for studying biological systems (UNLP). <br> I seek to continuously integrate my teaching and research profile, promoting scientific collaboration at local and international levels, and actively contributing to human resource training at all levels."
+	},
+	{
+		"id": 4,
+		"nombre": "Patricio",
+		"apellido": "Sobrero",
+		"titulo_es": "Dr. en Ciencia y Tecnología UNQ - Investigador Asistente CONICET",
+		"titulo_en": "PhD in Science and Technology UNQ - Assistant Researcher CONICET",
+		"fotoUrl": "./imgs/investigadores/Foto patricio.jpg",
+		"descripcion_es": "A lo largo de mi trayectoria científica me he especializado en microbiología molecular, con un enfoque particular en la regulación de la expresión génica en bacterias promotoras del crecimiento vegetal. Mis investigaciones se han centrado en comprender cómo estas bacterias perciben y procesan señales ambientales para modular la expresión génica de manera eficiente y adaptativa. Actualmente, mis líneas de investigación se orientan a desentrañar el funcionamiento de las redes regulatorias que controlan la biosíntesis de metabolitos especializados en <i>Pseudomonas</i>. Abordamos esta problemática mediante un enfoque cuali-cuantitativo, integrando diferentes niveles de regulación transcripcional, post-transcripcional y epigenético con el objetivo de construir una visión sistémica de la regulación génica en esta especie modelo. Mi trabajo busca aportar al entendimiento de los mecanismos evolutivos y adaptativos que moldean la regulación génica en bacterias de relevancia agrobiotecnológica.",
+		"descripcion_en": "Throughout my scientific career, I have specialized in molecular microbiology, with a particular focus on gene expression regulation in plant growth-promoting bacteria. My research has focused on understanding how these bacteria perceive and process environmental signals to modulate gene expression efficiently and adaptively. Currently, my research lines aim to unravel the functioning of regulatory networks that control specialized metabolite biosynthesis in <i>Pseudomonas</i>. We address this problem through a quali-quantitative approach, integrating different levels of transcriptional, post-transcriptional, and epigenetic regulation with the goal of building a systemic vision of gene regulation in this model species. My work seeks to contribute to understanding the evolutionary and adaptive mechanisms that shape gene regulation in bacteria of agrobiotechnological relevance."
+	},
+	{
+		"id": 5,
+		"nombre": "Melina",
+		"apellido": "Martins",
+		"titulo_es": "Lic. en Biotecnología (UNQ) - Becaria Doctoral CONICET",
+		"titulo_en": "BSc in Biotechnology (UNQ) - CONICET Doctoral Fellow",
+		"fotoUrl": "./imgs/investigadores/foto melina.jpg",
+		"descripcion_es": "Licenciada en Biotecnología con orientación en Genética Molecular (UNQ). Durante mi tesis de grado, realicé la puesta a punto de condiciones de cultivo para estudios metabolómicos y proteómicos del aislamiento <i>Pseudomonas donghuensis</i> SVBP6, identificando condiciones óptimas de crecimiento bajo estimulación con medio condicionado de los fitopatógenos <i>Xanthomonas vesicatoria</i> y <i>Sclerotinia sclerotiorum</i>. Asimismo, llevé a cabo estudios de control biológico utilizando el patosistema <i>Xanthomonas</i>-tomate. Actualmente, realizo mi doctorado en el LFGBBP, donde empleo técnicas de Biología Molecular y Microbiología para la caracterización del aislamiento probiótico autóctono <i>Pseudomonas donghuensis</i> SVBP6, con el objetivo de describir el metabolismo involucrado en la interacción bacteria-patógeno y dilucidar los mecanismos moleculares que median el antagonismo.",
+		"descripcion_en": "Bachelor's degree in Biotechnology with orientation in Molecular Genetics (UNQ). During my undergraduate thesis, I optimized culture conditions for metabolomic and proteomic studies of the isolate <i>Pseudomonas donghuensis</i> SVBP6, identifying optimal growth conditions under stimulation with conditioned medium from the phytopathogens <i>Xanthomonas vesicatoria</i> and <i>Sclerotinia sclerotiorum</i>. I also carried out biological control studies using the <i>Xanthomonas</i>-tomato pathosystem. Currently, I am pursuing my doctorate at LFGBBP, where I employ Molecular Biology and Microbiology techniques for characterizing the native probiotic isolate <i>Pseudomonas donghuensis</i> SVBP6, with the aim of describing the metabolism involved in bacteria-pathogen interaction and elucidating the molecular mechanisms that mediate antagonism."
+	},
+	{
+		"id": 6,
+		"nombre": "Yanina",
+		"apellido": "Magaldi",
+		"titulo_es": "Licenciada en Biotecnología con Orientación en Genética Molecular (UNQ)",
+		"titulo_en": "Bachelor's in Biotechnology with Orientation in Molecular Genetics (UNQ)",
+		"fotoUrl": "./imgs/investigadores/foto yanina.jpg",
+		"descripcion_es": "Actualmente soy becaria doctoral del CONICET y realizo el Doctorado en Ciencia y Tecnología en la Universidad Nacional de Quilmes, desempeñándome en tareas de docencia e investigación. Mi línea de investigación se centra en el estudio de Pseudomonas BP01, una bacteria aislada de suelo rizosférico con potencial como bacteria beneficiosa para plantas. Esta cepa produce un pigmento negro cuya naturaleza química y función biológica aún no han sido completamente caracterizadas. Mi trabajo aborda la regulación genética y metabólica de la producción del pigmento y su relación con el metabolismo del triptófano. Investigo la participación de este pigmento, y de otros metabolitos secundarios, en la actividad antagonista frente a bacterias y hongos fitopatógenos de plantas de tomate. El estudio de estos mecanismos resulta de particular importancia por su potencial aplicación en el desarrollo de estrategias biotecnológicas sustentables para el control de enfermedades en cultivos, contribuyendo a una agricultura más sostenible y a la reducción del uso de agroquímicos.",
+		"descripcion_en": "I am currently a CONICET doctoral fellow and pursuing a PhD in Science and Technology at the National University of Quilmes, working in teaching and research tasks. My research line focuses on the study of Pseudomonas BP01, a bacterium isolated from rhizospheric soil with potential as a beneficial bacterium for plants. This strain produces a black pigment whose chemical nature and biological function have not yet been fully characterized. My work addresses the genetic and metabolic regulation of pigment production and its relationship with tryptophan metabolism. I investigate the participation of this pigment, and other secondary metabolites, in antagonistic activity against phytopathogenic bacteria and fungi of tomato plants. The study of these mechanisms is particularly important for their potential application in developing sustainable biotechnological strategies for disease control in crops, contributing to more sustainable agriculture and reduced use of agrochemicals."
+	},
+	{
+		"id": 7,
+		"nombre": "Ariel",
+		"apellido": "Bravo",
+		"titulo_es": "Lic. en Biotecnología con orientación en Agrobiotecnología (UNQ) - Estudiante doctoral UNQ",
+		"titulo_en": "BSc in Biotechnology with orientation in Agrobiotechnology (UNQ) - UNQ Doctoral Student",
+		"fotoUrl": "./imgs/investigadores/foto ariel.png",
+		"descripcion_es": "Me desempeño como docente en el Centro universitario de la Innovación de la Matanza (UNQ-CUDI) en las áreas de química y microbiología. Mi trabajo de tesis se centra en la caracterización de sRNA en <i>Sinorhizobium meliloti</i>. Actualmente realizo actividades de investigación en la Johannes Gutenberg-Universität Mainz, donde trabajo en el estudio de proteínas intrínsecamente desordenadas.",
+		"descripcion_en": "I work as a teacher at the University Center for Innovation of La Matanza (UNQ-CUDI) in the areas of chemistry and microbiology. My thesis work focuses on the characterization of sRNA in <i>Sinorhizobium meliloti</i>. I am currently conducting research activities at Johannes Gutenberg-Universität Mainz, where I work on the study of intrinsically disordered proteins."
+	},
+	{
+		"id": 8,
+		"nombre": "Fernanda",
+		"apellido": "Coelho",
+		"titulo_es": "Lic. en Biotecnología y becaria doctoral de la Agencia I+D+i",
+		"titulo_en": "BSc in Biotechnology and doctoral fellow of the I+D+i Agency",
+		"fotoUrl": "./imgs/investigadores/foto fernanda.jpeg",
+		"descripcion_es": "Actualmente estoy estudiando aislamientos autóctonos de <i>Pseudomonas</i> con características promotoras del crecimiento vegetal en cultivos extensivos. Mediante técnicas de biología molecular y microbiología busco comprender cómo funcionan y qué genes están involucrados en estas propiedades de los aislamientos nativos y así aportar mi granito de arena en vías de una agricultura más sustentable.",
+		"descripcion_en": "I am currently studying native isolates of <i>Pseudomonas</i> with plant growth-promoting characteristics in extensive crops. Through molecular biology and microbiology techniques, I seek to understand how they work and what genes are involved in these properties of native isolates, thus contributing my grain of sand towards more sustainable agriculture."
+	},
+	{
+		"id": 9,
+		"nombre": "Melani",
+		"apellido": "Lorch",
+		"titulo_es": "Licenciada en Biotecnología y Doctora en Ciencia y Tecnología de la Universidad Nacional de Quilmes",
+		"titulo_en": "Bachelor's in Biotechnology and PhD in Science and Technology from the National University of Quilmes",
+		"fotoUrl": "./imgs/investigadores/foto melani.jpg",
+		"descripcion_es": "Durante mi tesina de licenciatura investigué el impacto de la aplicación reiterada del herbicida glifosato sobre la comunidad cultivable de Pseudomonas en un pastizal natural. Mi tesis doctoral, financiada mediante una beca CONICET, se centró en el estudio de la persistencia en semillas y la competitividad rizosférica de diversos aislamientos del género Pseudomonas con propiedades de promoción del crecimiento vegetal, mediante un enfoque multidisciplinario que integró técnicas de biología molecular, microbiología y microscopía. Actualmente realizo un servicio para YPF Tecnología (Y-TEC), que involucra el cultivo y enriquecimiento de microorganismos anaerobios capaces de utilizar poliacrilamida parcialmente hidrolizada (HPAM) como fuente de carbono y energía. Además de mis tareas de investigación, me desempeño como instructora de la materia Fisiología y Genética de Bacterias, correspondiente al ciclo superior de la Licenciatura en Biotecnología en la misma Universidad.",
+		"descripcion_en": "During my undergraduate thesis, I investigated the impact of repeated glyphosate herbicide application on the cultivable Pseudomonas community in a natural grassland. My doctoral thesis, funded by a CONICET grant, focused on studying seed persistence and rhizospheric competitiveness of various isolates of the genus Pseudomonas with plant growth-promoting properties, through a multidisciplinary approach that integrated molecular biology, microbiology, and microscopy techniques. I currently provide services for YPF Technology (Y-TEC), involving the cultivation and enrichment of anaerobic microorganisms capable of using partially hydrolyzed polyacrylamide (HPAM) as a carbon and energy source. In addition to my research tasks, I serve as an instructor for the Bacterial Physiology and Genetics course, corresponding to the upper cycle of the Biotechnology degree at the same University."
+	},
+	{
+		"id": 10,
+		"nombre": "Priscila",
+		"apellido": "Fredez",
+		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
+		"titulo_en": "Advanced student of the Bachelor's in Biotechnology with orientation in Molecular Genetics (UNQ)",
+		"fotoUrl": "./imgs/investigadores/foto priscila.jpg",
+		"descripcion_es": "Desarrollo actualmente mi tesina de grado en el LFGBBP. Mi trabajo de investigación consiste en caracterizar la transferencia horizontal de genes en diferentes especies bacterianas. El estudio se centra en los agentes de transferencia génica (GTAs) que comparten un origen evolutivo.",
+		"descripcion_en": "I am currently developing my undergraduate thesis at LFGBBP. My research work consists of characterizing horizontal gene transfer in different bacterial species. The study focuses on gene transfer agents (GTAs) that share an evolutionary origin."
+	},
+	{
+		"id": 11,
+		"nombre": "Lucia",
+		"apellido": "Nuñez",
+		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Bioprocesos (UNQ)",
+		"titulo_en": "Advanced student of the Bachelor's in Biotechnology with orientation in Bioprocesses (UNQ)",
+		"fotoUrl": "./imgs/investigadores/foto lucia.jpeg",
+		"descripcion_es": "Mi interés se orienta al estudio de microorganismos con potencial aplicación en agricultura sustentable y el desarrollo de estrategias biotecnológicas para el cuidado y manejo del ambiente. Actualmente realizo mi tesina de grado sobre la caracterización fisiológica y genómica de variantes morfológicas espontáneas de la cepa estimulante de cereales <i>Pseudomonas pergaminensis</i> en el LFGBBP en la UNQ, bajo la dirección del Dr. Claudio Valverde. Además, me desempeño como auxiliar docente en el área de Microbiología e Inmunología y como tutora de ingresantes en el Taller de Vida Universitaria en la misma Universidad. Participo activamente en la organización de jornadas académicas y actividades de divulgación científica, y me interesa la comunicación pública de la ciencia y su vinculación con la sociedad.",
+		"descripcion_en": "My interest is oriented towards the study of microorganisms with potential application in sustainable agriculture and the development of biotechnological strategies for environmental care and management. I am currently working on my undergraduate thesis on the physiological and genomic characterization of spontaneous morphological variants of the cereal-stimulating strain <i>Pseudomonas pergaminensis</i> at LFGBBP at UNQ, under the direction of Dr. Claudio Valverde. Additionally, I work as a teaching assistant in the Microbiology and Immunology area and as a tutor for new students in the University Life Workshop at the same University. I actively participate in organizing academic conferences and science outreach activities, and I am interested in public science communication and its connection with society."
+	},
+	{
+		"id": 12,
+		"nombre": "Sofia",
+		"apellido": "Díaz",
+		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
+		"titulo_en": "Advanced student of the Bachelor's in Biotechnology with orientation in Molecular Genetics (UNQ)",
+		"fotoUrl": "./imgs/investigadores/foto sofia.jpeg",
+		"descripcion_es": "Ademas de ser estudiante también me desempeño como auxiliar académico de laboratorio en el área de Ciencias Básicas de Alimentos. Actualmente, soy Becaria CIC de entrenamiento en el en el LFGBBP, donde me encuentro realizando mi seminario de grado enfocado en la caracterización molecular de proteínas de unión a ARN de la familia Crs-Rsm en <i>Pseudomonas aeruginosa</i>. Mi formación se centra en dos áreas que me han apasionado durante toda la carrera, la microbiología y biología molecular. Me interesa particularmente comprender los mecanismos moleculares que regulan la interacción entre microorganismos y su entorno, con una mirada aplicada hacia la biotecnología.",
+		"descripcion_en": "In addition to being a student, I also work as an academic laboratory assistant in the Food Basic Sciences area. Currently, I am a CIC training fellow at LFGBBP, where I am conducting my undergraduate seminar focused on the molecular characterization of RNA-binding proteins of the Crs-Rsm family in <i>Pseudomonas aeruginosa</i>. My training focuses on two areas that have passionate me throughout my career: microbiology and molecular biology. I am particularly interested in understanding the molecular mechanisms that regulate the interaction between microorganisms and their environment, with an applied view towards biotechnology."
+	},
+	{
+		"id": 13,
+		"nombre": "Micaela",
+		"apellido": "Arnoso Ventancour",
+		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en genética molecular (UNQ)",
+		"titulo_en": "Advanced student of the Bachelor's in Biotechnology with orientation in molecular genetics (UNQ)",
+		"fotoUrl": "./imgs/investigadores/foto micaela.jpeg",
+		"descripcion_es": "Actualmente, me encuentro realizando mi tesina de grado en el LFGBBP, sobre el desarrollo de bioinsumos bacterianos para mejorar la productividad y la calidad del cultivo de <i>Cannabis sativa</i> para su uso medicinal, bajo la dirección de la Dra. Betina Agaras",
+		"descripcion_en": "Currently, I am working on my undergraduate thesis at LFGBBP on the development of bacterial bioinputs to improve productivity and quality of <i>Cannabis sativa</i> cultivation for medicinal use, under the direction of Dr. Betina Agaras"
+	},
+	{
+		"id": 14,
+		"nombre": "Alexa",
+		"apellido": "Gallardo Lafon",
+		"titulo_es": "Estudiante de la Licenciatura en Biotecnología (UNQ) | Técnica laboratorista (UNQ) | Técnica en Nutrición Comunitaria (UNLa)",
+		"titulo_en": "Student of the Bachelor's in Biotechnology (UNQ) | Laboratory Technician (UNQ) | Community Nutrition Technician (UNLa)",
+		"fotoUrl": "./imgs/investigadores/foto alexa.jpg",
+		"descripcion_es": "Como estudiante avanzada de la Licenciatura en Biotecnología con orientación en bioprocesos mis intereses se enfocan en la biotecnología sustentable y ambiental. Actualmente soy beneficiaria de la Becas de Formación en la Investigación para Estudiantes en etapa final de Carrera de Grado de la Universidad Nacional de Quilmes y me encuentro trabajando con un aislamiento autóctono de pseudomonas productora de pigmento con potencial de aplicación como fitoprotector solar para cultivos de interés agronómico, bajo la dirección del Dr. Patricio Sobrero. Además, me desempeño como auxiliar académica en el área de ambiente y participo como voluntaria en los proyectos de extensión PACHA Programa de Alimentacion, Comunidad y Huerta Agroecológica de la UNLa, y Compostando y Cultivando ConCiencia, proyecto de gestión de residuos orgánicos y restauración ecológica de la UNQ.",
+		"descripcion_en": "As an advanced student of the Bachelor's in Biotechnology with orientation in bioprocesses, my interests focus on sustainable and environmental biotechnology. I am currently a beneficiary of the Research Training Scholarships for Students in the final stage of Undergraduate Degree at the National University of Quilmes and I am working with a native isolate of pigment-producing pseudomonas with potential application as a plant sunscreen for crops of agronomic interest, under the direction of Dr. Patricio Sobrero. Additionally, I work as an academic assistant in the environmental area and participate as a volunteer in the extension projects PACHA Food, Community and Agroecological Garden Program of UNLa, and Composting and Cultivating ConScience, an organic waste management and ecological restoration project of UNQ."
+	}
 ]

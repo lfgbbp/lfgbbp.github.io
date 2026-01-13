@@ -42,12 +42,17 @@ function generarFiltrosPorRango() {
         '2002-1997'
     ];
 
-    let botonesHTML = '<button class="filtro-btn active" data-range="all">Mostrar Todas</button>';
+    let botonesHTML = '<button class="filtro-btn active" data-range="all" data-i18n="publications.showAll">Mostrar Todas</button>';
+
     ranges.forEach(range => {
         botonesHTML += `<button class="filtro-btn" data-range="${range}">${range}</button>`;
     });
 
     contenedor.innerHTML = botonesHTML;
+
+    if (typeof applyTranslations === 'function' && typeof currentLang !== 'undefined') {
+        applyTranslations(currentLang);
+    }
 }
 
 function renderizarPublicaciones(papersParaMostrar) {
@@ -104,13 +109,11 @@ function activarLogicaFiltrosYBusqueda() {
     let filtroBusquedaActual = '';
 
     const aplicarFiltros = () => {
-        console.log(`Aplicando filtros - Rango: ${filtroRangoActual}, Búsqueda: "${filtroBusquedaActual}"`); // Log para depurar
+        console.log(`Aplicando filtros - Rango: ${filtroRangoActual}, Búsqueda: "${filtroBusquedaActual}"`);
         let papersFiltrados = todosLosPapers;
 
-        // 1. Filtrar por rango de año
         if (filtroRangoActual !== 'all') {
             try {
-                // ✅ CORRECCIÓN: Aseguramos el orden correcto de startYear y endYear
                 const years = filtroRangoActual.split('-').map(Number);
                 const startYear = Math.min(...years);
                 const endYear = Math.max(...years);
@@ -119,7 +122,6 @@ function activarLogicaFiltrosYBusqueda() {
                     const yearStr = paper.fechaPublicacion ? paper.fechaPublicacion.substring(0, 4) : null;
                     if (yearStr && !isNaN(yearStr)) { 
                         const year = parseInt(yearStr);
-                        // La comparación ahora siempre funcionará
                         return year >= startYear && year <= endYear; 
                     }
                     return false; 
@@ -129,7 +131,6 @@ function activarLogicaFiltrosYBusqueda() {
             }
         }
 
-        // 2. Filtrar por búsqueda (título o autores)
         if (filtroBusquedaActual) {
             const busquedaLower = filtroBusquedaActual.toLowerCase().trim();
             if (busquedaLower) { 
@@ -144,7 +145,6 @@ function activarLogicaFiltrosYBusqueda() {
         renderizarPublicaciones(papersFiltrados);
     };
 
-    // Listener para los botones de rango
     contenedorFiltros.addEventListener('click', (event) => {
         if (event.target.tagName !== 'BUTTON') return;
 
@@ -156,7 +156,6 @@ function activarLogicaFiltrosYBusqueda() {
         aplicarFiltros(); 
     });
 
-    // Listener para la barra de búsqueda 
     inputBusqueda.addEventListener('input', () => {
         clearTimeout(inputBusqueda.timer); 
         inputBusqueda.timer = setTimeout(() => {

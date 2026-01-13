@@ -1,92 +1,137 @@
 [
-    {
-        "id": 1,
-        "nombre": "Dr. Germán Ceizel-Borella",
-        "participacion": "Doctorado",
-        "lugarDeTrabajoActual": "Especialista en asuntos regulatorios de la Secretaría de Agricultura, Ganadería y Pesca de la Nación (Argentina)"
-    },
-    {
-        "id": 2,
-        "nombre": "Dra. Indra Roux",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Investigadora asociada en la unidad de Toxicologia de la Universidad de Cambridge (Reino Unido)"
-    },
-    {
-        "id": 3,
-        "nombre": "Dr. Federico Muzio",
-        "participacion": "Doctorado",
-        "lugarDeTrabajoActual": "Posdoc en la Univesidad de Pittsburgh (EEUU)"
-    },
-    {
-        "id": 4,
-        "nombre": "Lic. Teresita Ybarra",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Asistente de ensayos clinicos en IQVIA (Argentina)"
-    },
-    {
-        "id": 5,
-        "nombre": "Ing. Agrobiotec. Maria Fernanda Sosa",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Tecnica de ventas en Onelab S.A. (Argentina)"
-    },
-    {
-        "id": 6,
-        "nombre": "Dr. Leticia Fernandez",
-        "participacion": "Posdoctorado",
-        "lugarDeTrabajoActual": "Investigadora  Adjunta de CONICET (LABEA, UNS, Argentina)"
-    },
-    {
-        "id": 7,
-        "nombre": "Lic. Florencia Farina",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Emprendedora de Oreshki (Argentina)"
-    },
-    {
-        "id": 8,
-        "nombre": "Mg. Mariana Marrero",
-        "participacion": "Maestria",
-        "lugarDeTrabajoActual": "Docente JTP en la facultad de Ciencias Agrarias de la UNLZ (Argentina)"
-    },
-    {
-        "id": 9,
-        "nombre": "Lic. Julián D'Ambrosio",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Analista Senior de Aseguramiento de Calidad en Nutrihome S.A (Argentina)"
-    },
-    {
-        "id": 10,
-        "nombre": "Dr. Andres Muzlera",
-        "participacion": "Doctorado",
-        "lugarDeTrabajoActual": "MLOPs Engineer en Santander Tecnología Argentina (Argentina)"
-    },
-    {
-        "id": 11,
-        "nombre": "Dr. Matías Garavaglia",
-        "participacion": "Posdoctorado",
-        "lugarDeTrabajoActual": "Docente Investigador en la Universidad Nacional de Hurlingham (Argentina)"
-    },
-    {
-        "id": 12,
-        "nombre": "Dr. Alexandre Jousset",
-        "participacion": "Posdoctorado",
-        "lugarDeTrabajoActual": "CEO & Co-Fundador de Genedance (Suiza)"
-    },
-    {
-        "id": 13,
-        "nombre": "Lic. María Cecilia Álvarez Crespo",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Escuela Secundaria de Educación Técnica y Departamento de Ciencia y Tecnología, Universidad Nacional de Quilmes (Argentina)"
-    },
-    {
-        "id": 14,
-        "nombre": "Lic. Dante Ruiz",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Coordinador de Ingenieria en Koppert Argentina (Argentina)"
-    },
-    {
-        "id": 15,
-        "nombre": "Bqca. Malena Weisinger Calvo",
-        "participacion": "Seminario de Investigación",
-        "lugarDeTrabajoActual": "Bioquimica en el Hospital Ana Goitia en Avellaneda, Buenos Aires (Argentina)"
-    }
+	{
+		"id": 1,
+		"nombre_es": "Dr. Germán Ceizel-Borella",
+		"nombre_en": "Dr. Germán Ceizel-Borella",
+		"participacion_es": "Doctorado",
+		"participacion_en": "PhD",
+		"lugarDeTrabajoActual_es": "Especialista en asuntos regulatorios de la Secretaría de Agricultura, Ganadería y Pesca de la Nación (Argentina)",
+		"lugarDeTrabajoActual_en": "Regulatory Affairs Specialist at the National Secretariat of Agriculture, Livestock and Fisheries (Argentina)"
+	},
+	{
+		"id": 2,
+		"nombre_es": "Dra. Indra Roux",
+		"nombre_en": "Dr. Indra Roux",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Investigadora asociada en la unidad de Toxicologia de la Universidad de Cambridge (Reino Unido)",
+		"lugarDeTrabajoActual_en": "Associate Researcher in the Toxicology Unit at Cambridge University (United Kingdom)"
+	},
+	{
+		"id": 3,
+		"nombre_es": "Dr. Federico Muzio",
+		"nombre_en": "Dr. Federico Muzio",
+		"participacion_es": "Doctorado",
+		"participacion_en": "PhD",
+		"lugarDeTrabajoActual_es": "Posdoc en la Univesidad de Pittsburgh (EEUU)",
+		"lugarDeTrabajoActual_en": "Postdoc at the University of Pittsburgh (USA)"
+	},
+	{
+		"id": 4,
+		"nombre_es": "Lic. Teresita Ybarra",
+		"nombre_en": "BSc. Teresita Ybarra",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Asistente de ensayos clinicos en IQVIA (Argentina)",
+		"lugarDeTrabajoActual_en": "Clinical Trials Assistant at IQVIA (Argentina)"
+	},
+	{
+		"id": 5,
+		"nombre_es": "Ing. Agrobiotec. Maria Fernanda Sosa",
+		"nombre_en": "Agrobiotech Eng. Maria Fernanda Sosa",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Tecnica de ventas en Onelab S.A. (Argentina)",
+		"lugarDeTrabajoActual_en": "Sales Technician at Onelab S.A. (Argentina)"
+	},
+	{
+		"id": 6,
+		"nombre_es": "Dr. Leticia Fernandez",
+		"nombre_en": "Dr. Leticia Fernandez",
+		"participacion_es": "Posdoctorado",
+		"participacion_en": "Postdoctoral",
+		"lugarDeTrabajoActual_es": "Investigadora Adjunta de CONICET (LABEA, UNS, Argentina)",
+		"lugarDeTrabajoActual_en": "Associate Researcher at CONICET (LABEA, UNS, Argentina)"
+	},
+	{
+		"id": 7,
+		"nombre_es": "Lic. Florencia Farina",
+		"nombre_en": "BSc. Florencia Farina",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Emprendedora de Oreshki (Argentina)",
+		"lugarDeTrabajoActual_en": "Entrepreneur at Oreshki (Argentina)"
+	},
+	{
+		"id": 8,
+		"nombre_es": "Mg. Mariana Marrero",
+		"nombre_en": "MSc. Mariana Marrero",
+		"participacion_es": "Maestria",
+		"participacion_en": "Master's Degree",
+		"lugarDeTrabajoActual_es": "Docente JTP en la facultad de Ciencias Agrarias de la UNLZ (Argentina)",
+		"lugarDeTrabajoActual_en": "Teaching Assistant Professor at the Faculty of Agricultural Sciences, UNLZ (Argentina)"
+	},
+	{
+		"id": 9,
+		"nombre_es": "Lic. Julián D'Ambrosio",
+		"nombre_en": "BSc. Julián D'Ambrosio",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Analista Senior de Aseguramiento de Calidad en Nutrihome S.A (Argentina)",
+		"lugarDeTrabajoActual_en": "Senior Quality Assurance Analyst at Nutrihome S.A (Argentina)"
+	},
+	{
+		"id": 10,
+		"nombre_es": "Dr. Andres Muzlera",
+		"nombre_en": "Dr. Andres Muzlera",
+		"participacion_es": "Doctorado",
+		"participacion_en": "PhD",
+		"lugarDeTrabajoActual_es": "MLOPs Engineer en Santander Tecnología Argentina (Argentina)",
+		"lugarDeTrabajoActual_en": "MLOPs Engineer at Santander Technology Argentina (Argentina)"
+	},
+	{
+		"id": 11,
+		"nombre_es": "Dr. Matías Garavaglia",
+		"nombre_en": "Dr. Matías Garavaglia",
+		"participacion_es": "Posdoctorado",
+		"participacion_en": "Postdoctoral",
+		"lugarDeTrabajoActual_es": "Docente Investigador en la Universidad Nacional de Hurlingham (Argentina)",
+		"lugarDeTrabajoActual_en": "Teaching Researcher at the National University of Hurlingham (Argentina)"
+	},
+	{
+		"id": 12,
+		"nombre_es": "Dr. Alexandre Jousset",
+		"nombre_en": "Dr. Alexandre Jousset",
+		"participacion_es": "Posdoctorado",
+		"participacion_en": "Postdoctoral",
+		"lugarDeTrabajoActual_es": "CEO & Co-Fundador de Genedance (Suiza)",
+		"lugarDeTrabajoActual_en": "CEO & Co-Founder of Genedance (Switzerland)"
+	},
+	{
+		"id": 13,
+		"nombre_es": "Lic. María Cecilia Álvarez Crespo",
+		"nombre_en": "BSc. María Cecilia Álvarez Crespo",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Escuela Secundaria de Educación Técnica y Departamento de Ciencia y Tecnología, Universidad Nacional de Quilmes (Argentina)",
+		"lugarDeTrabajoActual_en": "Technical Education High School and Department of Science and Technology, National University of Quilmes (Argentina)"
+	},
+	{
+		"id": 14,
+		"nombre_es": "Lic. Dante Ruiz",
+		"nombre_en": "BSc. Dante Ruiz",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Coordinador de Ingenieria en Koppert Argentina (Argentina)",
+		"lugarDeTrabajoActual_en": "Engineering Coordinator at Koppert Argentina (Argentina)"
+	},
+	{
+		"id": 15,
+		"nombre_es": "Bqca. Malena Weisinger Calvo",
+		"nombre_en": "Biochemist Malena Weisinger Calvo",
+		"participacion_es": "Seminario de Investigación",
+		"participacion_en": "Research Seminar",
+		"lugarDeTrabajoActual_es": "Bioquimica en el Hospital Ana Goitia en Avellaneda, Buenos Aires (Argentina)",
+		"lugarDeTrabajoActual_en": "Biochemist at Ana Goitia Hospital in Avellaneda, Buenos Aires (Argentina)"
+	}
 ]
