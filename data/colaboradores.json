@@ -22,8 +22,8 @@
 	},
 	{
 		"id": 4,
-		"nombre_es": "Alessio Cimmino",
-		"nombre_en": "Alessio Cimmino",
+		"nombre_es": "Dr. Alessio Cimmino",
+		"nombre_en": "Dr. Alessio Cimmino",
 		"lugarDeTrabajoActual_es": "Departamento de Ciencias Químicas, Universidad de Nápoles Federico II (Italia)",
 		"lugarDeTrabajoActual_en": "Department of Chemical Sciences, University of Naples Federico II (Italy)"
 	},
@@ -36,8 +36,8 @@
 	},
 	{
 		"id": 6,
-		"nombre_es": "María Trinidad Gallegos",
-		"nombre_en": "María Trinidad Gallegos",
+		"nombre_es": "Dra. María Trinidad Gallegos",
+		"nombre_en": "Dr. María Trinidad Gallegos",
 		"lugarDeTrabajoActual_es": "Estación Experimental del Zaidín-CSIC (Granada, España)",
 		"lugarDeTrabajoActual_en": "Zaidín Experimental Station-CSIC (Granada, Spain)"
 	}
