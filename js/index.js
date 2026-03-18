@@ -1,30 +1,27 @@
 /* ==============================================
-   VARIABLES GLOBALES DE DATOS
-   (Actúan como caché para no recargar fetch)
+    VARIABLES GLOBALES DE DATOS
 ============================================== */
 let investigadoresData = [];
 let lineasInvestigacionData = [];
 let serviciosData = [];
 let exIntegrantesData = [];
 let colaboradoresData = [];
-let papersData = []; // Por si decidimos traducir algo aquí
+let papersData = []; 
 
 /* ==============================================
-   INICIALIZACIÓN
+    INICIALIZACIÓN
 ============================================== */
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Configurar año actual
     const currentYear = new Date().getFullYear();
     const yearElement = document.getElementById('current-year');
     if (yearElement) yearElement.textContent = currentYear;
 
-    // 2. Iniciar Cargas (Fetch)
     cargarServicios();
     mostrarUltimasPublicaciones();
     cargarLineasInvestigacion();
     cargarInvestigadores();
-    cargarDatosExIntegrantes(); // Precarga datos
-    cargarDatosColaboradores(); // Precarga datos
+    cargarDatosExIntegrantes();
+    cargarDatosColaboradores();
 
     // 3. Configurar UI
     setupMenuToggle();
@@ -34,25 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ESCUCHA EL CAMBIO DE IDIOMA (Disparado por language-switcher.js)
 window.addEventListener('languageChanged', (e) => {
-    // Cuando cambia el idioma, volvemos a renderizar todo sin hacer fetch de nuevo
     renderServicios();
     renderLineasInvestigacion(); 
-    // Los investigadores en la home son solo nombre/foto, pero si tuvieran cargo traducible:
-    // renderInvestigadores(); 
-    
-    // Si tienes papers con textos traducibles, descomenta:
-    // renderUltimasPublicaciones();
 });
 
 /* ==============================================
-   HELPER: OBTENER IDIOMA ACTUAL
+    HELPER: OBTENER IDIOMA ACTUAL
 ============================================== */
 function getLang() {
     return localStorage.getItem('preferredLanguage') || 'es';
 }
 
 /* ==============================================
-   1. INVESTIGADORES (ACTUALES)
+    1. INVESTIGADORES (ACTUALES)
 ============================================== */
 async function cargarInvestigadores() { 
     try {
@@ -74,19 +65,17 @@ function renderInvestigadores() {
     const lang = getLang(); // 'es' o 'en'
 
     investigadoresData.forEach((investigador) => {
-        // Asumimos que nombre y apellido son universales, si no, usar investigador['nombre_' + lang]
         const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
         
         const cardHTML = `
             <div class="researcher-card" data-id="${investigador.id}" role="button" tabindex="0">
                 <img src="${investigador.fotoUrl || './imgs/placeholder.png'}" 
-                     alt="${lang === 'es' ? 'Foto de' : 'Photo of'} ${limpiarHTML(nombreCompleto)}">
+                    alt="${lang === 'es' ? 'Foto de' : 'Photo of'} ${limpiarHTML(nombreCompleto)}">
                 <span class="researcher-name">${nombreCompleto}</span>
             </div>`;
         contenedor.innerHTML += cardHTML;
     });
 
-    // Reasignar eventos click
     contenedor.querySelectorAll('.researcher-card').forEach(card => {
         const action = () => {
             const id = parseInt(card.getAttribute('data-id')); 
@@ -101,7 +90,7 @@ function mostrarModalInvestigador(id) {
     const investigador = investigadoresData.find(inv => inv.id === id);
     if (!investigador) return; 
 
-    const lang = getLang(); // Detectar idioma al momento del click
+    const lang = getLang(); 
 
     const modal = document.getElementById('researcher-modal');
     const modalImage = document.getElementById('researcher-modal-image');
@@ -113,13 +102,11 @@ function mostrarModalInvestigador(id) {
         const nombreCompleto = `${investigador.nombre} ${investigador.apellido}`;
         
         modalImage.src = investigador.fotoUrl || './imgs/placeholder.png'; 
-        // Traducción dinámica del ALT
         const prefix = lang === 'es' ? 'Foto de' : 'Photo of';
         modalImage.alt = `${prefix} ${limpiarHTML(nombreCompleto)}`;
         
         modalName.innerHTML = nombreCompleto;
         
-        // SELECCIÓN DE IDIOMA: titulo_es vs titulo_en
         modalTitle.innerHTML = investigador[`titulo_${lang}`] || investigador.titulo_es || '';
         modalDescription.innerHTML = investigador[`descripcion_${lang}`] || investigador.descripcion_es || '';
         
@@ -129,7 +116,7 @@ function mostrarModalInvestigador(id) {
 }
 
 /* ==============================================
-   2. LÍNEAS DE INVESTIGACIÓN
+    2. LÍNEAS DE INVESTIGACIÓN
 ============================================== */
 async function cargarLineasInvestigacion() {
     try {
@@ -151,7 +138,6 @@ function renderLineasInvestigacion() {
     const lang = getLang();
 
     lineasInvestigacionData.forEach(linea => {
-        // Título traducido para la tarjeta
         const titulo = linea[`titulo_${lang}`] || linea.titulo_es;
         
         const itemHTML = `
@@ -200,7 +186,7 @@ function mostrarModalInvestigacion(id) {
 }
 
 /* ==============================================
-   3. SERVICIOS
+    3. SERVICIOS
 ============================================== */
 async function cargarServicios() {
     try {
@@ -236,7 +222,6 @@ function renderServicios() {
         contenedor.innerHTML += itemHTML;
     });
 
-    // Reactivar acordeón (lógica de UI)
     const titulos = contenedor.querySelectorAll('.accordion-title');
     titulos.forEach(titulo => {
         titulo.addEventListener('click', () => {
@@ -249,8 +234,7 @@ function renderServicios() {
 }
 
 /* ==============================================
-   4. EX-INTEGRANTES Y COLABORADORES
-   (Ahora con carga separada y renderizado on-click)
+    4. EX-INTEGRANTES Y COLABORADORES
 ============================================== */
 
 // Pre-carga de datos (se llama al inicio)
@@ -268,13 +252,11 @@ async function cargarDatosColaboradores() {
     } catch(e) { console.error(e); }
 }
 
-// Funciones de visualización (se llaman al hacer click en los botones)
 function mostrarExIntegrantes() {
-    if (exIntegrantesData.length === 0) return; // O mostrar error/loading
+    if (exIntegrantesData.length === 0) return; 
     
     const lang = getLang();
-    
-    // Agrupar dinámicamente según el idioma
+
     const agrupados = exIntegrantesData.reduce((acc, persona) => {
         // Usamos participacion_es o participacion_en como clave de grupo
         const tipo = persona[`participacion_${lang}`] || persona.participacion_es || 'Otros';
@@ -284,10 +266,7 @@ function mostrarExIntegrantes() {
     }, {});
 
     let htmlContent = '';
-    // Definimos el orden de prioridades, traduciendo las claves si es necesario
-    // Nota: Como las claves ahora son dinámicas, el orden fijo puede fallar si no coincide exactamente el string.
-    // Una forma simple es iterar las claves disponibles.
-    
+
     Object.keys(agrupados).forEach(tipo => {
         htmlContent += `
             <div class="participation-group">
@@ -332,7 +311,7 @@ function mostrarColaboradores() {
 }
 
 /* ==============================================
-   5. PUBLICACIONES
+    5. PUBLICACIONES
 ============================================== */
 async function mostrarUltimasPublicaciones() {
     try {
@@ -361,7 +340,6 @@ function renderUltimasPublicaciones() {
     const textoPublicado = lang === 'es' ? 'Publicado en:' : 'Published in:';
 
     ultimos4.forEach(paper => {
-        // Asumimos que títulos de papers no se traducen usualmente
         const titulo = paper.titulo; 
         
         const publicacionHTML = `
@@ -377,14 +355,13 @@ function renderUltimasPublicaciones() {
 }
 
 /* ==============================================
-   UTILIDADES (Modales, Menú, Scroll)
+    UTILIDADES (Modales, Menú, Scroll)
 ============================================== */
 function setupListenersModales() {
     // Botones de equipo (Ex-integrantes y Colaboradores)
     const btnPast = document.getElementById('btn-past-members');
     const btnCollab = document.getElementById('btn-collaborators');
-    
-    // IMPORTANTE: Ahora llamamos a las funciones que renderizan, no a las que cargan
+
     if (btnPast) btnPast.addEventListener('click', mostrarExIntegrantes);
     if (btnCollab) btnCollab.addEventListener('click', mostrarColaboradores);
     
@@ -449,13 +426,13 @@ function toggleBodyScroll(bloquear) {
 
 function setupMenuToggle() {
     const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close'); // Si tuvieras botón cerrar específico
+    const menuClose = document.getElementById('menu-close');
     const navBar = document.getElementById('navC');
     const navLinks = document.querySelectorAll('.liNav a');
 
     const closeMenu = () => {
         if (navBar) navBar.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restaurar scroll nativo si el menu lo bloquea
+        document.body.style.overflow = 'auto'; 
     };
 
     if (menuToggle && navBar) {
@@ -483,7 +460,7 @@ function limpiarHTML(texto) {
 }
 
 /* ==============================================
-   AJUSTE DE PADDING (Header Fixed)
+    AJUSTE DE PADDING (Header Fixed)
 ============================================== */
 function ajustarPaddingBody() {
     const header = document.querySelector('.header-main');

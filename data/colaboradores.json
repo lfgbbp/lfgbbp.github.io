@@ -40,5 +40,12 @@
 		"nombre_en": "Dr. María Trinidad Gallegos",
 		"lugarDeTrabajoActual_es": "Estación Experimental del Zaidín-CSIC (Granada, España)",
 		"lugarDeTrabajoActual_en": "Zaidín Experimental Station-CSIC (Granada, Spain)"
+	},
+	{
+		"id": 7,
+		"nombre_es": "Dr. Matías Garavaglia",
+		"nombre_en": "Dr. Matías Garavaglia",
+		"lugarDeTrabajoActual_es": "Laboratorio de Aplicaciones Biotecnológicas y Microbiología (LAByM) - Universidad Nacional de Hurlingham",
+		"lugarDeTrabajoActual_en": "Laboratory of Biotecnological Applications and Microbiology (LAByM) - National University of Hurlingham"
 	}
 ]
