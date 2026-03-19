@@ -71,6 +71,12 @@
 		"meta": {
 			"logoAlt": "El logo del laboratorio.",
 			"logoAltShort": "Logo LFG"
+		},
+		"seo": {
+			"title_home": "LFGBBP | Fisiología y Genética de Bacterias Beneficiosas para Plantas",
+			"desc_home": "Sitio oficial del Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP) de la Universidad Nacional de Quilmes (UNQ). Investigación en Pseudomonas y biocontrol.",
+			"title_pub": "Publicaciones Científicas | LFGBBP - UNQ",
+			"desc_pub": "Archivo de publicaciones científicas, artículos y papers del Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas (LFGBBP)."
 		}
 	},
 	"en": {
@@ -145,6 +151,12 @@
 		"meta": {
 			"logoAlt": "The laboratory logo.",
 			"logoAltShort": "LFG Logo"
+		},
+		"seo": {
+			"title_home": "LFGBBP | Physiology and Genetics of Plant Beneficial Bacteria",
+			"desc_home": "Official site of the Laboratory of Physiology and Genetics of Plant Beneficial Bacteria (LFGBBP) at the National University of Quilmes (UNQ). Research on Pseudomonas and biocontrol.",
+			"title_pub": "Scientific Publications | LFGBBP - UNQ",
+			"desc_pub": "Archive of scientific publications, articles, and papers of the Laboratory of Physiology and Genetics of Plant Beneficial Bacteria (LFGBBP)."
 		}
 	}
 }
