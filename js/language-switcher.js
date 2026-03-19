@@ -61,6 +61,15 @@ function applyTranslations(lang) {
             element.setAttribute('alt', value);
         }
     });
+    
+    // TRADUCCIÓN DE ETIQUETAS META (SEO)
+    document.querySelectorAll('[data-i18n-meta]').forEach(element => {
+        const key = element.getAttribute('data-i18n-meta');
+        const value = getNestedValue(t, key);
+        if (value) {
+            element.setAttribute('content', value);
+        }
+    });
 
     const footerDev = document.querySelector('footer p:last-child');
     if (footerDev) {
