@@ -71,13 +71,13 @@
 	},
 	{
 		"id": 8,
-		"nombre": "Fernanda",
-		"apellido": "Coelho",
-		"titulo_es": "Lic. en Biotecnología y becaria doctoral de la Agencia I+D+i",
-		"titulo_en": "BSc in Biotechnology and doctoral fellow of the I+D+i Agency",
-		"fotoUrl": "./imgs/investigadores/foto fernanda.jpeg",
-		"descripcion_es": "Actualmente estoy estudiando aislamientos autóctonos de <i>Pseudomonas</i> con características promotoras del crecimiento vegetal en cultivos extensivos. Mediante técnicas de biología molecular y microbiología busco comprender cómo funcionan y qué genes están involucrados en estas propiedades de los aislamientos nativos y así aportar mi granito de arena en vías de una agricultura más sustentable.",
-		"descripcion_en": "I am currently studying native isolates of <i>Pseudomonas</i> with plant growth-promoting characteristics in extensive crops. Through molecular biology and microbiology techniques, I seek to understand how they work and what genes are involved in these properties of native isolates, thus contributing my grain of sand towards more sustainable agriculture."
+		"nombre": "Priscila",
+		"apellido": "Fredez",
+		"titulo_es": "Lic. en Biotecnología (UNQ) - Becaria Doctoral CONICET",
+		"titulo_en": "BSc in Biotechnology (UNQ) - CONICET Doctoral Fellow",
+		"fotoUrl": "./imgs/investigadores/foto priscila.jpg",
+		"descripcion_es": "Desarrollo actualmente mi tesina de grado en el LFGBBP. Mi trabajo de investigación consiste en caracterizar la transferencia horizontal de genes en diferentes especies bacterianas. El estudio se centra en los agentes de transferencia génica (GTAs) que comparten un origen evolutivo.",
+		"descripcion_en": "I am currently developing my undergraduate thesis at LFGBBP. My research work consists of characterizing horizontal gene transfer in different bacterial species. The study focuses on gene transfer agents (GTAs) that share an evolutionary origin."
 	},
 	{
 		"id": 9,
@@ -91,16 +91,6 @@
 	},
 	{
 		"id": 10,
-		"nombre": "Priscila",
-		"apellido": "Fredez",
-		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
-		"titulo_en": "Advanced student of the Bachelor's in Biotechnology with orientation in Molecular Genetics (UNQ)",
-		"fotoUrl": "./imgs/investigadores/foto priscila.jpg",
-		"descripcion_es": "Desarrollo actualmente mi tesina de grado en el LFGBBP. Mi trabajo de investigación consiste en caracterizar la transferencia horizontal de genes en diferentes especies bacterianas. El estudio se centra en los agentes de transferencia génica (GTAs) que comparten un origen evolutivo.",
-		"descripcion_en": "I am currently developing my undergraduate thesis at LFGBBP. My research work consists of characterizing horizontal gene transfer in different bacterial species. The study focuses on gene transfer agents (GTAs) that share an evolutionary origin."
-	},
-	{
-		"id": 11,
 		"nombre": "Lucia",
 		"apellido": "Nuñez",
 		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Bioprocesos (UNQ)",
@@ -110,7 +100,7 @@
 		"descripcion_en": "My interest is oriented towards the study of microorganisms with potential application in sustainable agriculture and the development of biotechnological strategies for environmental care and management. I am currently working on my undergraduate thesis on the physiological and genomic characterization of spontaneous morphological variants of the cereal-stimulating strain <i>Pseudomonas pergaminensis</i> at LFGBBP at UNQ, under the direction of Dr. Claudio Valverde. Additionally, I work as a teaching assistant in the Microbiology and Immunology area and as a tutor for new students in the University Life Workshop at the same University. I actively participate in organizing academic conferences and science outreach activities, and I am interested in public science communication and its connection with society."
 	},
 	{
-		"id": 12,
+		"id": 11,
 		"nombre": "Sofia",
 		"apellido": "Díaz",
 		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en Genética Molecular (UNQ)",
@@ -120,7 +110,7 @@
 		"descripcion_en": "In addition to being a student, I also work as an academic laboratory assistant in the Food Basic Sciences area. Currently, I am a CIC training fellow at LFGBBP, where I am conducting my undergraduate seminar focused on the molecular characterization of RNA-binding proteins of the Crs-Rsm family in <i>Pseudomonas aeruginosa</i>. My training focuses on two areas that have passionate me throughout my career: microbiology and molecular biology. I am particularly interested in understanding the molecular mechanisms that regulate the interaction between microorganisms and their environment, with an applied view towards biotechnology."
 	},
 	{
-		"id": 13,
+		"id": 12,
 		"nombre": "Micaela",
 		"apellido": "Arnoso Ventancour",
 		"titulo_es": "Estudiante avanzada de la Licenciatura en Biotecnología con orientación en genética molecular (UNQ)",
@@ -130,7 +120,7 @@
 		"descripcion_en": "Currently, I am working on my undergraduate thesis at LFGBBP on the development of bacterial bioinputs to improve productivity and quality of <i>Cannabis sativa</i> cultivation for medicinal use, under the direction of Dr. Betina Agaras"
 	},
 	{
-		"id": 14,
+		"id": 13,
 		"nombre": "Alexa",
 		"apellido": "Gallardo Lafon",
 		"titulo_es": "Estudiante de la Licenciatura en Biotecnología (UNQ) | Técnica laboratorista (UNQ) | Técnica en Nutrición Comunitaria (UNLa)",
