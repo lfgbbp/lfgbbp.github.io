@@ -47,5 +47,12 @@
 		"nombre_en": "Dr. Matías Garavaglia",
 		"lugarDeTrabajoActual_es": "Laboratorio de Aplicaciones Biotecnológicas y Microbiología (LAByM) - Universidad Nacional de Hurlingham",
 		"lugarDeTrabajoActual_en": "Laboratory of Biotecnological Applications and Microbiology (LAByM) - National University of Hurlingham"
+	},
+	{
+		"id": 8,
+		"nombre_es": "Dr. Guillermo Maroniche",
+		"nombre_en": "Dr. Guillermo Maroniche",
+		"lugarDeTrabajoActual_es": "Facultad de Ciencias Agrarias, Universidad Nacional de Mar del Plata (UNMdP)",
+		"lugarDeTrabajoActual_en": "Faculty of Agricultural Sciences, National University of Mar del Plata (UNMdP)"
 	}
 ]
