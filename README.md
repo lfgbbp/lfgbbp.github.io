@@ -18,7 +18,7 @@ Este repositorio contiene el código fuente del sitio web oficial del Laboratori
 - **Últimas Publicaciones:** Muestra automáticamente los papers más recientes, ordenados por fecha, y enlaza a los investigadores correspondientes.
 - **Acordeón de Servicios Custom:** Un componente de acordeón interactivo y personalizado, construido con JavaScript puro.
 - **Totalmente Responsive:** El diseño se adapta perfectamente a dispositivos móviles, tablets y computadoras de escritorio gracias al uso de Media Queries.
-- **Gestión mediante Google Sheets:** Incluye un script en `google-sheets-script/` para administrar (agregar/modificar) de forma sencilla investigadores, ex-miembros, colaboradores, líneas de investigación, publicaciones y servicios desde una planilla visual y exportarlos directamente a JSON.
+- **Gestión y Sincronización mediante Google Sheets:** Incluye un script en `google-sheets-script/` para administrar (agregar/modificar) investigadores, ex-miembros, colaboradores, líneas de investigación, publicaciones y servicios desde una planilla visual, con sincronización directa (commit y push automático) hacia GitHub.
 
 ## Tecnologías Utilizadas
 

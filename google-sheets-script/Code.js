@@ -1,29 +1,32 @@
 /**
  * ==============================================================================
- * LFGBBP - SISTEMA DE GESTIÓN DE CONTENIDO PARA GOOGLE SHEETS
- * Laboratorio de Fisiología y Genética de Bacterias Beneficiosas para Plantas
+ * LFGBBP - SISTEMA DE GESTION DE CONTENIDO PARA GOOGLE SHEETS
+ * Laboratorio de Fisiologia y Genetica de Bacterias Beneficiosas para Plantas
  * Universidad Nacional de Quilmes (UNQ) - CONICET - CIC-BA
  * ==============================================================================
  * 
- * Este script permite administrar directamente desde Google Sheets los 6 módulos
+ * Este script permite administrar directamente desde Google Sheets los 6 modulos
  * de datos que alimentan el sitio web oficial (https://lfgbbp.github.io):
  * 
  * 1. Investigadores Actuales    -> data/investigadoresAct.json
  * 2. Ex-Miembros / Becarios     -> data/investigadoresPast.json
- * 3. Colaboradores Científicos  -> data/colaboradores.json
- * 4. Líneas de Investigación    -> data/researchLines.json
- * 5. Papers de Investigación    -> data/papers.json
- * 6. Servicios Tecnológicos     -> data/servicios.json
+ * 3. Colaboradores Cientificos  -> data/colaboradores.json
+ * 4. Lineas de Investigacion    -> data/researchLines.json
+ * 5. Papers de Investigacion    -> data/papers.json
+ * 6. Servicios Tecnologicos     -> data/servicios.json
+ * 
+ * Adicionalmente, incluye sincronizacion directa con la API de GitHub para
+ * realizar commit y push de manera automatica a la rama de produccion.
  */
 
 /* ==============================================================================
- * 1. CONFIGURACIÓN GLOBAL Y ESQUEMA DE DATOS
+ * 1. CONFIGURACION GLOBAL Y ESQUEMA DE DATOS
  * ============================================================================== */
 const CONFIG = {
-  UI_TITLE: 'LFGBBP - Panel de Gestión',
-  PRIMARY_COLOR: '#1a365d', // Azul institucional
+  UI_TITLE: 'LFGBBP - Panel de Gestion',
+  PRIMARY_COLOR: '#1a365d',
   SECONDARY_COLOR: '#2b6cb0',
-  ACCENT_COLOR: '#319795',
+  ACCENT_COLOR: '#2c7a7b',
   
   SHEETS: {
     INVESTIGADORES: {
@@ -35,19 +38,18 @@ const CONFIG = {
       idType: 'number',
       label: 'Investigador',
       pluralLabel: 'Investigadores',
-      icon: '👤',
       columns: [
         { key: 'id', label: 'ID', width: 60, type: 'number', required: true },
         { key: 'nombre', label: 'Nombre', width: 130, type: 'string', required: true },
         { key: 'apellido', label: 'Apellido', width: 130, type: 'string', required: true },
-        { key: 'titulo_es', label: 'Título (ES)', width: 260, type: 'string', required: true },
-        { key: 'titulo_en', label: 'Título (EN)', width: 260, type: 'string', required: true },
+        { key: 'titulo_es', label: 'Titulo (ES)', width: 260, type: 'string', required: true },
+        { key: 'titulo_en', label: 'Titulo (EN)', width: 260, type: 'string', required: true },
         { key: 'fotoUrl', label: 'Foto URL / Ruta', width: 220, type: 'string', required: false, hint: 'Ej: ./imgs/investigadores/foto claudio.jpg' },
-        { key: 'descripcion_es', label: 'Descripción (ES)', width: 380, type: 'multiline', required: true },
-        { key: 'descripcion_en', label: 'Descripción (EN)', width: 380, type: 'multiline', required: true }
+        { key: 'descripcion_es', label: 'Descripcion (ES)', width: 380, type: 'multiline', required: true },
+        { key: 'descripcion_en', label: 'Descripcion (EN)', width: 380, type: 'multiline', required: true }
       ],
       getDisplayLabel: function(item) {
-        return `#${item.id} - ${item.apellido || ''}, ${item.nombre || ''} (${item.titulo_es ? item.titulo_es.substring(0, 30) + '...' : ''})`;
+        return '#' + item.id + ' - ' + (item.apellido || '') + ', ' + (item.nombre || '') + ' (' + (item.titulo_es ? item.titulo_es.substring(0, 30) + '...' : '') + ')';
       }
     },
 
@@ -60,18 +62,17 @@ const CONFIG = {
       idType: 'number',
       label: 'Ex-Miembro',
       pluralLabel: 'Ex-Miembros',
-      icon: '🎓',
       columns: [
         { key: 'id', label: 'ID', width: 60, type: 'number', required: true },
         { key: 'nombre_es', label: 'Nombre (ES)', width: 180, type: 'string', required: true },
         { key: 'nombre_en', label: 'Nombre (EN)', width: 180, type: 'string', required: true },
-        { key: 'participacion_es', label: 'Participación (ES)', width: 190, type: 'string', required: true, hint: 'Ej: Doctorado, Seminario de Investigación, Tesina' },
-        { key: 'participacion_en', label: 'Participación (EN)', width: 190, type: 'string', required: true, hint: 'Ej: PhD, Research Seminar, Thesis' },
+        { key: 'participacion_es', label: 'Participacion (ES)', width: 190, type: 'string', required: true, hint: 'Ej: Doctorado, Seminario de Investigacion, Tesina' },
+        { key: 'participacion_en', label: 'Participacion (EN)', width: 190, type: 'string', required: true, hint: 'Ej: PhD, Research Seminar, Thesis' },
         { key: 'lugarDeTrabajoActual_es', label: 'Lugar de Trabajo Actual (ES)', width: 300, type: 'string', required: true },
         { key: 'lugarDeTrabajoActual_en', label: 'Lugar de Trabajo Actual (EN)', width: 300, type: 'string', required: true }
       ],
       getDisplayLabel: function(item) {
-        return `#${item.id} - ${item.nombre_es || 'Sin nombre'} (${item.participacion_es || ''})`;
+        return '#' + item.id + ' - ' + (item.nombre_es || 'Sin nombre') + ' (' + (item.participacion_es || '') + ')';
       }
     },
 
@@ -84,7 +85,6 @@ const CONFIG = {
       idType: 'number',
       label: 'Colaborador',
       pluralLabel: 'Colaboradores',
-      icon: '🤝',
       columns: [
         { key: 'id', label: 'ID', width: 60, type: 'number', required: true },
         { key: 'nombre_es', label: 'Nombre (ES)', width: 180, type: 'string', required: true },
@@ -93,7 +93,7 @@ const CONFIG = {
         { key: 'lugarDeTrabajoActual_en', label: 'Lugar de Trabajo Actual (EN)', width: 320, type: 'string', required: true }
       ],
       getDisplayLabel: function(item) {
-        return `#${item.id} - ${item.nombre_es || 'Sin nombre'}`;
+        return '#' + item.id + ' - ' + (item.nombre_es || 'Sin nombre');
       }
     },
 
@@ -104,20 +104,19 @@ const CONFIG = {
       jsonFile: 'researchLines.json',
       idField: 'id',
       idType: 'number',
-      label: 'Línea de Investigación',
-      pluralLabel: 'Líneas de Investigación',
-      icon: '🧬',
+      label: 'Linea de Investigacion',
+      pluralLabel: 'Lineas de Investigacion',
       columns: [
         { key: 'id', label: 'ID', width: 60, type: 'number', required: true },
-        { key: 'titulo_es', label: 'Título (ES)', width: 280, type: 'string', required: true },
-        { key: 'titulo_en', label: 'Título (EN)', width: 280, type: 'string', required: true },
-        { key: 'descripcion_es', label: 'Descripción (ES)', width: 400, type: 'multiline', required: true },
-        { key: 'descripcion_en', label: 'Descripción (EN)', width: 400, type: 'multiline', required: true },
+        { key: 'titulo_es', label: 'Titulo (ES)', width: 280, type: 'string', required: true },
+        { key: 'titulo_en', label: 'Titulo (EN)', width: 280, type: 'string', required: true },
+        { key: 'descripcion_es', label: 'Descripcion (ES)', width: 400, type: 'multiline', required: true },
+        { key: 'descripcion_en', label: 'Descripcion (EN)', width: 400, type: 'multiline', required: true },
         { key: 'imagen', label: 'Imagen URL / Ruta', width: 220, type: 'string', required: false, hint: 'Ej: ./imgs/lineas/linea1_2.jpeg' }
       ],
       getDisplayLabel: function(item) {
         const title = (item.titulo_es || '').replace(/<[^>]+>/g, '');
-        return `#${item.id} - ${title.substring(0, 45)}...`;
+        return '#' + item.id + ' - ' + title.substring(0, 45) + '...';
       }
     },
 
@@ -128,20 +127,19 @@ const CONFIG = {
       jsonFile: 'papers.json',
       idField: 'paperId',
       idType: 'number',
-      label: 'Paper de Investigación',
-      pluralLabel: 'Papers de Investigación',
-      icon: '📄',
+      label: 'Paper de Investigacion',
+      pluralLabel: 'Papers de Investigacion',
       columns: [
         { key: 'paperId', label: 'Paper ID', width: 80, type: 'number', required: true },
-        { key: 'fechaPublicacion', label: 'Año / Fecha', width: 100, type: 'string', required: true, hint: 'Ej: 2024' },
-        { key: 'titulo', label: 'Título', width: 340, type: 'multiline', required: true },
+        { key: 'fechaPublicacion', label: 'Ano / Fecha', width: 100, type: 'string', required: true, hint: 'Ej: 2024' },
+        { key: 'titulo', label: 'Titulo', width: 340, type: 'multiline', required: true },
         { key: 'publicadoEn', label: 'Revista / Journal', width: 220, type: 'string', required: true, hint: 'Ej: PLANTS, Molecular Microbiology' },
         { key: 'enlace', label: 'Enlace (DOI / URL)', width: 260, type: 'string', required: true, hint: 'Ej: https://doi.org/10.3390/plants13152130' },
         { key: 'autores', label: 'Autores', width: 320, type: 'string', required: true, hint: 'Ej: Lorch, M., Valverde, C., Agaras, B.' }
       ],
       getDisplayLabel: function(item) {
-        const title = item.titulo || 'Sin título';
-        return `[${item.fechaPublicacion || 'S/A'}] #${item.paperId} - ${title.substring(0, 40)}...`;
+        const title = item.titulo || 'Sin titulo';
+        return '[' + (item.fechaPublicacion || 'S/A') + '] #' + item.paperId + ' - ' + title.substring(0, 40) + '...';
       }
     },
 
@@ -154,66 +152,67 @@ const CONFIG = {
       idType: 'number',
       label: 'Servicio',
       pluralLabel: 'Servicios',
-      icon: '🛠️',
       columns: [
         { key: 'id', label: 'ID', width: 60, type: 'number', required: true },
-        { key: 'titulo_es', label: 'Título (ES)', width: 260, type: 'string', required: true },
-        { key: 'titulo_en', label: 'Título (EN)', width: 260, type: 'string', required: true },
-        { key: 'descripcion_es', label: 'Descripción (ES)', width: 400, type: 'multiline', required: true },
-        { key: 'descripcion_en', label: 'Descripción (EN)', width: 400, type: 'multiline', required: true }
+        { key: 'titulo_es', label: 'Titulo (ES)', width: 260, type: 'string', required: true },
+        { key: 'titulo_en', label: 'Titulo (EN)', width: 260, type: 'string', required: true },
+        { key: 'descripcion_es', label: 'Descripcion (ES)', width: 400, type: 'multiline', required: true },
+        { key: 'descripcion_en', label: 'Descripcion (EN)', width: 400, type: 'multiline', required: true }
       ],
       getDisplayLabel: function(item) {
-        return `#${item.id} - ${item.titulo_es || 'Sin título'}`;
+        return '#' + item.id + ' - ' + (item.titulo_es || 'Sin titulo');
       }
     }
   }
 };
 
 /* ==============================================================================
- * 2. MENÚ PRINCIPAL Y DISPARADORES DE HOJA (onOpen, onEdit)
+ * 2. MENU PRINCIPAL Y DISPARADORES DE HOJA (onOpen, onEdit)
  * ============================================================================== */
 
 /**
- * Se ejecuta automáticamente al abrir el archivo de Google Sheets.
- * Crea el menú personalizado "🔬 LFGBBP Gestión".
+ * Se ejecuta automaticamente al abrir el archivo de Google Sheets.
+ * Crea el menu "LFGBBP - Gestion Web".
  */
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   
-  const menu = ui.createMenu('🔬 LFGBBP Gestión')
-    .addItem('📱 Abrir Panel de Gestión (Sidebar)', 'showSidebar')
-    .addItem('✏️ Editar registro de fila seleccionada', 'editSelectedRow')
+  const menu = ui.createMenu('LFGBBP - Gestion Web')
+    .addItem('Abrir panel de gestion (Sidebar)', 'showSidebar')
+    .addItem('Editar registro de fila seleccionada', 'editSelectedRow')
     .addSeparator();
 
-  // Submenú para agregar o modificar módulo por módulo
-  const subMenu = ui.createMenu('➕ Agregar / ✏️ Modificar...')
-    .addItem('👤 Investigadores Actuales', 'openInvestigadoresForm')
-    .addItem('🎓 Ex-Miembros', 'openExMiembrosForm')
-    .addItem('🤝 Colaboradores', 'openColaboradoresForm')
-    .addItem('🧬 Líneas de Investigación', 'openLineasForm')
-    .addItem('📄 Papers de Investigación', 'openPapersForm')
-    .addItem('🛠️ Servicios', 'openServiciosForm');
+  // Submenu para agregar o modificar modulo por modulo
+  const subMenu = ui.createMenu('Agregar o modificar...')
+    .addItem('Investigadores actuales', 'openInvestigadoresForm')
+    .addItem('Ex-miembros', 'openExMiembrosForm')
+    .addItem('Colaboradores', 'openColaboradoresForm')
+    .addItem('Lineas de investigacion', 'openLineasForm')
+    .addItem('Papers de investigacion', 'openPapersForm')
+    .addItem('Servicios', 'openServiciosForm');
   
   menu.addSubMenu(subMenu)
     .addSeparator()
-    .addItem('⚙️ Inicializar y Formatear Hojas', 'setupAllSheets')
-    .addItem('📥 Cargar Datos Iniciales (desde JSON)', 'populateInitialData')
-    .addItem('📤 Exportar Datos a JSON', 'showExportDialog')
+    .addItem('Publicar cambios en sitio web (Commit y Push)', 'promptPublishToGitHub')
+    .addItem('Configuracion de GitHub', 'openGitHubConfigModal')
     .addSeparator()
-    .addItem('🔢 Asignar / Reparar IDs faltantes', 'fixMissingIds')
+    .addItem('Inicializar y formatear hojas', 'setupAllSheets')
+    .addItem('Cargar datos iniciales (desde JSON)', 'populateInitialData')
+    .addItem('Exportar datos a JSON local', 'showExportDialog')
+    .addSeparator()
+    .addItem('Asignar o reparar IDs faltantes', 'fixMissingIds')
     .addToUi();
 }
 
 /**
  * Trigger que detecta si el usuario escribe directamente en una fila y no tiene ID.
- * Genera automáticamente el ID correlativo correspondiente.
+ * Genera automaticamente el ID correlativo correspondiente.
  */
 function onEdit(e) {
   if (!e || !e.range) return;
   const sheet = e.range.getSheet();
   const sheetName = sheet.getName();
   
-  // Buscar a qué entidad pertenece la hoja
   let matchedConfig = null;
   for (const key in CONFIG.SHEETS) {
     if (CONFIG.SHEETS[key].sheetName === sheetName) {
@@ -224,13 +223,12 @@ function onEdit(e) {
   if (!matchedConfig) return;
 
   const row = e.range.getRow();
-  if (row <= 1) return; // Encabezado
+  if (row <= 1) return;
 
-  const idCol = 1; // El ID siempre está en la columna 1
+  const idCol = 1;
   const idCell = sheet.getRange(row, idCol);
   const currentId = idCell.getValue();
 
-  // Si la celda de ID está vacía pero hay datos en otras columnas de esa fila
   if (currentId === '' || currentId === null || currentId === undefined) {
     const numCols = matchedConfig.columns.length;
     const rowValues = sheet.getRange(row, 1, 1, numCols).getValues()[0];
@@ -245,11 +243,11 @@ function onEdit(e) {
 }
 
 /* ==============================================================================
- * 3. APERTURA DE DIÁLOGOS Y SIDEBAR
+ * 3. APERTURA DE DIALOGOS Y SIDEBAR
  * ============================================================================== */
 
 /**
- * Abre el sidebar principal de gestión con la sección por defecto o la especificada.
+ * Abre el sidebar principal de gestion.
  */
 function showSidebar(initialSection) {
   const sectionKey = (typeof initialSection === 'string' && CONFIG.SHEETS[initialSection])
@@ -265,7 +263,6 @@ function showSidebar(initialSection) {
       .setTitle(CONFIG.UI_TITLE)
       .setWidth(450);
   } catch (err) {
-    // Si no se encuentra Sidebar.html como archivo separado, generar fallback integrado
     html = HtmlService.createHtmlOutput(getEmbeddedSidebarHtml(sectionKey, ''))
       .setTitle(CONFIG.UI_TITLE)
       .setWidth(450);
@@ -274,7 +271,6 @@ function showSidebar(initialSection) {
   SpreadsheetApp.getUi().showSidebar(html);
 }
 
-/** Accesos directos desde el submenú */
 function openInvestigadoresForm() { showSidebar('INVESTIGADORES'); }
 function openExMiembrosForm()    { showSidebar('EX_MIEMBROS'); }
 function openColaboradoresForm()  { showSidebar('COLABORADORES'); }
@@ -284,7 +280,7 @@ function openServiciosForm()      { showSidebar('SERVICIOS'); }
 
 /**
  * Detecta la fila activa seleccionada en la planilla y abre el panel
- * cargando automáticamente dicho registro para su edición inmediata.
+ * cargando automaticamente dicho registro para su edicion.
  */
 function editSelectedRow() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -302,7 +298,7 @@ function editSelectedRow() {
   if (!matchedKey) {
     SpreadsheetApp.getUi().alert(
       'Aviso',
-      'Por favor colócate en una de las hojas de datos (Investigadores, Ex-Miembros, Colaboradores, Lineas_Investigacion, Papers o Servicios) y selecciona una fila.',
+      'Por favor colocate en una de las hojas de datos (Investigadores, Ex-Miembros, Colaboradores, Lineas_Investigacion, Papers o Servicios) y selecciona una fila.',
       SpreadsheetApp.getUi().ButtonSet.OK
     );
     return;
@@ -316,17 +312,13 @@ function editSelectedRow() {
 
   const idVal = sheet.getRange(activeRow, 1).getValue();
   if (!idVal) {
-    SpreadsheetApp.getUi().alert('Aviso', 'La fila seleccionada no tiene un ID válido.', SpreadsheetApp.getUi().ButtonSet.OK);
+    SpreadsheetApp.getUi().alert('Aviso', 'La fila seleccionada no tiene un ID valido.', SpreadsheetApp.getUi().ButtonSet.OK);
     return;
   }
 
-  // Abrir sidebar indicando qué elemento cargar
   showSidebarWithSelectedRecord(matchedKey, idVal);
 }
 
-/**
- * Abre el sidebar pasando el ID seleccionado para carga automática
- */
 function showSidebarWithSelectedRecord(sectionKey, recordId) {
   let html;
   try {
@@ -342,9 +334,6 @@ function showSidebarWithSelectedRecord(sectionKey, recordId) {
   SpreadsheetApp.getUi().showSidebar(html);
 }
 
-/**
- * Muestra el modal para exportar todos los datos a JSON.
- */
 function showExportDialog() {
   let html;
   try {
@@ -357,19 +346,30 @@ function showExportDialog() {
       .setWidth(850)
       .setHeight(620);
   }
-  SpreadsheetApp.getUi().showModalDialog(html, '📤 Exportar Datos para el Sitio Web');
+  SpreadsheetApp.getUi().showModalDialog(html, 'Exportar datos para el sitio web');
+}
+
+function openGitHubConfigModal() {
+  let html;
+  try {
+    html = HtmlService.createTemplateFromFile('GithubConfigModal')
+      .evaluate()
+      .setWidth(580)
+      .setHeight(480);
+  } catch (err) {
+    html = HtmlService.createHtmlOutput(getEmbeddedGitHubConfigModalHtml())
+      .setWidth(580)
+      .setHeight(480);
+  }
+  SpreadsheetApp.getUi().showModalDialog(html, 'Configuracion de sincronizacion con GitHub');
 }
 
 /* ==============================================================================
- * 4. CONFIGURACIÓN Y MANTENIMIENTO DE HOJAS (setupAllSheets, fixMissingIds)
+ * 4. CONFIGURACION Y MANTENIMIENTO DE HOJAS
  * ============================================================================== */
 
-/**
- * Crea las 6 hojas con sus encabezados estilizados, anchos de columna y colores.
- */
 function setupAllSheets() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let createdCount = 0;
 
   for (const key in CONFIG.SHEETS) {
     const cfg = CONFIG.SHEETS[key];
@@ -377,19 +377,16 @@ function setupAllSheets() {
     
     if (!sheet) {
       sheet = ss.insertSheet(cfg.sheetName);
-      createdCount++;
     }
 
     try {
       sheet.setTabColor(cfg.tabColor);
     } catch(e) {}
 
-    // Configurar encabezados
     const headers = cfg.columns.map(col => col.label);
     const headerRange = sheet.getRange(1, 1, 1, headers.length);
     headerRange.setValues([headers]);
     
-    // Estilos del encabezado
     headerRange
       .setBackground(CONFIG.PRIMARY_COLOR)
       .setFontColor('#FFFFFF')
@@ -401,23 +398,18 @@ function setupAllSheets() {
     sheet.setRowHeight(1, 35);
     sheet.setFrozenRows(1);
 
-    // Configurar anchos de columna
     cfg.columns.forEach((col, idx) => {
       sheet.setColumnWidth(idx + 1, col.width);
     });
 
-    // Formatear columna de ID
     const maxRows = Math.max(sheet.getMaxRows(), 2);
     const idRange = sheet.getRange(2, 1, maxRows - 1, 1);
     idRange.setHorizontalAlignment('center').setNumberFormat('0');
   }
 
-  SpreadsheetApp.getActiveSpreadsheet().toast('Todas las hojas están listas y configuradas correctamente.', '✅ Éxito', 5);
+  SpreadsheetApp.getActiveSpreadsheet().toast('Todas las hojas estan listas y configuradas correctamente.', 'Exito', 5);
 }
 
-/**
- * Busca filas con datos que no tengan ID asignado y les asigna el correlativo siguiente.
- */
 function fixMissingIds() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let totalFixed = 0;
@@ -453,15 +445,12 @@ function fixMissingIds() {
   }
 
   SpreadsheetApp.getUi().alert(
-    'Validación Completa',
-    `Se repararon / asignaron ${totalFixed} IDs faltantes.`,
+    'Validacion Completa',
+    'Se asignaron o repararon ' + totalFixed + ' IDs faltantes.',
     SpreadsheetApp.getUi().ButtonSet.OK
   );
 }
 
-/**
- * Calcula el siguiente ID disponible para una entidad.
- */
 function getNextAvailableId(cfg) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName(cfg.sheetName);
@@ -484,29 +473,25 @@ function getNextAvailableId(cfg) {
 }
 
 /* ==============================================================================
- * 5. CARGA DE DATOS INICIALES (DESDE JSON / SEED DATA)
+ * 5. CARGA DE DATOS INICIALES (DESDE JSON)
  * ============================================================================== */
 
-/**
- * Puebla la planilla con los datos existentes del laboratorio definidos en InitialData.js
- */
 function populateInitialData() {
   const ui = SpreadsheetApp.getUi();
   const response = ui.alert(
     'Confirmar Carga Inicial',
-    'Esta acción importará todos los datos actuales del laboratorio (investigadores, ex-miembros, colaboradores, líneas, papers y servicios) en las hojas correspondientes.\n\n¿Deseas continuar?',
+    'Esta accion importara los datos existentes del laboratorio (investigadores, ex-miembros, colaboradores, lineas, papers y servicios) en las hojas correspondientes.\n\nDeseas continuar?',
     ui.ButtonSet.YES_NO
   );
 
   if (response !== ui.Button.YES) return;
 
-  // Asegurar que las hojas existen
   setupAllSheets();
 
   if (typeof SEED_DATA === 'undefined') {
     ui.alert(
       'Error',
-      'No se encontró la variable SEED_DATA. Asegúrate de incluir el archivo InitialData.js en tu proyecto de Apps Script.',
+      'No se encontro la variable SEED_DATA. Asegurate de incluir el archivo InitialData.js en tu proyecto de Apps Script.',
       ui.ButtonSet.OK
     );
     return;
@@ -522,7 +507,6 @@ function populateInitialData() {
 
     if (!sheet || !Array.isArray(dataList)) continue;
 
-    // Limpiar filas previas respetando el encabezado
     const lastRow = sheet.getLastRow();
     if (lastRow > 1) {
       sheet.getRange(2, 1, lastRow - 1, sheet.getLastColumn()).clearContent();
@@ -530,7 +514,6 @@ function populateInitialData() {
 
     if (dataList.length === 0) continue;
 
-    // Mapear objetos a matriz bidimensional
     const rows = dataList.map(item => {
       return cfg.columns.map(col => {
         const val = item[col.key];
@@ -542,15 +525,13 @@ function populateInitialData() {
     range.setValues(rows);
     range.setVerticalAlignment('top');
 
-    // Centrar la columna de ID
     sheet.getRange(2, 1, rows.length, 1).setHorizontalAlignment('center');
-
-    summary.push(`• ${cfg.pluralLabel}: ${rows.length} registros`);
+    summary.push('- ' + cfg.pluralLabel + ': ' + rows.length + ' registros');
   }
 
   ui.alert(
-    '✅ Carga Exitosa',
-    'Los datos iniciales fueron importados con éxito:\n\n' + summary.join('\n'),
+    'Carga Exitosa',
+    'Los datos iniciales fueron importados con exito:\n\n' + summary.join('\n'),
     ui.ButtonSet.OK
   );
 }
@@ -559,9 +540,6 @@ function populateInitialData() {
  * 6. API INTERNA PARA LA UI (GET, SAVE, DELETE)
  * ============================================================================== */
 
-/**
- * Devuelve la configuración de las entidades para que la UI frontend pueda renderizar los formularios.
- */
 function getUIConfiguration() {
   const result = {};
   for (const k in CONFIG.SHEETS) {
@@ -571,7 +549,6 @@ function getUIConfiguration() {
       sheetName: s.sheetName,
       label: s.label,
       pluralLabel: s.pluralLabel,
-      icon: s.icon,
       idField: s.idField,
       columns: s.columns
     };
@@ -579,9 +556,6 @@ function getUIConfiguration() {
   return result;
 }
 
-/**
- * Obtiene la lista resumida de elementos de una sección para cargar el selector de modificar.
- */
 function getEntitiesList(entityKey) {
   const cfg = CONFIG.SHEETS[entityKey];
   if (!cfg) throw new Error('Entidad desconocida: ' + entityKey);
@@ -600,7 +574,6 @@ function getEntitiesList(entityKey) {
     const rawId = row[0];
     if (rawId === '' || rawId === null) return;
 
-    // Reconstruir objeto
     const item = {};
     cfg.columns.forEach((col, cIdx) => {
       item[col.key] = row[cIdx];
@@ -616,9 +589,6 @@ function getEntitiesList(entityKey) {
   return list;
 }
 
-/**
- * Obtiene el registro completo dado su ID.
- */
 function getEntityRecord(entityKey, id) {
   const cfg = CONFIG.SHEETS[entityKey];
   if (!cfg) throw new Error('Entidad desconocida: ' + entityKey);
@@ -634,7 +604,6 @@ function getEntityRecord(entityKey, id) {
 
   for (let i = 0; i < values.length; i++) {
     const row = values[i];
-    // Comparación flexible numérica o string
     if (String(row[0]).trim() === String(id).trim()) {
       const record = {};
       cfg.columns.forEach((col, cIdx) => {
@@ -647,15 +616,9 @@ function getEntityRecord(entityKey, id) {
   return null;
 }
 
-/**
- * Agrega o modifica un registro.
- * @param {string} entityKey - Clave de la entidad (ej: 'INVESTIGADORES')
- * @param {Object} data - Objeto con los datos del formulario
- * @param {boolean} isNew - true para agregar, false para modificar
- */
 function saveEntityRecord(entityKey, data, isNew) {
   const cfg = CONFIG.SHEETS[entityKey];
-  if (!cfg) throw new Error('Entidad inválida: ' + entityKey);
+  if (!cfg) throw new Error('Entidad invalida: ' + entityKey);
 
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let sheet = ss.getSheetByName(cfg.sheetName);
@@ -664,12 +627,11 @@ function saveEntityRecord(entityKey, data, isNew) {
     sheet = ss.getSheetByName(cfg.sheetName);
   }
 
-  // Validaciones mínimas
   cfg.columns.forEach(col => {
     if (col.required && col.key !== cfg.idField) {
       const val = data[col.key];
       if (val === undefined || val === null || String(val).trim() === '') {
-        throw new Error(`El campo "${col.label}" es obligatorio.`);
+        throw new Error('El campo "' + col.label + '" es obligatorio.');
       }
     }
   });
@@ -682,7 +644,6 @@ function saveEntityRecord(entityKey, data, isNew) {
     data[cfg.idField] = targetId;
     targetRow = sheet.getLastRow() + 1;
   } else {
-    // Buscar la fila existente por ID
     const lastRow = sheet.getLastRow();
     if (lastRow > 1) {
       const ids = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
@@ -694,15 +655,13 @@ function saveEntityRecord(entityKey, data, isNew) {
       }
     }
     if (targetRow === -1) {
-      throw new Error(`No se encontró el registro con ID ${targetId} para actualizar.`);
+      throw new Error('No se encontro el registro con ID ' + targetId + ' para actualizar.');
     }
   }
 
-  // Convertir datos a fila según el orden de columnas
   const rowData = cfg.columns.map(col => {
     let val = data[col.key];
     if (val === undefined || val === null) val = '';
-    // Asegurar número para campos ID
     if (col.type === 'number' && val !== '') {
       const num = Number(val);
       if (!isNaN(num)) return num;
@@ -714,10 +673,8 @@ function saveEntityRecord(entityKey, data, isNew) {
   range.setValues([rowData]);
   range.setVerticalAlignment('top');
 
-  // Centrar ID
   sheet.getRange(targetRow, 1).setHorizontalAlignment('center');
 
-  // Si es un paper, centrar el año de publicación
   if (cfg.key === 'PAPERS') {
     sheet.getRange(targetRow, 2).setHorizontalAlignment('center');
   }
@@ -727,24 +684,21 @@ function saveEntityRecord(entityKey, data, isNew) {
     isNew: isNew,
     id: targetId,
     message: isNew 
-      ? `✅ ${cfg.label} agregado exitosamente con ID ${targetId}.` 
-      : `✅ ${cfg.label} #${targetId} actualizado correctamente.`
+      ? cfg.label + ' agregado con exito con ID ' + targetId + '.' 
+      : cfg.label + ' #' + targetId + ' actualizado correctamente.'
   };
 }
 
-/**
- * Elimina un registro por ID.
- */
 function deleteEntityRecord(entityKey, id) {
   const cfg = CONFIG.SHEETS[entityKey];
-  if (!cfg) throw new Error('Entidad inválida: ' + entityKey);
+  if (!cfg) throw new Error('Entidad invalida: ' + entityKey);
 
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName(cfg.sheetName);
   if (!sheet) throw new Error('Hoja no encontrada: ' + cfg.sheetName);
 
   const lastRow = sheet.getLastRow();
-  if (lastRow <= 1) throw new Error('La hoja está vacía.');
+  if (lastRow <= 1) throw new Error('La hoja esta vacia.');
 
   const ids = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
   let targetRow = -1;
@@ -757,7 +711,7 @@ function deleteEntityRecord(entityKey, id) {
   }
 
   if (targetRow === -1) {
-    throw new Error(`No se encontró el registro con ID ${id} para eliminar.`);
+    throw new Error('No se encontro el registro con ID ' + id + ' para eliminar.');
   }
 
   sheet.deleteRow(targetRow);
@@ -765,17 +719,14 @@ function deleteEntityRecord(entityKey, id) {
   return {
     success: true,
     id: id,
-    message: `🗑️ ${cfg.label} #${id} eliminado correctamente.`
+    message: cfg.label + ' #' + id + ' eliminado correctamente.'
   };
 }
 
 /* ==============================================================================
- * 7. EXPORTACIÓN A JSON Y WEB APP (doGet)
+ * 7. EXPORTACION A JSON
  * ============================================================================== */
 
-/**
- * Lee todas las hojas y genera los objetos JSON limpios compatibles con el sitio web.
- */
 function exportAllJsonData() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const result = {};
@@ -791,7 +742,6 @@ function exportAllJsonData() {
       const values = sheet.getRange(2, 1, lastRow - 1, numCols).getValues();
 
       values.forEach(row => {
-        // Ignorar filas totalmente vacías
         const hasData = row.some(cell => cell !== '' && cell !== null && cell !== undefined);
         if (!hasData) return;
 
@@ -803,7 +753,6 @@ function exportAllJsonData() {
             cellValue = Number(cellValue);
             if (isNaN(cellValue)) cellValue = 0;
           } else {
-            // Limpiar saltos de línea innecesarios al final
             cellValue = (cellValue !== null && cellValue !== undefined) ? String(cellValue).trim() : '';
           }
           item[col.key] = cellValue;
@@ -816,23 +765,284 @@ function exportAllJsonData() {
     result[cfg.jsonFile] = {
       filename: cfg.jsonFile,
       label: cfg.pluralLabel,
-      icon: cfg.icon,
       count: items.length,
-      jsonString: JSON.stringify(items, null, '\t') // Formateado con tabs para coincidir con el repo
+      jsonString: JSON.stringify(items, null, '\t')
     };
   }
 
   return result;
 }
 
+/* ==============================================================================
+ * 8. INTEGRACION CON GITHUB (COMMIT Y PUSH AUTOMATICO)
+ * ============================================================================== */
+
+function getGitHubConfig() {
+  const props = PropertiesService.getScriptProperties();
+  const token = props.getProperty('GITHUB_TOKEN') || '';
+  return {
+    owner: props.getProperty('GITHUB_OWNER') || 'lfgbbp',
+    repo: props.getProperty('GITHUB_REPO') || 'lfgbbp.github.io',
+    branch: props.getProperty('GITHUB_BRANCH') || 'main',
+    hasToken: Boolean(token && token.length > 5)
+  };
+}
+
+function saveGitHubConfig(config) {
+  if (!config || !config.owner || !config.repo || !config.branch) {
+    throw new Error('Propietario, repositorio y rama son obligatorios.');
+  }
+  const props = PropertiesService.getScriptProperties();
+  props.setProperty('GITHUB_OWNER', config.owner.trim());
+  props.setProperty('GITHUB_REPO', config.repo.trim());
+  props.setProperty('GITHUB_BRANCH', config.branch.trim());
+  if (config.token && config.token.trim()) {
+    props.setProperty('GITHUB_TOKEN', config.token.trim());
+  }
+  return { success: true, message: 'Configuracion de GitHub guardada correctamente.' };
+}
+
+function testGitHubConnection(config) {
+  let token = (config && config.token) ? config.token.trim() : '';
+  const props = PropertiesService.getScriptProperties();
+  if (!token) token = props.getProperty('GITHUB_TOKEN') || '';
+  if (!token) {
+    return { success: false, message: 'No se ha configurado un Personal Access Token de GitHub.' };
+  }
+
+  const owner = (config && config.owner) ? config.owner.trim() : (props.getProperty('GITHUB_OWNER') || 'lfgbbp');
+  const repo = (config && config.repo) ? config.repo.trim() : (props.getProperty('GITHUB_REPO') || 'lfgbbp.github.io');
+  const branch = (config && config.branch) ? config.branch.trim() : (props.getProperty('GITHUB_BRANCH') || 'main');
+
+  try {
+    const url = 'https://api.github.com/repos/' + owner + '/' + repo + '/branches/' + branch;
+    const options = {
+      method: 'get',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github+json',
+        'User-Agent': 'LFGBBP-Sheets-Sync'
+      },
+      muteHttpExceptions: true
+    };
+    const res = UrlFetchApp.fetch(url, options);
+    const code = res.getResponseCode();
+    if (code === 200) {
+      return { success: true, message: 'Conexion exitosa con ' + owner + '/' + repo + ' en la rama ' + branch + '.' };
+    } else if (code === 401) {
+      return { success: false, message: 'Token de acceso invalido o revocado (Error 401).' };
+    } else if (code === 404) {
+      return { success: false, message: 'No se encontro el repositorio o la rama (' + owner + '/' + repo + ' / ' + branch + '). Verifica nombres y permisos (Error 404).' };
+    } else {
+      let errDetail = res.getContentText();
+      try { errDetail = JSON.parse(errDetail).message || errDetail; } catch(e) {}
+      return { success: false, message: 'Error de GitHub (' + code + '): ' + errDetail };
+    }
+  } catch (err) {
+    return { success: false, message: 'Fallo al conectar con GitHub: ' + err.message };
+  }
+}
+
 /**
- * Endpoint Web App para servir los datos JSON directamente si se publica como aplicación web.
- * Permite llamadas GET como:
- * - ?type=all
- * - ?type=papers
- * - ?type=investigadores
- * - ?type=servicios
+ * Publica todos los archivos JSON directamente en el repositorio de GitHub realizando
+ * commit y push automatico a la rama configurada (por defecto 'main').
  */
+function publishToGitHub(commitMessage) {
+  const props = PropertiesService.getScriptProperties();
+  const token = props.getProperty('GITHUB_TOKEN') || '';
+  if (!token) {
+    throw new Error('No esta configurado el Token de GitHub. Abre el menu "LFGBBP - Gestion Web > Configuracion de GitHub" para ingresarlo.');
+  }
+
+  const owner = props.getProperty('GITHUB_OWNER') || 'lfgbbp';
+  const repo = props.getProperty('GITHUB_REPO') || 'lfgbbp.github.io';
+  const branch = props.getProperty('GITHUB_BRANCH') || 'main';
+
+  const defaultMsg = 'Actualizacion de datos desde Google Sheets (' + Utilities.formatDate(new Date(), 'GMT-3', 'yyyy-MM-dd HH:mm') + ')';
+  const msg = (commitMessage && commitMessage.trim()) ? commitMessage.trim() : defaultMsg;
+
+  const headers = {
+    'Authorization': 'Bearer ' + token,
+    'Accept': 'application/vnd.github+json',
+    'User-Agent': 'LFGBBP-Sheets-Sync'
+  };
+
+  // 1. Obtener JSON actual desde las hojas
+  const exportData = exportAllJsonData();
+
+  // 2. Obtener SHA del commit actual de la rama
+  const refUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/git/ref/heads/' + branch;
+  const refRes = UrlFetchApp.fetch(refUrl, { method: 'get', headers: headers, muteHttpExceptions: true });
+  if (refRes.getResponseCode() !== 200) {
+    throw new Error('No se pudo acceder a la rama ' + branch + ' en GitHub. Codigo: ' + refRes.getResponseCode());
+  }
+  const latestCommitSha = JSON.parse(refRes.getContentText()).object.sha;
+
+  // 3. Obtener el tree SHA del ultimo commit
+  const commitUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/git/commits/' + latestCommitSha;
+  const commitRes = UrlFetchApp.fetch(commitUrl, { method: 'get', headers: headers, muteHttpExceptions: true });
+  if (commitRes.getResponseCode() !== 200) {
+    throw new Error('No se pudo obtener la informacion del commit base ' + latestCommitSha);
+  }
+  const baseTreeSha = JSON.parse(commitRes.getContentText()).tree.sha;
+
+  // 4. Crear el arbol (Tree) con los 6 archivos JSON en data/
+  const treeItems = [
+    {
+      path: 'data/investigadoresAct.json',
+      mode: '100644',
+      type: 'blob',
+      content: exportData['investigadoresAct.json'].jsonString
+    },
+    {
+      path: 'data/investigadoresPast.json',
+      mode: '100644',
+      type: 'blob',
+      content: exportData['investigadoresPast.json'].jsonString
+    },
+    {
+      path: 'data/colaboradores.json',
+      mode: '100644',
+      type: 'blob',
+      content: exportData['colaboradores.json'].jsonString
+    },
+    {
+      path: 'data/researchLines.json',
+      mode: '100644',
+      type: 'blob',
+      content: exportData['researchLines.json'].jsonString
+    },
+    {
+      path: 'data/papers.json',
+      mode: '100644',
+      type: 'blob',
+      content: exportData['papers.json'].jsonString
+    },
+    {
+      path: 'data/servicios.json',
+      mode: '100644',
+      type: 'blob',
+      content: exportData['servicios.json'].jsonString
+    }
+  ];
+
+  const createTreeUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/git/trees';
+  const treeRes = UrlFetchApp.fetch(createTreeUrl, {
+    method: 'post',
+    contentType: 'application/json',
+    headers: headers,
+    payload: JSON.stringify({
+      base_tree: baseTreeSha,
+      tree: treeItems
+    }),
+    muteHttpExceptions: true
+  });
+
+  if (treeRes.getResponseCode() !== 201) {
+    throw new Error('Error al preparar archivos en GitHub: ' + treeRes.getContentText());
+  }
+  const newTreeSha = JSON.parse(treeRes.getContentText()).sha;
+
+  // Si el nuevo arbol es identico, no hubo modificaciones
+  if (newTreeSha === baseTreeSha) {
+    return {
+      success: true,
+      noChanges: true,
+      message: 'No se detectaron modificaciones respecto a la version actual publicada en el repositorio.'
+    };
+  }
+
+  // 5. Crear el commit
+  const createCommitUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/git/commits';
+  const newCommitRes = UrlFetchApp.fetch(createCommitUrl, {
+    method: 'post',
+    contentType: 'application/json',
+    headers: headers,
+    payload: JSON.stringify({
+      message: msg,
+      tree: newTreeSha,
+      parents: [latestCommitSha]
+    }),
+    muteHttpExceptions: true
+  });
+
+  if (newCommitRes.getResponseCode() !== 201) {
+    throw new Error('Error al registrar commit en GitHub: ' + newCommitRes.getContentText());
+  }
+  const newCommitSha = JSON.parse(newCommitRes.getContentText()).sha;
+
+  // 6. Actualizar la rama (Push)
+  const updateRefUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/git/refs/heads/' + branch;
+  const updateRes = UrlFetchApp.fetch(updateRefUrl, {
+    method: 'patch',
+    contentType: 'application/json',
+    headers: headers,
+    payload: JSON.stringify({
+      sha: newCommitSha,
+      force: false
+    }),
+    muteHttpExceptions: true
+  });
+
+  if (updateRes.getResponseCode() !== 200) {
+    throw new Error('Error al actualizar la rama en GitHub: ' + updateRes.getContentText());
+  }
+
+  const commitUrlBrowser = 'https://github.com/' + owner + '/' + repo + '/commit/' + newCommitSha;
+
+  return {
+    success: true,
+    commitSha: newCommitSha,
+    commitUrl: commitUrlBrowser,
+    message: 'Publicacion completada exitosamente en la rama ' + branch + '. El sitio web se actualizara en breve.'
+  };
+}
+
+/**
+ * Accion directa desde el menu para solicitar confirmacion y publicar.
+ */
+function promptPublishToGitHub() {
+  const ui = SpreadsheetApp.getUi();
+  const config = getGitHubConfig();
+
+  if (!config.hasToken) {
+    const res = ui.alert(
+      'Configuracion Requerida',
+      'No se ha configurado el Token de GitHub para la sincronizacion automatica.\nDeseas configurarlo ahora?',
+      ui.ButtonSet.YES_NO
+    );
+    if (res === ui.Button.YES) openGitHubConfigModal();
+    return;
+  }
+
+  const promptResult = ui.prompt(
+    'Confirmar Publicacion en Sitio Web',
+    'Ingresa una breve descripcion de los cambios realizados (o deja en blanco para usar la fecha actual):',
+    ui.ButtonSet.OK_CANCEL
+  );
+
+  if (promptResult.getSelectedButton() !== ui.Button.OK) return;
+
+  const commitMsg = promptResult.getResponseText();
+
+  try {
+    SpreadsheetApp.getActiveSpreadsheet().toast('Conectando con GitHub y subiendo cambios...', 'Publicando', 10);
+    const result = publishToGitHub(commitMsg);
+
+    if (result.noChanges) {
+      ui.alert('Sin Cambios', result.message, ui.ButtonSet.OK);
+    } else {
+      ui.alert('Publicacion Exitosa', result.message + '\n\nEnlace del commit:\n' + result.commitUrl, ui.ButtonSet.OK);
+    }
+  } catch (err) {
+    ui.alert('Error de Publicacion', err.message, ui.ButtonSet.OK);
+  }
+}
+
+/* ==============================================================================
+ * 9. ENDPOINT REST PARA WEB APP (doGet)
+ * ============================================================================== */
+
 function doGet(e) {
   const data = exportAllJsonData();
   const type = (e && e.parameter && e.parameter.type) ? e.parameter.type.toLowerCase() : 'all';
@@ -851,7 +1061,6 @@ function doGet(e) {
   } else if (type === 'servicios' || type === 'servicios.json') {
     responseData = JSON.parse(data['servicios.json'].jsonString);
   } else {
-    // Todos los módulos
     responseData = {
       investigadoresAct: JSON.parse(data['investigadoresAct.json'].jsonString),
       investigadoresPast: JSON.parse(data['investigadoresPast.json'].jsonString),
@@ -867,15 +1076,11 @@ function doGet(e) {
 }
 
 /* ==============================================================================
- * 8. PLANTILLAS HTML INTEGRADAS (FALLBACK AUTOMÁTICO)
+ * 10. PLANTILLAS HTML INTEGRADAS (FALLBACK AUTOMATICO)
  * ============================================================================== */
 
-/**
- * Fallback en caso de que Sidebar.html no esté creado como archivo separado en Apps Script.
- */
 function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
-  return `
-<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -885,33 +1090,31 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
       :root {
         --primary: #1a365d;
         --primary-light: #2b6cb0;
-        --accent: #319795;
-        --bg: #f7fafc;
-        --card-bg: #ffffff;
-        --text: #2d3748;
-        --text-muted: #718096;
+        --bg: #f8fafc;
+        --text: #1e293b;
+        --text-muted: #64748b;
         --border: #e2e8f0;
-        --success: #38a169;
-        --danger: #e53e3e;
+        --success: #15803d;
+        --danger: #b91c1c;
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         background: var(--bg);
         color: var(--text);
         padding: 12px;
         font-size: 13px;
       }
       .header {
-        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        background: var(--primary);
         color: white;
-        padding: 12px;
-        border-radius: 8px;
+        padding: 12px 14px;
+        border-radius: 6px;
         margin-bottom: 12px;
         text-align: center;
       }
-      .header h2 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-      .header p { font-size: 11px; opacity: 0.9; }
+      .header h2 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+      .header p { font-size: 11px; opacity: 0.85; }
 
       .section-nav {
         display: grid;
@@ -923,33 +1126,54 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
         background: white;
         border: 1px solid var(--border);
         padding: 8px 4px;
-        border-radius: 6px;
+        border-radius: 5px;
         font-size: 11px;
         font-weight: 600;
         cursor: pointer;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 4px;
+        justify-content: center;
         transition: all 0.15s ease;
+        color: var(--text);
+        text-align: center;
       }
-      .nav-btn:hover { border-color: var(--primary-light); background: #ebf8ff; }
+      .nav-btn:hover { border-color: var(--primary-light); background: #f1f5f9; color: var(--primary); }
       .nav-btn.active {
         background: var(--primary);
         color: white;
         border-color: var(--primary);
       }
 
+      .publish-card {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 10px 12px;
+        margin-bottom: 12px;
+      }
+      .publish-card-header {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+      .publish-card-text {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
       .mode-toggle {
         display: flex;
-        background: #edf2f7;
-        border-radius: 6px;
-        padding: 3px;
+        background: #e2e8f0;
+        border-radius: 5px;
+        padding: 2px;
         margin-bottom: 12px;
       }
       .mode-btn {
         flex: 1;
-        padding: 6px;
+        padding: 7px;
         border: none;
         background: transparent;
         font-size: 11px;
@@ -961,13 +1185,13 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
       .mode-btn.active {
         background: white;
         color: var(--primary);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.08);
       }
 
       .card {
         background: white;
         border: 1px solid var(--border);
-        border-radius: 8px;
+        border-radius: 6px;
         padding: 12px;
         margin-bottom: 12px;
       }
@@ -980,17 +1204,17 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
         font-size: 11px;
         font-weight: 600;
         margin-bottom: 4px;
-        color: #4a5568;
+        color: #334155;
       }
-      .tag-es { background: #e2e8f0; color: #2b6cb0; padding: 1px 4px; border-radius: 3px; font-size: 9px; }
-      .tag-en { background: #feebc8; color: #c05621; padding: 1px 4px; border-radius: 3px; font-size: 9px; }
+      .tag-es { background: #e2e8f0; color: #1e3a8a; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+      .tag-en { background: #fef3c7; color: #92400e; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
       .tag-req { color: var(--danger); font-weight: bold; }
 
       input[type="text"], input[type="number"], select, textarea {
         width: 100%;
         padding: 7px 9px;
         border: 1px solid var(--border);
-        border-radius: 5px;
+        border-radius: 4px;
         font-size: 12px;
         font-family: inherit;
         background: white;
@@ -1000,68 +1224,91 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
         outline: none;
         box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.15);
       }
-      textarea { resize: vertical; min-height: 60px; line-height: 1.4; }
+      textarea { resize: vertical; min-height: 55px; line-height: 1.4; }
       .hint { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
 
-      .btn-container { display: flex; gap: 8px; margin-top: 14px; }
+      .btn-container { display: flex; gap: 6px; margin-top: 14px; }
       .btn {
         flex: 1;
-        padding: 9px;
+        padding: 8px;
         border: none;
-        border-radius: 6px;
-        font-size: 12px;
+        border-radius: 5px;
+        font-size: 11px;
         font-weight: 600;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 5px;
       }
       .btn-primary { background: var(--primary); color: white; }
       .btn-primary:hover { background: var(--primary-light); }
-      .btn-danger { background: #fff5f5; color: var(--danger); border: 1px solid #fed7d7; }
+      .btn-danger { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
       .btn-danger:hover { background: var(--danger); color: white; }
-      .btn-secondary { background: #edf2f7; color: var(--text); }
+      .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid #cbd5e1; }
+      .btn-publish {
+        background: #047857;
+        color: white;
+        width: 100%;
+        padding: 8px;
+        font-size: 11px;
+      }
+      .btn-publish:hover { background: #065f46; }
 
       .alert {
-        padding: 10px;
-        border-radius: 6px;
+        padding: 9px 12px;
+        border-radius: 5px;
         font-size: 11px;
         margin-bottom: 12px;
         display: none;
+        line-height: 1.4;
       }
-      .alert-success { background: #f0fff4; color: #22543d; border: 1px solid #c6f6d5; }
-      .alert-error { background: #fff5f5; color: #742a2a; border: 1px solid #fed7d7; }
-      .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; }
+      .alert-success { background: #f0fdf4; color: var(--success); border: 1px solid #bbf7d0; }
+      .alert-error { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+      .alert-info { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+      .spinner {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 2px solid currentColor;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        vertical-align: middle;
+      }
       @keyframes spin { to { transform: rotate(360deg); } }
     </style>
   </head>
   <body>
     <div class="header">
-      <h2>LFGBBP - Panel Web</h2>
-      <p>Gestor de Contenido para lfgbbp.github.io</p>
+      <h2>LFGBBP - Panel de Gestion</h2>
+      <p>Administracion del Sitio Web Oficial</p>
     </div>
 
-    <!-- Navegación de Secciones -->
     <div class="section-nav">
-      <button class="nav-btn" onclick="selectSection('INVESTIGADORES')"><span>👤</span> Investigadores</button>
-      <button class="nav-btn" onclick="selectSection('EX_MIEMBROS')"><span>🎓</span> Ex-Miembros</button>
-      <button class="nav-btn" onclick="selectSection('COLABORADORES')"><span>🤝</span> Colaboradores</button>
-      <button class="nav-btn" onclick="selectSection('LINEAS')"><span>🧬</span> Líneas</button>
-      <button class="nav-btn" onclick="selectSection('PAPERS')"><span>📄</span> Papers</button>
-      <button class="nav-btn" onclick="selectSection('SERVICIOS')"><span>🛠️</span> Servicios</button>
+      <button class="nav-btn" onclick="selectSection('INVESTIGADORES')">Investigadores</button>
+      <button class="nav-btn" onclick="selectSection('EX_MIEMBROS')">Ex-Miembros</button>
+      <button class="nav-btn" onclick="selectSection('COLABORADORES')">Colaboradores</button>
+      <button class="nav-btn" onclick="selectSection('LINEAS')">Lineas</button>
+      <button class="nav-btn" onclick="selectSection('PAPERS')">Papers</button>
+      <button class="nav-btn" onclick="selectSection('SERVICIOS')">Servicios</button>
     </div>
 
-    <!-- Toggle Modo (Agregar / Modificar) -->
+    <div class="publish-card">
+      <div class="publish-card-header">Sincronizacion Web</div>
+      <div class="publish-card-text">Publica los datos actualizados de la planilla en GitHub para actualizar el sitio web automaticamente.</div>
+      <button type="button" class="btn btn-publish" id="publish-btn" onclick="handlePublishToGitHub()">
+        Publicar cambios en el sitio web (Commit y Push)
+      </button>
+    </div>
+
     <div class="mode-toggle">
-      <button id="mode-add-btn" class="mode-btn active" onclick="setMode(true)">➕ Agregar Nuevo</button>
-      <button id="mode-edit-btn" class="mode-btn" onclick="setMode(false)">✏️ Modificar Existente</button>
+      <button id="mode-add-btn" class="mode-btn active" onclick="setMode(true)">Agregar nuevo</button>
+      <button id="mode-edit-btn" class="mode-btn" onclick="setMode(false)">Modificar existente</button>
     </div>
 
-    <!-- Mensajes de alerta -->
     <div id="alert-box" class="alert"></div>
 
-    <!-- Selector de registro para Modificar -->
     <div id="selector-card" class="card" style="display: none;">
       <div class="field-label">Seleccionar registro para editar:</div>
       <select id="record-select" onchange="onRecordSelectChange()">
@@ -1069,20 +1316,19 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
       </select>
     </div>
 
-    <!-- Formulario Dinámico -->
     <div class="card">
       <div id="form-header" style="font-weight: 700; font-size: 12px; margin-bottom: 12px; color: var(--primary);"></div>
       <form id="dynamic-form" onsubmit="handleFormSubmit(event)">
         <div id="form-fields"></div>
         <div class="btn-container">
           <button type="submit" id="save-btn" class="btn btn-primary">
-            <span id="save-btn-text">💾 Guardar</span>
+            <span id="save-btn-text">Guardar</span>
           </button>
           <button type="button" id="delete-btn" class="btn btn-danger" style="display: none;" onclick="handleDelete()">
-            🗑️ Eliminar
+            Eliminar
           </button>
           <button type="button" class="btn btn-secondary" onclick="resetForm()">
-            🔄 Limpiar
+            Limpiar
           </button>
         </div>
       </form>
@@ -1107,7 +1353,8 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
       function selectSection(key) {
         currentSection = key;
         document.querySelectorAll('.nav-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.innerText.includes(UI_CONFIG[key].icon) || btn.innerText.includes(UI_CONFIG[key].pluralLabel.substring(0, 5)));
+          const cfg = UI_CONFIG[key];
+          btn.classList.toggle('active', btn.innerText.trim().toLowerCase() === cfg.pluralLabel.toLowerCase() || btn.innerText.trim().toLowerCase().startsWith(cfg.pluralLabel.substring(0, 4).toLowerCase()));
         });
 
         if (preselectedId) {
@@ -1134,8 +1381,13 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
         document.getElementById('mode-edit-btn').classList.toggle('active', !isNewMode);
         document.getElementById('selector-card').style.display = isNewMode ? 'none' : 'block';
         document.getElementById('delete-btn').style.display = isNewMode ? 'none' : 'block';
-        document.getElementById('save-btn-text').innerText = isNewMode ? '➕ Agregar ' + UI_CONFIG[currentSection].label : '💾 Guardar Cambios';
-        document.getElementById('form-header').innerText = (isNewMode ? 'Nuevo ' : 'Modificar ') + UI_CONFIG[currentSection].label;
+        
+        if (UI_CONFIG && UI_CONFIG[currentSection]) {
+          document.getElementById('save-btn-text').innerText = isNewMode 
+            ? 'Agregar ' + UI_CONFIG[currentSection].label 
+            : 'Guardar cambios';
+          document.getElementById('form-header').innerText = (isNewMode ? 'Nuevo ' : 'Modificar ') + UI_CONFIG[currentSection].label;
+        }
       }
 
       function loadSectionEntities() {
@@ -1144,7 +1396,7 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
 
         google.script.run
           .withSuccessHandler(function(list) {
-            select.innerHTML = '<option value="">-- Selecciona un registro (' + list.length + ') --</option>';
+            select.innerHTML = '<option value="">-- Seleccionar registro (' + list.length + ') --</option>';
             list.forEach(item => {
               const opt = document.createElement('option');
               opt.value = item.id;
@@ -1191,7 +1443,6 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
 
         cfg.columns.forEach(col => {
           if (col.key === cfg.idField) {
-            // Campo de ID sólo informativo si se edita
             const hiddenId = document.createElement('input');
             hiddenId.type = 'hidden';
             hiddenId.id = 'field_' + col.key;
@@ -1273,7 +1524,7 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
         google.script.run
           .withSuccessHandler(function(res) {
             saveBtn.disabled = false;
-            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? '➕ Agregar ' + cfg.label : '💾 Guardar Cambios') + '</span>';
+            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? 'Agregar ' + cfg.label : 'Guardar cambios') + '</span>';
             showAlert(res.message, 'success');
 
             if (isNewMode) {
@@ -1284,7 +1535,7 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
           })
           .withFailureHandler(function(err) {
             saveBtn.disabled = false;
-            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? '➕ Agregar ' + cfg.label : '💾 Guardar Cambios') + '</span>';
+            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? 'Agregar ' + cfg.label : 'Guardar cambios') + '</span>';
             showError(err);
           })
           .saveEntityRecord(currentSection, data, isNewMode);
@@ -1294,13 +1545,13 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
         const idField = document.getElementById('field_' + UI_CONFIG[currentSection].idField);
         const id = idField ? idField.value : null;
         if (!id) {
-          alert('No hay ningún registro seleccionado para eliminar.');
+          alert('No hay ningun registro seleccionado para eliminar.');
           return;
         }
 
-        if (!confirm('¿Estás seguro de que deseas eliminar este registro permanentemente?')) return;
+        if (!confirm('Confirma que deseas eliminar este registro permanentemente?')) return;
 
-        showAlert('Eliminando...', 'info');
+        showAlert('Eliminando registro...', 'info');
         google.script.run
           .withSuccessHandler(function(res) {
             showAlert(res.message, 'success');
@@ -1311,9 +1562,36 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
           .deleteEntityRecord(currentSection, id);
       }
 
+      function handlePublishToGitHub() {
+        const commitMsg = prompt('Ingresa un comentario descriptivo para la actualizacion (opcional):', 'Actualizacion de datos desde Google Sheets');
+        if (commitMsg === null) return;
+
+        const pubBtn = document.getElementById('publish-btn');
+        pubBtn.disabled = true;
+        pubBtn.innerHTML = '<span class="spinner"></span> Publicando en GitHub...';
+        showAlert('Conectando con GitHub para crear commit y push...', 'info');
+
+        google.script.run
+          .withSuccessHandler(function(res) {
+            pubBtn.disabled = false;
+            pubBtn.innerText = 'Publicar cambios en el sitio web (Commit y Push)';
+            if (res.success) {
+              showAlert(res.message, 'success');
+            } else {
+              showAlert(res.message, 'error');
+            }
+          })
+          .withFailureHandler(function(err) {
+            pubBtn.disabled = false;
+            pubBtn.innerText = 'Publicar cambios en el sitio web (Commit y Push)';
+            showError(err);
+          })
+          .publishToGitHub(commitMsg);
+      }
+
       function showAlert(msg, type) {
         const box = document.getElementById('alert-box');
-        box.className = 'alert alert-' + (type === 'success' ? 'success' : 'error');
+        box.className = 'alert alert-' + (type === 'success' ? 'success' : (type === 'info' ? 'info' : 'error'));
         box.innerText = msg;
         box.style.display = 'block';
       }
@@ -1327,16 +1605,11 @@ function getEmbeddedSidebarHtml(initialSection, initialRecordId) {
       }
     </script>
   </body>
-</html>
-  `;
+</html>`;
 }
 
-/**
- * Fallback en caso de que ExportModal.html no esté creado como archivo separado en Apps Script.
- */
 function getEmbeddedExportModalHtml() {
-  return `
-<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -1351,12 +1624,12 @@ function getEmbeddedExportModalHtml() {
       .btn-primary { background: #1a365d; color: white; border-color: #1a365d; }
       .btn-primary:hover { background: #2b6cb0; }
       pre { background: #0f172a; color: #f8fafc; padding: 12px; border-radius: 6px; height: 380px; overflow: auto; font-family: monospace; font-size: 11px; }
-      .info-banner { background: #ebf8ff; border: 1px solid #bee3f8; color: #2b6cb0; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; font-size: 11px; }
+      .info-banner { background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; font-size: 11px; }
     </style>
   </head>
   <body>
     <div class="info-banner">
-      💡 <b>Instrucciones:</b> Copia o descarga cada archivo JSON y colócalo en la carpeta <code>data/</code> de tu repositorio. Luego haz commit y push para actualizar el sitio web.
+      Instrucciones: Puedes copiar o descargar los archivos JSON si deseas una copia manual. Para publicar directamente en el sitio web sin descargar archivos, utiliza la opcion Publicar cambios en el sitio web (Commit y Push).
     </div>
     <div id="tab-container" class="tabs"></div>
     <div class="actions-bar">
@@ -1365,9 +1638,9 @@ function getEmbeddedExportModalHtml() {
         <span id="current-count" style="color: #64748b; font-size: 11px; margin-left: 8px;"></span>
       </div>
       <div style="display: flex; gap: 8px;">
-        <button class="btn btn-primary" onclick="copyCurrentJson()">📋 Copiar JSON</button>
-        <button class="btn" onclick="downloadCurrentJson()">💾 Descargar Archivo</button>
-        <button class="btn" onclick="downloadAllJsonFiles()">📦 Descargar Todos (.JSON)</button>
+        <button class="btn btn-primary" onclick="copyCurrentJson()">Copiar JSON</button>
+        <button class="btn" onclick="downloadCurrentJson()">Descargar Archivo</button>
+        <button class="btn" onclick="downloadAllJsonFiles()">Descargar Todos</button>
       </div>
     </div>
     <pre id="json-viewer">// Cargando datos...</pre>
@@ -1397,7 +1670,7 @@ function getEmbeddedExportModalHtml() {
           const item = exportData[fileKey];
           const btn = document.createElement('button');
           btn.className = 'tab' + (idx === 0 ? ' active' : '');
-          btn.innerHTML = item.icon + ' ' + item.filename;
+          btn.innerText = item.filename;
           btn.onclick = () => switchTab(fileKey);
           container.appendChild(btn);
         });
@@ -1408,7 +1681,7 @@ function getEmbeddedExportModalHtml() {
       function switchTab(fileKey) {
         activeFile = fileKey;
         document.querySelectorAll('.tab').forEach(t => {
-          t.classList.toggle('active', t.innerText.includes(exportData[fileKey].filename));
+          t.classList.toggle('active', t.innerText === exportData[fileKey].filename);
         });
 
         const item = exportData[fileKey];
@@ -1421,7 +1694,7 @@ function getEmbeddedExportModalHtml() {
         if (!activeFile) return;
         const text = exportData[activeFile].jsonString;
         navigator.clipboard.writeText(text).then(() => {
-          alert('✅ ' + activeFile + ' copiado al portapapeles.');
+          alert(activeFile + ' copiado al portapapeles.');
         });
       }
 
@@ -1452,6 +1725,107 @@ function getEmbeddedExportModalHtml() {
       }
     </script>
   </body>
-</html>
-  `;
+</html>`;
+}
+
+function getEmbeddedGitHubConfigModalHtml() {
+  return `<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 18px; margin: 0; background: #f8fafc; font-size: 13px; color: #1e293b; }
+      .instructions { background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px; margin-bottom: 16px; font-size: 12px; line-height: 1.5; }
+      .form-group { margin-bottom: 14px; }
+      label { display: block; font-weight: 600; font-size: 12px; margin-bottom: 4px; }
+      input[type="text"], input[type="password"] { width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 5px; box-sizing: border-box; }
+      .btn { padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 5px; cursor: pointer; border: 1px solid #cbd5e1; background: white; }
+      .btn-primary { background: #1a365d; color: white; border-color: #1a365d; }
+      .alert { padding: 10px; border-radius: 5px; margin-bottom: 14px; font-size: 12px; display: none; }
+      .alert-success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
+      .alert-error { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; }
+    </style>
+  </head>
+  <body>
+    <div id="status-alert" class="alert"></div>
+    <div class="instructions">
+      <strong>Configuracion de sincronizacion con GitHub</strong>
+      <p style="margin-top: 4px;">Ingresa el Personal Access Token de GitHub con permisos de escritura (repo o Contents: Read and write) para permitir commit y push directo.</p>
+    </div>
+    <form id="config-form" onsubmit="saveConfiguration(event)">
+      <div class="form-group">
+        <label>Propietario (Owner)</label>
+        <input type="text" id="owner" required placeholder="lfgbbp">
+      </div>
+      <div class="form-group">
+        <label>Repositorio</label>
+        <input type="text" id="repo" required placeholder="lfgbbp.github.io">
+      </div>
+      <div class="form-group">
+        <label>Rama (Branch)</label>
+        <input type="text" id="branch" required placeholder="main">
+      </div>
+      <div class="form-group">
+        <label>Personal Access Token (GitHub PAT)</label>
+        <input type="password" id="token" placeholder="ghp_... o github_pat_...">
+      </div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px;">
+        <button type="button" class="btn" onclick="testConnection()">Probar Conexion</button>
+        <button type="submit" class="btn btn-primary">Guardar Configuracion</button>
+      </div>
+    </form>
+    <script>
+      window.onload = function() {
+        google.script.run
+          .withSuccessHandler(function(config) {
+            if (config) {
+              document.getElementById('owner').value = config.owner || 'lfgbbp';
+              document.getElementById('repo').value = config.repo || 'lfgbbp.github.io';
+              document.getElementById('branch').value = config.branch || 'main';
+              if (config.hasToken) {
+                document.getElementById('token').placeholder = 'Token configurado (dejar en blanco para no modificar)';
+              }
+            }
+          })
+          .getGitHubConfig();
+      };
+
+      function testConnection() {
+        const config = {
+          owner: document.getElementById('owner').value.trim(),
+          repo: document.getElementById('repo').value.trim(),
+          branch: document.getElementById('branch').value.trim(),
+          token: document.getElementById('token').value.trim()
+        };
+        google.script.run
+          .withSuccessHandler(function(res) {
+            const box = document.getElementById('status-alert');
+            box.className = 'alert alert-' + (res.success ? 'success' : 'error');
+            box.innerText = res.message;
+            box.style.display = 'block';
+          })
+          .testGitHubConnection(config);
+      }
+
+      function saveConfiguration(e) {
+        e.preventDefault();
+        const config = {
+          owner: document.getElementById('owner').value.trim(),
+          repo: document.getElementById('repo').value.trim(),
+          branch: document.getElementById('branch').value.trim(),
+          token: document.getElementById('token').value.trim()
+        };
+        google.script.run
+          .withSuccessHandler(function(res) {
+            const box = document.getElementById('status-alert');
+            box.className = 'alert alert-success';
+            box.innerText = res.message;
+            box.style.display = 'block';
+          })
+          .saveGitHubConfig(config);
+      }
+    </script>
+  </body>
+</html>`;
 }

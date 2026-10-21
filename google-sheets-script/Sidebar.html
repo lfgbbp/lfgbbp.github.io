@@ -8,14 +8,14 @@
       :root {
         --primary: #1a365d;
         --primary-light: #2b6cb0;
-        --accent: #319795;
-        --bg: #f7fafc;
+        --accent: #2c7a7b;
+        --bg: #f8fafc;
         --card-bg: #ffffff;
-        --text: #2d3748;
-        --text-muted: #718096;
+        --text: #1e293b;
+        --text-muted: #64748b;
         --border: #e2e8f0;
-        --success: #38a169;
-        --danger: #e53e3e;
+        --success: #15803d;
+        --danger: #b91c1c;
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
@@ -26,16 +26,15 @@
         font-size: 13px;
       }
       .header {
-        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        background: var(--primary);
         color: white;
         padding: 12px 14px;
-        border-radius: 8px;
+        border-radius: 6px;
         margin-bottom: 12px;
         text-align: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
-      .header h2 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
-      .header p { font-size: 11px; opacity: 0.9; }
+      .header h2 { font-size: 14px; font-weight: 700; margin-bottom: 2px; letter-spacing: 0.5px; }
+      .header p { font-size: 11px; opacity: 0.85; }
 
       .section-nav {
         display: grid;
@@ -47,18 +46,19 @@
         background: white;
         border: 1px solid var(--border);
         padding: 8px 4px;
-        border-radius: 6px;
+        border-radius: 5px;
         font-size: 11px;
         font-weight: 600;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
+        justify-content: center;
         transition: all 0.15s ease;
         color: var(--text);
+        text-align: center;
       }
-      .nav-btn:hover { border-color: var(--primary-light); background: #ebf8ff; color: var(--primary); }
+      .nav-btn:hover { border-color: var(--primary-light); background: #f1f5f9; color: var(--primary); }
       .nav-btn.active {
         background: var(--primary);
         color: white;
@@ -67,9 +67,9 @@
 
       .mode-toggle {
         display: flex;
-        background: #edf2f7;
-        border-radius: 6px;
-        padding: 3px;
+        background: #e2e8f0;
+        border-radius: 5px;
+        padding: 2px;
         margin-bottom: 12px;
       }
       .mode-btn {
@@ -87,16 +87,35 @@
       .mode-btn.active {
         background: white;
         color: var(--primary);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.08);
       }
 
       .card {
         background: white;
         border: 1px solid var(--border);
-        border-radius: 8px;
+        border-radius: 6px;
         padding: 12px;
         margin-bottom: 12px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      }
+
+      .publish-card {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 10px 12px;
+        margin-bottom: 12px;
+      }
+      .publish-card-header {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+      .publish-card-text {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+        line-height: 1.3;
       }
 
       .field-group { margin-bottom: 10px; }
@@ -107,17 +126,17 @@
         font-size: 11px;
         font-weight: 600;
         margin-bottom: 4px;
-        color: #4a5568;
+        color: #334155;
       }
-      .tag-es { background: #e2e8f0; color: #2b6cb0; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
-      .tag-en { background: #feebc8; color: #c05621; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+      .tag-es { background: #e2e8f0; color: #1e3a8a; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+      .tag-en { background: #fef3c7; color: #92400e; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
       .tag-req { color: var(--danger); font-weight: bold; }
 
       input[type="text"], input[type="number"], select, textarea {
         width: 100%;
         padding: 7px 9px;
         border: 1px solid var(--border);
-        border-radius: 5px;
+        border-radius: 4px;
         font-size: 12px;
         font-family: inherit;
         background: white;
@@ -129,48 +148,58 @@
         outline: none;
         box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.15);
       }
-      textarea { resize: vertical; min-height: 60px; line-height: 1.4; }
+      textarea { resize: vertical; min-height: 55px; line-height: 1.4; }
       .hint { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
 
       .btn-container { display: flex; gap: 6px; margin-top: 14px; }
       .btn {
         flex: 1;
-        padding: 9px;
+        padding: 8px;
         border: none;
-        border-radius: 6px;
-        font-size: 12px;
+        border-radius: 5px;
+        font-size: 11px;
         font-weight: 600;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 5px;
         transition: background 0.15s ease;
       }
       .btn-primary { background: var(--primary); color: white; }
       .btn-primary:hover { background: var(--primary-light); }
-      .btn-danger { background: #fff5f5; color: var(--danger); border: 1px solid #fed7d7; }
+      .btn-danger { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
       .btn-danger:hover { background: var(--danger); color: white; }
-      .btn-secondary { background: #edf2f7; color: var(--text); }
+      .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid #cbd5e1; }
       .btn-secondary:hover { background: #e2e8f0; }
+      .btn-publish {
+        background: #047857;
+        color: white;
+        width: 100%;
+        padding: 8px;
+        font-size: 11px;
+      }
+      .btn-publish:hover {
+        background: #065f46;
+      }
 
       .alert {
         padding: 9px 12px;
-        border-radius: 6px;
+        border-radius: 5px;
         font-size: 11px;
         margin-bottom: 12px;
         display: none;
         line-height: 1.4;
       }
-      .alert-success { background: #f0fff4; color: #22543d; border: 1px solid #c6f6d5; }
-      .alert-error { background: #fff5f5; color: #742a2a; border: 1px solid #fed7d7; }
-      .alert-info { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; }
+      .alert-success { background: #f0fdf4; color: var(--success); border: 1px solid #bbf7d0; }
+      .alert-error { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+      .alert-info { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
 
       .spinner {
         display: inline-block;
-        width: 14px;
-        height: 14px;
-        border: 2px solid white;
+        width: 12px;
+        height: 12px;
+        border: 2px solid currentColor;
         border-top-color: transparent;
         border-radius: 50%;
         animation: spin 0.8s linear infinite;
@@ -180,24 +209,33 @@
   </head>
   <body>
     <div class="header">
-      <h2>LFGBBP - Panel Web</h2>
-      <p>Gestor de Contenido para lfgbbp.github.io</p>
+      <h2>LFGBBP - Panel de Gestión</h2>
+      <p>Administración del Sitio Web Oficial</p>
     </div>
 
     <!-- Navegación de Secciones -->
     <div class="section-nav">
-      <button class="nav-btn" onclick="selectSection('INVESTIGADORES')"><span>👤</span> Investigadores</button>
-      <button class="nav-btn" onclick="selectSection('EX_MIEMBROS')"><span>🎓</span> Ex-Miembros</button>
-      <button class="nav-btn" onclick="selectSection('COLABORADORES')"><span>🤝</span> Colaboradores</button>
-      <button class="nav-btn" onclick="selectSection('LINEAS')"><span>🧬</span> Líneas</button>
-      <button class="nav-btn" onclick="selectSection('PAPERS')"><span>📄</span> Papers</button>
-      <button class="nav-btn" onclick="selectSection('SERVICIOS')"><span>🛠️</span> Servicios</button>
+      <button class="nav-btn" onclick="selectSection('INVESTIGADORES')">Investigadores</button>
+      <button class="nav-btn" onclick="selectSection('EX_MIEMBROS')">Ex-Miembros</button>
+      <button class="nav-btn" onclick="selectSection('COLABORADORES')">Colaboradores</button>
+      <button class="nav-btn" onclick="selectSection('LINEAS')">Líneas</button>
+      <button class="nav-btn" onclick="selectSection('PAPERS')">Papers</button>
+      <button class="nav-btn" onclick="selectSection('SERVICIOS')">Servicios</button>
+    </div>
+
+    <!-- Bloque de Publicación Automática a GitHub -->
+    <div class="publish-card">
+      <div class="publish-card-header">Sincronización Web</div>
+      <div class="publish-card-text">Publica los datos actualizados de la planilla en GitHub para actualizar el sitio web automáticamente.</div>
+      <button type="button" class="btn btn-publish" id="publish-btn" onclick="handlePublishToGitHub()">
+        Publicar cambios en el sitio web (Commit y Push)
+      </button>
     </div>
 
     <!-- Toggle Modo (Agregar / Modificar) -->
     <div class="mode-toggle">
-      <button id="mode-add-btn" class="mode-btn active" onclick="setMode(true)">➕ Agregar Nuevo</button>
-      <button id="mode-edit-btn" class="mode-btn" onclick="setMode(false)">✏️ Modificar Existente</button>
+      <button id="mode-add-btn" class="mode-btn active" onclick="setMode(true)">Agregar nuevo</button>
+      <button id="mode-edit-btn" class="mode-btn" onclick="setMode(false)">Modificar existente</button>
     </div>
 
     <!-- Mensajes de alerta -->
@@ -218,13 +256,13 @@
         <div id="form-fields"></div>
         <div class="btn-container">
           <button type="submit" id="save-btn" class="btn btn-primary">
-            <span id="save-btn-text">💾 Guardar</span>
+            <span id="save-btn-text">Guardar</span>
           </button>
           <button type="button" id="delete-btn" class="btn btn-danger" style="display: none;" onclick="handleDelete()">
-            🗑️ Eliminar
+            Eliminar
           </button>
           <button type="button" class="btn btn-secondary" onclick="resetForm()">
-            🔄 Limpiar
+            Limpiar
           </button>
         </div>
       </form>
@@ -250,7 +288,7 @@
         currentSection = key;
         document.querySelectorAll('.nav-btn').forEach(btn => {
           const cfg = UI_CONFIG[key];
-          btn.classList.toggle('active', btn.innerText.includes(cfg.icon) || btn.innerText.includes(cfg.pluralLabel.substring(0, 5)));
+          btn.classList.toggle('active', btn.innerText.trim().toLowerCase() === cfg.pluralLabel.toLowerCase() || btn.innerText.trim().toLowerCase().startsWith(cfg.pluralLabel.substring(0, 4).toLowerCase()));
         });
 
         if (preselectedId) {
@@ -280,8 +318,8 @@
         
         if (UI_CONFIG && UI_CONFIG[currentSection]) {
           document.getElementById('save-btn-text').innerText = isNewMode 
-            ? '➕ Agregar ' + UI_CONFIG[currentSection].label 
-            : '💾 Guardar Cambios';
+            ? 'Agregar ' + UI_CONFIG[currentSection].label 
+            : 'Guardar cambios';
           document.getElementById('form-header').innerText = (isNewMode ? 'Nuevo ' : 'Modificar ') + UI_CONFIG[currentSection].label;
         }
       }
@@ -292,7 +330,7 @@
 
         google.script.run
           .withSuccessHandler(function(list) {
-            select.innerHTML = '<option value="">-- Selecciona un registro (' + list.length + ') --</option>';
+            select.innerHTML = '<option value="">-- Seleccionar registro (' + list.length + ') --</option>';
             list.forEach(item => {
               const opt = document.createElement('option');
               opt.value = item.id;
@@ -320,7 +358,7 @@
           return;
         }
 
-        showAlert('Cargando datos...', 'info');
+        showAlert('Cargando datos del registro...', 'info');
         google.script.run
           .withSuccessHandler(function(record) {
             hideAlert();
@@ -420,7 +458,7 @@
         google.script.run
           .withSuccessHandler(function(res) {
             saveBtn.disabled = false;
-            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? '➕ Agregar ' + cfg.label : '💾 Guardar Cambios') + '</span>';
+            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? 'Agregar ' + cfg.label : 'Guardar cambios') + '</span>';
             showAlert(res.message, 'success');
 
             if (isNewMode) {
@@ -431,7 +469,7 @@
           })
           .withFailureHandler(function(err) {
             saveBtn.disabled = false;
-            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? '➕ Agregar ' + cfg.label : '💾 Guardar Cambios') + '</span>';
+            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? 'Agregar ' + cfg.label : 'Guardar cambios') + '</span>';
             showError(err);
           })
           .saveEntityRecord(currentSection, data, isNewMode);
@@ -445,9 +483,9 @@
           return;
         }
 
-        if (!confirm('¿Estás seguro de que deseas eliminar este registro permanentemente?')) return;
+        if (!confirm('¿Confirma que desea eliminar este registro permanentemente?')) return;
 
-        showAlert('Eliminando...', 'info');
+        showAlert('Eliminando registro...', 'info');
         google.script.run
           .withSuccessHandler(function(res) {
             showAlert(res.message, 'success');
@@ -458,10 +496,37 @@
           .deleteEntityRecord(currentSection, id);
       }
 
+      function handlePublishToGitHub() {
+        const commitMsg = prompt('Ingresa un comentario descriptivo para la actualización (opcional):', 'Actualización de datos desde Google Sheets');
+        if (commitMsg === null) return; // Cancelado
+
+        const pubBtn = document.getElementById('publish-btn');
+        pubBtn.disabled = true;
+        pubBtn.innerHTML = '<span class="spinner"></span> Publicando en GitHub...';
+        showAlert('Conectando con GitHub para crear commit y push...', 'info');
+
+        google.script.run
+          .withSuccessHandler(function(res) {
+            pubBtn.disabled = false;
+            pubBtn.innerText = 'Publicar cambios en el sitio web (Commit y Push)';
+            if (res.success) {
+              showAlert(res.message, 'success');
+            } else {
+              showAlert(res.message, 'error');
+            }
+          })
+          .withFailureHandler(function(err) {
+            pubBtn.disabled = false;
+            pubBtn.innerText = 'Publicar cambios en el sitio web (Commit y Push)';
+            showError(err);
+          })
+          .publishToGitHub(commitMsg);
+      }
+
       function showAlert(msg, type) {
         const box = document.getElementById('alert-box');
         box.className = 'alert alert-' + (type === 'success' ? 'success' : (type === 'info' ? 'info' : 'error'));
-        box.innerText = msg;
+        box.innerHTML = msg;
         box.style.display = 'block';
       }
 

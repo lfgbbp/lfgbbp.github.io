@@ -22,9 +22,9 @@
         color: var(--text);
       }
       .info-banner {
-        background: #ebf8ff;
-        border: 1px solid #bee3f8;
-        color: #2b6cb0;
+        background: #f1f5f9;
+        border: 1px solid var(--border);
+        color: #334155;
         padding: 10px 14px;
         border-radius: 6px;
         margin-bottom: 12px;
@@ -117,7 +117,7 @@
   </head>
   <body>
     <div class="info-banner">
-      💡 <b>Instrucciones de actualización:</b> Guarda estos archivos en la carpeta <code>data/</code> de tu repositorio <code>lfgbbp.github.io</code> y realiza <code>git add .</code>, <code>git commit -m "Actualizar datos"</code> y <code>git push</code> para actualizar el sitio web en vivo.
+      <strong>Instrucciones de exportación:</strong> Puedes descargar o copiar los archivos JSON manualmente si deseas una copia local. Para publicar directamente en el sitio web sin descargar archivos, utiliza la opción <strong>Publicar en sitio web (Commit y Push)</strong> del menú.
     </div>
 
     <!-- Pestañas de archivos -->
@@ -130,9 +130,9 @@
         <span id="current-count" class="status-pill" style="margin-left: 8px;"></span>
       </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <button class="btn btn-primary" onclick="copyCurrentJson()">📋 Copiar JSON</button>
-        <button class="btn" onclick="downloadCurrentJson()">💾 Descargar Archivo</button>
-        <button class="btn" onclick="downloadAllJsonFiles()">📦 Descargar Todos (.JSON)</button>
+        <button class="btn btn-primary" onclick="copyCurrentJson()">Copiar JSON</button>
+        <button class="btn" onclick="downloadCurrentJson()">Descargar Archivo</button>
+        <button class="btn" onclick="downloadAllJsonFiles()">Descargar Todos (.JSON)</button>
       </div>
     </div>
 
@@ -166,7 +166,7 @@
           const item = exportData[fileKey];
           const btn = document.createElement('button');
           btn.className = 'tab' + (idx === 0 ? ' active' : '');
-          btn.innerHTML = (item.icon || '📄') + ' ' + item.filename;
+          btn.innerText = item.filename;
           btn.onclick = () => switchTab(fileKey);
           container.appendChild(btn);
         });
@@ -177,7 +177,7 @@
       function switchTab(fileKey) {
         activeFile = fileKey;
         document.querySelectorAll('.tab').forEach(t => {
-          t.classList.toggle('active', t.innerText.includes(exportData[fileKey].filename));
+          t.classList.toggle('active', t.innerText === exportData[fileKey].filename);
         });
 
         const item = exportData[fileKey];
@@ -190,7 +190,7 @@
         if (!activeFile) return;
         const text = exportData[activeFile].jsonString;
         navigator.clipboard.writeText(text).then(() => {
-          alert('✅ ' + activeFile + ' copiado al portapapeles con éxito.');
+          alert(activeFile + ' copiado al portapapeles con éxito.');
         }).catch(() => {
           alert('No se pudo copiar automáticamente. Por favor selecciónalo manualmente en la ventana.');
         });
