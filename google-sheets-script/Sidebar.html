@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #1a365d;
+        --primary-light: #2b6cb0;
+        --accent: #319795;
+        --bg: #f7fafc;
+        --card-bg: #ffffff;
+        --text: #2d3748;
+        --text-muted: #718096;
+        --border: #e2e8f0;
+        --success: #38a169;
+        --danger: #e53e3e;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        padding: 12px;
+        font-size: 13px;
+      }
+      .header {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .header h2 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+      .header p { font-size: 11px; opacity: 0.9; }
+
+      .section-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .nav-btn {
+        background: white;
+        border: 1px solid var(--border);
+        padding: 8px 4px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.15s ease;
+        color: var(--text);
+      }
+      .nav-btn:hover { border-color: var(--primary-light); background: #ebf8ff; color: var(--primary); }
+      .nav-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .mode-toggle {
+        display: flex;
+        background: #edf2f7;
+        border-radius: 6px;
+        padding: 3px;
+        margin-bottom: 12px;
+      }
+      .mode-btn {
+        flex: 1;
+        padding: 7px;
+        border: none;
+        background: transparent;
+        font-size: 11px;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        color: var(--text-muted);
+        transition: all 0.15s ease;
+      }
+      .mode-btn.active {
+        background: white;
+        color: var(--primary);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+
+      .card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      }
+
+      .field-group { margin-bottom: 10px; }
+      .field-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #4a5568;
+      }
+      .tag-es { background: #e2e8f0; color: #2b6cb0; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+      .tag-en { background: #feebc8; color: #c05621; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+      .tag-req { color: var(--danger); font-weight: bold; }
+
+      input[type="text"], input[type="number"], select, textarea {
+        width: 100%;
+        padding: 7px 9px;
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: inherit;
+        background: white;
+        color: var(--text);
+        transition: border-color 0.15s ease;
+      }
+      input:focus, select:focus, textarea:focus {
+        border-color: var(--primary-light);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.15);
+      }
+      textarea { resize: vertical; min-height: 60px; line-height: 1.4; }
+      .hint { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+
+      .btn-container { display: flex; gap: 6px; margin-top: 14px; }
+      .btn {
+        flex: 1;
+        padding: 9px;
+        border: none;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: background 0.15s ease;
+      }
+      .btn-primary { background: var(--primary); color: white; }
+      .btn-primary:hover { background: var(--primary-light); }
+      .btn-danger { background: #fff5f5; color: var(--danger); border: 1px solid #fed7d7; }
+      .btn-danger:hover { background: var(--danger); color: white; }
+      .btn-secondary { background: #edf2f7; color: var(--text); }
+      .btn-secondary:hover { background: #e2e8f0; }
+
+      .alert {
+        padding: 9px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        margin-bottom: 12px;
+        display: none;
+        line-height: 1.4;
+      }
+      .alert-success { background: #f0fff4; color: #22543d; border: 1px solid #c6f6d5; }
+      .alert-error { background: #fff5f5; color: #742a2a; border: 1px solid #fed7d7; }
+      .alert-info { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; }
+
+      .spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid white;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>LFGBBP - Panel Web</h2>
+      <p>Gestor de Contenido para lfgbbp.github.io</p>
+    </div>
+
+    <!-- Navegación de Secciones -->
+    <div class="section-nav">
+      <button class="nav-btn" onclick="selectSection('INVESTIGADORES')"><span>👤</span> Investigadores</button>
+      <button class="nav-btn" onclick="selectSection('EX_MIEMBROS')"><span>🎓</span> Ex-Miembros</button>
+      <button class="nav-btn" onclick="selectSection('COLABORADORES')"><span>🤝</span> Colaboradores</button>
+      <button class="nav-btn" onclick="selectSection('LINEAS')"><span>🧬</span> Líneas</button>
+      <button class="nav-btn" onclick="selectSection('PAPERS')"><span>📄</span> Papers</button>
+      <button class="nav-btn" onclick="selectSection('SERVICIOS')"><span>🛠️</span> Servicios</button>
+    </div>
+
+    <!-- Toggle Modo (Agregar / Modificar) -->
+    <div class="mode-toggle">
+      <button id="mode-add-btn" class="mode-btn active" onclick="setMode(true)">➕ Agregar Nuevo</button>
+      <button id="mode-edit-btn" class="mode-btn" onclick="setMode(false)">✏️ Modificar Existente</button>
+    </div>
+
+    <!-- Mensajes de alerta -->
+    <div id="alert-box" class="alert"></div>
+
+    <!-- Selector de registro para Modificar -->
+    <div id="selector-card" class="card" style="display: none;">
+      <div class="field-label">Seleccionar registro para editar:</div>
+      <select id="record-select" onchange="onRecordSelectChange()">
+        <option value="">-- Cargando lista... --</option>
+      </select>
+    </div>
+
+    <!-- Formulario Dinámico -->
+    <div class="card">
+      <div id="form-header" style="font-weight: 700; font-size: 12px; margin-bottom: 12px; color: var(--primary);"></div>
+      <form id="dynamic-form" onsubmit="handleFormSubmit(event)">
+        <div id="form-fields"></div>
+        <div class="btn-container">
+          <button type="submit" id="save-btn" class="btn btn-primary">
+            <span id="save-btn-text">💾 Guardar</span>
+          </button>
+          <button type="button" id="delete-btn" class="btn btn-danger" style="display: none;" onclick="handleDelete()">
+            🗑️ Eliminar
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">
+            🔄 Limpiar
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let UI_CONFIG = null;
+      let currentSection = '<?= (typeof initialSection !== "undefined" && initialSection) ? initialSection : "INVESTIGADORES" ?>';
+      let isNewMode = true;
+      let preselectedId = '<?= (typeof initialRecordId !== "undefined" && initialRecordId) ? initialRecordId : "" ?>';
+
+      window.onload = function() {
+        google.script.run
+          .withSuccessHandler(function(config) {
+            UI_CONFIG = config;
+            selectSection(currentSection);
+          })
+          .withFailureHandler(showError)
+          .getUIConfiguration();
+      };
+
+      function selectSection(key) {
+        currentSection = key;
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+          const cfg = UI_CONFIG[key];
+          btn.classList.toggle('active', btn.innerText.includes(cfg.icon) || btn.innerText.includes(cfg.pluralLabel.substring(0, 5)));
+        });
+
+        if (preselectedId) {
+          isNewMode = false;
+        }
+        updateModeUI();
+        loadSectionEntities();
+        renderForm();
+      }
+
+      function setMode(isNew) {
+        isNewMode = isNew;
+        preselectedId = '';
+        updateModeUI();
+        if (!isNewMode) {
+          loadSectionEntities();
+        } else {
+          resetForm();
+        }
+      }
+
+      function updateModeUI() {
+        document.getElementById('mode-add-btn').classList.toggle('active', isNewMode);
+        document.getElementById('mode-edit-btn').classList.toggle('active', !isNewMode);
+        document.getElementById('selector-card').style.display = isNewMode ? 'none' : 'block';
+        document.getElementById('delete-btn').style.display = isNewMode ? 'none' : 'block';
+        
+        if (UI_CONFIG && UI_CONFIG[currentSection]) {
+          document.getElementById('save-btn-text').innerText = isNewMode 
+            ? '➕ Agregar ' + UI_CONFIG[currentSection].label 
+            : '💾 Guardar Cambios';
+          document.getElementById('form-header').innerText = (isNewMode ? 'Nuevo ' : 'Modificar ') + UI_CONFIG[currentSection].label;
+        }
+      }
+
+      function loadSectionEntities() {
+        const select = document.getElementById('record-select');
+        select.innerHTML = '<option value="">-- Cargando... --</option>';
+
+        google.script.run
+          .withSuccessHandler(function(list) {
+            select.innerHTML = '<option value="">-- Selecciona un registro (' + list.length + ') --</option>';
+            list.forEach(item => {
+              const opt = document.createElement('option');
+              opt.value = item.id;
+              opt.text = item.displayLabel;
+              if (String(item.id) === String(preselectedId)) {
+                opt.selected = true;
+              }
+              select.appendChild(opt);
+            });
+
+            if (preselectedId) {
+              onRecordSelectChange();
+              preselectedId = '';
+            }
+          })
+          .withFailureHandler(showError)
+          .getEntitiesList(currentSection);
+      }
+
+      function onRecordSelectChange() {
+        const select = document.getElementById('record-select');
+        const id = select.value;
+        if (!id) {
+          resetForm();
+          return;
+        }
+
+        showAlert('Cargando datos...', 'info');
+        google.script.run
+          .withSuccessHandler(function(record) {
+            hideAlert();
+            if (record) {
+              populateForm(record);
+            }
+          })
+          .withFailureHandler(showError)
+          .getEntityRecord(currentSection, id);
+      }
+
+      function renderForm() {
+        const container = document.getElementById('form-fields');
+        container.innerHTML = '';
+        const cfg = UI_CONFIG[currentSection];
+
+        cfg.columns.forEach(col => {
+          if (col.key === cfg.idField) {
+            const hiddenId = document.createElement('input');
+            hiddenId.type = 'hidden';
+            hiddenId.id = 'field_' + col.key;
+            hiddenId.name = col.key;
+            container.appendChild(hiddenId);
+            return;
+          }
+
+          const group = document.createElement('div');
+          group.className = 'field-group';
+
+          const label = document.createElement('div');
+          label.className = 'field-label';
+          
+          let tagBadge = '';
+          if (col.key.endsWith('_es')) tagBadge = '<span class="tag-es">ES</span>';
+          if (col.key.endsWith('_en')) tagBadge = '<span class="tag-en">EN</span>';
+          
+          label.innerHTML = '<span>' + col.label + (col.required ? ' <span class="tag-req">*</span>' : '') + '</span>' + tagBadge;
+          group.appendChild(label);
+
+          let input;
+          if (col.type === 'multiline') {
+            input = document.createElement('textarea');
+            input.rows = 3;
+          } else {
+            input = document.createElement('input');
+            input.type = col.type === 'number' ? 'number' : 'text';
+          }
+          input.id = 'field_' + col.key;
+          input.name = col.key;
+          if (col.required) input.required = true;
+          group.appendChild(input);
+
+          if (col.hint) {
+            const hint = document.createElement('div');
+            hint.className = 'hint';
+            hint.innerText = col.hint;
+            group.appendChild(hint);
+          }
+
+          container.appendChild(group);
+        });
+      }
+
+      function populateForm(record) {
+        const cfg = UI_CONFIG[currentSection];
+        cfg.columns.forEach(col => {
+          const el = document.getElementById('field_' + col.key);
+          if (el) {
+            el.value = (record[col.key] !== undefined && record[col.key] !== null) ? record[col.key] : '';
+          }
+        });
+      }
+
+      function resetForm() {
+        document.getElementById('dynamic-form').reset();
+        const idField = document.getElementById('field_' + UI_CONFIG[currentSection].idField);
+        if (idField) idField.value = '';
+        if (isNewMode) {
+          hideAlert();
+        }
+      }
+
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        const cfg = UI_CONFIG[currentSection];
+        const data = {};
+
+        cfg.columns.forEach(col => {
+          const el = document.getElementById('field_' + col.key);
+          if (el) data[col.key] = el.value;
+        });
+
+        const saveBtn = document.getElementById('save-btn');
+        saveBtn.disabled = true;
+        saveBtn.innerHTML = '<span class="spinner"></span> Guardando...';
+
+        google.script.run
+          .withSuccessHandler(function(res) {
+            saveBtn.disabled = false;
+            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? '➕ Agregar ' + cfg.label : '💾 Guardar Cambios') + '</span>';
+            showAlert(res.message, 'success');
+
+            if (isNewMode) {
+              resetForm();
+            } else {
+              loadSectionEntities();
+            }
+          })
+          .withFailureHandler(function(err) {
+            saveBtn.disabled = false;
+            saveBtn.innerHTML = '<span id="save-btn-text">' + (isNewMode ? '➕ Agregar ' + cfg.label : '💾 Guardar Cambios') + '</span>';
+            showError(err);
+          })
+          .saveEntityRecord(currentSection, data, isNewMode);
+      }
+
+      function handleDelete() {
+        const idField = document.getElementById('field_' + UI_CONFIG[currentSection].idField);
+        const id = idField ? idField.value : null;
+        if (!id) {
+          alert('No hay ningún registro seleccionado para eliminar.');
+          return;
+        }
+
+        if (!confirm('¿Estás seguro de que deseas eliminar este registro permanentemente?')) return;
+
+        showAlert('Eliminando...', 'info');
+        google.script.run
+          .withSuccessHandler(function(res) {
+            showAlert(res.message, 'success');
+            resetForm();
+            loadSectionEntities();
+          })
+          .withFailureHandler(showError)
+          .deleteEntityRecord(currentSection, id);
+      }
+
+      function showAlert(msg, type) {
+        const box = document.getElementById('alert-box');
+        box.className = 'alert alert-' + (type === 'success' ? 'success' : (type === 'info' ? 'info' : 'error'));
+        box.innerText = msg;
+        box.style.display = 'block';
+      }
+
+      function hideAlert() {
+        document.getElementById('alert-box').style.display = 'none';
+      }
+
+      function showError(err) {
+        showAlert('Error: ' + (err.message || err), 'error');
+      }
+    </script>
+  </body>
+</html>

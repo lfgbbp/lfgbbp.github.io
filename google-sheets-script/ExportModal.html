@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #1a365d;
+        --primary-light: #2b6cb0;
+        --border: #e2e8f0;
+        --bg-editor: #0f172a;
+        --text: #1e293b;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding: 16px;
+        margin: 0;
+        background: #f8fafc;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .info-banner {
+        background: #ebf8ff;
+        border: 1px solid #bee3f8;
+        color: #2b6cb0;
+        padding: 10px 14px;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+      .tabs {
+        display: flex;
+        gap: 4px;
+        border-bottom: 2px solid var(--border);
+        margin-bottom: 12px;
+        overflow-x: auto;
+      }
+      .tab {
+        padding: 8px 12px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 12px;
+        border-radius: 6px 6px 0 0;
+        color: #64748b;
+        white-space: nowrap;
+        transition: all 0.15s ease;
+      }
+      .tab:hover {
+        color: var(--primary);
+        background: #f1f5f9;
+      }
+      .tab.active {
+        background: var(--primary);
+        color: white;
+      }
+      .actions-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .btn {
+        padding: 7px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #cbd5e1;
+        background: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.15s ease;
+      }
+      .btn:hover { background: #f1f5f9; }
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+      .btn-primary:hover {
+        background: var(--primary-light);
+        border-color: var(--primary-light);
+      }
+      .editor-container {
+        position: relative;
+      }
+      pre {
+        background: var(--bg-editor);
+        color: #f8fafc;
+        padding: 14px;
+        border-radius: 8px;
+        height: 380px;
+        overflow: auto;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        font-size: 11.5px;
+        line-height: 1.5;
+        border: 1px solid #334155;
+      }
+      .status-pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 12px;
+        background: #e2e8f0;
+        font-size: 11px;
+        color: #475569;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info-banner">
+      💡 <b>Instrucciones de actualización:</b> Guarda estos archivos en la carpeta <code>data/</code> de tu repositorio <code>lfgbbp.github.io</code> y realiza <code>git add .</code>, <code>git commit -m "Actualizar datos"</code> y <code>git push</code> para actualizar el sitio web en vivo.
+    </div>
+
+    <!-- Pestañas de archivos -->
+    <div id="tab-container" class="tabs"></div>
+
+    <!-- Barra de acciones -->
+    <div class="actions-bar">
+      <div>
+        <span id="current-filename" style="font-weight: 700; font-size: 13px;"></span>
+        <span id="current-count" class="status-pill" style="margin-left: 8px;"></span>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="copyCurrentJson()">📋 Copiar JSON</button>
+        <button class="btn" onclick="downloadCurrentJson()">💾 Descargar Archivo</button>
+        <button class="btn" onclick="downloadAllJsonFiles()">📦 Descargar Todos (.JSON)</button>
+      </div>
+    </div>
+
+    <!-- Visualizador de código -->
+    <div class="editor-container">
+      <pre id="json-viewer">// Generando archivos JSON desde Google Sheets...</pre>
+    </div>
+
+    <script>
+      let exportData = {};
+      let activeFile = '';
+
+      window.onload = function() {
+        google.script.run
+          .withSuccessHandler(function(data) {
+            exportData = data;
+            renderTabs();
+          })
+          .withFailureHandler(function(err) {
+            document.getElementById('json-viewer').innerText = 'Error al exportar datos: ' + (err.message || err);
+          })
+          .exportAllJsonData();
+      };
+
+      function renderTabs() {
+        const container = document.getElementById('tab-container');
+        container.innerHTML = '';
+        const files = Object.keys(exportData);
+
+        files.forEach((fileKey, idx) => {
+          const item = exportData[fileKey];
+          const btn = document.createElement('button');
+          btn.className = 'tab' + (idx === 0 ? ' active' : '');
+          btn.innerHTML = (item.icon || '📄') + ' ' + item.filename;
+          btn.onclick = () => switchTab(fileKey);
+          container.appendChild(btn);
+        });
+
+        if (files.length > 0) switchTab(files[0]);
+      }
+
+      function switchTab(fileKey) {
+        activeFile = fileKey;
+        document.querySelectorAll('.tab').forEach(t => {
+          t.classList.toggle('active', t.innerText.includes(exportData[fileKey].filename));
+        });
+
+        const item = exportData[fileKey];
+        document.getElementById('current-filename').innerText = item.filename;
+        document.getElementById('current-count').innerText = item.count + ' registros';
+        document.getElementById('json-viewer').innerText = item.jsonString;
+      }
+
+      function copyCurrentJson() {
+        if (!activeFile) return;
+        const text = exportData[activeFile].jsonString;
+        navigator.clipboard.writeText(text).then(() => {
+          alert('✅ ' + activeFile + ' copiado al portapapeles con éxito.');
+        }).catch(() => {
+          alert('No se pudo copiar automáticamente. Por favor selecciónalo manualmente en la ventana.');
+        });
+      }
+
+      function downloadCurrentJson() {
+        if (!activeFile) return;
+        const text = exportData[activeFile].jsonString;
+        downloadBlob(text, activeFile);
+      }
+
+      function downloadAllJsonFiles() {
+        const keys = Object.keys(exportData);
+        keys.forEach((k, idx) => {
+          setTimeout(() => {
+            downloadBlob(exportData[k].jsonString, exportData[k].filename);
+          }, idx * 300);
+        });
+      }
+
+      function downloadBlob(content, filename) {
+        const blob = new Blob([content], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>
